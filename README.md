@@ -44,8 +44,7 @@ direkt umstellen und live sehen, wie Inhalte frei-/gesperrt werden.
   (Free / Starter / Pro), serverseitig geprüft
 - **Community**: Channels (inkl. Pro-Lounge), Posts, Antworten, Likes,
   Schreibrechte je Stufe
-- **Mitglieder-Übersicht** und **Einstellungen** (Profil, Stufe, Platzhalter
-  für Zahlungen & E-Mails)
+- **Einstellungen** (Profil, Stufe, Platzhalter für Zahlungen & E-Mails)
 - **Admin-Bereich** (nur Rolle `admin`): Kennzahlen, Nutzerliste, Inhalte
 
 ## Architektur
@@ -59,7 +58,6 @@ src/
 │   │   ├── dashboard/        → Übersicht & Weiterlernen
 │   │   ├── kurse/            → Module → Lektionen (Tier-Gating)
 │   │   ├── community/        → Channels & Beiträge
-│   │   ├── mitglieder/       → Mitgliederliste
 │   │   ├── einstellungen/    → Profil & Account-Stufe
 │   │   └── admin/            → Admin-Cockpit (rollenbasiert)
 │   └── (legal)/              → Impressum, Datenschutz, AGB (Platzhalter!)

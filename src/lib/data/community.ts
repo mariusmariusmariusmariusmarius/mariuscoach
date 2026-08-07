@@ -164,13 +164,3 @@ export const SEED_POSTS: CommunityPost[] = [
   },
 ];
 
-export const MEMBERS = [
-  { name: "Marius", tier: "pro" as Tier, role: "Coach & Gründer", avatarColor: "from-emerald-500 to-teal-400", online: true },
-  { name: "Lena K.", tier: "starter" as Tier, role: "Virtuelle Assistentin", avatarColor: "from-rose-400 to-pink-500", online: true },
-  { name: "Jonas B.", tier: "pro" as Tier, role: "Freelancer", avatarColor: "from-indigo-400 to-blue-500", online: false },
-  { name: "Sarah M.", tier: "starter" as Tier, role: "Coach", avatarColor: "from-amber-400 to-orange-500", online: true },
-  { name: "Tim R.", tier: "free" as Tier, role: "Fotograf", avatarColor: "from-cyan-400 to-sky-500", online: false },
-  { name: "Nina P.", tier: "pro" as Tier, role: "Agentur-Inhaberin", avatarColor: "from-violet-500 to-fuchsia-500", online: false },
-  { name: "David W.", tier: "free" as Tier, role: "Handwerksmeister", avatarColor: "from-lime-400 to-green-500", online: true },
-  { name: "Amira S.", tier: "starter" as Tier, role: "Online-Shop", avatarColor: "from-fuchsia-400 to-purple-500", online: false },
-];

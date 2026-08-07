@@ -11,7 +11,6 @@ import {
   Settings,
   ShieldCheck,
   Sparkles,
-  Users,
   X,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
@@ -21,7 +20,6 @@ const NAV = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/kurse", label: "Kurse", icon: GraduationCap },
   { href: "/community", label: "Community", icon: MessagesSquare },
-  { href: "/mitglieder", label: "Mitglieder", icon: Users },
   { href: "/einstellungen", label: "Einstellungen", icon: Settings },
 ] as const;
 
