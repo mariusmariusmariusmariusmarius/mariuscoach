@@ -34,7 +34,7 @@ export const TIER_INFO: Record<
   },
   starter: {
     label: "Starter",
-    price: "29 €",
+    price: "49,90 €",
     priceHint: "pro Monat",
     tagline: "Baue deine erste eigene Website",
     features: [
@@ -48,10 +48,11 @@ export const TIER_INFO: Record<
   },
   pro: {
     label: "Pro",
-    price: "79 €",
+    price: "79,90 €",
     priceHint: "pro Monat",
     tagline: "Vom Projekt zum Business",
     features: [
+      "30 Min. 1:1-Coaching pro Woche",
       "Alle Starter-Inhalte",
       "Ads & Conversion-Tracking",
       "Onlineshop & Zahlungsanbieter",
