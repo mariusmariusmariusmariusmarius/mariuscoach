@@ -13,7 +13,7 @@ export default async function CoursesPage() {
 
   return (
     <div className="space-y-8">
-      <div className="animate-fade-up">
+      <div>
         <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Kurse</h1>
         <p className="mt-2 text-zinc-400">
           Dein Weg von der ersten Domain bis zur eigenen Admin-App — Modul für Modul.

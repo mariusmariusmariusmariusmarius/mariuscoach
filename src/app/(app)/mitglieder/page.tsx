@@ -11,7 +11,7 @@ export default async function MembersPage() {
 
   return (
     <div className="space-y-8">
-      <div className="animate-fade-up">
+      <div>
         <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Mitglieder</h1>
         <p className="mt-2 text-zinc-400">
           {MEMBERS.length + 1} Mitglieder ·{" "}

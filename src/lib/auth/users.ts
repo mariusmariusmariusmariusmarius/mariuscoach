@@ -25,7 +25,7 @@ const seedUsers: User[] = [
   {
     id: "u_demo_free",
     name: "Demo Free",
-    email: "demo@mariuscoach.de",
+    email: "demo@mariusmueller.media",
     password: "demo123",
     tier: "free",
     role: "member",
@@ -35,7 +35,7 @@ const seedUsers: User[] = [
   {
     id: "u_demo_starter",
     name: "Demo Starter",
-    email: "starter@mariuscoach.de",
+    email: "starter@mariusmueller.media",
     password: "starter123",
     tier: "starter",
     role: "member",
@@ -45,7 +45,7 @@ const seedUsers: User[] = [
   {
     id: "u_demo_pro",
     name: "Demo Pro",
-    email: "pro@mariuscoach.de",
+    email: "pro@mariusmueller.media",
     password: "pro123",
     tier: "pro",
     role: "member",
@@ -55,7 +55,7 @@ const seedUsers: User[] = [
   {
     id: "u_marius",
     name: "Marius",
-    email: "admin@mariuscoach.de",
+    email: "admin@mariusmueller.media",
     password: "admin123",
     tier: "pro",
     role: "admin",

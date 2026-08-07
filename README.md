@@ -1,9 +1,12 @@
-# MariusCoach
+# Marius Müller Media
 
 Deine eigene Lernplattform (Skool-Alternative): Kurse, Community und
 Account-Stufen — gebaut mit Next.js. **Aktueller Stand: Gerüst.** Alle
 Seiten, Flows und die Freischaltungs-Logik stehen; externe Dienste (Neon,
-Stripe, Resend, Vercel) werden später angebunden.
+Stripe, Resend) werden später angebunden.
+
+**Live:** [mariuscoach.vercel.app](https://mariuscoach.vercel.app) — deployt
+automatisch bei jedem Push über die Vercel-GitHub-Integration.
 
 ## Loslegen
 
@@ -20,10 +23,10 @@ Solange keine echte Datenbank angebunden ist, gibt es eingebaute Test-Accounts:
 
 | E-Mail                  | Passwort   | Stufe   | Besonderheit        |
 | ----------------------- | ---------- | ------- | ------------------- |
-| demo@mariuscoach.de     | demo123    | Free    | Nur Basics-Modul    |
-| starter@mariuscoach.de  | starter123 | Starter | + Website & Leads   |
-| pro@mariuscoach.de      | pro123     | Pro     | Alle Inhalte        |
-| admin@mariuscoach.de    | admin123   | Pro     | + Admin-Bereich     |
+| demo@mariusmueller.media     | demo123    | Free    | Nur Basics-Modul    |
+| starter@mariusmueller.media  | starter123 | Starter | + Website & Leads   |
+| pro@mariusmueller.media      | pro123     | Pro     | Alle Inhalte        |
+| admin@mariusmueller.media    | admin123   | Pro     | + Admin-Bereich     |
 
 Registrierung funktioniert ebenfalls (neue Accounts starten als Free),
 gespeichert wird aber nur im RAM — nach einem Server-Neustart sind

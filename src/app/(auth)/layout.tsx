@@ -14,7 +14,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         <div className="mb-8 flex flex-col items-center gap-6">
           <Logo />
         </div>
-        <div className="animate-fade-up rounded-3xl glass p-8 shadow-2xl shadow-black/40">
+        <div className="rounded-3xl glass p-8 shadow-2xl shadow-black/40">
           {children}
         </div>
         <Link

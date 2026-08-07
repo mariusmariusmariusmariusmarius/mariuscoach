@@ -22,6 +22,7 @@
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-space-grotesk), var(--font-geist-sans), sans-serif;
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-fade-in: fade-in 0.9s ease both;
@@ -88,6 +89,14 @@ body {
 
 ::selection {
   background: color-mix(in srgb, var(--color-brand-500) 40%, transparent);
+}
+
+/* Markante Display-Schrift für alle Headlines */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 /* Dezente Scrollbar */

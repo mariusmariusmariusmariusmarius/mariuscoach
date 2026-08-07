@@ -22,7 +22,7 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-8">
       {/* Begrüßung */}
-      <div className="animate-fade-up">
+      <div>
         <p className="text-sm text-zinc-500">Schön, dass du da bist 👋</p>
         <h1 className="mt-1 text-3xl font-bold tracking-tight text-white md:text-4xl">
           Moin, {session.name.split(" ")[0]}!

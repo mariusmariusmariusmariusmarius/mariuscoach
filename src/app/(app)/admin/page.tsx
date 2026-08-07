@@ -18,7 +18,7 @@ export default async function AdminPage() {
 
   return (
     <div className="space-y-8">
-      <div className="animate-fade-up">
+      <div>
         <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Admin</h1>
         <p className="mt-2 text-zinc-400">
           Dein Cockpit: Nutzer, Inhalte und später alles, was die Plattform steuert.

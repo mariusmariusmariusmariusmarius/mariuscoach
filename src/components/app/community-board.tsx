@@ -60,7 +60,7 @@ export function CommunityBoard({ session }: { session: Session }) {
 
   return (
     <div className="space-y-6">
-      <div className="animate-fade-up">
+      <div>
         <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Community</h1>
         <p className="mt-2 text-zinc-400">
           Offene Fragen, Cases, Wins — hier baut ihr zusammen.
