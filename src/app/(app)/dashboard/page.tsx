@@ -7,6 +7,7 @@ import { SEED_POSTS } from "@/lib/data/community";
 import { DataIcon } from "@/components/icon-map";
 import { TierBadge } from "@/components/ui/tier-badge";
 import { Avatar } from "@/components/ui/avatar";
+import { DailyChecklist } from "@/components/app/daily-checklist";
 
 export const metadata = { title: "Dashboard" };
 
@@ -28,6 +29,15 @@ export default async function DashboardPage() {
           Moin, {session.name.split(" ")[0]}!
         </h1>
       </div>
+
+      {/* Daily Checklist mit Streak */}
+      {nextModule && nextLesson && (
+        <DailyChecklist
+          lessonTitle={nextLesson.title}
+          lessonHref={`/kurse/${nextModule.slug}/${nextLesson.slug}`}
+          lessonDuration={nextLesson.duration}
+        />
+      )}
 
       {/* Statuskarten */}
       <div className="grid gap-4 sm:grid-cols-3">
