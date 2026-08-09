@@ -1,18 +1,16 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  BookOpen,
   Check,
+  ClipboardCopy,
   Globe,
   GraduationCap,
   MessagesSquare,
   Play,
   ShieldCheck,
-  Users,
   Zap,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
-import { DataIcon } from "@/components/icon-map";
 import { TierBadge } from "@/components/ui/tier-badge";
 import {
   CountUp,
@@ -22,46 +20,55 @@ import {
   Stagger,
   StaggerItem,
 } from "@/components/motion-primitives";
+import { CurriculumExplorer } from "@/components/landing/curriculum-explorer";
 import { CURRICULUM, totalLessons } from "@/lib/data/curriculum";
 import { TIERS, TIER_INFO } from "@/lib/tiers";
 
+const TOTAL_HOURS = Math.round(
+  CURRICULUM.reduce(
+    (sum, m) => sum + m.lessons.reduce((s, l) => s + l.duration, 0),
+    0
+  ) / 60
+);
+
 const TOPICS = [
   "Domains", "Hosting", "Websites mit Claude", "Landingpages", "Lead-Automation",
-  "E-Mail-Automation", "Meta Ads", "Google Ads", "Conversion-Tracking", "Onlineshops",
-  "Zahlungsanbieter", "Abo-Modelle", "Datenbanken", "Webhooks", "Login-Bereiche",
-  "Terminbuchung", "Admin-Apps", "Rechtstexte", "KI-Bilder",
+  "E-Mail-Automation", "SEO", "Google My Business", "Meta Ads", "Google Ads",
+  "Conversion-Tracking", "Onlineshops", "Zahlungsanbieter", "Abo-Modelle",
+  "Datenbanken", "Webhooks", "Login-Bereiche", "Terminbuchung", "Admin-Apps",
+  "Rechtstexte", "KI-Bilder", "Websites verkaufen",
 ];
 
 const FEATURES = [
   {
-    icon: GraduationCap,
-    title: "Schritt für Schritt zum Ergebnis",
-    text: "Kein Theorie-Marathon: Jedes Modul endet mit etwas, das live ist — deine Website, dein Formular, dein Shop.",
+    icon: Zap,
+    title: "Speed is key",
+    text: "Website an einem Tag statt in Monaten. Wir sind keine Nerds — wir wollen Ergebnisse. Claude regelt die Technik, du triffst die Entscheidungen.",
+  },
+  {
+    icon: ClipboardCopy,
+    title: "Fertige Prompts & Cheat Sheets",
+    text: "Neben jedem Video: die exakten Prompts zum Kopieren, alle Skills mit Links, jede verwendete Software. Nachmachen statt rätseln.",
   },
   {
     icon: Globe,
     title: "Unabhängig statt Baukasten",
-    text: "Du lernst, Websites zu bauen, die dir gehören. Kein Abo-Baukasten, keine Limits, volle Kontrolle.",
-  },
-  {
-    icon: MessagesSquare,
-    title: "Community, die antwortet",
-    text: "Offene Fragen, echte Cases, ehrliches Feedback — du baust nicht allein.",
-  },
-  {
-    icon: Zap,
-    title: "Automation von Anfang an",
-    text: "Leads, E-Mails, Termine: Du baust dir Systeme, die arbeiten, während du schläfst.",
+    text: "Deine Website gehört dir — gehostet für 0 € statt 20–40 € Baukasten-Abo im Monat. Keine Limits, volle Kontrolle.",
   },
   {
     icon: ShieldCheck,
-    title: "Rechtssicher & sauber",
-    text: "Impressum, Datenschutz, Tracking-Consent — von Anfang an richtig aufgesetzt.",
+    title: "Aus 200+ echten Projekten",
+    text: "Über 5 Jahre und 200 gebaute Websites: echte Cases, echte Zahlen, echte Fehler zum Draus-Lernen — nichts aus der Theorie.",
   },
   {
-    icon: Users,
-    title: "Vom Hobby zum Business",
-    text: "Ads, Shops, eigene Tools: Der Weg von der ersten Domain bis zum bezahlten Kundenprojekt.",
+    icon: GraduationCap,
+    title: "66 Lektionen, ein roter Faden",
+    text: "Von der Domain bis zur eigenen App — jede Lektion endet mit einem sichtbaren Ergebnis, das live ist.",
+  },
+  {
+    icon: MessagesSquare,
+    title: "Community & 1:1-Coaching",
+    text: "Offene Fragen werden beantwortet, Cases besprochen — und als Pro-Mitglied hast du 30 Minuten 1:1 pro Woche.",
   },
 ];
 
@@ -177,13 +184,15 @@ export default function LandingPage() {
               </div>
               <div>
                 <div className="font-display text-2xl font-bold text-white md:text-3xl">
-                  <CountUp to={totalLessons()} suffix="+" />
+                  <CountUp to={totalLessons()} />
                 </div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-zinc-500">Lektionen</div>
               </div>
               <div>
-                <div className="font-display text-2xl font-bold text-white md:text-3xl">1:1</div>
-                <div className="mt-1 text-xs uppercase tracking-widest text-zinc-500">Praxis-Cases</div>
+                <div className="font-display text-2xl font-bold text-white md:text-3xl">
+                  <CountUp to={TOTAL_HOURS} suffix="+" />
+                </div>
+                <div className="mt-1 text-xs uppercase tracking-widest text-zinc-500">Stunden</div>
               </div>
             </div>
           </StaggerItem>
@@ -231,44 +240,36 @@ export default function LandingPage() {
 
       {/* Curriculum */}
       <section id="kurse" className="relative mx-auto max-w-6xl scroll-mt-24 px-4 py-24">
-        <Reveal className="mb-14 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+        <Reveal className="mb-10 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-400">Das Curriculum</p>
             <h2 className="max-w-xl text-3xl font-bold tracking-tight md:text-5xl">
-              Von <span className="text-gradient">„Was ist eine Domain?“</span> bis zur eigenen Admin-App
+              Von <span className="text-gradient">„Was ist eine Domain?“</span> bis zum eigenen Business
             </h2>
           </div>
           <p className="max-w-sm text-sm text-zinc-400">
-            {CURRICULUM.length} Module, {totalLessons()} Lektionen — jede Stufe deines
-            Accounts schaltet neue Inhalte frei.
+            {CURRICULUM.length} Module, {totalLessons()} Lektionen, {TOTAL_HOURS}+ Stunden —
+            klick dich durch jedes Modul und sieh dir jede einzelne Lektion an.
           </p>
         </Reveal>
 
-        <Stagger className="grid gap-5 md:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
-          {CURRICULUM.map((mod, i) => (
-            <StaggerItem key={mod.slug} hoverLift>
-              <div className="group relative h-full overflow-hidden rounded-3xl border border-white/8 bg-surface-900/70 p-7 transition-colors hover:border-white/15">
-                <div className={`pointer-events-none absolute -right-16 -top-16 size-44 rounded-full bg-gradient-to-br opacity-15 blur-2xl transition group-hover:opacity-30 ${mod.gradient}`} />
-                <div className="mb-5 flex items-start justify-between">
-                  <div className={`inline-grid size-12 place-items-center rounded-2xl bg-gradient-to-br text-white ${mod.gradient}`}>
-                    <DataIcon name={mod.icon} className="size-6" />
-                  </div>
-                  <TierBadge tier={mod.tier} />
-                </div>
-                <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                  Modul {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mb-2 text-xl font-semibold text-white">{mod.title}</h3>
-                <p className="mb-5 text-sm leading-relaxed text-zinc-400">{mod.subtitle}</p>
-                <p className="flex items-center gap-2 text-xs text-zinc-500">
-                  <BookOpen className="size-3.5" />
-                  {mod.lessons.length} Lektionen ·{" "}
-                  {mod.lessons.reduce((sum, lesson) => sum + lesson.duration, 0)} Min.
-                </p>
-              </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
+        <Reveal delay={0.1}>
+          <CurriculumExplorer />
+        </Reveal>
+
+        {/* Der Weg in 9 Stationen */}
+        <Reveal delay={0.05}>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-2 gap-y-3 text-sm text-zinc-500">
+            {CURRICULUM.map((mod, i) => (
+              <span key={mod.slug} className="flex items-center gap-2">
+                <span className="text-zinc-300">{mod.title}</span>
+                {i < CURRICULUM.length - 1 && (
+                  <ArrowRight className="size-3.5 text-zinc-700" />
+                )}
+              </span>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       {/* Community-Teaser */}

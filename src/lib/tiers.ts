@@ -28,8 +28,8 @@ export const TIER_INFO: Record<
     tagline: "Starte mit den Grundlagen",
     features: [
       "Basics-Modul komplett frei",
+      "Eigene Domain + E-Mail in 30 Minuten",
       "Community lesen",
-      "Wöchentlicher Newsletter",
     ],
   },
   starter: {
@@ -39,10 +39,11 @@ export const TIER_INFO: Record<
     tagline: "Baue deine erste eigene Website",
     features: [
       "Alle Free-Inhalte",
-      "Website bauen mit Claude",
+      "Website bauen mit Claude (17 Lektionen)",
       "Leads & Automation",
+      "SEO & Google — gefunden werden",
+      "Cheat Sheets: fertige Prompts zum Kopieren",
       "Community aktiv nutzen",
-      "Neue Lektionen jede Woche",
     ],
     highlight: true,
   },
@@ -54,11 +55,11 @@ export const TIER_INFO: Record<
     features: [
       "30 Min. 1:1-Coaching pro Woche",
       "Alle Starter-Inhalte",
-      "Ads & Conversion-Tracking",
-      "Onlineshop & Zahlungsanbieter",
-      "Eigener Server, Datenbank & Webhooks",
-      "Eigene Tools & Admin-App",
-      "Live-Cases & Q&A-Channel",
+      "Ads & Marketing",
+      "Onlineshop mit Stripe & Lieferanten-APIs",
+      "Web-Apps, Server & Datenbank",
+      "Eigene Tools: Terminbuchung, Admin-App & Co.",
+      "Websites verkaufen: Preise, Kunden, Wartung",
     ],
   },
 };
