@@ -1,6 +1,15 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { ArrowLeft, ArrowRight, CheckCircle2, Clock, Play } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle2,
+  ClipboardCopy,
+  Clock,
+  Link2,
+  Play,
+  Wrench,
+} from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import { hasAccess } from "@/lib/tiers";
 import { getLesson } from "@/lib/data/curriculum";
@@ -68,22 +77,60 @@ export default async function LessonPage({
         </div>
       </div>
 
-      {/* Lektions-Inhalt */}
-      <div className="rounded-3xl border border-white/8 bg-surface-900/70 p-8">
-        <h2 className="mb-3 text-lg font-semibold text-white">Worum geht&apos;s?</h2>
-        <p className="leading-relaxed text-zinc-300">{lesson.description}</p>
-        <div className="mt-6 rounded-2xl border border-dashed border-white/10 bg-surface-950/40 p-6 text-sm text-zinc-500">
-          Hier entstehen die Lektionsinhalte: Schritt-für-Schritt-Anleitung,
-          Code-Snippets, Checklisten und Downloads. Die Inhalte werden später
-          über den Admin-Bereich gepflegt und aus der Datenbank geladen.
+      {/* Lektions-Inhalt + Cheat Sheet */}
+      <div className="grid gap-6 lg:grid-cols-5">
+        <div className="rounded-3xl border border-white/8 bg-surface-900/70 p-8 lg:col-span-3">
+          <h2 className="mb-3 text-lg font-semibold text-white">Worum geht&apos;s?</h2>
+          <p className="leading-relaxed text-zinc-300">{lesson.description}</p>
+          <div className="mt-6 rounded-2xl border border-dashed border-white/10 bg-surface-950/40 p-6 text-sm text-zinc-500">
+            Hier entstehen die Lektionsinhalte: Schritt-für-Schritt-Anleitung
+            und Anmerkungen. Die Inhalte werden später über den Admin-Bereich
+            gepflegt und aus der Datenbank geladen.
+          </div>
+          <button
+            type="button"
+            className="mt-6 inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-2.5 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/20"
+          >
+            <CheckCircle2 className="size-4" />
+            Als erledigt markieren
+          </button>
         </div>
-        <button
-          type="button"
-          className="mt-6 inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-2.5 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/20"
-        >
-          <CheckCircle2 className="size-4" />
-          Als erledigt markieren
-        </button>
+
+        {/* Cheat Sheet: Prompts, Skills, Software der Lektion */}
+        <aside className="rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6 lg:col-span-2">
+          <h2 className="mb-1 text-lg font-semibold text-white">Cheat Sheet</h2>
+          <p className="mb-5 text-xs text-zinc-500">
+            Alles aus dieser Lektion zum Nachmachen.
+          </p>
+          <div className="space-y-4">
+            <div>
+              <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-300">
+                <ClipboardCopy className="size-3.5" /> Prompts
+              </p>
+              <div className="rounded-xl border border-dashed border-white/10 bg-surface-950/40 p-3 font-mono text-xs text-zinc-500">
+                Die Prompts dieser Lektion — zum Kopieren. (Inhalte folgen mit
+                den Videos.)
+              </div>
+            </div>
+            <div>
+              <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-300">
+                <Link2 className="size-3.5" /> Skills & Links
+              </p>
+              <div className="rounded-xl border border-dashed border-white/10 bg-surface-950/40 p-3 text-xs text-zinc-500">
+                Verwendete Skills mit Installations-Links.
+              </div>
+            </div>
+            <div>
+              <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-300">
+                <Wrench className="size-3.5" /> Software
+              </p>
+              <div className="rounded-xl border border-dashed border-white/10 bg-surface-950/40 p-3 text-xs text-zinc-500">
+                Tools aus dieser Lektion (z. B. Claude, Vercel, Higgs, Stripe)
+                mit Kosten-Hinweis.
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
 
       {/* Navigation */}

@@ -24,24 +24,30 @@ ein Witz. Kernphilosophie, die sich durch JEDE Lektion zieht:
 > hinbekommen. Allrounder statt Spezialist. Selbst bauen und Kohle verdienen.
 
 **Format:** Loom-Screencasts (Standing Desk, evtl. Whiteboard), durchgehendes
-**fiktives** Beispielprojekt („Honest is better") — Vorschlag: ein
-Handwerksbetrieb, weil er die meisten Fälle abdeckt **[MM+Claude: finales
-Beispiel-Business festlegen]**. Jede Lektion liefert die fertigen
-**Prompt-Vorlagen zum Kopieren** — das ist das Kern-Asset des Kurses.
+**fiktives** Beispielprojekt („Honest is better"): der Handwerksbetrieb
+**„Haustechnik Sommer"** (Heizung, Sanitär, Klima — deckt Leads, Termine,
+Bewertungen und Regional-SEO ab).
+
+**Cheat Sheet neben jedem Video (deine Ansage aus N7/N12):** Auf der
+Lektionsseite steht rechts neben dem Video immer ein Cheat Sheet mit
+① den Prompts der Lektion zum Kopieren, ② den verwendeten Skills mit Links,
+③ der verwendeten Software (Higgs, Stripe, Vercel …). Das ist das Kern-Asset
+des Kurses — die Plattform hat dafür bereits einen festen Bereich auf jeder
+Lektionsseite.
 
 **Dein Stack (zieht sich durch alle Module):**
 | Zweck | Tool | Kosten-Ansage im Kurs |
 |---|---|---|
 | Domain + E-Mail | All-Inkl (Budget: IONOS) | ~10 €/Jahr Domain |
-| KI | Claude Desktop-App, Pro-Abo | 20–30 €/Monat |
-| Skills | skills.sh (Webdesign, Typo, UI/UX, SEO, Legal, Higgs …) | — |
-| Hosting Websites | Vercel | 0 € bis ~10.000 Besucher/Monat |
-| Hosting Apps/Server | Hetzner | günstigster Tarif |
-| Datenbank | Neon (CLI/MCP) | 0 € am Anfang |
+| KI | Claude Desktop-App | Pro reicht für Websites; **Max ab großem Shop/Web-App** |
+| Skills | skills.sh (Webdesign, Typo, UI/UX, SEO, Legal, Higgs …) | exakte Liste kommt beim Videodreh (→ Cheat Sheets) |
+| Hosting Websites | Vercel | 0 €; Pro erst bei richtig viel Traffic |
+| Hosting Apps/Server | Hetzner | günstigster Tarif, nur wenn nötig |
+| Datenbank | Neon (CLI/MCP) | 0 € am Anfang, nur wenn nötig |
 | E-Mail-Versand | Resend | 0 € bis 25.000 Mails/Monat |
 | Zahlungen | Stripe | Gebühr pro Transaktion **[MM+Claude: exakte Sätze, ~1,5 % + 0,25 € EU-Karten]** |
-| KI-Medien | Higgsfield (MCP/CLI, Realism-Skill) | **[Nachfrage: welches Abo empfehlen?]** |
-| SEO-Daten | SEMrush (hat MCP/CLI!) | **[Nachfrage: welches Paket?]** |
+| KI-Medien | Higgsfield (MCP/CLI, Realism-Skill) | **Free reicht für eine Website** |
+| SEO-Daten | SEMrush (hat MCP/CLI!) | Mitglieder kaufen selbst |
 | Rechnungen | sevDesk-/Lexware-API u. a. | **[MM+Claude: „Big Five" DE recherchieren]** |
 
 **USP-Story (für Landingpage & Modul-Intros):** 200+ gebaute Websites, 5+
@@ -77,7 +83,7 @@ bekommt die ehrliche Antwort: falscher Kurs, richtige Entscheidung hier.
 | # | Modul | Stufe | Lektionen |
 |---|---|---|---|
 | 1 | Basics | Free | 4 |
-| 2 | Website bauen mit Claude | Starter | 16 |
+| 2 | Website bauen mit Claude | Starter | 17 |
 | 3 | Leads & Automation | Starter | 7 |
 | 4 | SEO & Google | Starter | 8 |
 | 5 | Ads & Marketing | Pro | 9 |
@@ -85,7 +91,7 @@ bekommt die ehrliche Antwort: falscher Kurs, richtige Entscheidung hier.
 | 7 | Web-Apps, Server & Datenbank | Pro | 5 |
 | 8 | Eigene Tools | Pro | 4 |
 | 9 | Websites verkaufen | Pro | 5 |
-| | **Gesamt** | | **65** |
+| | **Gesamt** | | **66** |
 
 Struktur-Entscheidungen aus deinen Antworten: „Umzug vom Baukasten" wandert
 in Modul 2 (enthält den Website-Nachbau → darf nicht free sein). Der
@@ -158,15 +164,15 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
 - Dein Standard-Start: neuer Ordner → öffnen → neuer Chat → **immer GitHub-
   Repo verbinden** (Sicherheitsnetz: Main + Branches, „kann nichts passieren
   — wenn was komisch ist, Branch löschen")
-- Vorab-Installationen fürs Terminal **[MM+Claude: exakte Ein-Befehl-Anleitung
-  für Node/npm & Co. („die Suppe") pro Mac/Windows — kläre ich im Nachfragebogen]**
+- Vorab-Installationen fürs Terminal: **Homebrew** („die Suppe" ✓) + Node —
+  **[MM+Claude: Ein-Befehl-Anleitung pro Mac/Windows schreibe ich]**
 - **Ergebnis:** Claude läuft, Repo verbunden, bereit für den ersten Prompt.
 
 **2.2 Was sind Skills — dein unfairer Vorteil**
 - Deine Definition: „vorgeschriebene Kontextdateien, damit die KI versteht,
   wie man Anforderung X richtig umsetzt" — fertig, mehr Theorie braucht keiner
 - skills.sh zeigen; installieren: Webdesign, Typografie, UI/UX, SEO,
-  Page-Generator **[Nachfrage: exakte Skill-Liste mit Namen]**
+  Page-Generator (exakte Liste lieferst du beim Videodreh → Cheat Sheet)
 - Terminal-Momente entdramatisieren: copy → paste → Enter
 - **Ergebnis:** Skill-Set installiert — ab jetzt baut Claude besser als jeder
   Baukasten.
@@ -261,9 +267,9 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
 - Deine Kernidee: **Wir bauen nicht eine, wir bauen zehn.** Variablen tauschen
   (Beweisbilder vs. Bewertungen), A/B-testen, Verlierer fliegt raus — „der
   Markt gibt die Antwort, wir raten nicht"
-- ⭐ **Dein Fahrschul-Case**: Webdesigner insolvent + verschwunden, Ads liefen
-  ins Leere → in 2 Stunden komplette Landingpage mit Domain, Hosting,
-  Meta-Pixel — 12 Prompts. Vorher zahlte der Kunde 2.000 €
+- ⭐ **Dein Fahrschul-Case** (darf gezeigt werden ✓): Webdesigner insolvent +
+  verschwunden, Ads liefen ins Leere → in 2 Stunden komplette Landingpage mit
+  Domain, Hosting, Meta-Pixel — 12 Prompts. Vorher zahlte der Kunde 2.000 €
 - **Ergebnis:** Mind. 2 Landingpage-Varianten live + Test-Mindset verankert.
 
 **2.13 Bau deinen Quiz-Funnel (Link-in-Bio)**
@@ -408,10 +414,10 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
   zählen — du wolltest Unterstützung]**
 - **Ergebnis:** Jede Seite hat Titel, Beschreibung, Bild — komplett optimiert.
 
-**4.4 ⭐ Der Klima-Case: Lokale Landingpages**
-- Deine Story: Klima/Heizung/Lüftung-Firma, Schweiz, neue Website → Keywords
-  pro Region recherchiert → 15–20 Regional-Landingpages → von ~0 auf 4–5
-  High-Ticket-Anfragen pro Woche
+**4.4 ⭐ Lokale Landingpages: Der Regional-Hebel**
+- Deine Story — **nur anonymisiert erzählen, nicht zeigen** (deine Ansage ✓):
+  Haustechnik-Firma, neue Website → Keywords pro Region recherchiert → 15–20
+  Regional-Landingpages → von ~0 auf 4–5 High-Ticket-Anfragen pro Woche
 - Warum das funktioniert **[MM+Claude: Local-SEO-Mechanik dahinter — du
   wolltest die Erklärung von mir]** + die Grenze: nicht 100 Seiten spammen
 - **Ergebnis:** Eigene Regional-Pages für die 2–3 wichtigsten Orte.
@@ -546,7 +552,8 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
 **6.2 Produkte & Lieferanten-APIs**
 - Dropshipping: Lieferanten-API anbinden → alle Produkte, Bilder, Preise,
   **Live-Lagerbestand** automatisch (dein Ibiza-Boho-Shop über das
-  EU-Warenhaus **[Nachfrage: BigBuy?]** — 12.000 Produkte in einer Stunde)
+  EU-Warenhaus **Matterhorn** ✓ — 12.000 Produkte in einer Stunde; der Shop
+  darf gezeigt werden ✓)
 - Eigene Produkte: selbst pflegen, Bilder mit Higgs veredeln, Texte von Claude
 - Lager-Ampel: „nur noch X verfügbar" / ausverkauft = nicht bestellbar —
   automatisch

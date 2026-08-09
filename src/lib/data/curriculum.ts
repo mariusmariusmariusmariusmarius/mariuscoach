@@ -1,7 +1,8 @@
 import type { Tier } from "@/lib/tiers";
 
 /**
- * Das Curriculum der Plattform.
+ * Das Curriculum der Plattform — Stand: Lehrplan v1 (docs/lehrplan.md),
+ * geschmiedet aus Marius' Fragebogen-Antworten.
  * Aktuell statisch als Gerüst — später kommt das aus der Datenbank (Neon)
  * und wird über den Admin-Bereich gepflegt.
  */
@@ -32,33 +33,41 @@ export const CURRICULUM: CourseModule[] = [
   {
     slug: "basics",
     title: "Basics",
-    subtitle: "Das Fundament: Domain, E-Mail & Website verstehen",
+    subtitle: "In 30 Minuten: eigene Domain, eigene E-Mail — und verstehen, warum",
     tier: "free",
     icon: "compass",
     gradient: "from-sky-500/80 to-cyan-400/80",
     lessons: [
       {
+        slug: "was-ist-eine-webseite",
+        title: "Was ist eine Webseite — und warum brauchst du eine?",
+        description:
+          "Die 3 Welten des Internets: Social Media, Websites, Plattformen. Deine Website ist dein Point of Sale — ohne sie verlierst du Aufmerksamkeit.",
+        duration: 12,
+        kind: "video",
+      },
+      {
         slug: "was-ist-eine-domain",
         title: "Was ist eine Domain?",
         description:
-          "Wie Domains funktionieren, was sie kosten und wie du die richtige für dein Projekt findest.",
-        duration: 12,
+          "Deine Domain ist ein Vermögenswert und gehört IMMER dir. .de vs. .com, der richtige Anbieter für ~10 €/Jahr — und die Upsell-Fallen, die du dir sparst.",
+        duration: 14,
         kind: "video",
       },
       {
         slug: "email-adressen-anlegen",
         title: "E-Mail-Adressen anlegen",
         description:
-          "Professionelle E-Mail-Adressen auf deiner eigenen Domain einrichten — Schritt für Schritt.",
-        duration: 15,
+          "In 4 Schritten zur info@-Adresse auf deiner Domain, eingerichtet auf jedem Gerät. IMAP statt POP3 — und der Signatur-Fact, den kaum jemand kennt.",
+        duration: 18,
         kind: "video",
       },
       {
-        slug: "was-ist-eine-webseite",
-        title: "Was ist eine Webseite?",
+        slug: "emails-die-ankommen",
+        title: "E-Mails, die ankommen",
         description:
-          "HTML, Server, Browser: Wie eine Website wirklich funktioniert — einfach erklärt.",
-        duration: 18,
+          "Warum Mails im Spam landen (Stichwort Domain-Key) und wie du in Minuten auf 10/10 beim Mail-Test kommst.",
+        duration: 10,
         kind: "video",
       },
     ],
@@ -66,73 +75,145 @@ export const CURRICULUM: CourseModule[] = [
   {
     slug: "website-bauen-mit-claude",
     title: "Website bauen mit Claude",
-    subtitle: "Deine unabhängige Website — selbst gebaut, selbst gehostet",
+    subtitle: "Deine unabhängige Website — professionell, live, in Rekordzeit",
     tier: "starter",
     icon: "sparkles",
     gradient: "from-violet-500/80 to-fuchsia-500/80",
     lessons: [
       {
-        slug: "unabhaengige-website-mit-claude",
-        title: "Eine unabhängige Website mit Claude bauen",
+        slug: "dein-setup",
+        title: "Dein Setup: Claude + GitHub",
         description:
-          "Von der leeren Datei zur fertigen Website: Wie du mit Claude eine Seite baust, die dir gehört — ohne Baukasten.",
-        duration: 45,
-        kind: "video",
-      },
-      {
-        slug: "selbst-hosten",
-        title: "Selbst hosten",
-        description:
-          "Deine Website live bringen: Hosting-Optionen im Vergleich und dein erstes eigenes Deployment.",
-        duration: 30,
-        kind: "video",
-      },
-      {
-        slug: "domain-mit-website-verbinden",
-        title: "Domain mit Website verbinden",
-        description:
-          "DNS ohne Kopfschmerzen: Deine Domain zeigt auf deine Website — mit SSL.",
-        duration: 20,
-        kind: "video",
-      },
-      {
-        slug: "anfragebogen-integrieren",
-        title: "Anfragebogen integrieren",
-        description:
-          "Ein Formular, das Anfragen sammelt statt nur hübsch auszusehen — Validierung inklusive.",
-        duration: 25,
-        kind: "video",
-      },
-      {
-        slug: "eigene-bilder-einbinden",
-        title: "Eigene Bilder auf die Website bringen",
-        description:
-          "Bilder richtig einbinden: Formate, Größen, Ladezeit — damit deine Seite schnell bleibt.",
-        duration: 18,
-        kind: "video",
-      },
-      {
-        slug: "ki-bilder-vs-eigene-bilder",
-        title: "KI-Bilder vs. eigene Bilder",
-        description:
-          "Wann KI-Bilder überzeugen, wann eigene Fotos gewinnen — und wie du beides kombinierst.",
+          "Claude-App installieren, das richtige Abo wählen und dein Sicherheitsnetz aufbauen: jedes Projekt startet mit einem GitHub-Repo.",
         duration: 15,
         kind: "video",
       },
       {
-        slug: "rechtstexte",
-        title: "Rechtstexte",
+        slug: "was-sind-skills",
+        title: "Was sind Skills — dein unfairer Vorteil",
         description:
-          "Impressum, Datenschutz & Co.: Was auf deine Seite muss und wo du es herbekommst.",
-        duration: 20,
-        kind: "text",
+          "Vorgefertigte Kontextdateien, die Claude zum Profi machen: Webdesign, Typografie, UI/UX, SEO. Einmal installieren, immer profitieren.",
+        duration: 12,
+        kind: "video",
       },
       {
-        slug: "landingpages-erstellen",
-        title: "Landingpages erstellen",
+        slug: "erste-website-in-35-minuten",
+        title: "Die erste Website in 35 Minuten",
         description:
-          "Landingpages, die konvertieren: Aufbau, Headline, Call-to-Action — mit echten Beispielen.",
-        duration: 35,
+          "Der Master-Prompt, der aus deinen Infos eine echte React/Next-Website macht — keine austauschbare KI-Seite, sondern deine.",
+        duration: 40,
+        kind: "video",
+      },
+      {
+        slug: "referenz-websites",
+        title: "Referenz-Websites nutzen",
+        description:
+          "Websites, die dir gefallen, als Vorlage einsetzen: herunterladen, ins Repo, in deinem Stil nachbauen lassen.",
+        duration: 12,
+        kind: "video",
+      },
+      {
+        slug: "copywriting-mit-claude",
+        title: "Copywriting mit Claude",
+        description:
+          "Der Interview-Prompt: Claude fragt dich über dein Business aus und schreibt Texte, die sich heimisch anfühlen — ohne KI-Sound.",
+        duration: 25,
+        kind: "video",
+      },
+      {
+        slug: "design-grundlagen",
+        title: "Design-Grundlagen: Warum Seiten gut aussehen",
+        description:
+          "Hierarchie, Typografie, Abstände, Layout-Rhythmus — die 1.000 kleinen Details, die Profi-Seiten von Baukasten-Seiten unterscheiden.",
+        duration: 25,
+        kind: "video",
+      },
+      {
+        slug: "eigene-bilder",
+        title: "Eigene Bilder auf die Website",
+        description:
+          "Der Ordnerstruktur-Trick: Bilder sortieren, Dateipfad an Claude — fertig eingebunden, komprimiert und zugeschnitten.",
+        duration: 15,
+        kind: "video",
+      },
+      {
+        slug: "ki-bilder-vs-eigene",
+        title: "KI-Bilder vs. eigene Fotos",
+        description:
+          "Wann KI gewinnt (Speed, Produktbilder) und wann echte Fotos unschlagbar sind (Vertrauen). Plus: den KI-Look erkennen und vermeiden.",
+        duration: 15,
+        kind: "video",
+      },
+      {
+        slug: "live-gehen-mit-vercel",
+        title: "Live gehen mit Vercel",
+        description:
+          "5 Fingerklicks, 2 Minuten warten: deine Website ist online — für 0 € im Monat statt Baukasten-Gebühren.",
+        duration: 15,
+        kind: "video",
+      },
+      {
+        slug: "domain-verbinden",
+        title: "Domain verbinden",
+        description:
+          "Zwei DNS-Einträge, copy & paste, fertig — mit Gratis-SSL. Und warum du NIEMALS die Nameserver anfasst (deine Mails danken es dir).",
+        duration: 12,
+        kind: "video",
+      },
+      {
+        slug: "anfragebogen-lead-friction",
+        title: "Anfragebogen & Lead-Friction",
+        description:
+          "Wenig Felder = viele kalte Leads, viel Friction = heiße Leads. Du entscheidest — die Technik (Formular → Mail an beide Seiten) steht in Minuten.",
+        duration: 20,
+        kind: "video",
+      },
+      {
+        slug: "landingpages",
+        title: "Landingpages, die konvertieren",
+        description:
+          "Hero, Painpoint, Beweis, CTA — und dann: nicht eine bauen, sondern zehn. A/B-testen, der Markt entscheidet. Mit echtem Case: Landingpage in 2 Stunden.",
+        duration: 30,
+        kind: "case",
+      },
+      {
+        slug: "quiz-funnel",
+        title: "Bau deinen Quiz-Funnel (Link-in-Bio)",
+        description:
+          "Der Funnel, über den du vermutlich hergekommen bist — jetzt baust du deinen eigenen: 5 Fragen, E-Mail-Capture, persönliche Empfehlung.",
+        duration: 30,
+        kind: "case",
+      },
+      {
+        slug: "rechtstexte-barrierefreiheit",
+        title: "Rechtstexte & Barrierefreiheit",
+        description:
+          "Impressum, Datenschutz und BFSG ohne Anwaltstermin: Der Legal-Skill liest dein Projekt und schreibt alles korrekt — plus die ehrliche Einordnung zur Abmahn-Panik.",
+        duration: 18,
+        kind: "video",
+      },
+      {
+        slug: "pagespeed-mobile",
+        title: "PageSpeed & Mobile (kurz)",
+        description:
+          "Next + Vercel + optimierte Bilder = blitzschnell. Der 3-Minuten-Check — und warum alles darüber hinaus Prokrastination ist.",
+        duration: 8,
+        kind: "video",
+      },
+      {
+        slug: "claude-von-unterwegs",
+        title: "Claude von unterwegs",
+        description:
+          "Repo auf GitHub + Cloud-Umgebung = Website-Änderungen vom Handy. Kundenwunsch reinkopieren, „bitte verbessern“, fertig — auch vom Strand.",
+        duration: 10,
+        kind: "video",
+      },
+      {
+        slug: "umzug-vom-baukasten",
+        title: "Umzug vom Baukasten (Komplett-Anleitung)",
+        description:
+          "Wix & Co. verlassen in 8 Schritten: Website sichern, mit Claude nachbauen, Domain umleiten, E-Mails retten (imapsync!), kündigen — ohne Datenverlust.",
+        duration: 30,
         kind: "video",
       },
     ],
@@ -140,41 +221,139 @@ export const CURRICULUM: CourseModule[] = [
   {
     slug: "leads-und-automation",
     title: "Leads & Automation",
-    subtitle: "Aus Besuchern werden Anfragen — vollautomatisch",
+    subtitle: "Die Website arbeitet von allein: Anfragen, Mails, Medien, Bewertungen",
     tier: "starter",
     icon: "zap",
     gradient: "from-amber-400/80 to-orange-500/80",
     lessons: [
       {
-        slug: "lead-automation",
-        title: "Lead-Automation: Wo kommen die Leads hin?",
+        slug: "wohin-mit-den-leads",
+        title: "Wohin mit den Leads?",
         description:
-          "Vom Formular in dein System: Leads automatisch erfassen, speichern und weiterverarbeiten.",
-        duration: 30,
+          "Formular → Datenbank → Webhook → Mail an dich + Bestätigung an den Kunden. Die Automation reagiert zuerst, du rufst dann an.",
+        duration: 15,
         kind: "video",
       },
       {
-        slug: "speicherung-der-daten",
-        title: "Speicherung der Daten",
+        slug: "admin-app-lead-zentrale",
+        title: "Deine Admin-App als Lead-Zentrale",
         description:
-          "Wo deine Lead-Daten sicher liegen: Datenbank-Grundlagen und DSGVO-Basics.",
+          "Statt teurem CRM: /admin im eigenen Repo — Leads, Status, Übersicht. Ein Prompt, 10 Minuten, 0 € im Monat.",
+        duration: 20,
+        kind: "video",
+      },
+      {
+        slug: "email-automation-resend",
+        title: "E-Mail-Automation mit Resend",
+        description:
+          "Automatische Mails an beide Seiten, kostenlos bis 25.000 Mails im Monat — und bei Bedarf ans bestehende CRM angebunden.",
+        duration: 18,
+        kind: "video",
+      },
+      {
+        slug: "higgsfield-ki-medien",
+        title: "Higgsfield: KI-Medien im Claude-Workflow",
+        description:
+          "Higgs per MCP mit Claude verbinden: ultrarealistische Bilder für Website und Shop, direkt im Repo — komplette Website in 30 Minuten bebildert.",
+        duration: 25,
+        kind: "video",
+      },
+      {
+        slug: "whatsapp-auf-der-website",
+        title: "WhatsApp auf der Website",
+        description:
+          "Der Click-to-Chat-Button: Ein Klick und der Kunde ist bei dir im WhatsApp-Chat — gerade für Handwerker oft besser als jedes Formular.",
+        duration: 10,
+        kind: "video",
+      },
+      {
+        slug: "google-bewertungen-sammeln",
+        title: "Google-Bewertungen sammeln (Automation)",
+        description:
+          "Auftrag erledigt → automatische Mail mit QR-Code zum Bewertungsfenster. Warum 4,8 besser ist als 5,0 — und was rechtlich tabu ist.",
+        duration: 18,
+        kind: "video",
+      },
+      {
+        slug: "ki-workflows-im-business",
+        title: "KI-Workflows im Business",
+        description:
+          "E-Mail-Antworten, Benachrichtigungen, Abläufe automatisieren — live vorgeführt. Und die klare Grenze: bei Geld bleibt der Mensch dran.",
+        duration: 22,
+        kind: "video",
+      },
+    ],
+  },
+  {
+    slug: "seo-und-google",
+    title: "SEO & Google",
+    subtitle: "Gefunden werden ohne Werbebudget — vor allem lokal",
+    tier: "starter",
+    icon: "search",
+    gradient: "from-lime-400/80 to-emerald-500/80",
+    lessons: [
+      {
+        slug: "wie-google-denkt",
+        title: "Wie Google denkt",
+        description:
+          "Lokalität, Relevanz, Vertrauen — und der Mythos-Buster: Textoptimierung kann heute jeder per KI, der echte Hebel liegt woanders.",
+        duration: 15,
+        kind: "video",
+      },
+      {
+        slug: "keywords-mit-semrush",
+        title: "Keywords mit SEMrush + Claude",
+        description:
+          "Nicht raten — den Markt fragen: echte Suchdaten per MCP in Claude, schwache Keywords finden und dominieren.",
+        duration: 20,
+        kind: "video",
+      },
+      {
+        slug: "onpage-technisches-seo",
+        title: "Onpage & technisches SEO per Skill",
+        description:
+          "Titles, Descriptions, OG-Images, Sitemap, robots.txt — der SEO-Skill füllt alles automatisch, auf jeder Seite (nicht nur der Homepage!).",
+        duration: 18,
+        kind: "video",
+      },
+      {
+        slug: "lokale-landingpages",
+        title: "Lokale Landingpages: Der Regional-Hebel",
+        description:
+          "Pro Region eine Landingpage mit dem passenden Keyword — der Weg von null auf mehrere High-Ticket-Anfragen pro Woche.",
+        duration: 25,
+        kind: "case",
+      },
+      {
+        slug: "google-my-business",
+        title: "Google My Business: Der schnellste Hebel",
+        description:
+          "Der Map-Pack-Eintrag steht VOR allen organischen Ergebnissen — und ist schneller erobert. Profil komplett ausfüllen, Fotos, Öffnungszeiten pflegen.",
         duration: 22,
         kind: "video",
       },
       {
-        slug: "email-automation",
-        title: "E-Mail-Automation",
+        slug: "search-console",
+        title: "Search Console",
         description:
-          "Kunden bekommen automatisch eine E-Mail: Bestätigungen, Follow-ups und Sequenzen einrichten.",
-        duration: 28,
+          "Property anlegen, über die Website verifizieren, Sitemap einreichen — und die zwei, drei Berichte, die du wirklich brauchst.",
+        duration: 15,
         kind: "video",
       },
       {
-        slug: "higgs-integration",
-        title: "Higgs-Integration",
+        slug: "besucher-dashboard",
+        title: "Besucher-Dashboard (Analytics)",
         description:
-          "KI-Medien direkt in deinen Workflow: Bilder, Videos und Audio automatisiert erzeugen.",
-        duration: 25,
+          "Wissen, wie viele Leute auf deiner Website sind: Vercel Analytics aktivieren oder das eigene Mini-Dashboard in der Admin-App.",
+        duration: 12,
+        kind: "video",
+      },
+      {
+        slug: "blog-content-mit-claude",
+        title: "Blog & Content mit Claude",
+        description:
+          "Für wen sich ein Blog lohnt (Spoiler: nicht für jeden) — und der Workflow: SEMrush-Daten + SEO-Skill + Gegencheck-Prompt.",
+        duration: 20,
         kind: "video",
       },
     ],
@@ -182,168 +361,290 @@ export const CURRICULUM: CourseModule[] = [
   {
     slug: "ads-und-marketing",
     title: "Ads & Marketing",
-    subtitle: "Besucher kaufen: Meta Ads, Google Ads & Tracking",
+    subtitle: "Bezahlte Reichweite, die sich rechnet — erst wenn die Basis steht",
     tier: "pro",
     icon: "megaphone",
     gradient: "from-rose-500/80 to-pink-500/80",
     lessons: [
       {
-        slug: "meta-ads",
-        title: "Meta Ads",
+        slug: "wann-ads-und-wann-nicht",
+        title: "Wann Ads — und wann nicht",
         description:
-          "Kampagnen auf Facebook & Instagram aufsetzen: Zielgruppen, Creatives, Budget.",
-        duration: 40,
+          "Ads sind Brandbeschleuniger: Wo kein Feuer ist, kann nichts beschleunigt werden. Der ehrliche Selbstcheck vor dem ersten Euro.",
+        duration: 12,
         kind: "video",
       },
       {
-        slug: "google-ads",
-        title: "Google Ads",
+        slug: "seo-vs-ads-keywords",
+        title: "SEO- vs. Ads-Keywords",
         description:
-          "Gefunden werden, wenn Leute suchen: Search-Kampagnen, die sich rechnen.",
-        duration: 40,
+          "Zwei Listen, zwei Logiken: schwache Keywords organisch erobern vs. spezifische Kauf-Keywords bezahlen.",
+        duration: 12,
         kind: "video",
       },
       {
-        slug: "conversion-tracking",
-        title: "Conversion-Tracking",
+        slug: "budget-und-algorithmus",
+        title: "Budget & Algorithmus",
         description:
-          "Wissen, was funktioniert: Pixel, Events und serverseitiges Tracking sauber einrichten.",
+          "20–50 € pro Tag als Einstieg — darunter lernt der Algorithmus nichts. Kalkulieren mit Marge, Preis und Conversion.",
+        duration: 12,
+        kind: "video",
+      },
+      {
+        slug: "meta-ads-leadformular-vs-landingpage",
+        title: "Meta Ads: Leadformular vs. Landingpage",
+        description:
+          "Viele günstige Leads oder wenige heiße? Das Friction-Framework angewendet auf deine erste Meta-Kampagne.",
+        duration: 25,
+        kind: "video",
+      },
+      {
+        slug: "creatives-bibliothek",
+        title: "Die Creatives-Bibliothek",
+        description:
+          "Hook → Meat → CTA, plus alle Creative-Typen: Vorher/Nachher, UGC, Funny, Meme … 25 Varianten in 10 Minuten mit KI — dann testen.",
         duration: 30,
         kind: "video",
       },
       {
-        slug: "anzeigen-optimieren",
-        title: "Optimierung der Anzeigen",
+        slug: "google-ads-search-mit-claude",
+        title: "Google Ads Search mit Claude",
         description:
-          "Aus Daten Entscheidungen machen: Anzeigen testen, skalieren, abschalten.",
+          "Keywords, Ausschlüsse, Standorte — das komplette Kampagnen-Setup über Claude statt durchs Klick-Labyrinth.",
+        duration: 22,
+        kind: "video",
+      },
+      {
+        slug: "conversion-tracking-mit-claude",
+        title: "Conversion-Tracking mit Claude",
+        description:
+          "Meta-Token an Claude, Events definieren (Formular, Anruf, WhatsApp) — in Minuten installiert, jeder Klick sauber getrackt.",
+        duration: 20,
+        kind: "video",
+      },
+      {
+        slug: "consent-dsgvo-tracking",
+        title: "Consent & DSGVO beim Tracking",
+        description:
+          "Consent-Banner per Skill, rechtssicher ohne Reinfuchsen — und was bei Ablehnung an Daten verloren geht.",
+        duration: 12,
+        kind: "video",
+      },
+      {
+        slug: "optimieren-mit-kennzahlen",
+        title: "Optimieren mit Kennzahlen",
+        description:
+          "Der Markt ist die einzige Wahrheit: KPIs verstehen (CAC, CTR, CR), Schwellenwerte setzen — testen, skalieren, abschalten.",
         duration: 25,
-        kind: "case",
+        kind: "video",
       },
     ],
   },
   {
     slug: "onlineshop",
     title: "Onlineshop",
-    subtitle: "Verkaufen: Shop, Zahlungen, Abos & Warenwirtschaft",
+    subtitle: "Kompletter eigener Shop — Frontend bis Warenwirtschaft, ohne Shopify",
     tier: "pro",
     icon: "shopping-bag",
     gradient: "from-emerald-500/80 to-teal-400/80",
     lessons: [
       {
-        slug: "onlineshop-erstellen",
-        title: "Onlineshop erstellen",
+        slug: "shop-komplett-selbst-bauen",
+        title: "Shop komplett selbst bauen",
         description:
-          "Dein eigener Shop von Grund auf: Produktseiten, Warenkorb, Checkout.",
-        duration: 50,
-        kind: "video",
-      },
-      {
-        slug: "zahlungsanbieter",
-        title: "Zahlungsanbieter: Einmalzahlung & Abos",
-        description:
-          "Stripe & Co. anbinden: Einmalzahlungen, Abo-Modelle und was bei Steuern zu beachten ist.",
+          "Produktseiten, Warenkorb, Checkout — alles mit Claude, skalierbar von 1 bis 12.000 Produkte. Kleiner Shop: eine Stunde.",
         duration: 35,
         kind: "video",
       },
       {
-        slug: "cms-und-produkte",
-        title: "CMS & Produkte anbinden",
+        slug: "produkte-lieferanten-apis",
+        title: "Produkte & Lieferanten-APIs",
         description:
-          "Produkte pflegen ohne Code: Ein CMS anbinden und Inhalte strukturieren.",
-        duration: 30,
+          "Lieferanten-API anbinden: alle Produkte, Bilder und Live-Lagerbestand automatisch — gezeigt am echten Shop mit 12.000 Produkten.",
+        duration: 25,
+        kind: "case",
+      },
+      {
+        slug: "stripe-einrichten",
+        title: "Stripe einrichten",
+        description:
+          "Konto verifizieren, API-Keys an Claude, eingebettetes Payment Element — Stripe einmal anfassen, dann nie wieder.",
+        duration: 20,
         kind: "video",
       },
       {
-        slug: "warenwirtschaft-lager-versand",
-        title: "Warenwirtschaft, Lager & Versand-API",
+        slug: "abos-zahlungsarten-checkout",
+        title: "Abos, Zahlungsarten & Checkout-Psychologie",
         description:
-          "Der Maschinenraum: Bestände, Bestellungen und Versand automatisch abwickeln.",
-        duration: 40,
+          "Subscriptions, PayPal, fehlgeschlagene Zahlungen — und die deutschen Checkout-Regeln: Brutto-Preise, keine Überraschungen.",
+        duration: 20,
+        kind: "video",
+      },
+      {
+        slug: "shop-admin-app",
+        title: "Deine Shop-Admin-App (statt CMS)",
+        description:
+          "Verkäufe, Zahlungen, Retouren, Lager-Ampel — eine Page im selben Repo statt fünf Drittanbieter-Tools.",
+        duration: 18,
+        kind: "video",
+      },
+      {
+        slug: "rechnungen-buchhaltung-versand",
+        title: "Rechnungen, Buchhaltung & Versand",
+        description:
+          "Rechnungen über Stripe oder die API deiner Buchhaltungssoftware (sevDesk & Co.), Versand-APIs — der Bestellablauf läuft end-to-end.",
+        duration: 25,
+        kind: "video",
+      },
+      {
+        slug: "shop-recht-steuern",
+        title: "Shop-Recht & Steuern (nur das Nötigste)",
+        description:
+          "Widerruf, AGB, Button-Lösung per E-Commerce-Legal-Skill — und bei Steuern die ehrliche Grenze: Stripe bringt die Kohle, der Rest ist Steuerberater-Land.",
+        duration: 15,
         kind: "video",
       },
     ],
   },
   {
-    slug: "server-und-auth",
-    title: "Server, Datenbank & Auth",
-    subtitle: "Advanced: Login-Bereiche, eigener Server, Webhooks",
+    slug: "web-apps-server-datenbank",
+    title: "Web-Apps, Server & Datenbank",
+    subtitle: "Vom Website-Bauer zum App-Bauer: Logins, Datenbanken, eigener Server",
     tier: "pro",
     icon: "server",
     gradient: "from-indigo-500/80 to-blue-500/80",
     lessons: [
       {
-        slug: "login-bereich-und-auth",
-        title: "Login-Bereich & Authentifizierung",
+        slug: "login-auth-mit-claude",
+        title: "Login & Auth mit Claude",
         description:
-          "Geschützte Bereiche bauen: Sessions, Tokens und sichere Logins verstehen.",
-        duration: 40,
+          "Registrierung, Verifizierungs-Code, Passwort-Reset — der komplette Account-Flow aus einem Prompt, Mails über Resend.",
+        duration: 25,
         kind: "video",
       },
       {
-        slug: "nutzer-anlegen-passwort-vergessen",
-        title: "Nutzer anlegen & Passwort vergessen",
+        slug: "datenbank-mit-neon",
+        title: "Datenbank mit Neon",
         description:
-          "Der komplette Account-Flow: Registrierung, E-Mail-Bestätigung, Passwort-Reset.",
-        duration: 30,
-        kind: "video",
-      },
-      {
-        slug: "eigener-server-hosting",
-        title: "Eigener Server & Hosting",
-        description:
-          "Vom Managed Hosting zum eigenen Server: Wann sich der Schritt lohnt und wie er geht.",
-        duration: 35,
-        kind: "video",
-      },
-      {
-        slug: "datenbank",
-        title: "Datenbank",
-        description:
-          "Daten strukturiert speichern: Tabellen, Relationen und deine erste eigene Datenbank.",
-        duration: 35,
+          "Neon per CLI/MCP verbinden — Claude kennt dein Projekt und legt die beste Struktur selbst an. Du hast noch nie eine Tabelle definiert? Musst du auch nicht.",
+        duration: 20,
         kind: "video",
       },
       {
         slug: "webhooks",
-        title: "Webhooks",
+        title: "Webhooks: Dienste verbinden",
         description:
-          "Systeme verbinden: Wenn Dienst A automatisch Dienst B anstößt — live gebaut.",
+          "Wenn Dienst A automatisch Dienst B anstößt: Formular → Mail, Zahlung → Freischaltung, Nachricht → Benachrichtigung — mit echten Beispielen.",
+        duration: 15,
+        kind: "video",
+      },
+      {
+        slug: "eigener-server-hetzner",
+        title: "Eigener Server bei Hetzner",
+        description:
+          "Wann sich der eigene Server lohnt (Apps, große Shops) — und wie Claude ihn über die Hetzner-API komplett für dich aufsetzt.",
         duration: 25,
+        kind: "video",
+      },
+      {
+        slug: "sicherheit-spam-backups",
+        title: "Sicherheit, Spam & Backups (entspannt)",
+        description:
+          "GitHub sichert den Code, Neon die Daten, Vercel das SSL — plus der Spam-Schutz-Baukasten für den Fall der Fälle. Ohne Paranoia.",
+        duration: 15,
         kind: "video",
       },
     ],
   },
   {
     slug: "eigene-tools",
-    title: "Eigene Tools bauen",
-    subtitle: "Terminbuchung, Angebote, Admin-App — Software für dein Business",
+    title: "Eigene Tools",
+    subtitle: "Software bauen, die andere teuer mieten — zugeschnitten auf dein Business",
     tier: "pro",
     icon: "wrench",
     gradient: "from-purple-500/80 to-violet-400/80",
     lessons: [
       {
-        slug: "terminbuchung",
-        title: "Terminbuchungs-Tool",
+        slug: "terminbuchung-selbst-bauen",
+        title: "Terminbuchung: Calendly selbst bauen",
         description:
-          "Nie wieder E-Mail-Ping-Pong: Ein eigenes Buchungstool mit Kalender-Logik bauen.",
-        duration: 45,
+          "Events pro Dienstleistung, Mitarbeiter-Kalender per Microsoft-API, nur freie Slots buchbar, Mails an beide — als Widget auf jeder Website.",
+        duration: 35,
         kind: "case",
       },
       {
-        slug: "angebotserstellung",
-        title: "Angebotserstellung",
+        slug: "angebots-rechnungs-automation",
+        title: "Angebots- & Rechnungs-Automation",
         description:
-          "Angebote in Minuten statt Stunden: Ein Tool, das PDFs generiert und versendet.",
-        duration: 40,
+          "„Schick dem Rainer ein Angebot, Fensterbau 7.000 €“ — Buchhaltungs-API erstellt das PDF, Resend verschickt es. Direkt aus dem Chat.",
+        duration: 25,
         kind: "case",
       },
       {
-        slug: "admin-app",
-        title: "Eigene Admin-App",
+        slug: "grosse-admin-app",
+        title: "Die große Admin-App (dein Cockpit)",
         description:
-          "Dein Cockpit: Eine Admin-Oberfläche für Kunden, Aufträge und Inhalte.",
-        duration: 50,
-        kind: "case",
+          "Leads, Aufträge, Angebote, Kennzahlen, Besucher — alles in einer Page, in einem Repo, für 0 € im Monat.",
+        duration: 20,
+        kind: "video",
+      },
+      {
+        slug: "ki-chat-assistent",
+        title: "KI-Chat-Assistent (ehrliche Einschätzung)",
+        description:
+          "Für die wenigsten sinnvoll — aber wenn (Ärzte, busy Betriebe), dann so: Claude-API, eigenes Backend, Leitplanken, ~10 €/Monat.",
+        duration: 20,
+        kind: "video",
+      },
+    ],
+  },
+  {
+    slug: "websites-verkaufen",
+    title: "Websites verkaufen",
+    subtitle: "Aus deinem Wissen ein Einkommen machen — Preise, Kunden, Wartung",
+    tier: "pro",
+    icon: "briefcase",
+    gradient: "from-orange-500/80 to-red-500/80",
+    lessons: [
+      {
+        slug: "geschaeftsmodell-und-zahlen",
+        title: "Dein Geschäftsmodell & deine Preise",
+        description:
+          "1.000–2.000 € pro Website bei ~2 Stunden Arbeit — die Kalkulation hinter 200 verkauften Websites, fast nur an KMU.",
+        duration: 15,
+        kind: "video",
+      },
+      {
+        slug: "hosting-wartung-gewinnmaschine",
+        title: "Hosting & Wartung: die Gewinnmaschine",
+        description:
+          "20–50 € pro Monat wiederkehrend, reale Kosten nahe null — planbare Einnahmen sind das eigentliche Business.",
+        duration: 15,
+        kind: "video",
+      },
+      {
+        slug: "erste-kunden-ohne-referenzen",
+        title: "Erste Kunden ohne Referenzen",
+        description:
+          "Das 10-kostenlose-Websites-Play: Kunden zahlen nur Hosting und geben eine Bewertung — deine Startrampe für 0 € Einsatz.",
+        duration: 12,
+        kind: "video",
+      },
+      {
+        slug: "kunden-onboarding-vorleistung",
+        title: "Kunden-Onboarding & Vorleistung",
+        description:
+          "Kunden sind faul — also gehst du in Vorkasse: fast fertige Website schicken, der Rest kommt von allein. Plus: beim Umzug IMMER Mails sichern.",
+        duration: 18,
+        kind: "video",
+      },
+      {
+        slug: "korrekturen-vertraege-erwartungen",
+        title: "Korrekturen, Verträge & Erwartungen",
+        description:
+          "Keine Verträge, keine Panik: Dein Risiko sind 2 Stunden Zeit. Kundennachricht in Claude, iterieren bis zufrieden — schnell, entspannt, profitabel.",
+        duration: 12,
+        kind: "video",
       },
     ],
   },
