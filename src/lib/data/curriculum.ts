@@ -342,10 +342,10 @@ export const CURRICULUM: CourseModule[] = [
       },
       {
         slug: "besucher-dashboard",
-        title: "Besucher-Dashboard (Analytics)",
+        title: "Besucher-Dashboard: Tracking im eigenen Repo",
         description:
-          "Wissen, wie viele Leute auf deiner Website sind: Vercel Analytics aktivieren oder das eigene Mini-Dashboard in der Admin-App.",
-        duration: 12,
+          "Analytics komplett selbst gebaut: Aufrufe in die eigene Datenbank, Dashboard in der Admin-App. Deine Daten bleiben bei dir — meist ganz ohne Cookie-Banner.",
+        duration: 18,
         kind: "video",
       },
       {

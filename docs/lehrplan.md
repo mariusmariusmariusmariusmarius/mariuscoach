@@ -289,6 +289,13 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
   gekündigt — Claude ist umfangreicher
 - Input, den nur du liefern kannst: Rechtsform (GbR/UG/GmbH), USt-ID — „oder
   fotografier halt deinen Handwerkskammer-Brief ab"
+- ⚖️ **Weniger Dienste = kürzere Datenschutzerklärung.** Genau hier zahlt sich
+  der Selbstbau aus: Wer sein Tracking im eigenen Repo betreibt (Lektion 4.7)
+  statt Google Analytics einzubinden, hat keine Datenübermittlung an Dritte,
+  braucht meist kein Consent-Banner — und die Datenschutzerklärung schrumpft
+  auf ein paar Absätze. Dasselbe Prinzip bei Fonts (lokal statt Google) und
+  Admin-App statt Fremd-CRM. Unabhängigkeit ist hier nicht nur billiger,
+  sondern auch rechtlich einfacher
 - Barrierefreiheit/BFSG: gleicher Ansatz — Skill ist aktuell, Claude setzt um.
   Dein Punkt: „Regeln wiedergeben kann eine Maschine besser als ein Mensch"
 - **Ergebnis:** Impressum, Datenschutz, Barrierefreiheit — komplett, ohne
@@ -443,12 +450,26 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
   „nicht indexiert" / Klick-Einbruch / Seite-2-Ranking]**
 - **Ergebnis:** Search Console verbunden, alle Seiten gelistet.
 
-**4.7 Besucher-Dashboard (Analytics)**
-- Deine Frage beantwortet: Vercel bringt Web Analytics mit (aktivierbar,
-  cookielos) — Alternative: eigenes Mini-Dashboard in der Admin-App
-  **[MM+Claude: beide Wege zeigen, Empfehlung: Vercel Analytics für den Start]**
-- Controlling-Mindset: Besucher, Quellen, was passiert im Funnel
-- **Ergebnis:** Du siehst, wie viele Leute auf der Website sind — täglich.
+**4.7 Besucher-Dashboard: Tracking im eigenen Repo** ⭐
+- **Der Hauptweg (deine Entdeckung): Tracking komplett selbst gebaut.** Kein
+  Google Analytics, kein Drittanbieter — eine eigene API-Route schreibt jeden
+  Seitenaufruf in die eigene Datenbank (Neon), das Dashboard dafür sitzt in
+  der Admin-App aus Modul 3. Alles ein Prompt, alles im selben Repo
+- Was du damit siehst: Besucher, Seitenaufrufe, Verweise (woher kommen sie —
+  Google, Instagram, Ads), Geräte, und vor allem: **die eigenen Funnel-Schritte**
+  („wie viele haben Frage 3 erreicht, wie viele abgeschickt") — das kann kein
+  Standard-Tool, weil es deine Seite ist
+- **Die drei Wege im Vergleich** (in der Lektion nebeneinandergestellt):
+  ① eigenes Tracking im Repo — volle Kontrolle, Daten bleiben bei dir, 0 €;
+  ② Vercel Web Analytics — ein Klick, cookielos, gut für den Schnellstart;
+  ③ Google Analytics — mächtig, aber Drittanbieter + Consent-Banner-Pflicht
+- ⚖️ **Der Datenschutz-Vorteil ist das eigentliche Verkaufsargument:** Eigenes
+  Tracking = keine Datenübermittlung an Dritte, keine Cookies nötig (anonym
+  erfassen: IP kürzen/nicht speichern) → schlanke Datenschutzerklärung und
+  **in der Regel kein Consent-Banner**. Verweis auf Lektion 2.14
+- Controlling-Mindset: Zahlen täglich anschauen, Entscheidungen daraus ableiten
+- **Ergebnis:** Eigenes Analytics-Dashboard unter `/admin` — du siehst täglich,
+  wie viele Leute auf der Website sind, ohne dass jemand mitliest.
 
 **4.8 Blog & Content mit Claude**
 - Für wen: überregionale/digitale Angebote (Consulting, E-Commerce). Der
