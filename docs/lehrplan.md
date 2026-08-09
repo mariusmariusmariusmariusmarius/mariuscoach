@@ -479,6 +479,24 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
   Claude analysiert die Rohdaten direkt und baut die Keyword-Struktur
 - Strategie bleibt: relevante Keywords finden → davon die schwachen/
   eroberbaren dominieren
+- **Was noch alles drinsteckt (8 Daten-Familien, alle über denselben MCP):**
+  | API | Was sie liefert | Wo im Kurs |
+  |---|---|---|
+  | Keywords Data | Suchvolumen (Google Ads), Google Trends, Bing | 4.2 |
+  | SERP | Rankings für Google, YouTube, Bing … | 4.2 / 4.4 |
+  | **Labs** | **Konkurrenz-Vergleiche:** für welche Keywords rankt eine Domain, Keyword-Gap (Domain Intersection), Wettbewerber-Übersicht, geschätzter Traffic — bis zu 1.000 Domains in einer Abfrage | 4.4 |
+  | **Backlinks** | 1,8 Billionen Backlinks: Profil einer Domain, verweisende Domains, Anchor-Texte, Historie ab 2019, **Link-Gap** (wer verlinkt die Konkurrenz, aber nicht mich) — ~0,05 $ pro 1.000 Zeilen | 4.1 (Backlinks erklären) |
+  | **OnPage** | 100+ technische Prüfpunkte einer Website (Links, Duplicate Content, Speed) — der Audit-Motor | **4.3** |
+  | **Business Data** | **Google-My-Business-Daten und Bewertungen** von Review-Plattformen | **4.5 + 3.6** |
+  | Domain Analytics | **Welche Technologie nutzt eine Website** (Wix? WordPress?) + Whois | **Modul 9** |
+  | Content Analysis | Marken-Erwähnungen im Web, Sentiment | Bonus |
+- 💡 **Zwei Ideen, die dadurch möglich werden:**
+  ① *Lektion 4.5:* Lokale Konkurrenz im Map Pack per API analysieren — wie
+  viele Bewertungen haben die, welcher Schnitt? Daraus ableiten, wie viele
+  Bewertungen der Kunde braucht.
+  ② *Modul 9 (Akquise-Gold):* Mit Domain Analytics alle Firmen einer Region
+  finden, die noch auf einem Baukasten laufen → fertige Leadliste für die
+  eigene Kundengewinnung. Das ist eine eigene Lektion wert.
 - **[MM+Claude: Weitere günstige Optionen als Bonus-Folie — Serper.dev
   (1 $ / 1.000 SERP-Abfragen, aber kein Suchvolumen), SE Ranking (hat MCP,
   Credits), Search Console (eigene Daten, gratis)]**
