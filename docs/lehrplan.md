@@ -47,7 +47,7 @@ Lektionsseite.
 | E-Mail-Versand | Resend | 0 € bis 25.000 Mails/Monat |
 | Zahlungen | Stripe | Gebühr pro Transaktion **[MM+Claude: exakte Sätze, ~1,5 % + 0,25 € EU-Karten]** |
 | KI-Medien | Higgsfield (MCP/CLI, Realism-Skill) | **Free reicht für eine Website** |
-| SEO-Daten | SEMrush (hat MCP/CLI!) | Mitglieder kaufen selbst |
+| SEO-Daten | ① Google Keyword Planner via Google-Ads-MCP ② DataForSEO (MCP, Pay-as-you-go) | ① 0 € ② ab 50 $ Guthaben, kein Abo — ersetzt SEMrush |
 | Rechnungen | sevDesk-/Lexware-API u. a. | **[MM+Claude: „Big Five" DE recherchieren]** |
 
 **USP-Story (für Landingpage & Modul-Intros):** 200+ gebaute Websites, 5+
@@ -454,12 +454,36 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
   Hebel liegt bei Google Business, Bewertungen, lokalen Pages
 - **Ergebnis:** Realistisches SEO-Weltbild, keine falschen Hoffnungen.
 
-**4.2 Keywords mit SEMrush + Claude**
-- Nicht raten — den Markt fragen: SEMrush-Daten (MCP/CLI!) in Claude,
-  automatisch einbauen lassen
-- Strategie: relevante Keywords finden → davon die schwachen/eroberbaren
-  dominieren
-- **Ergebnis:** Keyword-Plan aus echten Daten.
+**4.2 Keyword-Daten holen — ohne teures Abo** ⭐
+- Deine Ansage: **SEMrush ist asozial teuer** (ab ~120 €/Monat) — und wir
+  brauchen kein hübsches Dashboard, sondern **rohe Daten für Claude**. Claude
+  ist unser Analyse-Tool, die Tabelle bauen wir uns selbst, wenn wir eine
+  wollen
+- **Weg 1 — kostenlos: Google Keyword Planner über die Google-Ads-API.**
+  Wer Google Ads nutzt (Modul 5!), hat die Daten direkt an der Quelle. Skill
+  dafür ist offiziell von Google: `google-ads-api-mcp-setup`.
+  ⚠️ Ehrlicher Hinweis: Ohne aktive Kampagnen zeigt Google nur grobe Spannen
+  („100–1.000") — mit laufender Kampagne exakte Zahlen
+- **Weg 2 — Rohdaten in Masse: DataForSEO.** Offizieller MCP-Server für
+  Claude, **Pay-as-you-go statt Abo**, Guthaben verfällt nie:
+  - Suchvolumen (Keywords Data API): **0,06 $ pro Abfrage mit bis zu 1.000
+    Keywords** → 1 Mio. Keywords ≈ 60 $
+  - Keyword-Ideen & Difficulty (Labs API): ab 0,01 $ pro Task
+  - SERP-Daten: ab 0,0006 $ pro Abfrage
+  - Einstieg: 50 $ Mindestguthaben, 1 $ Gratis-Credit zum Testen
+  - **Rechenbeispiel für die Lektion:** Ein komplettes Regional-Projekt wie
+    dein Klima-Case (20 Orte × 1.000 Keywords) kostet **rund 1,20 $** — statt
+    120 € Monatsabo
+- Ablauf im Video: MCP verbinden → Claude fragen („hol Suchvolumen für diese
+  Begriffe in diesen Orten und sag mir, welche schwach umkämpft sind") →
+  Claude analysiert die Rohdaten direkt und baut die Keyword-Struktur
+- Strategie bleibt: relevante Keywords finden → davon die schwachen/
+  eroberbaren dominieren
+- **[MM+Claude: Weitere günstige Optionen als Bonus-Folie — Serper.dev
+  (1 $ / 1.000 SERP-Abfragen, aber kein Suchvolumen), SE Ranking (hat MCP,
+  Credits), Search Console (eigene Daten, gratis)]**
+- **Ergebnis:** Keyword-Plan aus echten Marktdaten — für ein paar Cent statt
+  Monatsabo.
 
 **4.3 Onpage & technisches SEO per Skill**
 - H1-Hierarchie mit Keyword, Titles, Descriptions, OG-Images; sitemap.xml +
@@ -522,7 +546,7 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
 **4.8 Blog & Content mit Claude**
 - Für wen: überregionale/digitale Angebote (Consulting, E-Commerce). Der
   Handwerker aus Ochsenbach braucht keinen Blog
-- Workflow: SEMrush-Daten + SEO-Skill → Plan → Claude schreibt → Gegencheck
+- Workflow: Keyword-Daten (4.2) + SEO-Skill → Plan → Claude schreibt → Gegencheck
   mit zweitem Prompt/anderem Skill; KI-Klang raus (Bindestriche, Übereifer)
 - Deine Einschätzung: Google straft KI-Text nicht ab — Gleichklang ist das
   Risiko

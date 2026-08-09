@@ -302,9 +302,9 @@ export const CURRICULUM: CourseModule[] = [
       },
       {
         slug: "keywords-mit-semrush",
-        title: "Keywords mit SEMrush + Claude",
+        title: "Keyword-Daten holen — ohne teures Abo",
         description:
-          "Nicht raten — den Markt fragen: echte Suchdaten per MCP in Claude, schwache Keywords finden und dominieren.",
+          "Nicht raten — den Markt fragen: echte Suchdaten per MCP direkt in Claude. Kostenlos über Google Ads oder für Cent-Beträge statt 120 € Monatsabo.",
         duration: 20,
         kind: "video",
       },
@@ -352,7 +352,7 @@ export const CURRICULUM: CourseModule[] = [
         slug: "blog-content-mit-claude",
         title: "Blog & Content mit Claude",
         description:
-          "Für wen sich ein Blog lohnt (Spoiler: nicht für jeden) — und der Workflow: SEMrush-Daten + SEO-Skill + Gegencheck-Prompt.",
+          "Für wen sich ein Blog lohnt (Spoiler: nicht für jeden) — und der Workflow: echte Keyword-Daten + SEO-Skill + Gegencheck-Prompt.",
         duration: 20,
         kind: "video",
       },

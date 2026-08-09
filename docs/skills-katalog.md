@@ -74,6 +74,16 @@ Claude besser als jeder Baukasten:
 
 ## Modul 4: SEO & Google
 
+**Keyword-Daten (statt SEMrush — Lektion 4.2):**
+- **google-ads-api-mcp-setup** — `google/skills` — kostenloser Weg über den
+  Keyword Planner (offiziell von Google)
+- **dataforseo-toolkit** — `dataforseo/dataforseo-toolkit-skill` — offizieller
+  Skill des Anbieters; dazu der DataForSEO-MCP-Server (Pay-as-you-go)
+- seo-dataforseo — `agricidaniel/claude-seo` (3,8 K) — meistgenutzter
+  Community-Skill dafür
+- keyword-research — `aaron-he-zhu/seo-geo-claude-skills` (6,8 K)
+
+**Allgemein:**
 - **seo-audit** — `coreyhaines31/marketingskills` (182 K) — der große SEO-Skill
 - **programmatic-seo** — `coreyhaines31/marketingskills` (116 K) — EXAKT dein Regional-Landingpages-Ansatz aus Lektion 4.4!
 - **ai-seo** — `coreyhaines31/marketingskills` (105 K) — AI Overviews / ChatGPT-Suche (deine Frage aus dem Fragebogen)
