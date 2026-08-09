@@ -87,6 +87,40 @@ verrät sein eigenes Geschäftsmodell, weil er weiß, dass es kippt. Das ist
 glaubwürdiger als jedes Verkaufsversprechen und passt exakt zur Zielgruppe,
 die Baukasten-Marketing satt hat.
 
+### Die Anti-Guru-Haltung (zieht sich durch alle Module)
+
+> **Niemand ist allwissend.** Niemand kann sagen, welches Keyword
+> funktioniert, welches Bild in der Werbung zieht, welcher Text verkauft.
+> Wer behauptet, er habe DEN Blueprint zum Nachmachen, lügt.
+>
+> **Der Einzige, auf den man hören muss, ist der Markt** — und der antwortet
+> über echte Daten. Deshalb ist Tracking kein Nice-to-have, sondern die
+> einzige Wahrheit, die man kriegen kann. Und dank Claude braucht dafür
+> niemand Wissenschaftler zu sein: Daten holen, auswerten, umsetzen — läuft.
+>
+> **Man kann eigentlich nichts falsch machen: testen, Markt fragen, anpassen.
+> Der einzige echte Fehler ist, gar nicht zu messen.**
+
+Praktische Folge fürs Curriculum: In jedem Modul, in dem etwas entschieden
+wird (Keywords, Landingpages, Creatives, Checkout), heißt die Antwort nie
+„so macht man das", sondern „so findest du heraus, was bei DIR funktioniert".
+
+### Die vier Mehrwerte (für VSL, Landingpage und Modul-Intros)
+
+1. **Deine Seite sieht besser aus als 90 % da draußen** — durch Skills,
+   fertige Prompts und Referenz-Websites. Kein Design-Wissen nötig. *Und das
+   ist nur das Mindeste — da fängt es erst an.*
+2. **Alles läuft über Claude.** Wir nutzen ausschließlich Anbieter mit
+   MCP/CLI/API (DataForSEO, Vercel, Neon, Hetzner, Stripe, Resend, Meta,
+   Google). Niemand muss verstehen, wie ein Server funktioniert — Claude
+   regelt, du entscheidest. Kein Detail-Nerdkram, wo er nichts bringt.
+3. **Echte Marktdaten statt Raten** — Suchvolumen, Konkurrenz, Ad-Zahlen in
+   Echtzeit, von Claude analysiert und direkt in die Seite eingebaut.
+4. **Es hört nicht bei der Website auf** — Shop, Datenbank, eigener Server,
+   Buchungstool, eigenes Cockpit. Sachen, für die andere Entwickler bezahlen.
+
+Die Ein-Satz-Mehrwerte je Modul stehen in `docs/vsl-skript.md`.
+
 ---
 
 ## Videos vor dem Curriculum
