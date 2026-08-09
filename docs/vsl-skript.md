@@ -4,13 +4,17 @@
 Es beantwortet: Wer bist du? Was hast du gemacht? **Warum machst du das?**
 Und vor allem: **Was habe ich davon?** Ziel am Ende: kostenlos registrieren.
 
-**Länge:** 4,5–5 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
+**Länge:** ~5 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
 sprichst direkt in die Linse. Kein Teleprompter-Ablesen — Stichpunkte
 reichen, dein Ton ist der Wert.
 
 **Falls es zu lang wird:** Block 2 auf 15 Sekunden kürzen, Block 5 auf die
-zwei stärksten Punkte reduzieren (5.1 und 5.3). Block 1, 6 und 7 niemals
+zwei stärksten Punkte reduzieren (5.1 und 5.3). Block 1, 6, 7 und 8 niemals
 kürzen — die tragen das Video.
+
+**Alle Werte, Argumente, Trust Points und Einwandbehandlungen** stehen
+gesammelt in `docs/messaging.md` — dort auch die vollständige Geld-Rechnung
+und der Klartext-Prompt fürs freie Reden.
 
 ---
 
@@ -91,15 +95,20 @@ entscheidet sich, ob jemand kauft.*
 >
 > Und ganz ehrlich: **Das ist nur das Mindeste.** Da fängt's erst an."
 
-### 5.2 Alles läuft über Claude — du musst kein Technik-Nerd sein
+### 5.2 Tempo — und du musst kein Technik-Nerd sein
 
-> „Zweitens: Wir arbeiten nur mit Anbietern, die sich direkt mit Claude
-> verbinden lassen. Deine Datenbank, dein Hosting, deine SEO-Daten, deine
-> Werbeanzeigen — alles hängt an einem Chat.
+> „Zweitens: das Tempo. Deine erste Website steht an einem Tag. Eine
+> Landingpage in zwei Stunden. Nicht weil ich schnell tippe, sondern weil du
+> die fertigen Prompts bekommst und nicht mehr suchen musst.
 >
-> Das heißt: Du musst nicht verstehen, wie ein Server funktioniert. Du musst
-> nicht wissen, wie man eine Datenbank aufsetzt. **Claude regelt das. Du sagst,
-> was du willst.** Wir gehen nicht ins Detail, wo's nichts bringt."
+> Und das Beste: **Du musst dafür kein Technik-Nerd sein.** Wir arbeiten nur
+> mit Anbietern, die sich direkt an Claude anschließen lassen — deine
+> Datenbank, dein Hosting, deine SEO-Daten, deine Werbeanzeigen. Alles hängt
+> an einem Chat.
+>
+> Du musst nicht verstehen, wie ein Server funktioniert. Du musst nicht
+> wissen, wie man eine Datenbank aufsetzt. **Claude regelt das. Du sagst, was
+> du willst.** Wir gehen nirgends ins Detail, wo's dir nichts bringt."
 
 ### 5.3 Echte Marktdaten statt Raten
 
@@ -158,15 +167,37 @@ in die Kamera. Hier hebst du dich von jedem Guru ab.*
 > Bewertungen, die von allein eingesammelt werden. Die Website ist nur der
 > Anfang."
 
-## 8. Preis-Anker & CTA (4:25–4:55)
+## 8. Reden wir über Geld (4:25–5:05) ⭐
 
-> „Was kostet dich eine Website beim Dienstleister? 1.500, 2.000 Euro. Plus
-> 30 Euro im Monat fürs Hosting, für immer.
+*Zahlen ruhig und langsam sagen — hier rechnet der Zuschauer mit.*
+
+> „Und jetzt reden wir mal über Geld.
 >
-> Hier zahlst du 49,90 im Monat — und kannst danach nicht eine Website bauen,
-> sondern so viele du willst. Für dich, für deinen Betrieb, für deine Kunden.
+> **Was kostet der normale Weg?** Eine Website von der Agentur: 1.500 bis
+> 2.000 Euro. Dazu 30 bis 50 Euro im Monat für Hosting und Wartung — für
+> immer. Oder du nimmst einen Baukasten: 20 bis 40 Euro im Monat, auch für
+> immer. Nach drei Jahren bist du da bei tausend Euro — für eine Seite, die
+> dir nicht mal gehört.
 >
-> Und wenn du erstmal reinschauen willst: Die Basics sind komplett kostenlos.
+> **Und was zahlst du hier?** Claude kostet dich rund 20 Euro im Monat. Deine
+> Domain zehn Euro im Jahr. Das Hosting: null. Der E-Mail-Versand: null. Die
+> Datenbank: null, bis du richtig groß wirst.
+>
+> Dazu die Plattform mit 49,90 im Monat — **aber nur, solange du lernst.**
+>
+> Heißt: Während du dabei bist, zahlst du rund 70 Euro im Monat. Danach rund
+> zwanzig — und kannst so viele Websites bauen, wie du willst. Für dich, für
+> deinen Betrieb, für deine Kunden.
+>
+> **Wenn du nur eine einzige Website baust, hast du schon gespart. Ab der
+> zweiten verdienst du.**"
+
+*Regie: Die zwei Rechnungen als Grafik nebeneinander einblenden — links der
+klassische Weg, rechts deiner. Nicht überladen, nur die Zahlen.*
+
+## 9. CTA (5:05–5:20)
+
+> „Und wenn du erstmal reinschauen willst: Die Basics sind komplett kostenlos.
 > Domain, E-Mail-Adressen, wie das Internet überhaupt funktioniert — kostet
 > dich nichts außer 30 Minuten.
 >
