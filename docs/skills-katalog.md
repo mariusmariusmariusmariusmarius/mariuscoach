@@ -49,7 +49,11 @@ Claude besser als jeder Baukasten:
 - landing-page-generator — `kostja94/marketing-skills` (1,3 K)
 
 **2.14 Rechtstexte & Barrierefreiheit:**
-- **legal-page-generator** — `kostja94/marketing-skills` (1,1 K) — dein genannter Skill ✓
+- ⭐ **rechtstexte-de** — `mariusmariusmariusmariusmarius/rechtstexte-de` — **DEIN EIGENER SKILL, live!**
+  Install: `npx skills add mariusmariusmariusmariusmarius/rechtstexte-de` —
+  scannt das Projekt, Interview, erzeugt Impressum/Datenschutz/Widerruf,
+  Consent-Matrix, BFSG-Check. Wird in Lektion 2.14 unterrichtet.
+- legal-page-generator — `kostja94/marketing-skills` (1,1 K) — Konkurrenz, nur zur Beobachtung
 - privacy-page-generator — `kostja94/marketing-skills` (1,1 K)
 - legal-impressum — `dirnbauer/webconsulting-skills` (klein)
 - bfsg-check — `waldo-van-der-code/deutsches-recht-mit-claude` (ganz neu/klein)
