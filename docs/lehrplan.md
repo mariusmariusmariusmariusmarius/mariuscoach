@@ -61,6 +61,54 @@ bekommt die ehrliche Antwort: falscher Kurs, richtige Entscheidung hier.
 
 ---
 
+## ⭐ Das WARUM — die Positionierung hinter allem
+
+Das ist die Kernbotschaft der Plattform. Sie steht im VSL auf der
+Landingpage und schwingt in jedem Modul mit:
+
+> **Webdesign als Dienstleistung hatte seine Daseinsberechtigung — aber
+> durch KI geht der Preis dafür langfristig gegen null.** Nicht weil die
+> Arbeit wertlos wäre, sondern weil sie jeder selbst machen kann. Und die
+> Leute werden es tun, weil es so einfach geworden ist.
+>
+> **Was die KI NICHT beantwortet, ist das Drumherum:** Wem gehört meine
+> Domain? Wie ziehen meine E-Mails um, ohne dass alte Mails verloren gehen?
+> Wo läuft die Seite und was kostet sie? Warum sieht meine Seite billig aus
+> und die vom Nachbarn nicht? Wie werde ich bei Google gefunden? Wie
+> verbinde ich Werbeanzeigen und Tracking mit der Website?
+>
+> **Genau da hängen die Leute fest — nicht am Bauen, am Drumherum.** Deshalb
+> setzt Marius sich von der Dienstleistung ab und geht ins Coaching: „Du
+> brauchst mich nicht als Dienstleister. Du brauchst mich einmal als
+> Erklärer."
+
+Warum das so gut funktioniert: Es ist ehrlich bis zur Selbstschädigung — er
+verrät sein eigenes Geschäftsmodell, weil er weiß, dass es kippt. Das ist
+glaubwürdiger als jedes Verkaufsversprechen und passt exakt zur Zielgruppe,
+die Baukasten-Marketing satt hat.
+
+---
+
+## Videos vor dem Curriculum
+
+Zwei Videos, die nicht zu einem Modul gehören, aber vor allem anderen
+produziert werden (Skript: `docs/vsl-skript.md`):
+
+**① VSL (Video Sales Letter) — öffentlich auf der Landingpage.** 3–4 Minuten,
+direkt in die Kamera: Wer bin ich → 200+ Websites → das Warum (Markt kippt)
+→ die Lücke (das Drumherum) → die Plattform → Preis-Anker → CTA. Das ist
+das erste, was ein Besucher sieht, und der wichtigste Verkäufer der Seite.
+Zweitverwertung: 30-Sekunden-Cut als Meta/TikTok-Ad, die sechs Fragen als
+einzelne Reel-Hooks, Kurzversion auf der Funnel-Ergebnisseite.
+
+**② Willkommensvideo — im Mitgliederbereich nach dem Login.** 60–90 Sekunden:
+freuen, Plattform erklären (Module, Cheat Sheets, Community), die eine Regel
+(„eine Lektion, dann selber machen"), erster Auftrag („Modul 1, in 30 Minuten
+hast du deine Domain"), Community-Einladung. Platz dafür: Dashboard ganz
+oben, bis die erste Lektion gestartet wurde.
+
+---
+
 ## Stufen & Plattform-Strategie (aus Sektion 10)
 
 - **Free** = Modul 1 (Basics) — ausdrücklich OHNE Website-Bau. Aha-Moment:

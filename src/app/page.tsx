@@ -199,6 +199,77 @@ export default function LandingPage() {
         </Stagger>
       </section>
 
+      {/* VSL: Wer ich bin & warum ich das mache */}
+      <section className="mx-auto max-w-6xl px-4 pb-16">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          {/* Video */}
+          <Reveal>
+            <div className="group relative aspect-video overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-surface-800 to-surface-950 ring-glow">
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-600/20 to-accent-500/10" />
+              <div className="absolute inset-0 grid place-items-center">
+                <div className="text-center">
+                  <button
+                    type="button"
+                    className="mx-auto mb-4 grid size-20 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/25 backdrop-blur transition group-hover:scale-105 group-hover:bg-brand-500/80"
+                    aria-label="Video abspielen"
+                  >
+                    <Play className="size-8 translate-x-0.5" />
+                  </button>
+                  <p className="text-sm font-medium text-zinc-300">
+                    Warum ich meinen eigenen Job überflüssig mache
+                  </p>
+                  <p className="mt-1 text-xs text-zinc-500">3:45 Min. · mit Marius</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Botschaft */}
+          <Reveal delay={0.12}>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-400">
+              Warum es diese Plattform gibt
+            </p>
+            <h2 className="mb-5 text-balance text-3xl font-bold leading-tight tracking-tight md:text-4xl">
+              Webdesign als Dienstleistung{" "}
+              <span className="text-gradient">hat bald ausgedient.</span>
+            </h2>
+            <div className="space-y-4 text-zinc-400">
+              <p>
+                Ich habe über 200 Websites gebaut und damit mein Geld verdient.
+                Heute baue ich eine komplette Kundenwebsite in zwei Stunden — mit
+                zwölf Prompts. Der Preis für diese Dienstleistung geht langfristig
+                gegen null, weil jeder es selbst machen kann.
+              </p>
+              <p className="font-medium text-zinc-200">
+                Nur beantwortet dir die KI nicht das Drumherum:
+              </p>
+              <ul className="grid gap-2 sm:grid-cols-2">
+                {[
+                  "Wem gehört meine Domain?",
+                  "Wie ziehen meine E-Mails um?",
+                  "Wo läuft die Seite — und was kostet sie?",
+                  "Warum sieht meine Seite billig aus?",
+                  "Wie werde ich bei Google gefunden?",
+                  "Wie tracke ich meine Werbeanzeigen?",
+                ].map((q) => (
+                  <li key={q} className="flex items-start gap-2 text-sm text-zinc-300">
+                    <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-brand-500/15 text-brand-300">
+                      <Check className="size-3" />
+                    </span>
+                    {q}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-lg font-semibold text-white">
+                Du brauchst mich nicht als Dienstleister.
+                <br />
+                Du brauchst mich einmal als Erklärer.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Themen-Marquee */}
       <section className="border-y border-white/5 bg-surface-900/60 py-5">
         <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
