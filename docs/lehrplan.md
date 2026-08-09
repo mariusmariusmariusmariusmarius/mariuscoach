@@ -171,8 +171,9 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
 **2.2 Was sind Skills — dein unfairer Vorteil**
 - Deine Definition: „vorgeschriebene Kontextdateien, damit die KI versteht,
   wie man Anforderung X richtig umsetzt" — fertig, mehr Theorie braucht keiner
-- skills.sh zeigen; installieren: Webdesign, Typografie, UI/UX, SEO,
-  Page-Generator (exakte Liste lieferst du beim Videodreh → Cheat Sheet)
+- skills.sh zeigen; installieren: das Kern-Setup aus dem recherchierten
+  **Skill-Katalog** (`docs/skills-katalog.md`) — u. a. find-skills,
+  frontend-design, ui-ux-pro-max, web-design-guidelines, Web-Quality-Paket
 - Terminal-Momente entdramatisieren: copy → paste → Enter
 - **Ergebnis:** Skill-Set installiert — ab jetzt baut Claude besser als jeder
   Baukasten.
