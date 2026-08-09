@@ -50,6 +50,25 @@ Claude neu starten — fertig. Ab jetzt kann Claude die Daten selbst holen.
 
 ---
 
+## ⚠️ Stolperfalle, die uns selbst passiert ist
+
+**Greif mit einem frischen Account nicht von mehreren Orten gleichzeitig zu.**
+Neue Accounts stehen bei DataForSEO unter Beobachtung: Wenn kurz nach der
+Anmeldung in Deutschland plötzlich eine Anfrage aus einem Rechenzentrum im
+Ausland kommt, sperrt das System den Zugang automatisch als Vorsichtsmaßnahme.
+
+Das ist kein Fehler und kein Drama — eine kurze Mail an
+**support@dataforseo.com** genügt, dann wird der Account wieder freigegeben.
+Aber es kostet einen halben Tag, wenn man es nicht weiß.
+
+**Merke:** Erst vom eigenen Rechner testen. Server, Automationen oder Tools
+mit anderer IP erst dazuschalten, wenn der Account ein paar Tage läuft.
+
+*(Gutes Beispiel für den Kurs: So verhalten sich viele API-Anbieter — Stripe,
+Meta und Google genauso. Neue Accounts sind immer misstrauisch.)*
+
+---
+
 ## Schritt 3: Erster Test — einfach fragen
 
 ```
