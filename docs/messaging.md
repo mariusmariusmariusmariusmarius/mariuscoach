@@ -122,7 +122,60 @@ gehört und die du nicht mitnehmen kannst.
 
 ---
 
-## 5. Das Versprechen
+## 5. Das Prinzip: testen statt raten
+
+Das ist **die Haltung, aus der heraus du unterrichtest** — und der schärfste
+Unterschied zu allen anderen Angeboten in diesem Markt. Gehört in jeden
+längeren Verkaufstext, direkt vor das Versprechen.
+
+### Die vier Schritte des Arguments
+
+**① Niemand ist allwissend — auch ich nicht.**
+> „Niemand kann dir sagen, welches Keyword funktioniert, welches Bild zieht,
+> welcher Text verkauft. Niemand kann dir sagen, wie du deine Dienstleistung
+> verkaufst — dein Markt, deine Region, deine Kunden."
+
+**② Deswegen ist jeder „Blueprint" eine Lüge.**
+> „Da draußen läuft ein Haufen selbsternannter Gurus rum, die dir DEN
+> Blueprint verkaufen. Das eine System. Die eine Formel. **Ich kann das
+> ehrlich gesagt nicht mehr hören.**"
+>
+> Begründung: **Der Markt steht nicht still — er bewegt sich schneller als je
+> zuvor.** Was letztes Jahr lief, ist dieses Jahr durch. Was beim Nachbarn
+> funktioniert, kann bei dir floppen.
+> → *„Ein Blueprint ist eine Momentaufnahme von gestern. Verkauft wird er dir
+> als Zukunft."*
+
+**③ Was wir stattdessen machen: testen.**
+> „**Wir verlassen uns nicht auf Wahrsager. Wir testen.** Testen, testen,
+> testen. Website, Ads, Texte — stetig verbessern. Wir messen jede Metrik,
+> die messbar ist, und vergleichen sie mit dem, was der Markt gerade macht."
+>
+> → Deswegen ist **Tracking** kein Nice-to-have, sondern das Fundament:
+> *„Der Einzige, auf den man hören muss, ist der Markt. Und der antwortet dir
+> — aber nur, wenn du ihn fragst."*
+
+**④ Und dafür brauchst du kein technisches Wissen.**
+> Claude hängt an Website, Datenbank, Werbekonten und Suchdaten — das Ganze
+> läuft **aus der Chatbox**.
+> *„Wie lief die Anzeige letzte Woche?"* → Antwort.
+> *„Schreib die Startseite auf das Keyword um, das am besten läuft."* → passiert.
+> → *„Das ist Arbeit, für die Firmen normalerweise Leute einstellen. Bei dir
+> ist es ein Satz im Chat."*
+
+**Der Abschluss:**
+> „Deswegen kannst du eigentlich nichts falsch machen. Du testest, du guckst,
+> was der Markt sagt, du passt an. **Der einzige echte Fehler ist, gar nicht
+> zu messen.**"
+
+💡 **Warum das verkauft:** Es nimmt die Angst („ich kann nichts falsch
+machen"), erklärt, warum Tracking und Datenmodule im Kurs so viel Raum
+kriegen — und macht dich glaubwürdig, weil du zugibst, was du *nicht* weißt.
+Genau deshalb steht direkt danach das Versprechen.
+
+---
+
+## 6. Das Versprechen
 
 Der emotionale Höhepunkt in jedem Verkaufstext. Funktioniert nur an **einer**
 Stelle: direkt nachdem du gesagt hast, dass niemand die Zukunft kennt. Erst
@@ -153,7 +206,7 @@ Versprich **Fähigkeiten und Zustände** — die kannst du halten.
 
 ---
 
-## 6. Einwände und Antworten
+## 7. Einwände und Antworten
 
 | Einwand | Antwort |
 |---|---|
@@ -168,7 +221,7 @@ Versprich **Fähigkeiten und Zustände** — die kannst du halten.
 
 ---
 
-## 7. Formulierungen, die immer funktionieren
+## 8. Formulierungen, die immer funktionieren
 
 Deine besten Sätze — wörtlich wiederverwenden:
 
@@ -178,6 +231,10 @@ Deine besten Sätze — wörtlich wiederverwenden:
 - „Das ist nur das Mindeste — da fängt's erst an."
 - „Der Einzige, auf den man hören muss, ist der Markt."
 - „Der einzige echte Fehler ist, gar nicht zu messen."
+- „Wir verlassen uns nicht auf Wahrsager. Wir testen."
+- „Ein Blueprint ist eine Momentaufnahme von gestern — verkauft als Zukunft."
+- „Niemand ist allwissend. Auch ich nicht."
+- „Das ist Arbeit, für die Firmen Leute einstellen. Bei dir ist es ein Satz im Chat."
 - „Wir sind keine Nerds. Wir wollen Ergebnisse."
 - „Nicht nur eine Website bauen — dein Unternehmen automatisieren."
 - „Die Website ist nur der Anfang."
@@ -188,7 +245,7 @@ nach Guru klingt, zerstört deinen wichtigsten Vorteil: dass man dir glaubt.
 
 ---
 
-## 8. Der Klartext-Prompt
+## 9. Der Klartext-Prompt
 
 Für den Fall, dass du frei redest und daraus etwas Konkretes brauchst.
 Kopieren, deinen Text drunter, ab in Claude:
@@ -222,13 +279,13 @@ kein Nachteil, sondern Rohmaterial.
 
 ---
 
-## 9. Wo was hingehört
+## 10. Wo was hingehört
 
 | Kanal | Was rauf |
 |---|---|
-| **VSL** | Werte ①–⑦ komprimiert, Anti-Guru-Passage, **das Versprechen**, Geld-Rechnung, Trust Points |
-| **Landingpage** | Kernbotschaft, die vier Haupt-Werte, **das Versprechen als Abschluss-Block**, Curriculum, Preise, Cases |
-| **Ads** | Ein Pain-Satz ODER die Anti-Guru-These — nie beides |
+| **VSL** | Werte ①–⑦ komprimiert, **das Prinzip (testen statt raten)**, **das Versprechen**, Geld-Rechnung, Trust Points |
+| **Landingpage** | Kernbotschaft, die vier Haupt-Werte, **das Prinzip als eigener Abschnitt**, **das Versprechen als Abschluss-Block**, Curriculum, Preise, Cases |
+| **Ads** | Ein Pain-Satz ODER die Blueprint-These („Wir verlassen uns nicht auf Wahrsager") — nie beides |
 | **Reels** | Ein Wert pro Video, immer mit konkretem Beispiel |
 | **Funnel-Ergebnis** | Kernbotschaft + der passende Modul-Mehrwert |
-| **Verkaufsgespräch** | Einwandbehandlung aus Abschnitt 6, Versprechen zum Abschluss |
+| **Verkaufsgespräch** | Einwandbehandlung aus Abschnitt 7, Versprechen zum Abschluss |

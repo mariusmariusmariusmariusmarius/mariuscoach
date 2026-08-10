@@ -4,7 +4,7 @@
 Es beantwortet: Wer bist du? Was hast du gemacht? **Warum machst du das?**
 Und vor allem: **Was habe ich davon?** Ziel am Ende: kostenlos registrieren.
 
-**Länge:** ~6 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
+**Länge:** ~6,5 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
 sprichst direkt in die Linse. Kein Teleprompter-Ablesen — Stichpunkte
 reichen, dein Ton ist der Wert.
 
@@ -135,30 +135,71 @@ entscheidet sich, ob jemand kauft.*
 *Regie: Pro Punkt ein kurzer Screencapture-Einschub. Nicht zu viel Text
 einblenden — die Beispiele sollen konkret bleiben.*
 
-## 6. Die Wahrheit über „Blueprints" (3:40–4:10) ⭐⭐ Deine Abgrenzung
+## 6. Die Wahrheit über „Blueprints" (3:40–4:40) ⭐⭐ Deine Abgrenzung
 
+*Der wichtigste Block im Video. Hier erklärst du nicht nur, WAS du machst,
+sondern nach welchem **Prinzip** du dein Wissen weitergibst. Ohne Schnitte,
+direkt in die Kamera.*
+
+### 6.1 Die Ansage
 > „Und jetzt was, das dir kein anderer sagt:
 >
-> **Niemand ist allwissend.** Niemand kann dir sagen, welches Keyword
-> funktioniert, welches Bild in der Werbung zieht, welcher Text verkauft.
-> Wenn dir jemand erzählt, er hat DEN Blueprint und du musst ihn nur
-> nachmachen — dann lügt er.
+> **Niemand ist allwissend.** Auch ich nicht. Niemand kann dir sagen, welches
+> Keyword funktioniert, welches Bild in der Werbung zieht, welcher Text
+> verkauft. Niemand kann dir sagen, wie du deine Dienstleistung verkaufst —
+> dein Markt, deine Region, deine Kunden.
 >
-> **Der Einzige, auf den man hören muss, ist der Markt.** Und der sagt es dir
-> — über echte Daten. Deswegen ist Tracking so wichtig. Nicht weil's schick
-> ist, sondern weil es die einzige Wahrheit ist, die du kriegen kannst.
+> Und trotzdem läuft da draußen ein Haufen selbsternannter Gurus rum, die dir
+> DEN Blueprint verkaufen wollen. Das eine System. Die eine Formel. **Ich kann
+> das ehrlich gesagt nicht mehr hören.**"
+
+### 6.2 Warum es diesen Blueprint nicht geben kann
+> „Und zwar aus einem ganz simplen Grund: **Der Markt steht nicht still.** Er
+> bewegt sich — und aktuell schneller als jemals zuvor. Was letztes Jahr
+> funktioniert hat, ist dieses Jahr durch. Was bei deinem Nachbarn läuft, kann
+> bei dir floppen.
 >
-> Und hier kommt das Schöne: Du musst dafür kein Wissenschaftler sein. Claude
-> holt die Daten, wertet sie aus und passt deine Seite an. Automatisch.
+> Ein Blueprint ist immer eine Momentaufnahme von gestern. Verkauft wird er
+> dir als Zukunft."
+
+### 6.3 Das Prinzip: testen statt raten
+> „Deswegen mach ich's anders. **Wir verlassen uns nicht auf Wahrsager. Wir
+> testen.** Testen, testen, testen.
+>
+> Website, Werbeanzeigen, deine Texte — wir verbessern das stetig, Stück für
+> Stück. Wir messen **jede Metrik, die messbar ist**, und vergleichen sie mit
+> dem, was der Markt gerade macht. Dann passen wir an. Dann messen wir wieder.
+>
+> **Der Einzige, auf den man hören muss, ist der Markt.** Und der antwortet
+> dir — aber nur, wenn du ihn fragst. Genau deswegen ist Tracking so wichtig.
+> Nicht weil's schick ist, sondern weil es die einzige Wahrheit ist, die du
+> kriegen kannst."
+
+### 6.4 Und das Beste: du brauchst dafür kein technisches Wissen
+> „Jetzt denkst du vielleicht: Klingt gut, aber ich kann sowas nicht.
+>
+> Doch. Und genau das ist der Punkt, an dem sich hier alles ändert. Weil wir
+> Claude mit allem verbinden — deiner Website, deiner Datenbank, deinen
+> Werbekonten, deinen Suchdaten. Und dann läuft das komplett **aus der
+> Chatbox**.
+>
+> Du fragst: 'Wie lief die Anzeige letzte Woche?' — und kriegst die Antwort.
+> Du sagst: 'Schreib die Startseite auf das Keyword um, das am besten läuft' —
+> und es passiert.
+>
+> Das ist Arbeit, für die Firmen normalerweise Leute einstellen. Bei dir ist
+> es ein Satz im Chat.
 >
 > Deswegen kannst du eigentlich nichts falsch machen. Du testest, du guckst,
 > was der Markt sagt, du passt an. **Der einzige echte Fehler ist, gar nicht
 > zu messen.**"
 
-*Regie: Das ist der ehrlichste Moment im Video — wieder ohne Schnitte, direkt
-in die Kamera. Hier hebst du dich von jedem Guru ab.*
+*Regie: Der ehrlichste Moment im Video — hier hebst du dich von jedem Guru ab.
+Bei 6.1 ruhig etwas Genervtheit zulassen, das ist echt. Bei 6.4 einen kurzen
+Screencapture einblenden: die Frage im Chat, darunter die Antwort mit echten
+Zahlen. Ein Beispiel reicht.*
 
-## 7. Mein Versprechen (4:10–5:00) ⭐⭐ Der emotionale Höhepunkt
+## 7. Mein Versprechen (4:40–5:30) ⭐⭐ Der emotionale Höhepunkt
 
 *Kommt bewusst direkt NACH der Anti-Guru-Passage — dadurch wird es
 glaubwürdig statt marktschreierisch. Ruhig sprechen, jeden Punkt einzeln
@@ -195,7 +236,7 @@ sacken lassen.*
 *Regie: Die fünf Punkte einzeln einblenden, während du sie sagst. Beim letzten
 Satz zurück in die Kamera, ohne Text im Bild.*
 
-## 7b. Der Value-Shift (5:00–5:15)
+## 7b. Der Value-Shift (5:30–5:45)
 
 > „Und damit sind wir beim eigentlichen Punkt. **Was ich dir biete, ist nicht
 > nur, eine Website zu bauen. Es ist, dein Unternehmen zu automatisieren und
@@ -205,7 +246,7 @@ Satz zurück in die Kamera, ohne Text im Bild.*
 > Bewertungen, die von allein eingesammelt werden. Die Website ist nur der
 > Anfang."
 
-## 8. Reden wir über Geld (5:15–5:55) ⭐
+## 8. Reden wir über Geld (5:45–6:25) ⭐
 
 *Zahlen ruhig und langsam sagen — hier rechnet der Zuschauer mit.*
 
@@ -233,7 +274,7 @@ Satz zurück in die Kamera, ohne Text im Bild.*
 *Regie: Die zwei Rechnungen als Grafik nebeneinander einblenden — links der
 klassische Weg, rechts deiner. Nicht überladen, nur die Zahlen.*
 
-## 9. CTA (5:55–6:10)
+## 9. CTA (6:25–6:40)
 
 > „Und wenn du erstmal reinschauen willst: Die Basics sind komplett kostenlos.
 > Domain, E-Mail-Adressen, wie das Internet überhaupt funktioniert — kostet
