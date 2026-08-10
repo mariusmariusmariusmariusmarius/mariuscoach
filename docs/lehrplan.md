@@ -577,6 +577,13 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
 **4.3 Onpage & technisches SEO per Skill**
 - H1-Hierarchie mit Keyword, Titles, Descriptions, OG-Images; sitemap.xml +
   robots.txt füllt der Skill automatisch
+- **Strukturierte Daten (JSON-LD)** — der Teil, den Baukästen nur halbgar
+  können: Ein Block im Quelltext, der Google direkt sagt, *was* du bist —
+  `LocalBusiness` mit Name, Adresse, Telefon, Öffnungszeiten, Leistungen.
+  Nicht raten lassen, sondern mitgeben. Claude baut das in einem Prompt ein
+- Darin steckt ein Feld namens **`sameAs`** — das füllen wir in Lektion 4.5,
+  wenn Google-Profil und Bewertungsportale stehen. Merken: *„Das Feld kommt
+  später dran, es ist wichtiger, als es aussieht."*
 - Häufigster Anfängerfehler: nur die Homepage optimiert, Service-/Produkt-
   Seiten vergessen
 - **[MM+Claude: Meta-Tags-Liste + die 2–3 technischen Checks, die wirklich
@@ -601,7 +608,28 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
   Anruf-Button, Traffic vom Profil auf die Website
 - **[MM+Claude: Beiträge/Updates — lohnt sich das? Meine Einschätzung ergänze
   ich]**
-- **Ergebnis:** Vollständiges, optimiertes Google-Profil.
+- ⭐ **`sameAs`: die drei Profile zu EINER Firma zusammenziehen** — der
+  Abschluss der Lektion, und der Punkt, den fast keiner kennt:
+  - **Das Problem:** Du hast jetzt eine Website, einen Google-Eintrag und ein
+    Trustpilot-Profil. Für Google sind das erstmal **drei Dinge, die zufällig
+    ähnlich heißen** — nicht automatisch eine Firma. Gerade bei Allerweltsnamen
+    („Malerbetrieb Schmidt") ist das ein echtes Problem
+  - **Die Lösung:** Im JSON-LD aus Lektion 4.3 gibt es das Feld `sameAs`. Da
+    trägst du die Adressen deiner anderen Profile ein — Google-Eintrag,
+    Trustpilot, Instagram, Facebook. Damit sagst du: **„Das bin alles ich."**
+  - **Was es bringt:** Google zieht die verstreuten Fragmente zu **einer
+    Entität** zusammen. Wenn jemand deinen Firmennamen googelt, entsteht eher
+    ein zusammenhängendes Bild — Website, Bewertungen, Karteneintrag als eine
+    Einheit — statt drei loser Treffer. Besonders relevant, sobald
+    **Bewertungen** im Spiel sind: Die sollen bei *dir* landen, nicht im Nichts
+  - ⚠️ **Ehrlich bleiben (Anti-Guru):** Das ist ein **Signal, keine Garantie**.
+    Google entscheidet selbst, was es übernimmt. Es kostet dich drei Minuten
+    und kann nur helfen — aber wer dir erzählt, `sameAs` bringt dich nach oben,
+    erzählt Quatsch
+  - **Prompt:** *„Ergänze im JSON-LD meiner Seite das Feld `sameAs` mit diesen
+    Profil-URLs: {Google-Eintrag}, {Trustpilot}, {Instagram}, {Facebook}."*
+- **Ergebnis:** Vollständiges, optimiertes Google-Profil — und Website,
+  Google-Eintrag und Bewertungsprofil sind für Google **eine** Firma.
 
 **4.6 Search Console**
 - Account, Property, Verifizierung über die Website (schneller als über die
