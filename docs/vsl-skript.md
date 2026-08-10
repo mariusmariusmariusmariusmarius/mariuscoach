@@ -4,13 +4,14 @@
 Es beantwortet: Wer bist du? Was hast du gemacht? **Warum machst du das?**
 Und vor allem: **Was habe ich davon?** Ziel am Ende: kostenlos registrieren.
 
-**Länge:** ~5 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
+**Länge:** ~6 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
 sprichst direkt in die Linse. Kein Teleprompter-Ablesen — Stichpunkte
 reichen, dein Ton ist der Wert.
 
 **Falls es zu lang wird:** Block 2 auf 15 Sekunden kürzen, Block 5 auf die
-zwei stärksten Punkte reduzieren (5.1 und 5.3). Block 1, 6, 7 und 8 niemals
-kürzen — die tragen das Video.
+zwei stärksten Punkte reduzieren (5.1 und 5.3), Block 7b weglassen (steckt
+inhaltlich schon im Versprechen). Block 1, 6, 7 und 8 niemals kürzen — die
+tragen das Video.
 
 **Alle Werte, Argumente, Trust Points und Einwandbehandlungen** stehen
 gesammelt in `docs/messaging.md` — dort auch die vollständige Geld-Rechnung
@@ -157,17 +158,54 @@ einblenden — die Beispiele sollen konkret bleiben.*
 *Regie: Das ist der ehrlichste Moment im Video — wieder ohne Schnitte, direkt
 in die Kamera. Hier hebst du dich von jedem Guru ab.*
 
-## 7. Der Value-Shift (4:10–4:25) ⭐
+## 7. Mein Versprechen (4:10–5:00) ⭐⭐ Der emotionale Höhepunkt
 
-> „Und damit sind wir beim Punkt. **Was ich dir biete, ist nicht nur, eine
-> Website zu bauen. Es ist, dein Unternehmen zu automatisieren und besser zu
-> machen.**
+*Kommt bewusst direkt NACH der Anti-Guru-Passage — dadurch wird es
+glaubwürdig statt marktschreierisch. Ruhig sprechen, jeden Punkt einzeln
+sacken lassen.*
+
+> „Und jetzt, wo ich dir gerade gesagt hab, dass niemand die Zukunft kennt,
+> kommt trotzdem ein Versprechen. Aber ein ehrliches.
+>
+> **Ich verspreche dir keine Zahlen.** Ich sag dir nicht, dass du in drei
+> Monaten zehn neue Kunden hast. Das weiß keiner. Wer dir das verspricht,
+> lügt.
+>
+> **Aber das hier verspreche ich dir — wenn du die Module durchgehst und
+> mitmachst:**
+>
+> **Du bist unabhängig.** Deine Website gehört dir. Kein Baukasten-Abo, kein
+> Dienstleister, auf den du warten musst, keine Rechnung für jede Kleinigkeit.
+>
+> **Du bist schnell.** Du entscheidest was — und setzt es am selben Tag um.
+> Nicht in drei Wochen, wenn die Agentur Zeit hat. Ich änder Websites vom
+> Handy aus, während ich unterwegs bin. Das wirst du auch können.
+>
+> **Du hast eine fertige Website**, die richtig gut aussieht und bei Google
+> gefunden wird. Nicht 'irgendwas ist online' — sondern eine Seite, für die
+> du dich nicht schämen musst.
+>
+> **Du bekommst Anfragen** — automatisch, während du arbeitest oder schläfst.
+>
+> **Und das alles hast du selbst gebaut. Für unter 50 Euro im Monat.**
+>
+> Das ist kein Marketing-Versprechen. Das ist einfach das, was rauskommt, wenn
+> du die Sachen machst, die ich dir zeige."
+
+*Regie: Die fünf Punkte einzeln einblenden, während du sie sagst. Beim letzten
+Satz zurück in die Kamera, ohne Text im Bild.*
+
+## 7b. Der Value-Shift (5:00–5:15)
+
+> „Und damit sind wir beim eigentlichen Punkt. **Was ich dir biete, ist nicht
+> nur, eine Website zu bauen. Es ist, dein Unternehmen zu automatisieren und
+> besser zu machen.**
 >
 > Anfragen, die automatisch reinkommen. Termine, die sich selbst buchen.
 > Bewertungen, die von allein eingesammelt werden. Die Website ist nur der
 > Anfang."
 
-## 8. Reden wir über Geld (4:25–5:05) ⭐
+## 8. Reden wir über Geld (5:15–5:55) ⭐
 
 *Zahlen ruhig und langsam sagen — hier rechnet der Zuschauer mit.*
 
@@ -195,7 +233,7 @@ in die Kamera. Hier hebst du dich von jedem Guru ab.*
 *Regie: Die zwei Rechnungen als Grafik nebeneinander einblenden — links der
 klassische Weg, rechts deiner. Nicht überladen, nur die Zahlen.*
 
-## 9. CTA (5:05–5:20)
+## 9. CTA (5:55–6:10)
 
 > „Und wenn du erstmal reinschauen willst: Die Basics sind komplett kostenlos.
 > Domain, E-Mail-Adressen, wie das Internet überhaupt funktioniert — kostet

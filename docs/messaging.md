@@ -122,7 +122,38 @@ gehört und die du nicht mitnehmen kannst.
 
 ---
 
-## 5. Einwände und Antworten
+## 5. Das Versprechen
+
+Der emotionale Höhepunkt in jedem Verkaufstext. Funktioniert nur an **einer**
+Stelle: direkt nachdem du gesagt hast, dass niemand die Zukunft kennt. Erst
+die Ehrlichkeit, dann das Versprechen — sonst klingt es wie jede andere
+Werbung.
+
+**Die Einleitung (nicht weglassen):**
+> „Ich verspreche dir keine Zahlen. Ich sag dir nicht, dass du in drei Monaten
+> zehn neue Kunden hast. Das weiß keiner. Wer dir das verspricht, lügt. **Aber
+> das hier verspreche ich dir — wenn du die Module durchgehst und mitmachst:**"
+
+**Die fünf Punkte:**
+
+| Versprechen | Wie du es sagst |
+|---|---|
+| **Unabhängigkeit** | „Deine Website gehört dir. Kein Baukasten-Abo, kein Dienstleister, auf den du warten musst, keine Rechnung für jede Kleinigkeit." |
+| **Geschwindigkeit** | „Du entscheidest was — und setzt es am selben Tag um. Ich änder Websites vom Handy aus, während ich unterwegs bin. Das wirst du auch können." |
+| **Eine fertige Website** | „Die richtig gut aussieht und bei Google gefunden wird. Nicht ‚irgendwas ist online' — sondern eine Seite, für die du dich nicht schämen musst." |
+| **Anfragen** | „Automatisch, während du arbeitest oder schläfst." |
+| **Selbst gebaut, günstig** | „Und das alles hast du selbst gebaut. Für unter 50 Euro im Monat." |
+
+**Der Abbinder:**
+> „Das ist kein Marketing-Versprechen. Das ist einfach das, was rauskommt,
+> wenn du die Sachen machst, die ich dir zeige."
+
+⚠️ **Regel:** Nie Zahlen versprechen (Umsatz, Kundenanzahl, Ranking-Platz).
+Versprich **Fähigkeiten und Zustände** — die kannst du halten.
+
+---
+
+## 6. Einwände und Antworten
 
 | Einwand | Antwort |
 |---|---|
@@ -137,7 +168,7 @@ gehört und die du nicht mitnehmen kannst.
 
 ---
 
-## 6. Formulierungen, die immer funktionieren
+## 7. Formulierungen, die immer funktionieren
 
 Deine besten Sätze — wörtlich wiederverwenden:
 
@@ -157,7 +188,7 @@ nach Guru klingt, zerstört deinen wichtigsten Vorteil: dass man dir glaubt.
 
 ---
 
-## 7. Der Klartext-Prompt
+## 8. Der Klartext-Prompt
 
 Für den Fall, dass du frei redest und daraus etwas Konkretes brauchst.
 Kopieren, deinen Text drunter, ab in Claude:
@@ -191,13 +222,13 @@ kein Nachteil, sondern Rohmaterial.
 
 ---
 
-## 8. Wo was hingehört
+## 9. Wo was hingehört
 
 | Kanal | Was rauf |
 |---|---|
-| **VSL** | Werte ①–⑦ komprimiert, Anti-Guru-Passage, Geld-Rechnung, Trust Points |
-| **Landingpage** | Kernbotschaft, die vier Haupt-Werte, Curriculum, Preise, Cases |
+| **VSL** | Werte ①–⑦ komprimiert, Anti-Guru-Passage, **das Versprechen**, Geld-Rechnung, Trust Points |
+| **Landingpage** | Kernbotschaft, die vier Haupt-Werte, **das Versprechen als Abschluss-Block**, Curriculum, Preise, Cases |
 | **Ads** | Ein Pain-Satz ODER die Anti-Guru-These — nie beides |
 | **Reels** | Ein Wert pro Video, immer mit konkretem Beispiel |
 | **Funnel-Ergebnis** | Kernbotschaft + der passende Modul-Mehrwert |
-| **Verkaufsgespräch** | Einwandbehandlung aus Abschnitt 5 |
+| **Verkaufsgespräch** | Einwandbehandlung aus Abschnitt 6, Versprechen zum Abschluss |
