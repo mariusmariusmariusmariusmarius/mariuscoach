@@ -175,12 +175,35 @@ Genau deshalb steht direkt danach das Versprechen.
 
 ---
 
-## 6. Das Versprechen
+## 6. Die Ansprache und das Versprechen
 
 Der emotionale Höhepunkt in jedem Verkaufstext. Funktioniert nur an **einer**
 Stelle: direkt nachdem du gesagt hast, dass niemand die Zukunft kennt. Erst
 die Ehrlichkeit, dann das Versprechen — sonst klingt es wie jede andere
 Werbung.
+
+### 6a. Die drei Typen — „egal, wo du gerade stehst"
+
+Direkt vor das Versprechen. Zweck: Jeder Zuschauer soll sich wiedererkennen,
+**bevor** das Versprechen kommt — sonst hört er es nicht als an ihn gerichtet.
+Wichtig: Jeder Typ kriegt einen **konkreten Nutzen**, nicht nur ein Etikett.
+
+| Typ | Wo er steht | Was er hier kriegt |
+|---|---|---|
+| **Der junge Gründer** | baut sich gerade die Selbstständigkeit auf, will sichtbar werden | der komplette Weg — ohne am Start tausende Euro für eine Website auszugeben |
+| **Der etablierte Unternehmer** | läuft schon, sucht neue Möglichkeiten, will sich weiterbilden | nicht die Website, sondern **Automatisierung**: Anfragen, Termine, Angebote, Bewertungen |
+| **Der Webentwickler** | vom Fach, will besser werden | Tempo — „zwei Stunden statt zwei Wochen" — und **Modul 9**: wie er das verkauft |
+
+**Der Abbinder:**
+> „Für jeden von euch dreien ist hier was drin. Nicht als netter Nebeneffekt —
+> sondern als Mehrwert, der auch in zwei Jahren noch hält."
+
+💡 **Warum Webentwickler und nicht Webdesigner:** Der Entwickler ist der, der
+die Marktverschiebung aus dem Warum-Block gerade selbst spürt. Ihn
+anzusprechen ist konsequent, nicht widersprüchlich — du bietest ihm den
+Ausweg, den du selbst genommen hast.
+
+### 6b. Das Versprechen
 
 **Die Einleitung (nicht weglassen):**
 > „Ich verspreche dir keine Zahlen. Ich sag dir nicht, dass du in drei Monaten
@@ -283,9 +306,9 @@ kein Nachteil, sondern Rohmaterial.
 
 | Kanal | Was rauf |
 |---|---|
-| **VSL** | Werte ①–⑦ komprimiert, **das Prinzip (testen statt raten)**, **das Versprechen**, Geld-Rechnung, Trust Points |
-| **Landingpage** | Kernbotschaft, die vier Haupt-Werte, **das Prinzip als eigener Abschnitt**, **das Versprechen als Abschluss-Block**, Curriculum, Preise, Cases |
+| **VSL** | Werte ①–⑦ komprimiert, **das Prinzip (testen statt raten)**, **die drei Typen + das Versprechen**, Geld-Rechnung, Trust Points |
+| **Landingpage** | Kernbotschaft, die vier Haupt-Werte, **das Prinzip als eigener Abschnitt**, **die drei Typen als „Für wen ist das?"-Sektion**, **das Versprechen als Abschluss-Block**, Curriculum, Preise, Cases |
 | **Ads** | Ein Pain-Satz ODER die Blueprint-These („Wir verlassen uns nicht auf Wahrsager") — nie beides |
 | **Reels** | Ein Wert pro Video, immer mit konkretem Beispiel |
-| **Funnel-Ergebnis** | Kernbotschaft + der passende Modul-Mehrwert |
+| **Funnel-Ergebnis** | Kernbotschaft + der passende Modul-Mehrwert (die drei Typen decken sich mit den Funnel-Profilen) |
 | **Verkaufsgespräch** | Einwandbehandlung aus Abschnitt 7, Versprechen zum Abschluss |

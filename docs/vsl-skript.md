@@ -4,14 +4,18 @@
 Es beantwortet: Wer bist du? Was hast du gemacht? **Warum machst du das?**
 Und vor allem: **Was habe ich davon?** Ziel am Ende: kostenlos registrieren.
 
-**Länge:** ~6,5 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
+**Länge:** ~7 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
 sprichst direkt in die Linse. Kein Teleprompter-Ablesen — Stichpunkte
 reichen, dein Ton ist der Wert.
 
-**Falls es zu lang wird:** Block 2 auf 15 Sekunden kürzen, Block 5 auf die
-zwei stärksten Punkte reduzieren (5.1 und 5.3), Block 7b weglassen (steckt
-inhaltlich schon im Versprechen). Block 1, 6, 7 und 8 niemals kürzen — die
-tragen das Video.
+**Falls es zu lang wird** (Reihenfolge zum Kürzen): ① Block 7b weglassen
+(steckt inhaltlich schon im Versprechen), ② Block 2 auf 15 Sekunden, ③ Block 5
+auf die zwei stärksten Punkte (5.1 und 5.3), ④ in Block 7.1 die drei Typen nur
+benennen, ohne den Nutzen-Satz dahinter. Block 1, 6, 7.2 und 8 niemals kürzen
+— die tragen das Video.
+
+**Für kalten Traffic** (Ads) eine 3-Minuten-Fassung schneiden: Block 1, 3, 6,
+7 und 9. Der Rest ist für Leute, die dich schon kennen.
 
 **Alle Werte, Argumente, Trust Points und Einwandbehandlungen** stehen
 gesammelt in `docs/messaging.md` — dort auch die vollständige Geld-Rechnung
@@ -199,11 +203,44 @@ Bei 6.1 ruhig etwas Genervtheit zulassen, das ist echt. Bei 6.4 einen kurzen
 Screencapture einblenden: die Frage im Chat, darunter die Antwort mit echten
 Zahlen. Ein Beispiel reicht.*
 
-## 7. Mein Versprechen (4:40–5:30) ⭐⭐ Der emotionale Höhepunkt
+## 7. Für wen das hier ist — und mein Versprechen (4:40–5:55) ⭐⭐ Der emotionale Höhepunkt
 
 *Kommt bewusst direkt NACH der Anti-Guru-Passage — dadurch wird es
 glaubwürdig statt marktschreierisch. Ruhig sprechen, jeden Punkt einzeln
 sacken lassen.*
+
+### 7.1 Egal, wo du gerade stehst
+
+*Die direkte Ansprache. Jeder Zuschauer soll sich in einem der drei
+wiedererkennen — und zwar bevor das Versprechen kommt. Bei jedem Typ eine
+kurze Pause, damit die Einordnung sitzt.*
+
+> „Und egal, wo du gerade stehst:
+>
+> **Vielleicht bist du gerade am Anfang.** Junger Gründer, baust dir deine
+> Selbstständigkeit auf, hast eine Idee und willst endlich sichtbar werden.
+> Dann kriegst du hier den kompletten Weg — ohne dass du am Start schon
+> tausende Euro für eine Website ausgibst, die du dir eigentlich nicht leisten
+> kannst.
+>
+> **Vielleicht führst du schon seit Jahren ein Unternehmen.** Läuft, aber du
+> suchst nach neuen Möglichkeiten und willst dich weiterentwickeln. Dann geht
+> es hier nicht um deine Website — sondern darum, Sachen zu automatisieren,
+> die dich heute noch Zeit kosten. Anfragen, Termine, Angebote, Bewertungen.
+>
+> **Oder du bist selbst vom Fach.** Webentwickler, und du willst einfach
+> besser werden — schneller arbeiten, mehr abliefern, mehr verlangen können.
+> Dann zeig ich dir, wie ich in zwei Stunden schaffe, wofür ich früher zwei
+> Wochen gebraucht hab. Und wie du das verkaufst.
+>
+> **Für jeden von euch dreien ist hier was drin.** Nicht als netter
+> Nebeneffekt — sondern als Mehrwert, der auch in zwei Jahren noch hält."
+
+*Regie: Die drei Typen einzeln einblenden, kurze Pause nach jedem. Nicht
+runterrattern — der Zuschauer braucht den Moment, in dem er denkt: „Das bin
+ich."*
+
+### 7.2 Mein Versprechen
 
 > „Und jetzt, wo ich dir gerade gesagt hab, dass niemand die Zukunft kennt,
 > kommt trotzdem ein Versprechen. Aber ein ehrliches.
@@ -236,7 +273,7 @@ sacken lassen.*
 *Regie: Die fünf Punkte einzeln einblenden, während du sie sagst. Beim letzten
 Satz zurück in die Kamera, ohne Text im Bild.*
 
-## 7b. Der Value-Shift (5:30–5:45)
+## 7b. Der Value-Shift (5:55–6:10)
 
 > „Und damit sind wir beim eigentlichen Punkt. **Was ich dir biete, ist nicht
 > nur, eine Website zu bauen. Es ist, dein Unternehmen zu automatisieren und
@@ -246,7 +283,7 @@ Satz zurück in die Kamera, ohne Text im Bild.*
 > Bewertungen, die von allein eingesammelt werden. Die Website ist nur der
 > Anfang."
 
-## 8. Reden wir über Geld (5:45–6:25) ⭐
+## 8. Reden wir über Geld (6:10–6:50) ⭐
 
 *Zahlen ruhig und langsam sagen — hier rechnet der Zuschauer mit.*
 
@@ -274,7 +311,7 @@ Satz zurück in die Kamera, ohne Text im Bild.*
 *Regie: Die zwei Rechnungen als Grafik nebeneinander einblenden — links der
 klassische Weg, rechts deiner. Nicht überladen, nur die Zahlen.*
 
-## 9. CTA (6:25–6:40)
+## 9. CTA (6:50–7:05)
 
 > „Und wenn du erstmal reinschauen willst: Die Basics sind komplett kostenlos.
 > Domain, E-Mail-Adressen, wie das Internet überhaupt funktioniert — kostet
