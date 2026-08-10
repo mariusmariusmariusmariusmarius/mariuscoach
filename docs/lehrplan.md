@@ -226,6 +226,7 @@ Domain + E-Mail besitzen. Macht Lust auf Starter, verrät aber nicht den Bau.*
 - Klassiker-Fehler: www funktioniert, nackte Domain nicht; Domain läuft auf
   fremden Namen
 - **Ergebnis:** Eigene Domain registriert, auf den eigenen Namen.
+  *(Skript: `docs/skripte/1-2-was-ist-eine-domain.md`)*
 
 **1.3 E-Mail-Adressen anlegen**
 - Die 4 Schritte: Anbieter → Mail → Postfach anlegen → info@ + Passwort
