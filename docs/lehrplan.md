@@ -189,14 +189,20 @@ ganz nach hinten zu Tools. Google My Business ins SEO-Modul.
 Domain + E-Mail besitzen. Macht Lust auf Starter, verrät aber nicht den Bau.*
 
 **1.1 Was ist eine Webseite — und warum brauchst du eine?**
-- Deine 3-Welten-Erklärung: Das digitale Leben findet statt in ① Social Media
-  (gemietet — „dir gehört da nichts"), ② dem freien Internet (deine Website —
-  gehört dir) und ③ Plattformen (Google Business, Trustpilot — „Telefonbuch
-  des Internets"). Alle drei zeigen am Ende auf die Website
+- **Aufbau: erst das Warum (Aufmerksamkeit), dann das Wo (drei Welten).**
 - ⭐ **Der Kern: Es geht um Aufmerksamkeit.** Aufmerksamkeitsökonomie — das
   Knappste ist nicht Geld, sondern Aufmerksamkeit. Vier Gruppen, deren
   Aufmerksamkeit man braucht: **Kunden · Empfehler · Bewerber · Lieferanten
   und Partner**
+- Die 3 Welten als Antwort auf „wo findet Aufmerksamkeit statt" — jede mit
+  ihrer eigenen Aufgabe, keine wird schlechtgeredet:
+  ① **Social Media** = Content, Reichweite, Werbung — bringt Leute auf dich
+  aufmerksam. Funnel, Landingpage und Zahlung laufen aber in Welt 2.
+  ② **Deine Website** = gehört dir und hält alles zusammen. Point of Sale:
+  Leads einsammeln, verkaufen, messen — hier passiert die Arbeit.
+  ③ **Plattformen** (Google Business, Trustpilot) = Telefonbuch des Internets,
+  gefunden werden und Vertrauen aufbauen.
+  → Alle drei zeigen am Ende auf die Website
 - Dein Gartenzaun-Beispiel als Bild: Der Nachbar sagt „Ich hab da was im
   Internet gesehen, die Seite sah professionell aus" — funktioniert nur, wenn
   es etwas zum Weiterschicken gibt
