@@ -190,13 +190,24 @@ Domain + E-Mail besitzen. Macht Lust auf Starter, verrät aber nicht den Bau.*
 
 **1.1 Was ist eine Webseite — und warum brauchst du eine?**
 - Deine 3-Welten-Erklärung: Das digitale Leben findet statt in ① Social Media
-  (Insta, Facebook, WhatsApp), ② dem freien Internet (Websites) und
-  ③ Plattformen (Google Business, Trustpilot, Foren — „Telefonbuch des Internets")
-- Website = Point of Sale. Ohne sie verlierst du Aufmerksamkeit — von Kunden,
-  vom Nachbarn, der dich empfiehlt, vom Bewerber. „Wenn dich keiner kennt,
-  kann keiner bei dir kaufen — und keiner bei dir arbeiten."
-- Ausblick: Mit den richtigen Prompts steht so eine Seite in ~35 Minuten
-- **Ergebnis:** Der eine Satz sitzt: Website = Point of Sale im Internet.
+  (gemietet — „dir gehört da nichts"), ② dem freien Internet (deine Website —
+  gehört dir) und ③ Plattformen (Google Business, Trustpilot — „Telefonbuch
+  des Internets"). Alle drei zeigen am Ende auf die Website
+- ⭐ **Der Kern: Es geht um Aufmerksamkeit.** Aufmerksamkeitsökonomie — das
+  Knappste ist nicht Geld, sondern Aufmerksamkeit. Vier Gruppen, deren
+  Aufmerksamkeit man braucht: **Kunden · Empfehler · Bewerber · Lieferanten
+  und Partner**
+- Dein Gartenzaun-Beispiel als Bild: Der Nachbar sagt „Ich hab da was im
+  Internet gesehen, die Seite sah professionell aus" — funktioniert nur, wenn
+  es etwas zum Weiterschicken gibt
+- **Der Multiplikator-Gedanke:** Ohne Website musst du jedem alles neu
+  erzählen. Die Website baust du einmal und sie erklärt es ab dann für dich —
+  bei jedem, rund um die Uhr. Deshalb ist das Internet der größte Hebel
+- Website = Point of Sale: Dort landet die Aufmerksamkeit. „Wenn dich keiner
+  kennt, kann keiner bei dir kaufen — und keiner bei dir arbeiten."
+- Technik minimal: Domain = Adresse, Hosting = Grundstück. Mehr nicht
+- **Ergebnis:** Der Satz sitzt — Es geht um Aufmerksamkeit, und das Internet
+  ist der größte Hebel dafür. *(Skript: `docs/skripte/1-1-…`)*
 
 **1.2 Was ist eine Domain?**
 - Domain = **Asset**, ein Vermögenswert deines Unternehmens — da hängen alle
