@@ -133,6 +133,7 @@ gehört und die du nicht mitnehmen kannst.
 | *„Kann KI das wirklich?"* | „Ich hab damit über 200 Websites gebaut. Guck dir die Basics kostenlos an — dann weißt du's." |
 | *„Was, wenn ich nicht weiterkomme?"* | „Dafür gibt's die Community. Und als Pro-Mitglied 30 Minuten pro Woche direkt mit mir." |
 | *„Und wenn sich die KI wieder ändert?"* | „Deswegen ist es ein Abo und kein PDF. Ändert sich was, ändert sich der Kurs." |
+| *„Ist ein deutscher Anbieter nicht besser/schneller?"* | „Die großen Baukästen hosten bei denselben Cloud-Anbietern wie wir — Amazon hat da praktisch ein Monopol. Gleiche Server, gleiche Geschwindigkeit. Der Unterschied ist, was ausgeliefert wird: Ein Baukasten schleppt seinen ganzen Editor mit, unsere Seite liefert fertiges HTML. Deswegen ist sie schneller — nicht wegen des Servers." |
 
 ---
 

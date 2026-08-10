@@ -323,9 +323,24 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
   Minuten warten, online"
 - Die Story dazu: Guillermo Rauch, Gründer von Vercel = Erfinder von Next →
   revolutionäre Bildoptimierung, blitzschnelle Ladezeiten, Server auch in DE
-- Kostenargument: 0 €/Monat statt 20 € Baukasten — und „Baukästen sind eh zu
-  99 % React auf AWS", das Speed-Argument für Wix ist Quatsch
-- **Ergebnis:** Website live unter vercel.app-URL.
+- Kostenargument: 0 €/Monat statt 20 € Baukasten
+- ⭐ **Der Server-Talk — Einwand „ein deutscher Anbieter ist doch besser":**
+  - **Fast alle großen Anbieter sitzen auf denselben Servern.** Jimdo, Wix &
+    Co. hosten bei den großen Cloud-Anbietern, allen voran AWS — Amazon hat
+    da praktisch ein Monopol. Vercel läuft ebenfalls auf dieser Infrastruktur.
+    Heißt: **Auf Serverebene sind alle gleich schnell.** Wer dir erzählt, sein
+    Baukasten sei schneller, weil er deutsch ist, verkauft dir was.
+  - **Der Unterschied entsteht nicht am Server, sondern an dem, was
+    ausgeliefert wird.** Ein Baukasten muss seinen ganzen Editor-Ballast
+    mitschicken — jede Seite schleppt Code mit, den du nie brauchst. Unsere
+    Next-App liefert fertig vorgerendertes HTML und optimierte Bilder.
+    **Gleicher Server, weniger Ballast → schneller.**
+  - Dazu: Vercel liefert über ein weltweites Netz aus, mit Standorten in
+    Deutschland. Die Daten laufen nicht „einmal um die Welt".
+  - **Wir bauen ausschließlich React/Next-Apps** — das ist der Grund, warum
+    unsere Seiten so schnell sind, nicht irgendein Hosting-Trick.
+- **Ergebnis:** Website live unter vercel.app-URL — und du kannst jedem
+  erklären, warum sie schneller ist als die vom Baukasten.
 
 **2.10 Domain verbinden**
 - Claude fragen → A-Record + CNAME ausgespuckt → copy/paste in
@@ -408,6 +423,10 @@ eigener Domain, mit Anfragen-Funktion. Baukasten-Kosten: gespart.*
   Mail-Zwischenspeicherung — Kunde hat alle E-Mails verloren
 - Domain-Transfer nur nötig, wenn Domain beim Baukasten liegt (Auth-Code →
   All-Inkl)
+- 💬 **Der typische Einwand beim Wechsel:** „Aber Jimdo ist doch ein deutscher
+  Anbieter, ist das nicht besser?" → kurz aufgreifen und auf den Server-Talk
+  aus Lektion 2.9 verweisen: dieselbe Infrastruktur, aber ohne
+  Baukasten-Ballast — und ohne Monatsgebühr
 - Google-Rankings behalten **[MM+Claude: Redirects + Search Console in 2–3
   Sätzen — du wolltest das von mir]**
 - **Ergebnis:** Alte Domain zeigt auf neue Seite, Mails komplett, Baukasten
