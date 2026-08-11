@@ -7,6 +7,27 @@ import type { Tier } from "@/lib/tiers";
  * und wird über den Admin-Bereich gepflegt.
  */
 
+/** Ein Merk-Block im Cheat Sheet: Überschrift + Punkte, optional ein Merksatz */
+export type CheatBlock = {
+  title: string;
+  items: string[];
+  /** Wird hervorgehoben unter den Punkten ausgegeben */
+  quote?: string;
+};
+
+/**
+ * Das Cheat Sheet steht rechts neben dem Video: alles zum Nachmachen.
+ * Leere Bereiche werden auf der Lektionsseite gar nicht erst gerendert.
+ */
+export type CheatSheet = {
+  blocks?: CheatBlock[];
+  prompts?: string[];
+  links?: { label: string; href: string; note?: string }[];
+  software?: { name: string; note?: string }[];
+  /** Ersetzt den Platzhalter, wenn es in dieser Lektion bewusst nichts gibt */
+  emptyNote?: string;
+};
+
 export type Lesson = {
   slug: string;
   title: string;
@@ -14,6 +35,7 @@ export type Lesson = {
   /** Minuten, rein informativ */
   duration: number;
   kind: "video" | "text" | "case";
+  cheatSheet?: CheatSheet;
 };
 
 export type CourseModule = {
@@ -45,6 +67,50 @@ export const CURRICULUM: CourseModule[] = [
           "Die 3 Welten des Internets: Social Media, Websites, Plattformen. Deine Website ist dein Point of Sale — ohne sie verlierst du Aufmerksamkeit.",
         duration: 12,
         kind: "video",
+        cheatSheet: {
+          blocks: [
+            {
+              title: "Aufmerksamkeit von vier Gruppen",
+              items: [
+                "**Kunden** — kaufen dein Produkt, buchen deine Leistung",
+                "**Empfehler** — schicken deinen Link weiter (der Nachbar am Gartenzaun)",
+                "**Bewerber** — googeln dich, bevor sie sich bewerben",
+                "**Lieferanten & Partner** — verhandeln anders mit dem, der professionell auftritt",
+              ],
+              quote:
+                "Wer gesehen wird, macht das Geschäft. Und das gilt nicht nur für Webseiten, sondern allgemein im Geschäftsleben.",
+            },
+            {
+              title: "Die drei Welten",
+              items: [
+                "**Social Media** — Instagram, Facebook, TikTok, YouTube: einfach und günstig Leute erreichen, organisch und bezahlt",
+                "**Deine Website** — Point of Sale: Meinung bilden, Leads einsammeln, verkaufen, messen",
+                "**Plattformen** — Google Business, Trustpilot, Verzeichnisse: großer Vertrauensfaktor, aber schlecht kontrollierbar",
+              ],
+            },
+            {
+              title: "Was auf deiner Website passiert",
+              items: [
+                "Besucher aus allen Kanälen landen hier",
+                "Sie bilden sich eine Meinung — wichtig für Kauf, Bewerbung, Weiterempfehlung",
+                "Anfragen und Leads werden eingesammelt (Funnel)",
+                "Verkauft wird hier: Termin, Angebot, Zahlung",
+                "Gemessen wird hier — **und was du messen kannst, kannst du optimieren**",
+              ],
+            },
+            {
+              title: "Zwei Bausteine, damit eine Website live ist",
+              items: [
+                "**Domain** = die Adresse (firma-mueller.de)",
+                "**Hosting** = der Server, auf dem die Seite aufgerufen wird",
+              ],
+              quote:
+                "Zwei getrennte Dinge, die man verbindet. Den Rest macht später Claude.",
+            },
+          ],
+          emptyNote:
+            "In dieser Lektion brauchst du noch keine Prompts und keine Software — wir bauen noch nichts.",
+        },
       },
       {
         slug: "was-ist-eine-domain",

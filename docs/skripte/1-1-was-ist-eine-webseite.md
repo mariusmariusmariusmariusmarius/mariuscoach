@@ -90,49 +90,51 @@ Whiteboard oder eingeblendete Grafik.
 > verstehst du den Rest von allein."
 
 ### Welt 1: Social Media — die Reichweite
-> „Instagram, Facebook, TikTok, youtube etc. Der Vorteile dieser Welt dass man einfach und günstig Leute erreicht auf organischem & bezhaltem Wege 
-
+> „Instagram, Facebook, TikTok, YouTube etc. Der Vorteil dieser Welt: dass man
+> einfach und günstig Leute erreicht, auf organischem & bezahltem Wege.
 >
-> Verkaufen kann man darüber auch. Aber der eigentliche Ablauf — wäre Über die zweite welt und dort spielt die musik 
+> Verkaufen kann man darüber auch. Aber der eigentliche Ablauf — wäre über die
+> zweite Welt, und dort spielt die Musik."
 
-### Welt 2: Deine Website 
->
+### Welt 2: Deine Website
 > Das ist das Ding, das alles zusammenhält. Hier ist dein **Point of Sale** —
 >
 > Und hier passiert die eigentliche Arbeit:
 > - Hier landen die Besucher aus allen Kanälen.
 > - Sie bilden sich eine Meinung (wichtig für jede weitere Interaktion in
->   deinem Unternehmen — Kauf, Bewerbung, Weiterempfehlung,  … etc.)
+>   deinem Unternehmen — Kauf, Bewerbung, Weiterempfehlung … etc.)
 > - Hier werden **Anfragen und Leads eingesammelt**. Funnel
 > - Hier wird **verkauft** — Termin gebucht, Angebot angefordert, Produkt bezahlt.
-> - Hier  **messen**, was funktioniert: Woher kommen die Leute, was
->   klicken sie, wo steigen sie aus. etc.. und wenn messen kann, kann man optimieren, 
->
+> - Hier **messen**, was funktioniert: Woher kommen die Leute, was klicken sie,
+>   wo steigen sie aus, etc. Und wenn man messen kann, kann man optimieren.
 
-### Welt 3: Die Plattformen, 
-> „Und dann gibt's die dritte Welt, die viele vergessen: Plattformen die dich Erwähnen:
-
-Google Business,
-> Trustpilot, Branchenverzeichnisse, Blogbeiträge von Redakture, Prajtisch auch webswiten die dich erwähenen , bewertenm und beurteilen. 
+### Welt 3: Die Plattformen
+> „Und dann gibt's die dritte Welt, die viele vergessen: Plattformen, die dich
+> erwähnen:
 >
-> Menschen lesen Bewertungen, gucken sich Fotos an. Bilden sich eine meinung.
+> Google Business, Trustpilot, Branchenverzeichnisse, Blogbeiträge von
+> Redakteuren, praktisch auch Webseiten, die dich erwähnen, bewerten und
+> beurteilen.
 >
-> Der Vorteil es kann ein großer Vertauenfaktor der nachteil man kann es schlecht kontrolliren
-
+> Menschen lesen Bewertungen, gucken sich Fotos an. Bilden sich eine Meinung.
+>
+> Der Vorteil: Es kann ein großer Vertrauensfaktor sein. Der Nachteil: Man kann
+> es schlecht kontrollieren."
 
 ---
 
 ## Block 4 — Was eine Website technisch ist (7:00–8:00)
 
->Noch ganz kurz die technscohen Grundlagen: 
-
-
-> Das du oder andere personen die Webseite Live sehen können sind 2 Dinge notwendig:
+> Noch ganz kurz die technischen Grundlagen:
+>
+> Damit du oder andere Personen die Webseite live sehen können, sind 2 Dinge
+> notwendig:
 >
 > **Erstens: die Adresse.** Das ist deine Domain — zum Beispiel
-> firma-mueller.de. 
+> firma-mueller.de.
 >
-> **Zweitens: der Sever auf dem deine Webseite aufgerufen werden kann , das nennt man das hosting,
+> **Zweitens: der Server, auf dem deine Webseite aufgerufen werden kann** — das
+> nennt man das Hosting.
 >
 > Domain und Hosting sind zwei getrennte Dinge, die man verbindet. Das ist
 > schon fast alles, was du am Anfang wissen musst. Den Rest macht später
@@ -148,14 +150,53 @@ Google Business,
 
 > „Was heißt das jetzt für dich?
 >
-> In der nächsten Lektion bekommst du erklärt wie du eine Domain kaufst, sie bearbeitest , wie man emialpostfächer erstellt, sie mit Mailapps wie applemail, thunderbird oder outlook verbindet. etc.. 
+> In der nächsten Lektion bekommst du erklärt, wie du eine Domain kaufst, sie
+> bearbeitest, wie man E-Mail-Postfächer erstellt, sie mit Mail-Apps wie Apple
+> Mail, Thunderbird oder Outlook verbindet, etc.
 >
 > Und dann kommt der Teil, auf den du wahrscheinlich wartest: Wir bauen die
-> Website. Ich zeig dir, wie du das mit den richtigen promts in gut einer
+> Website. Ich zeig dir, wie du das mit den richtigen Prompts in gut einer
 > halben Stunde hinbekommst. Nicht in Wochen. Nicht für 2.000 Euro.
 >
-> Nimm zwei Sätze aus dieser Lektion mit:  in der Onlinewelt geht es Aufmerksamkeit, und wie man diese aufmerksamkeit positiv für sich und sein unternhemn nutzen kann,. 
+> Nimm zwei Sätze aus dieser Lektion mit: In der Onlinewelt geht es um
+> Aufmerksamkeit, und wie man diese Aufmerksamkeit positiv für sich und sein
+> Unternehmen nutzen kann."
 
 ---
 
+## Cheat Sheet (rechts neben dem Video)
 
+**Worum es geht: Aufmerksamkeit von vier Gruppen**
+- **Kunden** — kaufen dein Produkt, buchen deine Leistung
+- **Empfehler** — schicken deinen Link weiter (der Nachbar am Gartenzaun)
+- **Bewerber** — googeln dich, bevor sie sich bewerben
+- **Lieferanten & Partner** — verhandeln anders mit dem, der professionell auftritt
+
+> Wer gesehen wird, macht das Geschäft. Und das gilt nicht nur für Webseiten,
+> sondern allgemein im Geschäftsleben.
+
+**Die drei Welten — und was jede kann**
+| Welt | Wofür sie da ist |
+|---|---|
+| **Social Media** | Instagram, Facebook, TikTok, YouTube — einfach und günstig Leute erreichen, organisch und bezahlt |
+| **Deine Website** | Point of Sale: Meinung bilden, Leads einsammeln, verkaufen, messen — hier passiert die Arbeit |
+| **Plattformen** | Google Business, Trustpilot, Verzeichnisse, Blogbeiträge — großer Vertrauensfaktor, aber schlecht kontrollierbar |
+
+**Was auf deiner Website passiert**
+- Besucher aus allen Kanälen landen hier
+- Sie bilden sich eine Meinung — wichtig für Kauf, Bewerbung, Weiterempfehlung
+- Anfragen und Leads werden eingesammelt (Funnel)
+- Verkauft wird hier: Termin, Angebot, Zahlung
+- Gemessen wird hier — **und was du messen kannst, kannst du optimieren**
+
+**Zwei Bausteine, damit eine Website live ist**
+- **Domain** = die Adresse (firma-mueller.de)
+- **Hosting** = der Server, auf dem die Seite aufgerufen wird
+
+→ Zwei getrennte Dinge, die man verbindet. Den Rest macht später Claude.
+
+**Prompts:** in dieser Lektion keine — wir bauen noch nichts.
+**Software:** in dieser Lektion keine.
+
+**Als Nächstes:** Lektion 1.2 — Domain kaufen, E-Mail-Postfächer anlegen und
+mit Apple Mail, Thunderbird oder Outlook verbinden.

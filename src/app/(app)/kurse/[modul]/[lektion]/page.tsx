@@ -4,16 +4,14 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  ClipboardCopy,
   Clock,
-  Link2,
   Play,
-  Wrench,
 } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import { hasAccess } from "@/lib/tiers";
 import { getLesson } from "@/lib/data/curriculum";
 import { TierBadge } from "@/components/ui/tier-badge";
+import { CheatSheet } from "@/components/app/cheat-sheet";
 
 export default async function LessonPage({
   params,
@@ -96,41 +94,7 @@ export default async function LessonPage({
           </button>
         </div>
 
-        {/* Cheat Sheet: Prompts, Skills, Software der Lektion */}
-        <aside className="rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6 lg:col-span-2">
-          <h2 className="mb-1 text-lg font-semibold text-white">Cheat Sheet</h2>
-          <p className="mb-5 text-xs text-zinc-500">
-            Alles aus dieser Lektion zum Nachmachen.
-          </p>
-          <div className="space-y-4">
-            <div>
-              <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-300">
-                <ClipboardCopy className="size-3.5" /> Prompts
-              </p>
-              <div className="rounded-xl border border-dashed border-white/10 bg-surface-950/40 p-3 font-mono text-xs text-zinc-500">
-                Die Prompts dieser Lektion — zum Kopieren. (Inhalte folgen mit
-                den Videos.)
-              </div>
-            </div>
-            <div>
-              <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-300">
-                <Link2 className="size-3.5" /> Skills & Links
-              </p>
-              <div className="rounded-xl border border-dashed border-white/10 bg-surface-950/40 p-3 text-xs text-zinc-500">
-                Verwendete Skills mit Installations-Links.
-              </div>
-            </div>
-            <div>
-              <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-300">
-                <Wrench className="size-3.5" /> Software
-              </p>
-              <div className="rounded-xl border border-dashed border-white/10 bg-surface-950/40 p-3 text-xs text-zinc-500">
-                Tools aus dieser Lektion (z. B. Claude, Vercel, Higgs, Stripe)
-                mit Kosten-Hinweis.
-              </div>
-            </div>
-          </div>
-        </aside>
+        <CheatSheet sheet={lesson.cheatSheet} />
       </div>
 
       {/* Navigation */}
