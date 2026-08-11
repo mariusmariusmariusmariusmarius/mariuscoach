@@ -90,77 +90,55 @@ Whiteboard oder eingeblendete Grafik.
 > verstehst du den Rest von allein."
 
 ### Welt 1: Social Media — die Reichweite
-> „Instagram, Facebook, TikTok. Da bist du wahrscheinlich schon, und das ist
-> auch gut so. Social Media ist stark für zwei Sachen: **Content posten und
-> Werbung schalten.** Du nutzt die Reichweite, die da schon ist, und bringst
-> Leute auf dich aufmerksam.
->
-> Verkaufen kann man darüber auch. Aber der eigentliche Ablauf — der Funnel,
-> die Landingpage, das Formular, die Zahlung — der läuft nicht auf Instagram.
-> Der läuft in Welt zwei."
+> „Instagram, Facebook, TikTok, youtube etc. Der Vorteile dieser Welt dass man einfach und günstig Leute erreicht auf organischem & bezhaltem Wege 
 
-### Welt 2: Deine Website — hier passiert die Arbeit ⭐
-> „Und die gehört dir. Deine Adresse, deine Inhalte, deine Regeln.
+>
+> Verkaufen kann man darüber auch. Aber der eigentliche Ablauf — wäre Über die zweite welt und dort spielt die musik 
+
+### Welt 2: Deine Website 
 >
 > Das ist das Ding, das alles zusammenhält. Hier ist dein **Point of Sale** —
-> der Ort, an dem verkauft wird. Früher war das die Ladentheke, heute ist es
-> deine Website.
 >
 > Und hier passiert die eigentliche Arbeit:
 > - Hier landen die Besucher aus allen Kanälen.
 > - Sie bilden sich eine Meinung (wichtig für jede weitere Interaktion in
->   deinem Unternehmen — Kauf, Bewerbung, Weiterempfehlung … etc.)
-> - Hier werden **Anfragen und Leads eingesammelt**.
+>   deinem Unternehmen — Kauf, Bewerbung, Weiterempfehlung,  … etc.)
+> - Hier werden **Anfragen und Leads eingesammelt**. Funnel
 > - Hier wird **verkauft** — Termin gebucht, Angebot angefordert, Produkt bezahlt.
-> - Hier kannst du **messen**, was funktioniert: Woher kommen die Leute, was
->   klicken sie, wo steigen sie aus.
+> - Hier  **messen**, was funktioniert: Woher kommen die Leute, was
+>   klicken sie, wo steigen sie aus. etc.. und wenn messen kann, kann man optimieren, 
 >
-> Genau das kann dir keine Social-Media-Seite bieten. Deswegen ist die Website
-> die Basis — und alles andere zahlt darauf ein."
 
-### Welt 3: Die Plattformen — das Telefonbuch des Internets
-> „Und dann gibt's die dritte Welt, die viele vergessen: Google Business,
-> Trustpilot, Branchenverzeichnisse. Ich nenn das immer das **Telefonbuch des
-> Internets.**
+### Welt 3: Die Plattformen, 
+> „Und dann gibt's die dritte Welt, die viele vergessen: Plattformen die dich Erwähnen:
+
+Google Business,
+> Trustpilot, Branchenverzeichnisse, Blogbeiträge von Redakture, Prajtisch auch webswiten die dich erwähenen , bewertenm und beurteilen. 
 >
-> Da stehst du drin — auch wenn du nichts machst. Leute suchen dort nach dir,
-> lesen Bewertungen, gucken sich Fotos an. Das schafft Vertrauen, bevor du
-> überhaupt mit jemandem gesprochen hast.
+> Menschen lesen Bewertungen, gucken sich Fotos an. Bilden sich eine meinung.
 >
-> Dazu kommt später ein eigenes Modul. Merk dir erstmal: Sie existiert. Und
-> auch da steht am Ende ein Link — auf deine Website."
+> Der Vorteil es kann ein großer Vertauenfaktor der nachteil man kann es schlecht kontrolliren
 
-> **Der Punkt:**
-> „**Alle drei Welten zeigen am Ende auf deine Website.** Instagram über den
-> Link in der Bio. Google Business über den Eintrag im Profil. Die Website ist
-> die Mitte."
-
-*Regie: Drei Kreise — Social Media / Website / Plattformen. Website in die
-Mitte, Pfeile von links und rechts drauf. Bei Welt 2 die vier Punkte einzeln
-einblenden.*
 
 ---
 
 ## Block 4 — Was eine Website technisch ist (7:00–8:00)
 
-> „Ganz kurz noch die Technik — und ich halte es wirklich kurz, weil du das
-> für den Anfang nicht brauchst.
->
-> Eine Website besteht aus zwei Sachen:
+>Noch ganz kurz die technscohen Grundlagen: 
+
+
+> Das du oder andere personen die Webseite Live sehen können sind 2 Dinge notwendig:
 >
 > **Erstens: die Adresse.** Das ist deine Domain — zum Beispiel
-> firma-mueller.de. Wie ein Straßenname.
+> firma-mueller.de. 
 >
-> **Zweitens: der Ort, an dem deine Seite liegt.** Das nennt man Hosting.
-> Wie das Grundstück, auf dem das Haus steht.
+> **Zweitens: der Sever auf dem deine Webseite aufgerufen werden kann , das nennt man das hosting,
 >
 > Domain und Hosting sind zwei getrennte Dinge, die man verbindet. Das ist
 > schon fast alles, was du am Anfang wissen musst. Den Rest macht später
 > Claude für uns.
 >
-> **Und ganz ehrlich: Das war's an Theorie.** Ich hab keine Lust, dir
-> stundenlang zu erklären, wie das Internet funktioniert. Wir wollen was
-> bauen."
+> **Und ganz ehrlich: Das war's an Theorie.** 
 
 *Regie: Zwei simple Symbole — Schild mit Adresse, Grundstück mit Haus.*
 
@@ -170,65 +148,14 @@ einblenden.*
 
 > „Was heißt das jetzt für dich?
 >
-> In den nächsten beiden Lektionen holen wir uns deine eigene Domain und legen
-> deine E-Mail-Adressen an. Das dauert zusammen keine 30 Minuten, und danach
-> hast du eine Adresse, die dir gehört.
+> In der nächsten Lektion bekommst du erklärt wie du eine Domain kaufst, sie bearbeitest , wie man emialpostfächer erstellt, sie mit Mailapps wie applemail, thunderbird oder outlook verbindet. etc.. 
 >
 > Und dann kommt der Teil, auf den du wahrscheinlich wartest: Wir bauen die
-> Website. Ich zeig dir, wie du das mit den richtigen Anweisungen in gut einer
+> Website. Ich zeig dir, wie du das mit den richtigen promts in gut einer
 > halben Stunde hinbekommst. Nicht in Wochen. Nicht für 2.000 Euro.
 >
-> Nimm zwei Sätze aus dieser Lektion mit: **Es geht um Aufmerksamkeit. Und
-> deine Website ist der Ort, wo aus Aufmerksamkeit Geschäft wird.**
->
-> Bis gleich in Lektion zwei."
+> Nimm zwei Sätze aus dieser Lektion mit:  in der Onlinewelt geht es Aufmerksamkeit, und wie man diese aufmerksamkeit positiv für sich und sein unternhemn nutzen kann,. 
 
 ---
 
-## Cheat Sheet (rechts neben dem Video)
 
-**Worum es geht: Aufmerksamkeit von vier Gruppen**
-- **Kunden** — kaufen dein Produkt, buchen deine Leistung
-- **Empfehler** — schicken deinen Link weiter (der Nachbar am Gartenzaun)
-- **Bewerber** — googeln dich, bevor sie sich bewerben
-- **Lieferanten & Partner** — schauen, mit wem sie es zu tun haben
-
-**Der Multiplikator**
-> Einmal bauen — und ab dann erklärt die Website es für dich. Bei jedem, rund
-> um die Uhr. Du musst nicht jedem alles neu erzählen.
-
-**Die drei Welten — und was jede kann**
-| Welt | Wofür sie da ist |
-|---|---|
-| **Social Media** | Content, Reichweite, Werbung — bringt Leute auf dich aufmerksam |
-| **Deine Website** | Point of Sale: Leads einsammeln, verkaufen, messen — hier passiert die Arbeit |
-| **Plattformen** (Google Business & Co.) | Telefonbuch des Internets: gefunden werden, Vertrauen aufbauen |
-
-→ Alle drei zeigen am Ende auf deine Website.
-
-**Zwei Bausteine einer Website**
-- **Domain** = die Adresse (firma-mueller.de)
-- **Hosting** = der Ort, wo die Seite liegt
-
-**Prompts:** in dieser Lektion keine — wir bauen noch nichts.
-**Software:** in dieser Lektion keine.
-
-**Als Nächstes:** Lektion 1.2 — Was ist eine Domain?
-
----
-
-## Notizen für den Dreh
-
-- **Block 2 ist die Lektion.** Erst das Warum, dann das Wo. Wenn du kürzen
-  musst, kürze Block 4.
-- Das **Gartenzaun-Beispiel** ist das Bild, an das sich die Leute erinnern —
-  erzähl es wie eine kleine Geschichte, nicht wie einen Aufzählungspunkt.
-- Bei den drei Welten **positiv bleiben**: Jede Welt hat ihre Aufgabe. Social
-  Media wird nicht schlechtgeredet — es bringt die Reichweite. Die Website
-  ist der Ort, wo die Arbeit passiert.
-- Stärkster Satz: *„Du musst nicht jedem alles neu erklären."* — danach kurz
-  Pause.
-- „Aufmerksamkeitsökonomie" einmal sagen und in einem Satz erklären. Nicht
-  wiederholen, sonst klingt's nach Buzzword.
-- Diese Lektion ist gratis und für viele der erste Kontakt mit dir. Sie
-  verkauft nichts — sie beweist, dass du Klartext redest.
