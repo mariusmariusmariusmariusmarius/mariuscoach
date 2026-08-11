@@ -20,7 +20,8 @@ Whiteboard oder eingeblendete Grafik.
 ## Block 1 — Einstieg (0:00–0:40)
 
 > „Bevor wir irgendwas bauen, klären wir die wichtigste Frage: Warum
-> überhaupt eine eigene Website?
+> überhaupt eine eigene Website?"
+
 ---
 
 ## Block 2 — Worum es geht: Aufmerksamkeit (0:40–4:00) ⭐⭐ Der Kern
@@ -30,8 +31,9 @@ Whiteboard oder eingeblendete Grafik.
 >
 > Wir leben in einer Aufmerksamkeitsökonomie. Heißt: **Wer gesehen wird,
 > macht das Geschäft.** Wer nicht gesehen wird, existiert praktisch nicht.
-
-Das gilt auch nicht nur für Webseiten, sondern auch allgemein im geschäftsleben
+>
+> Das gilt auch nicht nur für Webseiten, sondern auch allgemein im
+> Geschäftsleben.
 >
 > Und jetzt schau mal, wessen Aufmerksamkeit du eigentlich brauchst. Das sind
 > vier Gruppen — und die meisten denken nur an die erste."
@@ -51,18 +53,31 @@ Das gilt auch nicht nur für Webseiten, sondern auch allgemein im geschäftslebe
 > sucht gerade keine — dann googelt dich jeder, bevor er sich bewirbt.
 >
 > **Viertens: Lieferanten und Partner.** Auch die schauen sich an, mit wem sie
-> es zu tuen haben
-> Denk beispielsweise mal an eine Firma bei dir in der Region, die eine professionelle Webseite hat und Du siehst zwei-, dreimal die Woche was von denen auf Instagram. Die Website sieht professionell aus. Da stehen Bewertungen drauf, Bilder von echten Projekten.
-
-Und jetzt denk an einen Betrieb bei dir um die Ecke, den du online praktisch nicht findest.
-
-Beide liefern vielleicht exakt die gleiche Qualität ab. Aber jetzt sitzt bei beiden ein Lieferant oder ein potentieller Parter, und man redet über Konditionen oder über eine Partnerschaft etc. Was glaubst du, wer prozentual einen besseren Eindruck macht und gegebenenfalls auch ein besseres Ergebnis aus dieser Verhandlung oder aus dem Gespräch nimmt
-
-Wer sagt, das würde keine Rolle spielen? Der hat meiner Meinung nach keine Ahnung, und ich glaube, die Leute, die hier zuschauen, sind derselben Meinung wie ich.
-
-Und versteht mich nicht falsch... Ich sag nicht, dass der kleine Betrieb schlechter ist. Der Metzger um die Ecke kann der beste in der Stadt sein. Ich sag nur: dass du dir selbst als Geschäftsführer und deinem Unternehmen einen besseren Eindruck verschaffst sich das positiv auf jegliche geschäftszweige auswirkt.
-
- 
+> es zu tun haben.
+>
+> Denk beispielsweise mal an eine Firma bei dir in der Region, die eine
+> professionelle Webseite hat und du siehst zwei-, dreimal die Woche was von
+> denen auf Instagram. Die Website sieht professionell aus. Da stehen
+> Bewertungen drauf, Bilder von echten Projekten.
+>
+> Und jetzt denk an einen Betrieb bei dir um die Ecke, den du online praktisch
+> nicht findest.
+>
+> Beide liefern vielleicht exakt die gleiche Qualität ab. Aber jetzt sitzt bei
+> beiden ein Lieferant oder ein potentieller Partner, und man redet über
+> Konditionen oder über eine Partnerschaft etc. Was glaubst du, wer prozentual
+> einen besseren Eindruck macht und gegebenenfalls auch ein besseres Ergebnis
+> aus dieser Verhandlung oder aus dem Gespräch nimmt?
+>
+> Wer sagt, das würde keine Rolle spielen? Der hat meiner Meinung nach keine
+> Ahnung, und ich glaube, die Leute, die hier zuschauen, sind derselben Meinung
+> wie ich.
+>
+> Und versteht mich nicht falsch … Ich sag nicht, dass der kleine Betrieb
+> schlechter ist. Der Metzger um die Ecke kann der beste in der Stadt sein. Ich
+> sag nur: dass du dir selbst als Geschäftsführer und deinem Unternehmen einen
+> besseren Eindruck verschaffst sich das positiv auf jegliche Geschäftszweige
+> auswirkt."
 
 ---
 
@@ -93,7 +108,8 @@ Und versteht mich nicht falsch... Ich sag nicht, dass der kleine Betrieb schlech
 >
 > Und hier passiert die eigentliche Arbeit:
 > - Hier landen die Besucher aus allen Kanälen.
-- Sie bilden sich eine Meinung (wichtig für jeden weite interaktion in dinem unternhemen - kauf bewerbung weitermepfunlung... etc 
+> - Sie bilden sich eine Meinung (wichtig für jede weitere Interaktion in
+>   deinem Unternehmen — Kauf, Bewerbung, Weiterempfehlung … etc.)
 > - Hier werden **Anfragen und Leads eingesammelt**.
 > - Hier wird **verkauft** — Termin gebucht, Angebot angefordert, Produkt bezahlt.
 > - Hier kannst du **messen**, was funktioniert: Woher kommen die Leute, was
