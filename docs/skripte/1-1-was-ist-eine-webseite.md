@@ -21,15 +21,6 @@ Whiteboard oder eingeblendete Grafik.
 
 > „Bevor wir irgendwas bauen, klären wir die wichtigste Frage: Warum
 > überhaupt eine eigene Website?
->
-> Vielleicht denkst du dir: Ich hab Instagram, ich hab Facebook, meine Kunden
-> kommen über Empfehlung. Wozu der Aufwand?
->
-> Berechtigte Frage. Ich beantworte sie dir in den nächsten neun Minuten. Ohne
-> Fachbegriffe, ohne Technik — die kommt später."
-
-*Regie: Kein Intro-Jingle. Direkt reden.*
-
 ---
 
 ## Block 2 — Worum es geht: Aufmerksamkeit (0:40–4:00) ⭐⭐ Der Kern
@@ -37,9 +28,10 @@ Whiteboard oder eingeblendete Grafik.
 > „Fangen wir vorne an. Bei allem, was wir hier machen, geht es am Ende um
 > eine einzige Sache: **Aufmerksamkeit.**
 >
-> Wir leben in einer Aufmerksamkeitsökonomie. Heißt: Das Knappste heute ist
-> nicht Geld und nicht Material — es ist Aufmerksamkeit. **Wer gesehen wird,
+> Wir leben in einer Aufmerksamkeitsökonomie. Heißt: **Wer gesehen wird,
 > macht das Geschäft.** Wer nicht gesehen wird, existiert praktisch nicht.
+
+Das gilt auch nicht nur für Webseiten, sondern auch allgemein im geschäftsleben
 >
 > Und jetzt schau mal, wessen Aufmerksamkeit du eigentlich brauchst. Das sind
 > vier Gruppen — und die meisten denken nur an die erste."
@@ -52,36 +44,25 @@ Whiteboard oder eingeblendete Grafik.
 > alle. Beispiel aus dem echten Leben: Dein Nachbar unterhält sich mit
 > jemandem, und der sagt: 'Mein Gartenzaun müsste auch mal wieder gestrichen
 > werden.' Und dein Nachbar sagt: **'Warte mal, ich hab da was im Internet
-> gesehen — die Seite sah richtig professionell aus.'** Zack, Link geschickt,
+> gesehen — Das Unternehmen sah professionell aus.'** Zack, Link geschickt,
 > du bist im Rennen. Ohne dass du irgendwas gemacht hast.
->
-> Aber: Das funktioniert nur, wenn's was zu schicken gibt. Und wenn das, was
-> er schickt, gut aussieht.
 >
 > **Drittens: Bewerber.** Wenn du Mitarbeiter suchst — und ganz ehrlich, wer
 > sucht gerade keine — dann googelt dich jeder, bevor er sich bewirbt.
 >
 > **Viertens: Lieferanten und Partner.** Auch die schauen sich an, mit wem sie
-> es zu tun haben. Wer professionell auftritt, wird ernster genommen und
-> kriegt bessere Konditionen."
+> es zu tuen haben
+> Denk beispielsweise mal an eine Firma bei dir in der Region, die eine professionelle Webseite hat und Du siehst zwei-, dreimal die Woche was von denen auf Instagram. Die Website sieht professionell aus. Da stehen Bewertungen drauf, Bilder von echten Projekten.
 
-### Der Multiplikator
-> „Und jetzt der Grund, warum das Internet dabei dein größter Hebel ist.
->
-> Klar kannst du auch ohne Website Kunden gewinnen — über Empfehlung, über
-> Laufkundschaft, über dein Netzwerk. Sag ich gar nichts gegen. Aber das
-> **skaliert nicht.** Du musst jedem Einzelnen alles neu erzählen: was du
-> machst, wie du arbeitest, warum du gut bist.
->
-> Eine Website baust du **einmal** — und ab dann macht sie das für dich. Bei
-> jedem. Rund um die Uhr. **Jeder sieht dieselbe Seite, jeder kriegt denselben
-> guten Eindruck.** Du musst nicht mehr jedem alles neu erklären.
->
-> Das ist der Multiplikator."
+Und jetzt denk an einen Betrieb bei dir um die Ecke, den du online praktisch nicht findest.
 
-*Regie: Die vier Gruppen einzeln einblenden. Beim Gartenzaun-Beispiel Zeit
-lassen — das ist das Bild, das hängen bleibt. Beim Multiplikator: eine
-Website in der Mitte, viele Pfeile raus.*
+Beide liefern vielleicht exakt die gleiche Qualität ab. Aber jetzt sitzt bei beiden ein Lieferant oder ein potentieller Parter, und man redet über Konditionen oder über eine Partnerschaft etc. Was glaubst du, wer prozentual einen besseren Eindruck macht und gegebenenfalls auch ein besseres Ergebnis aus dieser Verhandlung oder aus dem Gespräch nimmt
+
+Wer sagt, das würde keine Rolle spielen? Der hat meiner Meinung nach keine Ahnung, und ich glaube, die Leute, die hier zuschauen, sind derselben Meinung wie ich.
+
+Und versteht mich nicht falsch... Ich sag nicht, dass der kleine Betrieb schlechter ist. Der Metzger um die Ecke kann der beste in der Stadt sein. Ich sag nur: dass du dir selbst als Geschäftsführer und deinem Unternehmen einen besseren Eindruck verschaffst sich das positiv auf jegliche geschäftszweige auswirkt.
+
+ 
 
 ---
 
@@ -112,6 +93,7 @@ Website in der Mitte, viele Pfeile raus.*
 >
 > Und hier passiert die eigentliche Arbeit:
 > - Hier landen die Besucher aus allen Kanälen.
+- Sie bilden sich eine Meinung (wichtig für jeden weite interaktion in dinem unternhemen - kauf bewerbung weitermepfunlung... etc 
 > - Hier werden **Anfragen und Leads eingesammelt**.
 > - Hier wird **verkauft** — Termin gebucht, Angebot angefordert, Produkt bezahlt.
 > - Hier kannst du **messen**, was funktioniert: Woher kommen die Leute, was
