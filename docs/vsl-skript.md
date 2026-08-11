@@ -4,18 +4,18 @@
 Es beantwortet: Wer bist du? Was hast du gemacht? **Warum machst du das?**
 Und vor allem: **Was habe ich davon?** Ziel am Ende: kostenlos registrieren.
 
-**Länge:** ~7 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
+**Länge:** ~7,5 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
 sprichst direkt in die Linse. Kein Teleprompter-Ablesen — Stichpunkte
 reichen, dein Ton ist der Wert.
 
-**Falls es zu lang wird** (Reihenfolge zum Kürzen): ① Block 7b weglassen
-(steckt inhaltlich schon im Versprechen), ② Block 2 auf 15 Sekunden, ③ Block 5
-auf die zwei stärksten Punkte (5.1 und 5.3), ④ in Block 7.1 die drei Typen nur
-benennen, ohne den Nutzen-Satz dahinter. Block 1, 6, 7.2 und 8 niemals kürzen
-— die tragen das Video.
+**Falls es zu lang wird** (Reihenfolge zum Kürzen): ① Block 7b bleibt raus
+(steckt in 5.5 und im Versprechen), ② Block 2 auf 15 Sekunden, ③ Block 4 auf
+vier statt sechs Fragen, ④ Block 5 auf die zwei stärksten Punkte (5.1 und 5.3),
+⑤ in Block 7.1 die drei Typen nur benennen, ohne den Nutzen-Satz dahinter.
+Block 1, 3, 5.5, 6, 7.2 und 8 niemals kürzen — die tragen das Video.
 
-**Für kalten Traffic** (Ads) eine 3-Minuten-Fassung schneiden: Block 1, 3, 6,
-7 und 9. Der Rest ist für Leute, die dich schon kennen.
+**Für kalten Traffic** (Ads) eine 3-Minuten-Fassung schneiden: Block 1, 3, 5.5,
+6, 7 und 9. Der Rest ist für Leute, die dich schon kennen.
 
 **Alle Werte, Argumente, Trust Points und Einwandbehandlungen** stehen
 gesammelt in `docs/messaging.md` — dort auch die vollständige Geld-Rechnung
@@ -139,14 +139,48 @@ entscheidet sich, ob jemand kauft.*
 *Regie: Pro Punkt ein kurzer Screencapture-Einschub. Nicht zu viel Text
 einblenden — die Beispiele sollen konkret bleiben.*
 
-## 6. Die Wahrheit über „Blueprints" (3:40–4:40) ⭐⭐ Deine Abgrenzung
+## 5.5 Der Hebel (3:40–4:15) ⭐ Die Brücke
+
+*Macht aus „eine Website" ein **System** — und liefert die Begründung, warum
+Block 6 überhaupt kommt. Ruhig und aufbauend sprechen, das ist kein
+Verkaufsteil, das ist eine Erklärung.*
+
+> „Und jetzt der Teil, der aus einer Website ein System macht.
+>
+> Ohne Website gewinnst du Kunden über Empfehlung, über Laufkundschaft, über
+> dein Netzwerk. Sag ich gar nichts gegen — aber du musst **jedem Einzelnen
+> alles neu erzählen.** Was du machst, wie du arbeitest, warum du gut bist in
+> dem, was du tust. Jedes Mal von vorne. Das kostet dich jedes Mal Zeit.
+>
+> Die Website baust du **einmal** — und ab dann übernimmt sie das. Den ersten
+> Eindruck. Das Vertrauen. Sie weckt Interesse, und im besten Fall wird aus
+> einem Besucher ein **Lead**. Also ein Kontakt, der wirklich Interesse an
+> deinem Produkt oder deiner Leistung hat.
+>
+> Und dieser Ablauf passiert nicht einmal. Der passiert hundertmal am Tag.
+> Tausendmal.
+>
+> Jetzt stell dir vor, du machst **an einer einzigen Stelle** in diesem Ablauf
+> zehn Prozent besser. Deine Position bei Google. Oder wie viele von den
+> Besuchern am Ende wirklich anfragen. Das wirkt dann auf jeden Einzelnen von
+> denen.
+>
+> **Je besser das System, desto länger der Hebel.**"
+
+*Regie: Beim „hundertmal, tausendmal" eine simple Animation — ein Besucher
+wird zu vielen. Beim letzten Satz stehenbleiben und in die Kamera.*
+
+## 6. Die Wahrheit über „Blueprints" (4:15–5:15) ⭐⭐ Deine Abgrenzung
 
 *Der wichtigste Block im Video. Hier erklärst du nicht nur, WAS du machst,
 sondern nach welchem **Prinzip** du dein Wissen weitergibst. Ohne Schnitte,
 direkt in die Kamera.*
 
 ### 6.1 Die Ansage
-> „Und jetzt was, das dir kein anderer sagt:
+> „Bleibt eine Frage: **Woher weißt du, an welcher Stelle du besser werden
+> musst?**
+>
+> Und da kommt die unbequeme Wahrheit, die dir kein anderer sagt:
 >
 > **Niemand ist allwissend.** Auch ich nicht. Niemand kann dir sagen, welches
 > Keyword funktioniert, welches Bild in der Werbung zieht, welcher Text
@@ -177,7 +211,11 @@ direkt in die Kamera.*
 > **Der Einzige, auf den man hören muss, ist der Markt.** Und der antwortet
 > dir — aber nur, wenn du ihn fragst. Genau deswegen ist Tracking so wichtig.
 > Nicht weil's schick ist, sondern weil es die einzige Wahrheit ist, die du
-> kriegen kannst."
+> kriegen kannst.
+>
+> Und gefragt wird mit echten Daten: was deine Besucher auf der Seite machen,
+> was bei Google gesucht wird, was bei Facebook und Instagram läuft. **Wir
+> raten nicht — wir gucken nach.**"
 
 ### 6.4 Und das Beste: du brauchst dafür kein technisches Wissen
 > „Jetzt denkst du vielleicht: Klingt gut, aber ich kann sowas nicht.
@@ -194,6 +232,10 @@ direkt in die Kamera.*
 > Das ist Arbeit, für die Firmen normalerweise Leute einstellen. Bei dir ist
 > es ein Satz im Chat.
 >
+> Und diese Anbindungen machst du dir in den Modulen selbst. Tools,
+> Datenbanken, Werbekonten — **mit Claude hängt sowas in unter zehn Minuten
+> dran.** Ich zeig dir jeden Schritt.
+>
 > Deswegen kannst du eigentlich nichts falsch machen. Du testest, du guckst,
 > was der Markt sagt, du passt an. **Der einzige echte Fehler ist, gar nicht
 > zu messen.**"
@@ -203,7 +245,7 @@ Bei 6.1 ruhig etwas Genervtheit zulassen, das ist echt. Bei 6.4 einen kurzen
 Screencapture einblenden: die Frage im Chat, darunter die Antwort mit echten
 Zahlen. Ein Beispiel reicht.*
 
-## 7. Für wen das hier ist — und mein Versprechen (4:40–5:55) ⭐⭐ Der emotionale Höhepunkt
+## 7. Für wen das hier ist — und mein Versprechen (5:15–6:30) ⭐⭐ Der emotionale Höhepunkt
 
 *Kommt bewusst direkt NACH der Anti-Guru-Passage — dadurch wird es
 glaubwürdig statt marktschreierisch. Ruhig sprechen, jeden Punkt einzeln
@@ -273,7 +315,11 @@ ich."*
 *Regie: Die fünf Punkte einzeln einblenden, während du sie sagst. Beim letzten
 Satz zurück in die Kamera, ohne Text im Bild.*
 
-## 7b. Der Value-Shift (5:55–6:10)
+## 7b. Der Value-Shift (nur bei Bedarf, +12 Sek.)
+
+*⚠️ Seit Block 5.5 („Der Hebel") inhaltlich weitgehend abgedeckt — **im
+Standard-Schnitt weglassen.** Nur einbauen, wenn du die Automations-Beispiele
+konkret nennen willst (z. B. in einer Fassung für bestehende Unternehmer).*
 
 > „Und damit sind wir beim eigentlichen Punkt. **Was ich dir biete, ist nicht
 > nur, eine Website zu bauen. Es ist, dein Unternehmen zu automatisieren und
@@ -283,7 +329,7 @@ Satz zurück in die Kamera, ohne Text im Bild.*
 > Bewertungen, die von allein eingesammelt werden. Die Website ist nur der
 > Anfang."
 
-## 8. Reden wir über Geld (6:10–6:50) ⭐
+## 8. Reden wir über Geld (6:30–7:10) ⭐
 
 *Zahlen ruhig und langsam sagen — hier rechnet der Zuschauer mit.*
 
@@ -311,7 +357,7 @@ Satz zurück in die Kamera, ohne Text im Bild.*
 *Regie: Die zwei Rechnungen als Grafik nebeneinander einblenden — links der
 klassische Weg, rechts deiner. Nicht überladen, nur die Zahlen.*
 
-## 9. CTA (6:50–7:05)
+## 9. CTA (7:10–7:25)
 
 > „Und wenn du erstmal reinschauen willst: Die Basics sind komplett kostenlos.
 > Domain, E-Mail-Adressen, wie das Internet überhaupt funktioniert — kostet
