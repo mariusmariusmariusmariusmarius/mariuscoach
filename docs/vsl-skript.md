@@ -4,18 +4,18 @@
 Es beantwortet: Wer bist du? Was hast du gemacht? **Warum machst du das?**
 Und vor allem: **Was habe ich davon?** Ziel am Ende: kostenlos registrieren.
 
-**Länge:** ~7,5 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
+**Länge:** ~6,25 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
 sprichst direkt in die Linse. Kein Teleprompter-Ablesen — Stichpunkte
 reichen, dein Ton ist der Wert.
 
-**Falls es zu lang wird** (Reihenfolge zum Kürzen): ① Block 7b bleibt raus
-(steckt in 5.5 und im Versprechen), ② Block 2 auf 15 Sekunden, ③ Block 4 auf
-vier statt sechs Fragen, ④ Block 5 auf die zwei stärksten Punkte (5.1 und 5.3),
-⑤ in Block 7.1 die drei Typen nur benennen, ohne den Nutzen-Satz dahinter.
-Block 1, 3, 5.5, 6, 7.2 und 8 niemals kürzen — die tragen das Video.
+**Falls es zu lang wird** (Reihenfolge zum Kürzen): ① Block 6b bleibt raus
+(steckt in 5.3 und im Versprechen), ② Block 2 auf 15 Sekunden, ③ Block 4 auf
+vier statt sechs Fragen, ④ in Block 5.2 den Shop-/Datenbank-Satz weglassen,
+⑤ in Block 6.1 die drei Typen nur benennen, ohne den Nutzen-Satz dahinter.
+**Block 5.1, 5.4, 6.2 und 7 niemals kürzen** — die tragen das Video.
 
-**Für kalten Traffic** (Ads) eine 3-Minuten-Fassung schneiden: Block 1, 3, 5.5,
-6, 7 und 9. Der Rest ist für Leute, die dich schon kennen.
+**Für kalten Traffic** (Ads) eine 3-Minuten-Fassung schneiden: Block 1, 3, 5,
+6 und 8. Der Rest ist für Leute, die dich schon kennen.
 
 **Alle Werte, Argumente, Trust Points und Einwandbehandlungen** stehen
 gesammelt in `docs/messaging.md` — dort auch die vollständige Geld-Rechnung
@@ -86,172 +86,81 @@ und der Klartext-Prompt fürs freie Reden.
 
 *Regie: Die Fragen als Text einblenden, eine nach der anderen.*
 
-## 5. Was du wirklich bekommst (2:25–3:40) ⭐⭐ Der Mehrwert-Block
+## 5. Nicht nur eine Website (2:25–4:05) ⭐⭐ Das Herzstück
 
-*Vier Punkte, jeder in wenigen Sätzen. Das ist das Herzstück — hier
-entscheidet sich, ob jemand kauft.*
+*Ersetzt die früheren Blöcke 5, 5.5 und 6 — statt drei Minuten Aufzählung ein
+Bogen in vier Schritten: Abgrenzung → was es konkret heißt → warum es sich
+multipliziert → kein Guru, sondern testen. Wenig Worte, viel Haltung.
+Durchgehend direkt in die Kamera, keine Schnitte.*
 
-### 5.1 Eine Seite, die besser aussieht als 90 % da draußen
+### 5.1 Die Abgrenzung (2:25–2:45)
 
-> „Erstens: Deine Seite sieht nicht aus wie selbstgebaut. Sie sieht besser
-> aus als 90 Prozent von dem, was da draußen rumsteht. Warum? Weil ich dir
-> die Skills mitgebe, die fertigen Prompts, und zeige, wie du dir Vorbilder
-> ranholst. Du musst nichts über Design wissen — du kriegst das Ergebnis.
+> „Was du hier lernst, ist nicht nur, wie man eine Website baut, die gut
+> aussieht. Das kann heute ehrlich gesagt jeder.
 >
-> Und ganz ehrlich: **Das ist nur das Mindeste.** Da fängt's erst an."
-
-### 5.2 Tempo — und du musst kein Technik-Nerd sein
-
-> „Zweitens: das Tempo. Deine erste Website steht an einem Tag. Eine
-> Landingpage in zwei Stunden. Nicht weil ich schnell tippe, sondern weil du
-> die fertigen Prompts bekommst und nicht mehr suchen musst.
+> Und ja — deine wird gut aussehen. Dafür sorgen die Skills und die fertigen
+> Prompts, und sie steht an einem Tag. **Aber das ist nur das Mindeste. Da
+> fängt's erst an.**
 >
-> Und das Beste: **Du musst dafür kein Technik-Nerd sein.** Wir arbeiten nur
-> mit Anbietern, die sich direkt an Claude anschließen lassen — deine
-> Datenbank, dein Hosting, deine SEO-Daten, deine Werbeanzeigen. Alles hängt
-> an einem Chat.
->
-> Du musst nicht verstehen, wie ein Server funktioniert. Du musst nicht
-> wissen, wie man eine Datenbank aufsetzt. **Claude regelt das. Du sagst, was
-> du willst.** Wir gehen nirgends ins Detail, wo's dir nichts bringt."
+> Wir gehen tiefer. Es geht darum, wie du mit dieser Website **auf dem Markt
+> mitmischst.**"
 
-### 5.3 Echte Marktdaten statt Raten
+### 5.2 Drei Sachen, die den Unterschied machen (2:45–3:25)
 
-> „Drittens — und das ist für mich der größte Punkt: Du rätst nicht mehr.
+> „Und das sind drei Dinge.
 >
-> Wir binden echte Suchdaten an. Du siehst in Echtzeit, was die Leute bei
-> Google wirklich eintippen, wie oft, und wie hart die Konkurrenz ist. Claude
-> analysiert das und baut dir daraus direkt die Seiten.
+> **Erstens: gefunden werden.** Suchmaschinenoptimierung — aber nicht als
+> Theorie. Mit echten Suchdaten. Du siehst, was die Leute wirklich bei Google
+> eintippen, und baust deine Seite genau darauf.
 >
-> Das Gleiche bei Werbung: Meta und Google hängen direkt mit dran. Du siehst
-> echte Zahlen, keine Vermutungen."
+> **Zweitens: Die Seite muss arbeiten.** Sie sieht nicht nur schön aus. Sie
+> sammelt Anfragen ein, bucht Termine, verkauft. Und wenn du willst:
+> Onlineshop, eigene Datenbank, dein eigenes Buchungstool. Sowas zeigt dir
+> sonst keiner.
+>
+> **Drittens: Du musst sehen, was passiert.** Tracking. Woher die Leute
+> kommen, was sie anklicken, wo sie abspringen.
+>
+> Und für alle drei brauchst du **kein technisches Fachwissen.** Du brauchst
+> Claude und die richtigen Tools. Mit Claude hängt so ein Tool in zehn Minuten
+> dran — ich zeig dir jedes einzelne."
 
-### 5.4 Und dann wird's richtig interessant
+### 5.3 Warum sich das multipliziert (3:25–3:40)
 
-> „Viertens: Wenn die Seite steht, hört's nicht auf. Onlineshop mit
-> Zahlungsanbieter. Eigene Datenbank. Eigener Server. Ein Terminbuchungstool,
-> das du dir selbst baust statt zehn Euro im Monat zu zahlen. Ein Cockpit, in
-> dem du all deine Anfragen siehst.
+> „Und der Ablauf läuft nicht einmal. Der läuft hundertmal am Tag.
 >
-> Sowas zeigt dir sonst keiner — und mit Claude ist das machbar, auch wenn du
-> vorher nie eine Zeile Code geschrieben hast."
-
-*Regie: Pro Punkt ein kurzer Screencapture-Einschub. Nicht zu viel Text
-einblenden — die Beispiele sollen konkret bleiben.*
-
-## 5.5 Der Hebel (3:40–4:15) ⭐ Die Brücke
-
-*Macht aus „eine Website" ein **System** — und liefert die Begründung, warum
-Block 6 überhaupt kommt. Ruhig und aufbauend sprechen, das ist kein
-Verkaufsteil, das ist eine Erklärung.*
-
-> „Und jetzt der Teil, der aus einer Website ein System macht.
->
-> Ohne Website gewinnst du Kunden über Empfehlung, über Laufkundschaft, über
-> dein Netzwerk. Sag ich gar nichts gegen — aber du musst **jedem Einzelnen
-> alles neu erzählen.** Was du machst, wie du arbeitest, warum du gut bist in
-> dem, was du tust. Jedes Mal von vorne. Das kostet dich jedes Mal Zeit.
->
-> Die Website baust du **einmal** — und ab dann übernimmt sie das. Den ersten
-> Eindruck. Das Vertrauen. Sie weckt Interesse, und im besten Fall wird aus
-> einem Besucher ein **Lead**. Also ein Kontakt, der wirklich Interesse an
-> deinem Produkt oder deiner Leistung hat.
->
-> Und dieser Ablauf passiert nicht einmal. Der passiert hundertmal am Tag.
-> Tausendmal.
->
-> Jetzt stell dir vor, du machst **an einer einzigen Stelle** in diesem Ablauf
-> zehn Prozent besser. Deine Position bei Google. Oder wie viele von den
-> Besuchern am Ende wirklich anfragen. Das wirkt dann auf jeden Einzelnen von
-> denen.
+> Wenn du an **einer einzigen Stelle** zehn Prozent besser wirst, wirkt das auf
+> jeden Einzelnen von denen.
 >
 > **Je besser das System, desto länger der Hebel.**"
 
-*Regie: Beim „hundertmal, tausendmal" eine simple Animation — ein Besucher
-wird zu vielen. Beim letzten Satz stehenbleiben und in die Kamera.*
+### 5.4 Und jetzt, was du hier NICHT kriegst (3:40–4:05) ⭐ Deine Abgrenzung
 
-## 6. Die Wahrheit über „Blueprints" (4:15–5:15) ⭐⭐ Deine Abgrenzung
+> „Ich bin kein Guru. Ich verkauf dir keinen Blueprint. Und ich garantier dir
+> gar nichts.
+>
+> Weil dir niemand sagen kann, welches Keyword zieht, welcher Text verkauft,
+> welche Seite konvertiert. **Ich auch nicht.** Wer was anderes behauptet, lügt.
+>
+> **Der Einzige, der das entscheidet, ist der Markt.**
+>
+> Deswegen zeig ich dir nicht, was funktioniert. Ich zeig dir, **wie du es
+> rausfindest.** Testen. Messen. Besser machen. Und dann von vorne.
+>
+> Der einzige echte Fehler ist, gar nicht zu messen."
 
-*Der wichtigste Block im Video. Hier erklärst du nicht nur, WAS du machst,
-sondern nach welchem **Prinzip** du dein Wissen weitergibst. Ohne Schnitte,
-direkt in die Kamera.*
+*Regie: 5.1 und 5.4 ohne Bild-Einblendungen — nur du. Bei 5.2 pro Punkt ein
+kurzer Screencapture (Suchvolumen-Tabelle, Anfrage die reinkommt,
+Besucher-Dashboard). Bei 5.3 eine simple Animation: einer wird zu vielen.
+Nach „Der einzige echte Fehler ist, gar nicht zu messen" eine Sekunde Stille.*
 
-### 6.1 Die Ansage
-> „Bleibt eine Frage: **Woher weißt du, an welcher Stelle du besser werden
-> musst?**
->
-> Und da kommt die unbequeme Wahrheit, die dir kein anderer sagt:
->
-> **Niemand ist allwissend.** Auch ich nicht. Niemand kann dir sagen, welches
-> Keyword funktioniert, welches Bild in der Werbung zieht, welcher Text
-> verkauft. Niemand kann dir sagen, wie du deine Dienstleistung verkaufst —
-> dein Markt, deine Region, deine Kunden.
->
-> Und trotzdem läuft da draußen ein Haufen selbsternannter Gurus rum, die dir
-> DEN Blueprint verkaufen wollen. Das eine System. Die eine Formel. **Ich kann
-> das ehrlich gesagt nicht mehr hören.**"
-
-### 6.2 Warum es diesen Blueprint nicht geben kann
-> „Und zwar aus einem ganz simplen Grund: **Der Markt steht nicht still.** Er
-> bewegt sich — und aktuell schneller als jemals zuvor. Was letztes Jahr
-> funktioniert hat, ist dieses Jahr durch. Was bei deinem Nachbarn läuft, kann
-> bei dir floppen.
->
-> Ein Blueprint ist immer eine Momentaufnahme von gestern. Verkauft wird er
-> dir als Zukunft."
-
-### 6.3 Das Prinzip: testen statt raten
-> „Deswegen mach ich's anders. **Wir verlassen uns nicht auf Wahrsager. Wir
-> testen.** Testen, testen, testen.
->
-> Website, Werbeanzeigen, deine Texte — wir verbessern das stetig, Stück für
-> Stück. Wir messen **jede Metrik, die messbar ist**, und vergleichen sie mit
-> dem, was der Markt gerade macht. Dann passen wir an. Dann messen wir wieder.
->
-> **Der Einzige, auf den man hören muss, ist der Markt.** Und der antwortet
-> dir — aber nur, wenn du ihn fragst. Genau deswegen ist Tracking so wichtig.
-> Nicht weil's schick ist, sondern weil es die einzige Wahrheit ist, die du
-> kriegen kannst.
->
-> Und gefragt wird mit echten Daten: was deine Besucher auf der Seite machen,
-> was bei Google gesucht wird, was bei Facebook und Instagram läuft. **Wir
-> raten nicht — wir gucken nach.**"
-
-### 6.4 Und das Beste: du brauchst dafür kein technisches Wissen
-> „Jetzt denkst du vielleicht: Klingt gut, aber ich kann sowas nicht.
->
-> Doch. Und genau das ist der Punkt, an dem sich hier alles ändert. Weil wir
-> Claude mit allem verbinden — deiner Website, deiner Datenbank, deinen
-> Werbekonten, deinen Suchdaten. Und dann läuft das komplett **aus der
-> Chatbox**.
->
-> Du fragst: 'Wie lief die Anzeige letzte Woche?' — und kriegst die Antwort.
-> Du sagst: 'Schreib die Startseite auf das Keyword um, das am besten läuft' —
-> und es passiert.
->
-> Das ist Arbeit, für die Firmen normalerweise Leute einstellen. Bei dir ist
-> es ein Satz im Chat.
->
-> Und diese Anbindungen machst du dir in den Modulen selbst. Tools,
-> Datenbanken, Werbekonten — **mit Claude hängt sowas in unter zehn Minuten
-> dran.** Ich zeig dir jeden Schritt.
->
-> Deswegen kannst du eigentlich nichts falsch machen. Du testest, du guckst,
-> was der Markt sagt, du passt an. **Der einzige echte Fehler ist, gar nicht
-> zu messen.**"
-
-*Regie: Der ehrlichste Moment im Video — hier hebst du dich von jedem Guru ab.
-Bei 6.1 ruhig etwas Genervtheit zulassen, das ist echt. Bei 6.4 einen kurzen
-Screencapture einblenden: die Frage im Chat, darunter die Antwort mit echten
-Zahlen. Ein Beispiel reicht.*
-
-## 7. Für wen das hier ist — und mein Versprechen (5:15–6:30) ⭐⭐ Der emotionale Höhepunkt
+## 6. Für wen das hier ist — und mein Versprechen (4:05–5:20) ⭐⭐ Der emotionale Höhepunkt
 
 *Kommt bewusst direkt NACH der Anti-Guru-Passage — dadurch wird es
 glaubwürdig statt marktschreierisch. Ruhig sprechen, jeden Punkt einzeln
 sacken lassen.*
 
-### 7.1 Egal, wo du gerade stehst
+### 6.1 Egal, wo du gerade stehst
 
 *Die direkte Ansprache. Jeder Zuschauer soll sich in einem der drei
 wiedererkennen — und zwar bevor das Versprechen kommt. Bei jedem Typ eine
@@ -282,7 +191,7 @@ kurze Pause, damit die Einordnung sitzt.*
 runterrattern — der Zuschauer braucht den Moment, in dem er denkt: „Das bin
 ich."*
 
-### 7.2 Mein Versprechen
+### 6.2 Mein Versprechen
 
 > „Und jetzt, wo ich dir gerade gesagt hab, dass niemand die Zukunft kennt,
 > kommt trotzdem ein Versprechen. Aber ein ehrliches.
@@ -315,9 +224,9 @@ ich."*
 *Regie: Die fünf Punkte einzeln einblenden, während du sie sagst. Beim letzten
 Satz zurück in die Kamera, ohne Text im Bild.*
 
-## 7b. Der Value-Shift (nur bei Bedarf, +12 Sek.)
+## 6b. Der Value-Shift (nur bei Bedarf, +12 Sek.)
 
-*⚠️ Seit Block 5.5 („Der Hebel") inhaltlich weitgehend abgedeckt — **im
+*⚠️ Seit Block 5.3 weitgehend abgedeckt — **im
 Standard-Schnitt weglassen.** Nur einbauen, wenn du die Automations-Beispiele
 konkret nennen willst (z. B. in einer Fassung für bestehende Unternehmer).*
 
@@ -329,7 +238,7 @@ konkret nennen willst (z. B. in einer Fassung für bestehende Unternehmer).*
 > Bewertungen, die von allein eingesammelt werden. Die Website ist nur der
 > Anfang."
 
-## 8. Reden wir über Geld (6:30–7:10) ⭐
+## 7. Reden wir über Geld (5:20–6:00) ⭐
 
 *Zahlen ruhig und langsam sagen — hier rechnet der Zuschauer mit.*
 
@@ -357,7 +266,7 @@ konkret nennen willst (z. B. in einer Fassung für bestehende Unternehmer).*
 *Regie: Die zwei Rechnungen als Grafik nebeneinander einblenden — links der
 klassische Weg, rechts deiner. Nicht überladen, nur die Zahlen.*
 
-## 9. CTA (7:10–7:25)
+## 8. CTA (6:00–6:15)
 
 > „Und wenn du erstmal reinschauen willst: Die Basics sind komplett kostenlos.
 > Domain, E-Mail-Adressen, wie das Internet überhaupt funktioniert — kostet
@@ -408,17 +317,17 @@ Anderer Job: Der Kauf ist durch — jetzt geht's um Orientierung. 60–90 Sek.
 
 - **Ad-Variante 1:** Block 1 als 20-Sekunden-Cut („Wie viel Geld hast du schon
   an eine selbsternannte Agentur gezahlt?") — stärkster Scroll-Stopper
-- **Ad-Variante 2:** Block 6 (Anti-Guru: „Wenn dir jemand sagt, er hat den
+- **Ad-Variante 2:** Block 5.4 (Anti-Guru: „Wenn dir jemand sagt, er hat den
   Blueprint, lügt er") — polarisiert und passt perfekt in eine Szene voller
   Blueprint-Verkäufer
 - **Ad-Variante 3:** Block 3 (die These vom sterbenden Webdesign)
 - **Organischer Content:** Jede der sechs Fragen aus Block 4 ist ein eigener
   Reel-Hook; jeder Modul-Satz aus der Tabelle oben ist ein Post
-- **Funnel-Ergebnisseite:** Kurzversion (Block 1 + 7 + 8)
+- **Funnel-Ergebnisseite:** Kurzversion (Block 1 + 6 + 7)
 
 ## Notizen für den Dreh
 
-- Block 1, 6 und 7 sind die drei Stellen, an denen es zählt — ruhig mehrmals
+- Block 1, 5.4 und 6 sind die drei Stellen, an denen es zählt — ruhig mehrmals
   aufnehmen, bis der Ton sitzt
 - Nicht auswendig lernen. Stichpunkte im Kopf, dann frei sprechen
 - Bei „selbsternannte Agentur" und beim Blueprint-Satz ruhig Ironie
