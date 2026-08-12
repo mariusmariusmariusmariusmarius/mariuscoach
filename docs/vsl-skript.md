@@ -4,7 +4,7 @@
 Es beantwortet: Wer bist du? Was hast du gemacht? **Warum machst du das?**
 Und vor allem: **Was habe ich davon?** Ziel am Ende: kostenlos registrieren.
 
-**Länge:** ~6,75 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
+**Länge:** ~7 Minuten. Setting: Standing Desk, Kamera auf Augenhöhe, du
 sprichst direkt in die Linse. Kein Teleprompter-Ablesen — Stichpunkte
 reichen, dein Ton ist der Wert.
 
@@ -87,7 +87,7 @@ und der Klartext-Prompt fürs freie Reden.
 
 *Regie: Die Fragen als Text einblenden, eine nach der anderen.*
 
-## 5. Nicht nur eine Website (2:25–4:40) ⭐⭐ Das Herzstück
+## 5. Nicht nur eine Website (2:25–5:00) ⭐⭐ Das Herzstück
 
 *Ersetzt die früheren Blöcke 5, 5.5 und 6 — statt drei Minuten Aufzählung ein
 Bogen in vier Schritten: Abgrenzung → was es konkret heißt → warum es sich
@@ -106,13 +106,16 @@ Durchgehend direkt in die Kamera, keine Schnitte.*
 > Wir gehen tiefer. Es geht darum, wie du mit dieser Website **auf dem Markt
 > mitmischst.**"
 
-### 5.2 Drei Sachen, die den Unterschied machen (2:45–3:30)
+### 5.2 Drei Sachen, die den Unterschied machen (2:45–3:40)
 
 > „Und das sind drei Dinge.
 >
-> **Erstens: Aufmerksamkeit.** Ohne die passiert gar nichts. Und dahin führen
-> zwei Wege: **bezahlt** — über Werbeanzeigen. Oder **organisch** — indem du
-> bei Google gefunden wirst. Meistens beides.
+> **Erstens: Aufmerksamkeit.** Ohne die passiert gar nichts.
+>
+> Und die kommt aus drei Richtungen: Die Leute **suchen** — bei Google, und
+> finden dich. Sie kennen dich oder dein Unternehmen **von Social Media.** Oder
+> sie stoßen **auf einer Plattform** auf dich — Google Business, Bewertungen,
+> Branchenverzeichnisse. Bezahlt oder organisch. Meistens beides.
 >
 > Und du rätst dabei nicht. Wir hängen Claude an eine Datenbank mit echten,
 > live abgefragten Suchdaten. **Claude sucht für dich:** auf welche Begriffe es
@@ -132,7 +135,7 @@ Durchgehend direkt in die Kamera, keine Schnitte.*
 > Claude und die richtigen Tools. Mit Claude hängt so ein Tool in zehn Minuten
 > dran — ich zeig dir jedes einzelne."
 
-### 5.3 Warum sich das multipliziert (3:30–3:45)
+### 5.3 Warum sich das multipliziert (3:40–3:55)
 
 > „Und der Ablauf läuft nicht einmal. Der läuft hundertmal am Tag.
 >
@@ -141,7 +144,7 @@ Durchgehend direkt in die Kamera, keine Schnitte.*
 >
 > **Je besser das System, desto länger der Hebel.**"
 
-### 5.4 Und jetzt, was du hier NICHT kriegst (3:45–4:40) ⭐ Deine Abgrenzung
+### 5.4 Und jetzt, was du hier NICHT kriegst (3:55–5:00) ⭐ Deine Abgrenzung
 
 > „Ich bin kein Guru. Ich verkauf dir keinen Blueprint. Und ich garantier dir
 > gar nichts.
@@ -151,23 +154,30 @@ Durchgehend direkt in die Kamera, keine Schnitte.*
 >
 > **Der Einzige, der das entscheidet, ist der Markt.**
 >
-> Und genau deswegen messen wir. Nicht irgendwas — sondern alles, was zählt:
+> Und genau deswegen messen wir. **Wir hängen Claude an drei große
+> Datenquellen:**
 >
-> **Deine Sichtbarkeit bei Google.** Nicht nur die Suchbegriffe. Auch wie
-> schnell deine Seite lädt, wer auf dich verlinkt, wo du im Vergleich zur
-> Konkurrenz stehst.
+> **Erstens: die Suchmaschinen.** Google, Bing und Co. Was tippen die Leute
+> wirklich ein, welche Begriffe lohnen sich, in welcher Region, in welcher
+> Branche — und wer wird gerade dafür gefunden statt dir. Dazu kommt, was deine
+> Seite technisch bremst: Ladezeit, wer auf dich verlinkt, wo du im Vergleich
+> zur Konkurrenz stehst.
 >
-> **Deine Werbung.** Facebook und Instagram, Google-Kampagnen, YouTube. Die
-> Zahlen kommen direkt aus deinen eigenen Konten.
+> **Zweitens: deine Werbung.** Facebook, Instagram, Google-Kampagnen, YouTube.
+> Wer klickt wann, was kostet dich eine Anfrage, wie lange schauen die Leute
+> dein Video überhaupt an. Die Zahlen kommen direkt aus deinen eigenen Konten.
 >
-> Das sind die drei großen Anbindungen — und alle drei hängen an Claude. Du
-> fragst, du kriegst die Antwort. **Ohne technisches Wissen.**
+> **Drittens: deine eigene Website.** Das ist die Stelle, an der sich die
+> Aufmerksamkeit sammelt, die du vorher erzeugt hast. Wo klicken die Leute weg?
+> Welcher Satz funktioniert nicht? Wo bricht es ab?
 >
-> **Und das läuft jede Woche automatisch.** Wenn irgendwo was einbricht, siehst
-> du's sofort — und nicht erst in drei Monaten, wenn die Anfragen ausbleiben.
+> Diese drei Datenmengen gehen in Claude rein — **ohne dass du dafür
+> technisches Wissen brauchst.** Und dann wird optimiert. Nicht einmal.
+> **Jede Woche.**
 >
-> Und wir gehen dabei nicht auf gut Glück. Wir testen **drei Varianten
-> gegeneinander** und lassen die Zahlen entscheiden, welche gewinnt.
+> Und wir gehen dabei nicht auf gut Glück. Wir schalten **mehrere Versionen
+> deiner Seite gleichzeitig**, spielen sie gegeneinander aus, messen,
+> vergleichen. **Wir schätzen nicht. Wir finden die Wahrheit raus.**
 >
 > Ich weiß, das klingt jetzt nach verdammt viel. Ist es aber nicht — **das
 > macht Claude für dich. Mit den richtigen Prompts. Und die kriegst du von
@@ -181,12 +191,13 @@ Durchgehend direkt in die Kamera, keine Schnitte.*
 *Regie: 5.1 ohne Einblendungen — nur du. Bei 5.2 pro Punkt ein kurzer
 Screencapture (Claude, der die Suchdaten holt · eine Anfrage, die reinkommt ·
 das Besucher-Dashboard). Bei 5.3 eine simple Animation: einer wird zu vielen.
-Bei 5.4 die Aufzählung mitlaufen lassen — Google, Meta, YouTube als drei
-Logos, die an Claude andocken. Beim Satz „das klingt nach verdammt viel"
+Bei 5.4 die drei Datenquellen einzeln einblenden — Suchmaschine, Werbekonto,
+deine Website — und dann alle drei zu Claude zusammenlaufen lassen. Beim
+A/B-Teil zwei Varianten derselben Seite nebeneinander. Beim Satz „das klingt nach verdammt viel"
 alles wieder ausblenden und zurück in die Kamera. Nach „Der einzige echte
 Fehler ist, gar nicht zu messen" eine Sekunde Stille.*
 
-## 6. Für wen das hier ist — und mein Versprechen (4:40–5:55) ⭐⭐ Der emotionale Höhepunkt
+## 6. Für wen das hier ist — und mein Versprechen (5:00–6:15) ⭐⭐ Der emotionale Höhepunkt
 
 *Kommt bewusst direkt NACH der Anti-Guru-Passage — dadurch wird es
 glaubwürdig statt marktschreierisch. Ruhig sprechen, jeden Punkt einzeln
@@ -270,7 +281,7 @@ konkret nennen willst (z. B. in einer Fassung für bestehende Unternehmer).*
 > Bewertungen, die von allein eingesammelt werden. Die Website ist nur der
 > Anfang."
 
-## 7. Reden wir über Geld (5:55–6:35) ⭐
+## 7. Reden wir über Geld (6:15–6:55) ⭐
 
 *Zahlen ruhig und langsam sagen — hier rechnet der Zuschauer mit.*
 
@@ -298,7 +309,7 @@ konkret nennen willst (z. B. in einer Fassung für bestehende Unternehmer).*
 *Regie: Die zwei Rechnungen als Grafik nebeneinander einblenden — links der
 klassische Weg, rechts deiner. Nicht überladen, nur die Zahlen.*
 
-## 8. CTA (6:35–6:50)
+## 8. CTA (6:55–7:10)
 
 > „Und wenn du erstmal reinschauen willst: Die Basics sind komplett kostenlos.
 > Domain, E-Mail-Adressen, wie das Internet überhaupt funktioniert — kostet
