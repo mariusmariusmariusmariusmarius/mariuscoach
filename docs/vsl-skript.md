@@ -110,12 +110,14 @@ Durchgehend direkt in die Kamera, keine Schnitte.*
 
 > „Und das sind drei Dinge.
 >
-> **Erstens: gefunden werden.** Suchmaschinenoptimierung — aber nicht als
-> Theorie. Wir hängen Claude an eine Datenbank mit echten, live abgefragten
-> Suchdaten. Und dann **sucht Claude für dich:** auf welche Suchbegriffe es
+> **Erstens: Aufmerksamkeit.** Ohne die passiert gar nichts. Und dahin führen
+> zwei Wege: **bezahlt** — über Werbeanzeigen. Oder **organisch** — indem du
+> bei Google gefunden wirst. Meistens beides.
+>
+> Und du rätst dabei nicht. Wir hängen Claude an eine Datenbank mit echten,
+> live abgefragten Suchdaten. **Claude sucht für dich:** auf welche Begriffe es
 > sich lohnt zu gehen, wie hart die Konkurrenz da ist, wofür die anderen
-> gefunden werden und du nicht. Du kriegst die Antwort — und Claude baut dir
-> die Seite direkt darauf.
+> gefunden werden und du nicht. Und baut die Seite direkt darauf.
 >
 > **Zweitens: Die Seite muss arbeiten.** Sie sieht nicht nur schön aus. Sie
 > sammelt Anfragen ein, bucht Termine, verkauft. Und wenn du willst:
