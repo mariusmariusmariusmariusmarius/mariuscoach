@@ -26,47 +26,51 @@ und der Klartext-Prompt fürs freie Reden.
 
 ## 1. Hook (0:00–0:25) — Erst der Schmerz, dann die These
 
-> „Wie viel Zeit hast du schon verschwendet, um eine Website zu bauen? 
+> „Wie viel Zeit hast du schon verschwendet, um eine Website zu bauen?
 >
-> Oder: Wie viel Geld hast du schon in die Hand genommen, um dir
-> eine Website von irgendeiner selbsternannten Agentur bauen zu lassen?
+> Oder: Wie viel Geld hast du schon in die Hand genommen, um dir eine Website
+> von irgendeiner selbsternannten Agentur bauen zu lassen?
 >
-> Ich sag dir was: **webentwicklung  als Dienstleistung wird es in ein paar Jahren
-> so nicht mehr geben.** Und ich sag das als jemand, der über 200 Websites
-> erstellt und damit sein Geld verdient hat."
+> Ich sag dir was: **Webentwicklung als Dienstleistung wird es in ein paar
+> Jahren so nicht mehr geben.** Und ich sag das als jemand, der über 200
+> Websites erstellt und damit sein Geld verdient hat."
 
 *Regie: Kein Intro, kein Logo, kein „Hallo Leute". Direkt mit der Frage rein.*
 
 ## 2. Wer bin ich (0:25–0:50)
 
-> „Ich bin Marius. Seit über fünf Jahren erstelle ich Websiten, baue Onlineshops. optiemiere texte für suchmaschienne , mange werbekampagnen. Ich habe über 200 unternhemen berteut undalles gesehne.
+> „Ich bin Marius. Seit über fünf Jahren erstelle ich Websites, baue
+> Onlineshops, optimiere Texte für Suchmaschinen, manage Werbekampagnen. Ich
+> habe über 200 Unternehmen betreut und alles gesehen."
 
 *Regie: B-Roll echter Projekte. Zahlen einblenden: 200+ Websites · 5+ Jahre.*
 
 ## 3. Das Warum (0:50–1:45) ⭐
 
-> Vor drei Jahren
-> hättest du für eine gute Website jemanden gebraucht, der sich volluumfänglich damit ausseindergestzt hat. und nichtnur die webseite, dann kommt noch die suchmaschiennptmierung , das tracking, und die coversionoptimerung alls prozresse die sich immer wieder dem markt anpassen müssen, heute geht es alles automatisch, da man alla datensätze mit Claude verbinden kann. 
-
+> „Vor drei Jahren hättest du für eine gute Website jemanden gebraucht, der
+> sich vollumfänglich damit auseinandergesetzt hat. Und nicht nur die Website,
+> dann kommt noch die Suchmaschinenoptimierung, das Tracking und die
+> Conversion-Optimierung, alles Prozesse, die sich immer wieder dem Markt
+> anpassen müssen. Heute geht es alles automatisch, da man alle Datensätze mit
+> Claude verbinden kann."
 
 *Regie: Keine Schnitte, kein B-Roll. Nur du und die Kamera. Langsam sprechen.*
 
 ## 4. Die Lücke (1:45–2:25)
 
-> „also...Websites bauen kann heute definitiv jeder.** Nur fehlen den meisten
-> Leuten noch die kleinen Handgriffe — das Wissen fürs Rundum-Paket. Damit am
-> Ende nicht irgendeine Seite rauskommt, sondern eine, die ihren zweck erfüllt 
->  Eine hebel von deine unternehmung.
+> „Also … **Websites bauen kann heute definitiv jeder.** Nur fehlen den
+> meisten Leuten noch die kleinen Handgriffe — das Wissen fürs Rundum-Paket.
+> Damit am Ende nicht irgendeine Seite rauskommt, sondern eine, die ihren
+> Zweck erfüllt. Ein Hebel von deinem Unternehmen.
+>
+> Es scheitert nicht an den Dingen, die du weißt, sondern an denen, die du
+> noch nicht weißt."
 
->es scheiter nicht an den dingen die du weisst sondern an denne die du noch nicht weißt
-
-
-## 5. Nicht nur eine Website (2:25–5:00) ⭐⭐ 
+## 5. Nicht nur eine Website (2:25–5:00) ⭐⭐
 
 ### 5.1 Die Abgrenzung (2:25–2:45)
 
-> „Was du hier lernst, ist nicht nur, wie man eine Website erstellt
-
+> „Was du hier lernst, ist nicht nur, wie man eine Website erstellt.
 >
 > Wir gehen tiefer. Es geht darum, wie du mit dieser Website **auf dem Markt
 > mitmischst.**"
@@ -75,47 +79,45 @@ und der Klartext-Prompt fürs freie Reden.
 
 > „Und das sind drei Dinge.
 >
-> **Erstens: Aufmerksamkeit.** 
-
-ohen das passiert in deinem unterhemen gar nichts,
+> **Erstens: Aufmerksamkeit.**
 >
-
->  aufmerksamkeit ob du dafür ob mit brezahlte oder organische.. kommt von 3 katgorein 
-
- Suchmaschienen Google,  aber auch Ki´s chats , erstezen immer mehr das klassiche scuehn.. 
-
-dann von Social Media, und Plattformen wie brachenbverzeichnisse oder auch bewertungsplattforemn wie trustpilot etc...
-
-alle 3 haben ihre vor und nachteile aber dazu später mehr 
-
-
+> Ohne das passiert in deinem Unternehmen gar nichts.
 >
-> **Zweitens: coversion ** S. Sie
-> was macht die seigte it der aufmerksamkeit ? überzeugt sie ? sammelt Anfragen ein, bucht Termine, verkauft. Und wenn du willst:
-> Onlineshop, oder dein eigenes Buchungstool. es gibt kein grenzen
+> Aufmerksamkeit, ob du dafür ob mit bezahlter oder organischer … kommt von
+> 3 Kategorien:
 >
-> **Drittens:  :optmiereug / measurment 
-
-Messen. Woher die Leute
-> kommen, was sie anklicken, wo sie abspringen. **Das ist der wichtigste
-> Punkt** — dazu gleich mehr.
+> Suchmaschinen, Google, aber auch KI-Chats, ersetzen immer mehr das
+> klassische Suchen …
 >
-
-
+> dann von Social Media, und Plattformen wie Branchenverzeichnisse oder auch
+> Bewertungsplattformen wie Trustpilot etc. …
+>
+> Alle 3 haben ihre Vor- und Nachteile, aber dazu später mehr.
+>
+> **Zweitens: Conversion.** Was macht die Seite mit der Aufmerksamkeit?
+> Überzeugt sie? Sammelt Anfragen ein, bucht Termine, verkauft. Und wenn du
+> willst: Onlineshop, oder dein eigenes Buchungstool. Es gibt keine Grenzen.
+>
+> **Drittens: Optimierung / Measurement.**
+>
+> Messen. Woher die Leute kommen, was sie anklicken, wo sie abspringen. **Das
+> ist der wichtigste Punkt** — dazu gleich mehr."
 
 ### 5.3 Und jetzt, was du hier NICHT kriegst (3:55–5:00) ⭐ Deine Abgrenzung
 
-Warum verkaufe ich dir kein garantie oder kein blueprint " mach mir einfach nach .. produtk" weil es das nicht gibt 
+> „Warum verkaufe ich dir keine Garantie oder keinen Blueprint, „mach mir
+> einfach nach"-Produkt? Weil es das nicht gibt.
 >
->  nieman dir sagen kann, welches Keyword zieht, welcher Text verkauft,
-> welche Seite konvertiert. **Ich auch nicht.**  kein coach kein guru 
+> Niemand kann dir sagen, welches Keyword zieht, welcher Text verkauft, welche
+> Seite konvertiert. **Ich auch nicht.** Kein Coach, kein Guru.
 >
 > **Der Einzige, der das entscheidet, ist der Markt.**
 >
-> Und genau deswegen messen  und optmiiren wir.
-
-ch ge e dir die werkeuge in die hand wie du überhautpt nachvollziehen kannst wie sich der markt bwegt , was er will etc. das amchen wir indem wir claude an  3 große datensatäze hägen  
-
+> Und genau deswegen messen und optimieren wir.
+>
+> Ich geb dir die Werkzeuge in die Hand, wie du überhaupt nachvollziehen
+> kannst, wie sich der Markt bewegt, was er will etc. Das machen wir, indem
+> wir Claude an 3 große Datensätze hängen:
 >
 > **Erstens: die Suchmaschinen.** Google, Bing und Co. Was tippen die Leute
 > wirklich ein, welche Begriffe lohnen sich, in welcher Region, in welcher
@@ -125,50 +127,70 @@ ch ge e dir die werkeuge in die hand wie du überhautpt nachvollziehen kannst wi
 >
 > **Zweitens: deine Werbung.** Facebook, Instagram, Google-Kampagnen, YouTube.
 > Wer klickt wann, was kostet dich eine Anfrage, wie lange schauen die Leute
-> dein Video / Bild überhaupt an
+> dein Video / Bild überhaupt an.
 >
 > **Drittens: deine eigene Website.** Das ist die Stelle, an der sich die
 > Aufmerksamkeit sammelt, die du vorher erzeugt hast. Wo klicken die Leute weg?
 > Welcher Satz funktioniert nicht? Wo bricht es ab?
 >
-> Diese drei Datenmengen gehen in Claude rein —* Und dann wird optimiert. Nicht einmal.
-> jede woche , jeden monat, etc.. wir bewegen uns mit dem markt.. 
+> Diese drei Datenmengen gehen in Claude rein. Und dann wird optimiert. Nicht
+> einmal. Jede Woche, jeden Monat, etc. Wir bewegen uns mit dem Markt …
 >
 > Und wir gehen dabei nicht auf gut Glück. Wir schalten **mehrere Versionen
 > deiner Seite gleichzeitig**, spielen sie gegeneinander aus, messen,
 > vergleichen. **Wir schätzen nicht. Wir finden die Wahrheit raus.**
 >
-> Ich weiß, das klingt jetzt nach verdammt viel arbeit und technsiches wissen . Ist es aber nicht — **das
-> macht Claude für dich.  du bist der dirigent in dienm unternhemn du musst nicht jeden instrument spielen können du üsst wissen für was sie gut sind und wie du sie einstezt. 
+> Ich weiß, das klingt jetzt nach verdammt viel Arbeit und technischem Wissen.
+> Ist es aber nicht — **das macht Claude für dich.** Du bist der Dirigent in
+> deinem Unternehmen. Du musst nicht jedes Instrument spielen können, du musst
+> wissen, für was sie gut sind und wie du sie einsetzt."
+
+### 5.4 Brauchst du überhaupt sowas?
+
+> „Warum braucht man das?
 >
-
-### 5.4 Brauchst du überhaupt sowas
-
-Warum braucht man das
- Du kannst dir das auch von einem Dienstleister bauen lassen. Das spart dir Zeit, 
-
-Aber eine Frage solltest du dir stellen: Bist du bei dem die größte Priorität?
-
-Ich war selbst jahrelang Dienstleister. Ich red die Branche nicht schlecht — ich war Teil davon. Aber ich sag dir, wie es läuft: Mein HauptFokus war, den nächsten Kunden an Land zu ziehen und Umsatz zu machen. Das zahlt ja schließlich meine Rechnungen. Dein Projekt war eins von vielen. 
-
-Der nächste Vorteil von einem Dienstleister ist, dass man sich nicht mit der Technik auseinandersetzen muss. Oder ist es überhaupt ein Vorteil? 
-
-Die Welt, in der wir uns befinden, findet heutzutage schon weitestgehend im Internet statt und geht immer weiter in diese richtug... Aktuell befindest du dich durch einen Scheitelpunkt, an dem du dich entscheiden kannst, ob du mit der Zeit gehst oder mit der Zeit verschwindest .
-
-Du musst heute nicht mehr verstehen, wie die Dinge funktionieren. Du musst nur wissen, was es gibt.
-
-wir sind wieder beim Orchester. Früher musstest du jedes Instrument selbst lernen — Server, Datenbanken, Code, Werbekonten, Tracking, SEO, Hosting etc  
-
-Mit Claude bist du nicht mehr der Musiker. Du bist der Dirigent. Und ein Dirigent spielt im Orchester kein einziges Instrument. Er weiß was es kann, und wie man es einsetzt
-
-Genau das bring ich dir bei. Ich geb dir die Werkzeuge und die Anleitung. Und zwar nicht für eine einzige Branche — sondern so, dass es überall funktioniert. Handwerk, Gastro, Retail, Coaching, Onlineshop, Apps,. Das Prinzip ist immer dasselbe." kenne den markt 
-
-Und was ist, wenn was Neues kommt?
-
-die module sind nicht einmal abgefilmt und  fertig. Es wird ständig aktualisiert —, welche Tools sind neut, was funjtionet nichtmehr, etc.. 
-
-Und du sitzt damit nicht allein da. In der Community sind Leute, die genau vor demselben Problem standen wie du — und meistens ist es schon gelöst, bevor du fragen musst."
-
+> Du kannst dir das auch von einem Dienstleister bauen lassen. Das spart dir
+> Zeit.
+>
+> Aber eine Frage solltest du dir stellen: Bist du bei dem die größte
+> Priorität?
+>
+> Ich war selbst jahrelang Dienstleister. Ich red die Branche nicht schlecht —
+> ich war Teil davon. Aber ich sag dir, wie es läuft: Mein Hauptfokus war, den
+> nächsten Kunden an Land zu ziehen und Umsatz zu machen. Das zahlt ja
+> schließlich meine Rechnungen. Dein Projekt war eins von vielen.
+>
+> Der nächste Vorteil von einem Dienstleister ist, dass man sich nicht mit der
+> Technik auseinandersetzen muss. Oder ist es überhaupt ein Vorteil?
+>
+> Die Welt, in der wir uns befinden, findet heutzutage schon weitestgehend im
+> Internet statt und geht immer weiter in diese Richtung … Aktuell befindest du
+> dich durch einen Scheitelpunkt, an dem du dich entscheiden kannst, ob du mit
+> der Zeit gehst oder mit der Zeit verschwindest.
+>
+> Du musst heute nicht mehr verstehen, wie die Dinge funktionieren. Du musst
+> nur wissen, was es gibt.
+>
+> Wir sind wieder beim Orchester. Früher musstest du jedes Instrument selbst
+> lernen — Server, Datenbanken, Code, Werbekonten, Tracking, SEO, Hosting etc.
+>
+> Mit Claude bist du nicht mehr der Musiker. Du bist der Dirigent. Und ein
+> Dirigent spielt im Orchester kein einziges Instrument. Er weiß, was es kann,
+> und wie man es einsetzt.
+>
+> Genau das bring ich dir bei. Ich geb dir die Werkzeuge und die Anleitung.
+> Und zwar nicht für eine einzige Branche — sondern so, dass es überall
+> funktioniert. Handwerk, Gastro, Retail, Coaching, Onlineshop, Apps. Das
+> Prinzip ist immer dasselbe. Kenne den Markt.
+>
+> Und was ist, wenn was Neues kommt?
+>
+> Die Module sind nicht einmal abgefilmt und fertig. Es wird ständig
+> aktualisiert — welche Tools sind neu, was funktioniert nicht mehr, etc. …
+>
+> Und du sitzt damit nicht allein da. In der Community sind Leute, die genau
+> vor demselben Problem standen wie du — und meistens ist es schon gelöst,
+> bevor du fragen musst."
 
 > „Und egal, wo du gerade stehst:
 >
@@ -188,36 +210,33 @@ Und du sitzt damit nicht allein da. In der Community sind Leute, die genau vor d
 > Dann zeig ich dir, wie ich in zwei Stunden schaffe, wofür ich früher zwei
 > Wochen gebraucht hab. Und wie du das verkaufst.
 >
-> **Für jeden von ist hier was dabei.** Nicht als netter
-> Nebeneffekt — sondern als Mehrwert, der auch in zwei Jahren drei oder 10 jarehn noch hält."
+> **Für jeden von euch ist hier was dabei.** Nicht als netter Nebeneffekt —
+> sondern als Mehrwert, der auch in zwei Jahren, drei oder 10 Jahren noch
+> hält."
 
 ### 6.2 Mein Versprechen
 
 > „Und jetzt, wo ich dir gerade gesagt hab, dass niemand die Zukunft kennt,
-> kommt trotzdem ein Versprechen. 
+> kommt trotzdem ein Versprechen.
 >
-wenn du die Module durchgehst und
-> mitmachst
+> Wenn du die Module durchgehst und mitmachst:
 >
-> gehört deine Website dir. Kein Baukasten-Abo, kein
-> Dienstleister, auf den du warten musst, keine Rechnung für jede Kleinigkeit.
+> gehört deine Website dir. Kein Baukasten-Abo, kein Dienstleister, auf den du
+> warten musst, keine Rechnung für jede Kleinigkeit.
 >
 > **Du bist schnell.** Du entscheidest was — und setzt es am selben Tag um.
 > Nicht in drei Wochen, wenn die Agentur Zeit hat. Ich änder Websites vom
 > Handy aus, während ich unterwegs bin. Das wirst du auch können.
 >
-> **Du hast keine webseite du hast ein system  weclhes  funktion erfüllt, welches  profeesionel aussiht, den besten enudruckt vermittelt, das 
-> gefunden wird, dein unternhemen automaatiert, die an den amrkt anpasst, 
-
+> **Du hast keine Website, du hast ein System**, welches Funktion erfüllt,
+> welches professionell aussieht, den besten Eindruck vermittelt, das gefunden
+> wird, dein Unternehmen automatisiert, die an den Markt anpasst,
 >
 > **Und das alles hast du selbst gebaut. Für unter 50 Euro im Monat.**
 >
-
-
-klicke jetzt auf den link 
+> Klicke jetzt auf den Link.
 >
-> Registrier dich kostenlos, die erstle lekton kannst du die kostelnlos anscheun.
-
-wir sehen uns. 
-
-
+> Registrier dich kostenlos, die erste Lektion kannst du dir kostenlos
+> anschauen.
+>
+> Wir sehen uns."
