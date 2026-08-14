@@ -6,23 +6,65 @@ Alle Funktionen der KAS-API, gezogen aus der offiziellen Doku
 **Warum das hier liegt:** Damit Domain, DNS und Postfächer aus Claude heraus
 steuerbar sind — Grundlage für Lektion 1.3 und die Automations-Module.
 
-⚠️ **Nicht getestet.** Die Liste ist aus der Doku extrahiert, nicht mit echten
-Zugangsdaten ausprobiert. Vor dem Dreh einmal selbst gegen den eigenen Account
-laufen lassen.
+⚠️ **Funktionsliste aus der Doku, nicht gegen einen echten Account getestet.**
+Das Protokoll unten ist dagegen verifiziert — ein Testaufruf wurde vom Server
+angenommen und mit einem KAS-Fehlercode beantwortet.
 
 ---
 
-## Die drei Auth-Parameter
+## Das Protokoll (verifiziert)
 
-Gehen bei **jedem** Aufruf mit:
+**Zwei Endpunkte**, beide SOAP, Stil `rpc/encoded`:
 
-| Parameter | Was rein muss |
-|---|---|
-| `kas_login` | Das KAS-Login (Kennung wie `w01234`) |
-| `kas_auth_data` | Passwort **oder** Session-Token |
-| `kas_auth_type` | Authentifizierungstyp — in den Doku-Beispielen `plain` |
+| Zweck | URL | Operation | Namespace |
+|---|---|---|---|
+| Anmelden | `https://kasapi.kasserver.com/soap/KasAuth.php` | `KasAuth` | `urn:xmethodsKasApiAuthentication` |
+| Alles andere | `https://kasapi.kasserver.com/soap/KasApi.php` | `KasApi` | `urn:xmethodsKasApi` |
 
-Protokoll ist **SOAP**, nicht REST.
+WSDL: `…/soap/wsdl/KasAuth.wsdl` und `…/soap/wsdl/KasApi.wsdl`
+
+**Der Trick:** Der einzige SOAP-Parameter heißt `Params` und enthält einen
+**JSON-String**. Die eigentlichen Angaben stecken also in JSON, nicht in XML.
+
+**Schritt 1 — Token holen** (an `KasAuth.php`):
+
+```json
+{
+  "kas_login": "w0123456",
+  "kas_auth_type": "plain",
+  "kas_auth_data": "dein-kas-passwort",
+  "session_lifetime": 600,
+  "session_update_lifetime": "Y",
+  "session_2fa": 123456
+}
+```
+Zurück kommt der Token als String.
+
+**Schritt 2 — Funktion aufrufen** (an `KasApi.php`):
+
+```json
+{
+  "kas_login": "w0123456",
+  "kas_auth_type": "session",
+  "kas_auth_data": "<Token aus Schritt 1>",
+  "kas_action": "get_domains",
+  "KasRequestParams": {}
+}
+```
+
+Die Parameter der jeweiligen Funktion kommen in `KasRequestParams` — nicht
+auf die oberste Ebene.
+
+**Fertiger Client:** `tools/kas.py` im Repo. Reines Python, keine Pakete nötig,
+Zugangsdaten kommen aus Umgebungsvariablen. Löschende Funktionen laufen dort
+nur mit `--force`.
+
+```bash
+export KAS_LOGIN=w0123456
+export KAS_PASSWORD='...'
+python3 tools/kas.py get_domains
+python3 tools/kas.py add_mailaccount local_part=info domain_part=meine-domain.de mail_password='...'
+```
 
 ---
 
