@@ -81,11 +81,28 @@ export default async function LessonPage({
           <div className="rounded-3xl border border-white/8 bg-surface-900/70 p-8">
             <h2 className="mb-3 text-lg font-semibold text-white">Worum geht&apos;s?</h2>
             <p className="leading-relaxed text-zinc-300">{lesson.description}</p>
-            <div className="mt-6 rounded-2xl border border-dashed border-white/10 bg-surface-950/40 p-6 text-sm text-zinc-500">
-              Hier entstehen die Lektionsinhalte: Schritt-für-Schritt-Anleitung
-              und Anmerkungen. Die Inhalte werden später über den Admin-Bereich
-              gepflegt und aus der Datenbank geladen.
-            </div>
+
+            {lesson.steps?.length ? (
+              <>
+                <h3 className="mt-8 mb-4 text-sm font-semibold uppercase tracking-widest text-brand-300">
+                  Das machst du
+                </h3>
+                <ol className="space-y-3">
+                  {lesson.steps.map((step, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-lg bg-brand-500/15 text-xs font-semibold text-brand-300">
+                        {i + 1}
+                      </span>
+                      <span className="leading-relaxed text-zinc-300">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </>
+            ) : (
+              <div className="mt-6 rounded-2xl border border-dashed border-white/10 bg-surface-950/40 p-6 text-sm text-zinc-500">
+                Die Schritte zu dieser Lektion folgen mit dem Video.
+              </div>
+            )}
             <button
               type="button"
               className="mt-6 inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-2.5 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/20"

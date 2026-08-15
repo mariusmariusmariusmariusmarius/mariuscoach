@@ -24,6 +24,8 @@ export type Lesson = {
   slug: string;
   title: string;
   description: string;
+  /** Die Schritte der Lektion in Stichpunkten — steht unter dem Video */
+  steps?: string[];
   /** Minuten, rein informativ */
   duration: number;
   kind: "video" | "text" | "case";
@@ -71,6 +73,16 @@ export const CURRICULUM: CourseModule[] = [
           "Der Unterschied zwischen einer KI, die redet, und einer, die arbeitet. Einrichten, Werkzeugpaket laden, ersten Skill installieren — ohne eine Zeile Code.",
         duration: 12,
         kind: "video",
+        steps: [
+          "Bei Claude registrieren — auf claude.ai ein Konto anlegen.",
+          "Pro-Abo abschließen. Das ist die einzige laufende Ausgabe, die der Kurs wirklich braucht.",
+          "Claude Code herunterladen und installieren — es gibt eine Version für Mac und eine für Windows.",
+          "Einen Ordner für deine Firma anlegen (z. B. bei den Dokumenten) und in Claude Code öffnen. Alles, was Claude macht, passiert ab jetzt in diesem Ordner.",
+          "Terminal öffnen: Mac mit Cmd + Leertaste und „terminal“, Windows mit Windows-Taste + R und „powershell“.",
+          "Den Setup-Befehl für dein System rechts kopieren, einfügen, Enter drücken. Du tippst dort keinen Buchstaben.",
+          "Passwort eingeben, wenn danach gefragt wird — beim Tippen bewegt sich nichts, das ist normal.",
+          "Warten, bis die Zusammenfassung kommt. Danach Claude Code einmal neu starten — fertig.",
+        ],
         cheatSheet: {
           prompts: [
             {
@@ -100,6 +112,15 @@ export const CURRICULUM: CourseModule[] = [
           "Deine Domain ist ein Vermögenswert und gehört IMMER dir. .de vs. .com, der richtige Anbieter — und am Ende hängt Claude direkt an deinem Hosting.",
         duration: 14,
         kind: "video",
+        steps: [
+          "Bei All-Inkl das Paket „Privat“ bestellen (4,95 €/Monat, erster Monat gratis) und dabei deine Wunschdomain registrieren.",
+          "Beim Bestellen keine Zusatzpakete anhaken — kein Domain-Guard, kein Virenschutz, kein bezahltes SSL.",
+          "Eine NEUE Domain nehmen, auch wenn du schon eine hast. Der Umzug einer bestehenden kommt in Lektion 1.6.",
+          "Willkommensmail abwarten. Darin stehen zwei Zugänge: Members (Vertrag) und KAS (Technik).",
+          "Die KAS-Kennung heraussuchen — sie fängt mit einem kleinen w an, z. B. w01a2b3c.",
+          "Den Prompt rechts kopieren, KAS-Kennung und KAS-Passwort eintragen und an Claude schicken.",
+          "Claude baut sich den Zugang und listet dir zum Schluss deine Domains auf. Dann steht die Verbindung.",
+        ],
         cheatSheet: {
           prompts: [
             {
@@ -160,6 +181,16 @@ Frag mich, bevor du irgendetwas anlegst, änderst oder löschst.`,
           "DNS ist das Adressbuch des Internets. Wir holen es kostenlos zu Cloudflare — schneller, und Claude kann reinschreiben. Ohne dass die Mails ausfallen.",
         duration: 12,
         kind: "video",
+        steps: [
+          "Kostenloses Konto bei Cloudflare anlegen.",
+          "Deine Domain hinzufügen und den Free-Tarif wählen — der steht ganz unten auf der Seite.",
+          "Cloudflare liest deine bestehenden Einträge ein. Prüfen, ob die MX-Einträge dabei sind (da muss kasserver.com stehen).",
+          "Die zwei Nameserver notieren, die Cloudflare dir anzeigt — jedes Konto bekommt eigene.",
+          "Diese zwei Nameserver im KAS bei deiner Domain eintragen und speichern.",
+          "Warten, bis Cloudflare per Mail bestätigt, dass die Domain aktiv ist.",
+          "Token erzeugen: Mein Profil → API-Tokens → Token erstellen → Vorlage „DNS bearbeiten“, nur für deine Domain.",
+          "Den Prompt rechts kopieren, Token und Domain eintragen und an Claude schicken.",
+        ],
         cheatSheet: {
           prompts: [
             {
@@ -200,6 +231,16 @@ Nichts anlegen, nichts ändern, nichts löschen.`,
           "info@deine-firma.de — angelegt durch einen Satz an Claude statt durch acht Formularfelder. Danach aufs Handy: IMAP statt POP3.",
         duration: 20,
         kind: "video",
+        steps: [
+          "Überlegen, welche Adressen du brauchst — info@ reicht für den Anfang, dazu meist dein Vorname@.",
+          "Den Prompt rechts kopieren, Domain und Wunschadressen eintragen und an Claude schicken.",
+          "Claude zeigt dir erst, was schon existiert, legt dann die neuen Postfächer an und gibt dir eine Tabelle mit Passwörtern und Serverdaten.",
+          "Im KAS die Seite neu laden — die Postfächer sind da.",
+          "Passwörter sicher ablegen, am besten im Passwort-Manager deines Browsers oder Handys.",
+          "Postfach aufs Handy holen: iPhone über Einstellungen → Mail → Accounts → Andere, Android über die Gmail-App → Konto hinzufügen → Andere.",
+          "Dabei IMAP wählen, niemals POP3.",
+          "Testmail an dich selbst schicken. Kommt sie an, ist alles fertig.",
+        ],
         cheatSheet: {
           prompts: [
             {
@@ -241,6 +282,17 @@ Richte eine Weiterleitung von kontakt@ auf info@ ein.`,
           "Optional — für alle mit bestehender Domain und laufender Post. Die Reihenfolge entscheidet: erst die neuen Postfächer, dann kopieren, dann umschalten.",
         duration: 14,
         kind: "video",
+        steps: [
+          "Herausfinden, welcher Fall bei dir vorliegt: nur die Post umleiten oder die Domain komplett zum neuen Anbieter holen.",
+          "Alle bestehenden E-Mail-Adressen auflisten, die weiterlaufen müssen.",
+          "Einen Tag vorher die Gültigkeitsdauer der MX-Einträge runtersetzen — Prompt rechts.",
+          "Postfächer bei All-Inkl anlegen, mit exakt denselben Adressen wie bisher. Noch nichts umstellen.",
+          "Zugangsdaten des alten Postfachs heraussuchen (stehen meist noch in deinem Mailprogramm).",
+          "Alte Mails kopieren lassen — dauert bei großen Postfächern ein bis zwei Stunden.",
+          "Erst jetzt die MX-Einträge umstellen und eine Testmail vom Handy schicken.",
+          "Nach ein bis zwei Tagen den Kopiervorgang wiederholen, damit die Nachzügler mitkommen.",
+          "Das alte Postfach noch ein paar Wochen stehen lassen, bevor du es löschst.",
+        ],
         cheatSheet: {
           prompts: [
             {
