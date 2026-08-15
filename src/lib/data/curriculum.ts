@@ -7,23 +7,13 @@ import type { Tier } from "@/lib/tiers";
  * und wird über den Admin-Bereich gepflegt.
  */
 
-/** Ein Merk-Block im Cheat Sheet: Überschrift + Punkte, optional ein Merksatz */
-export type CheatBlock = {
-  title: string;
-  items: string[];
-  /** Wird hervorgehoben unter den Punkten ausgegeben */
-  quote?: string;
-};
-
 /**
- * Das Cheat Sheet steht rechts neben dem Video: alles zum Nachmachen.
- * Leere Bereiche werden auf der Lektionsseite gar nicht erst gerendert.
+ * Die Info-Box rechts neben dem Video: bewusst nur Handwerkszeug —
+ * Prompts zum Kopieren und die Links, wo es raufgeht. Erklärt wird im Video.
  */
 export type CheatSheet = {
-  blocks?: CheatBlock[];
   prompts?: string[];
   links?: { label: string; href: string; note?: string }[];
-  software?: { name: string; note?: string }[];
   /** Ersetzt den Platzhalter, wenn es in dieser Lektion bewusst nichts gibt */
   emptyNote?: string;
 };
@@ -68,46 +58,6 @@ export const CURRICULUM: CourseModule[] = [
         duration: 12,
         kind: "video",
         cheatSheet: {
-          blocks: [
-            {
-              title: "Aufmerksamkeit von vier Gruppen",
-              items: [
-                "**Kunden** — kaufen dein Produkt, buchen deine Leistung",
-                "**Empfehler** — schicken deinen Link weiter (der Nachbar am Gartenzaun)",
-                "**Bewerber** — googeln dich, bevor sie sich bewerben",
-                "**Lieferanten & Partner** — verhandeln anders mit dem, der professionell auftritt",
-              ],
-              quote:
-                "Wer gesehen wird, macht das Geschäft. Und das gilt nicht nur für Webseiten, sondern allgemein im Geschäftsleben.",
-            },
-            {
-              title: "Die drei Welten",
-              items: [
-                "**Social Media** — Instagram, Facebook, TikTok, YouTube: einfach und günstig Leute erreichen, organisch und bezahlt",
-                "**Deine Website** — Point of Sale: Meinung bilden, Leads einsammeln, verkaufen, messen",
-                "**Plattformen** — Google Business, Trustpilot, Verzeichnisse: großer Vertrauensfaktor, aber schlecht kontrollierbar",
-              ],
-            },
-            {
-              title: "Was auf deiner Website passiert",
-              items: [
-                "Besucher aus allen Kanälen landen hier",
-                "Sie bilden sich eine Meinung — wichtig für Kauf, Bewerbung, Weiterempfehlung",
-                "Anfragen und Leads werden eingesammelt (Funnel)",
-                "Verkauft wird hier: Termin, Angebot, Zahlung",
-                "Gemessen wird hier — **und was du messen kannst, kannst du optimieren**",
-              ],
-            },
-            {
-              title: "Zwei Bausteine, damit eine Website live ist",
-              items: [
-                "**Domain** = die Adresse (firma-mueller.de)",
-                "**Hosting** = der Server, auf dem die Seite aufgerufen wird",
-              ],
-              quote:
-                "Zwei getrennte Dinge, die man verbindet. Den Rest macht später Claude.",
-            },
-          ],
           emptyNote:
             "In dieser Lektion brauchst du noch keine Prompts und keine Software — wir bauen noch nichts.",
         },
@@ -120,51 +70,6 @@ export const CURRICULUM: CourseModule[] = [
         duration: 12,
         kind: "video",
         cheatSheet: {
-          blocks: [
-            {
-              title: "Der Unterschied",
-              items: [
-                "**Chat im Browser** — redet über die Arbeit. Du machst sie trotzdem selbst.",
-                "**Claude Code** — macht die Arbeit: legt Dateien an, führt Sachen aus, schließt sich an dein Hosting an.",
-              ],
-              quote:
-                "Claude Code ist nicht der Berater am Telefon. Das ist der Handwerker, der mit dem Werkzeugkasten in deine Werkstatt kommt.",
-            },
-            {
-              title: "Einrichten in 3 Schritten",
-              items: [
-                "Auf claude.ai Claude Code für Mac oder Windows laden",
-                "Mit dem Claude-Konto anmelden (Abo nötig)",
-                "**Firmenordner** anlegen und in Claude Code öffnen — außerhalb davon fasst er nichts an",
-              ],
-            },
-            {
-              title: "Terminal öffnen",
-              items: [
-                "**Mac:** Cmd + Leertaste → „terminal\" → Enter",
-                "**Windows:** Windows-Taste + R → „powershell\" → Enter",
-                "Dort nur einfügen und Enter — **du tippst keinen Buchstaben**",
-              ],
-            },
-            {
-              title: "Die drei Regeln",
-              items: [
-                "**Er fragt, bevor er handelt** — Frage lesen, dann erlauben",
-                "**Sag, was NICHT passieren soll:** „Nur anlegen, nichts löschen und nichts überschreiben.\"",
-                "**Fehler? Reinkopieren statt googeln** — „Das kam raus, was ist da los?\"",
-              ],
-              quote:
-                "Du kannst hier nichts kaputtmachen, was nicht reparierbar wäre. Das ist kein Bankkonto, das ist ein Ordner auf deinem Rechner.",
-            },
-            {
-              title: "Was ein Skill ist",
-              items: [
-                "**Eine Anleitung, die Claude vorher liest.** Ohne Skill: guter Allrounder. Mit Skill: Fachmann.",
-                "Liegt als Ordner mit einer Textdatei bei dir auf der Platte — kein Abo, keine Cloud",
-                "Ab jetzt reicht der Satz: **„Gibt\u2019s dafür einen Skill?\"**",
-              ],
-            },
-          ],
           prompts: [
             `Setup-Paket · MAC — ins Terminal einfügen, Enter:
 
@@ -201,13 +106,6 @@ beantworte, lass es weg und frag lieber nach.`,
               note: "lesbarer Text — schau rein, bevor du es ausführst",
             },
           ],
-          software: [
-            { name: "Claude Code", note: "Mac oder Windows" },
-            {
-              name: "Setup-Paket",
-              note: "installiert Node, git, GitHub-Werkzeug, Python, Beautiful Soup und den Skill find-skills",
-            },
-          ],
         },
       },
       {
@@ -218,47 +116,6 @@ beantworte, lass es weg und frag lieber nach.`,
         duration: 14,
         kind: "video",
         cheatSheet: {
-          blocks: [
-            {
-              title: "Die eine Regel",
-              items: [
-                "Die Domain gehört **dir**. Nicht dem Designer, nicht der Agentur, nicht dem Neffen.",
-                "„Gehört dir\" heißt: **Du hast die Zugangsdaten**, du stehst als Inhaber drin, die Rechnung läuft auf dich.",
-              ],
-            },
-            {
-              title: "Anbieter: All-Inkl",
-              items: [
-                "Einziger Anbieter, dessen Schnittstelle auch **Postfächer** kann",
-                "IONOS: 75 Funktionen, **keine** für E-Mail · Strato: gar keine Schnittstelle",
-                "Paket **„Privat\", 4,95 €/Monat** — 3 Domains, 500 Postfächer, erster Monat gratis, keine Mindestlaufzeit",
-              ],
-            },
-            {
-              title: "Wir legen NEU an",
-              items: [
-                "Auch wenn du schon eine Domain hast — **lass sie erstmal in Ruhe**",
-                "Ein Umzug ist etwas anderes: da hängen deine E-Mails dran (→ Lektion 1.6)",
-              ],
-            },
-            {
-              title: "Zwei Logins — nicht verwechseln",
-              items: [
-                "**Members** = Vertrag, Rechnungen, Domains bestellen",
-                "**KAS** = Technik: Postfächer, DNS — **den hängen wir an Claude**",
-                "Die KAS-Kennung fängt mit einem kleinen **w** an, z. B. w01a2b3c",
-              ],
-            },
-            {
-              title: "Was du beim Kauf NICHT anklickst",
-              items: [
-                "Domain-Guard, Virenschutz, kostenpflichtiges SSL",
-                "Homepage-Baukasten, Backup-Service, „SEO-Booster\"",
-              ],
-              quote:
-                "Zehn Euro Domain sind kein Geschäftsmodell. Das Geld verdienen sie mit den Häkchen. Setz keins.",
-            },
-          ],
           prompts: [
             `All-Inkl (KAS) mit Claude verbinden — zwei Stellen ausfüllen,
 geschweifte Klammern mit weglöschen:
@@ -309,10 +166,6 @@ Frag mich, bevor du irgendetwas anlegst, änderst oder löschst.`,
               note: "prüfen, wer als Inhaber einer .de-Domain eingetragen ist",
             },
           ],
-          software: [
-            { name: "Claude Code", note: "aus Lektion 1.2" },
-            { name: "All-Inkl KAS", note: "Zugangsdaten aus der Willkommensmail" },
-          ],
         },
       },
       {
@@ -323,49 +176,6 @@ Frag mich, bevor du irgendetwas anlegst, änderst oder löschst.`,
         duration: 12,
         kind: "video",
         cheatSheet: {
-          blocks: [
-            {
-              title: "DNS in einem Satz",
-              items: [
-                "Das **Adressbuch des Internets**: übersetzt deinen Domainnamen in die Nummer des Servers",
-                "**A** = hier liegt die Website · **MX** = hierhin gehen die Mails · **TXT** = beweist, dass deine Mails echt sind",
-              ],
-            },
-            {
-              title: "Warum Cloudflare",
-              items: [
-                "Im All-Inkl-Tarif „Privat\" ist DNS-Bearbeitung **gesperrt** — bei Cloudflare kostenlos",
-                "Beste Schnittstelle am Markt, weltweite Server",
-                "**Die Postfächer bleiben bei All-Inkl** — wir tauschen nur das Adressbuch, nicht das Postamt",
-              ],
-            },
-            {
-              title: "Umstellen — die Reihenfolge zählt",
-              items: [
-                "Kostenloses Cloudflare-Konto anlegen",
-                "Domain hinzufügen → **Free-Tarif** wählen (steht ganz unten)",
-                "**MX-Einträge prüfen** — da muss `kasserver.com` stehen",
-                "Die zwei Nameserver von Cloudflare im KAS eintragen",
-              ],
-              quote:
-                "Fehlt ein MX-Eintrag, kommt deine Post nicht mehr an. Vor dem Nameserverwechsel prüfen — im Zweifel Claude fragen. Rückgängig geht jederzeit.",
-            },
-            {
-              title: "Deine zwei Nameserver sind DEINE",
-              items: [
-                "Cloudflare gibt jedem Konto ein eigenes Namenspaar — sie sehen aus wie Vornamen",
-                "**Nicht aus dem Video abtippen** — nimm die zwei Namen, die dir dein eigenes Konto anzeigt",
-              ],
-            },
-            {
-              title: "Token erzeugen",
-              items: [
-                "Cloudflare → **Mein Profil → API-Tokens → Token erstellen**",
-                "Vorlage **„DNS bearbeiten\"** wählen, Geltungsbereich auf **eine** Zone (deine Domain)",
-                "Sofort kopieren — er wird nur einmal angezeigt",
-              ],
-            },
-          ],
           prompts: [
             `Cloudflare (DNS) mit Claude verbinden — zwei Stellen ausfüllen,
 geschweifte Klammern mit weglöschen:
@@ -396,10 +206,6 @@ Nichts anlegen, nichts ändern, nichts löschen.`,
               note: "Free-Tarif reicht vollständig",
             },
           ],
-          software: [
-            { name: "Cloudflare-Konto", note: "kostenlos" },
-            { name: "Claude Code", note: "mit KAS-Verbindung aus 1.3" },
-          ],
         },
       },
       {
@@ -410,39 +216,6 @@ Nichts anlegen, nichts ändern, nichts löschen.`,
         duration: 20,
         kind: "video",
         cheatSheet: {
-          blocks: [
-            {
-              title: "Warum eigene Adresse",
-              items: [
-                "info@deine-firma.de statt firma@gmx.de — Grundausstattung, nicht Marketing",
-                "**500 Postfächer** sind im Paket drin. Kosten für dich: **0 €**",
-              ],
-            },
-            {
-              title: "IMAP — niemals POP3",
-              items: [
-                "**IMAP:** Mails bleiben auf dem Server, Handy und Rechner sehen dasselbe",
-                "**POP3:** holt die Mails runter und vom Server **weg** — Gerät kaputt, Mails weg",
-              ],
-              quote:
-                "Ich hatte Kunden mit drei Jahren Firmenkorrespondenz auf einem einzigen Laptop. Dann ging der Laptop kaputt.",
-            },
-            {
-              title: "Aufs Handy holen",
-              items: [
-                "**iPhone:** Einstellungen → Apps → Mail → Accounts → Account hinzufügen → **Andere**",
-                "**Android:** Gmail-App → Konto hinzufügen → **Andere**",
-                "Serverdaten stehen in Claudes Tabelle. Klemmt es: **Screenshot in Claude ziehen**",
-              ],
-            },
-            {
-              title: "Der Gratis-Fact",
-              items: [
-                "Die **Signatur hängt an der Mail-App**, nicht am Postfach",
-                "Am Rechner eingerichtet ≠ auf dem Handy vorhanden — zweimal machen",
-              ],
-            },
-          ],
           prompts: [
             `Postfächer anlegen — zwei Stellen ausfüllen:
 
@@ -472,10 +245,6 @@ nichts löschen und nichts überschreiben.
 
 Richte eine Weiterleitung von kontakt@ auf info@ ein.`,
           ],
-          software: [
-            { name: "Claude Code", note: "mit KAS-Verbindung aus 1.3" },
-            { name: "Dein Handy", note: "für die Einrichtung am Ende" },
-          ],
         },
       },
       {
@@ -486,34 +255,6 @@ Richte eine Weiterleitung von kontakt@ auf info@ ein.`,
         duration: 14,
         kind: "video",
         cheatSheet: {
-          blocks: [
-            {
-              title: "Welcher Fall bist du?",
-              items: [
-                "**Fall A — nur die Post zieht um:** Domain bleibt, du änderst 2 Einträge. Dauer: Minuten. Für die meisten der richtige Weg.",
-                "**Fall B — die Domain wechselt den Anbieter:** braucht einen **Auth-Code** vom alten Anbieter, dauert einige Tage.",
-                "Alte **Website** vom Baukasten mitnehmen? Das ist Modul 2 — hier geht es nur um Domain und Postfächer.",
-              ],
-            },
-            {
-              title: "Die Reihenfolge — daran hängt alles",
-              items: [
-                "**Postfächer beim neuen Anbieter anlegen** — exakt dieselben Adressen",
-                "**Alte Mails rüberkopieren**",
-                "**Erst jetzt umschalten** (MX-Einträge)",
-                "**Nach 1–2 Tagen nochmal kopieren** — Nachzügler",
-              ],
-              quote:
-                "Eine Mail, die nie ankommt, meldet sich nicht. Deswegen baust du erst das Neue auf — und schaltest dann um.",
-            },
-            {
-              title: "Danach",
-              items: [
-                "**Testmail vom Handy** an dein eigenes info@",
-                "**Altes Postfach noch Wochen stehen lassen** — kostet nichts, ist dein Netz",
-              ],
-            },
-          ],
           prompts: [
             `Am Tag davor — Umschaltzeit verkürzen:
 
@@ -551,13 +292,6 @@ Zeig mir vorher, was du vorhast, und frag nach, bevor du loslegst.`,
 
 Stell die MX-Einträge meiner Domain {DEINE-DOMAIN} auf All-Inkl um.
 Zeig mir vorher, was du änderst, und warte auf mein OK.`,
-          ],
-          software: [
-            { name: "Claude Code", note: "mit KAS- und Cloudflare-Verbindung" },
-            {
-              name: "Zugangsdaten beider Postfächer",
-              note: "alt und neu — für den Kopiervorgang",
-            },
           ],
         },
       },
