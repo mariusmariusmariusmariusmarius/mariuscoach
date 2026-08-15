@@ -49,23 +49,11 @@ export const CURRICULUM: CourseModule[] = [
   {
     slug: "basics",
     title: "Basics",
-    subtitle: "In 30 Minuten: eigene Domain, eigene E-Mail — und verstehen, warum",
+    subtitle: "Claude einrichten, Domain sichern, eigene E-Mail-Adressen — alles per Ansage",
     tier: "free",
     icon: "compass",
     gradient: "from-sky-500/80 to-cyan-400/80",
     lessons: [
-      {
-        slug: "was-ist-eine-webseite",
-        title: "Was ist eine Webseite — und warum brauchst du eine?",
-        description:
-          "Die 3 Welten des Internets: Social Media, Websites, Plattformen. Deine Website ist dein Point of Sale — ohne sie verlierst du Aufmerksamkeit.",
-        duration: 12,
-        kind: "video",
-        cheatSheet: {
-          emptyNote:
-            "In dieser Lektion brauchst du noch keine Prompts und keine Software — wir bauen noch nichts.",
-        },
-      },
       {
         slug: "claude-code",
         title: "Claude Code — dein Mitarbeiter",
