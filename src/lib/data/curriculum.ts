@@ -77,7 +77,6 @@ export const CURRICULUM: CourseModule[] = [
           "Bei Claude registrieren — auf claude.ai ein Konto anlegen.",
           "Pro-Abo abschließen. Das ist die einzige laufende Ausgabe, die der Kurs wirklich braucht.",
           "Claude Code herunterladen und installieren — es gibt eine Version für Mac und eine für Windows.",
-          "Einen Ordner für deine Firma anlegen (z. B. bei den Dokumenten) und in Claude Code öffnen. Alles, was Claude macht, passiert ab jetzt in diesem Ordner.",
           "Terminal öffnen: Mac mit Cmd + Leertaste und „terminal“, Windows mit Windows-Taste + R und „powershell“.",
           "Den Setup-Befehl für dein System rechts kopieren, einfügen, Enter drücken. Du tippst dort keinen Buchstaben.",
           "Passwort eingeben, wenn danach gefragt wird — beim Tippen bewegt sich nichts, das ist normal.",
