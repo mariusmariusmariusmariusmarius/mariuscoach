@@ -169,14 +169,14 @@ Frag mich, bevor du irgendetwas anlegst, änderst oder löschst.`,
         slug: "cloudflare-dns",
         title: "Cloudflare — das Adressbuch deiner Domain",
         description:
-          "DNS ist das Adressbuch des Internets. Wir holen es kostenlos zu Cloudflare — schneller, und Claude kann reinschreiben. Ohne dass die Mails ausfallen.",
+          "DNS ist das Adressbuch des Internets. Konto anlegen, Token holen, an Claude hängen — ab dann trägt er die Einträge selbst ein, wenn wir sie brauchen.",
         duration: 12,
         kind: "video",
         steps: [
-          "Kostenloses Konto bei Cloudflare anlegen und deine Domain hinzufügen — beim Tarif den kostenlosen wählen, der steht ganz unten.",
-          "Die zwei Nameserver, die Cloudflare dir anzeigt, im KAS bei deiner Domain eintragen. Ohne diesen Schritt passiert nichts.",
+          "Kostenloses Konto bei Cloudflare anlegen. Beim Einrichten fragt Cloudflare nach deiner Domain — eintragen und den kostenlosen Tarif wählen, der steht ganz unten.",
           "API-Token erstellen: Mein Profil → API-Tokens → Token erstellen → Vorlage \u201EDNS bearbeiten\u201C, nur für deine Domain. Sofort kopieren, er wird nur einmal angezeigt.",
           "Den Prompt rechts kopieren, Token und Domain eintragen und an Claude schicken.",
+          "Claude zeigt dir deine DNS-Einträge und die zwei Nameserver deines Kontos. Die Nameserver aufschreiben — die brauchst du in Modul 2, wenn deine Website live geht.",
         ],
         cheatSheet: {
           prompts: [
@@ -196,8 +196,8 @@ Geh so vor:
 2. Teste die Verbindung, nur lesend: Zeig mir alle DNS-Einträge meiner
    Domain als Tabelle — Typ, Name, Ziel.
 
-3. Sag mir in einem Satz, ob meine Mail-Einträge (MX) korrekt auf
-   All-Inkl zeigen.
+3. Zeig mir die zwei Nameserver, die Cloudflare meiner Domain zugewiesen
+   hat — die brauche ich später.
 
 Nichts anlegen, nichts ändern, nichts löschen.`,
             },
