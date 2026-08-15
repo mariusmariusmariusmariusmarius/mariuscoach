@@ -73,12 +73,12 @@ export const CURRICULUM: CourseModule[] = [
         cheatSheet: {
           prompts: [
             {
-              label: "Ins Terminal einfügen, Enter",
+              label: "Terminal öffnen: Cmd + Leertaste \u2192 \u201Eterminal\u201C \u2192 Enter. Dann einfügen, Enter:",
               os: "mac",
               text: `curl -fsSL https://setup.mariusmueller.media | bash`,
             },
             {
-              label: "In PowerShell einfügen, Enter",
+              label: "PowerShell öffnen: Windows-Taste + R \u2192 \u201Epowershell\u201C \u2192 Enter. Dann einfügen, Enter:",
               os: "win",
               text: `irm https://setup.mariusmueller.media/win | iex`,
             },
