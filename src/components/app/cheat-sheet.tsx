@@ -1,6 +1,7 @@
 import { ClipboardCopy, Link2 } from "lucide-react";
 import type { CheatSheet as CheatSheetData } from "@/lib/data/curriculum";
 import { CopyButton } from "@/components/ui/copy-button";
+import { OsIcon } from "@/components/ui/os-icon";
 
 function SectionLabel({
   icon: Icon,
@@ -40,7 +41,12 @@ export function CheatSheet({ sheet }: { sheet?: CheatSheetData }) {
                   className="overflow-hidden rounded-xl border border-white/10 bg-surface-950/60"
                 >
                   <div className="flex items-start justify-between gap-3 border-b border-white/5 px-3 py-2">
-                    <p className="text-xs leading-relaxed text-zinc-400">
+                    <p className="flex items-center gap-2 text-xs leading-relaxed text-zinc-400">
+                      {prompt.os ? (
+                        <span className="text-zinc-300">
+                          <OsIcon os={prompt.os} />
+                        </span>
+                      ) : null}
                       {prompt.label ?? "Prompt"}
                     </p>
                     <CopyButton text={prompt.text} />

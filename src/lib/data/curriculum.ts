@@ -12,8 +12,9 @@ import type { Tier } from "@/lib/tiers";
  * Prompts zum Kopieren und die Links, wo es raufgeht. Erklärt wird im Video.
  */
 export type CheatSheet = {
-  /** label steht ÜBER dem Block — im kopierbaren Text steht nur der Prompt */
-  prompts?: { label?: string; text: string }[];
+  /** label steht ÜBER dem Block — im kopierbaren Text steht nur der Prompt.
+   *  os blendet ein Apple- bzw. Windows-Zeichen davor ein. */
+  prompts?: { label?: string; os?: "mac" | "win"; text: string }[];
   links?: { label: string; href: string; note?: string }[];
   /** Ersetzt den Platzhalter, wenn es in dieser Lektion bewusst nichts gibt */
   emptyNote?: string;
@@ -73,11 +74,13 @@ export const CURRICULUM: CourseModule[] = [
         cheatSheet: {
           prompts: [
             {
-              label: "Setup-Paket · MAC — ins Terminal einfügen, Enter",
+              label: "Ins Terminal einfügen, Enter",
+              os: "mac",
               text: `curl -fsSL https://setup.mariusmueller.media | bash`,
             },
             {
-              label: "Setup-Paket · WINDOWS — in PowerShell einfügen, Enter",
+              label: "In PowerShell einfügen, Enter",
+              os: "win",
               text: `irm https://setup.mariusmueller.media/win | iex`,
             },
           ],
