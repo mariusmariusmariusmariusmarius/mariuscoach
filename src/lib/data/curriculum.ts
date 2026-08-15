@@ -207,17 +207,23 @@ Nichts anlegen, nichts ändern, nichts löschen.`,
         duration: 20,
         kind: "video",
         steps: [
+          "Zuerst der Umzug des Adressbuchs: bei All-Inkl in den \u201EMembers\u201C-Bereich einloggen — nicht ins KAS, das ist der andere Zugang.",
+          "Dort zu deiner Domain gehen und die Nameserver auf die zwei von Cloudflare ändern. Welche das sind, hat dir Claude in Lektion 1.3 genannt — sonst rechts nochmal abfragen.",
+          "Speichern. Die Umstellung braucht ein paar Minuten bis wenige Stunden, du kannst aber sofort weitermachen.",
           "Überlegen, welche Adressen du brauchst — info@ reicht für den Anfang, dazu meist dein Vorname@.",
-          "Den Prompt rechts kopieren, Domain und Wunschadressen eintragen und an Claude schicken.",
+          "Den Postfach-Prompt rechts kopieren, Domain und Wunschadressen eintragen und an Claude schicken.",
           "Claude zeigt dir erst, was schon existiert, legt dann die neuen Postfächer an und gibt dir eine Tabelle mit Passwörtern und Serverdaten.",
-          "Im KAS die Seite neu laden — die Postfächer sind da.",
           "Passwörter sicher ablegen, am besten im Passwort-Manager deines Browsers oder Handys.",
-          "Postfach aufs Handy holen: iPhone über Einstellungen → Mail → Accounts → Andere, Android über die Gmail-App → Konto hinzufügen → Andere.",
-          "Dabei IMAP wählen, niemals POP3.",
+          "Postfach aufs Handy holen: iPhone über Einstellungen → Mail → Accounts → Andere, Android über die Gmail-App → Konto hinzufügen → Andere. Dabei IMAP wählen, niemals POP3.",
           "Testmail an dich selbst schicken. Kommt sie an, ist alles fertig.",
         ],
         cheatSheet: {
           prompts: [
+            {
+              label: "Deine zwei Cloudflare-Nameserver abfragen — die trägst du bei All-Inkl im Members-Bereich ein",
+              text: `Zeig mir die zwei Nameserver, die Cloudflare meiner Domain
+{DEINE-DOMAIN} zugewiesen hat. Nur anzeigen, nichts ändern.`,
+            },
             {
               label: "Postfächer anlegen — zwei Stellen ausfüllen",
               text: `Leg mir Postfächer für meine Domain an.
