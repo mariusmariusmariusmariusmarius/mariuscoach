@@ -23,10 +23,14 @@ Solange keine echte Datenbank angebunden ist, gibt es eingebaute Test-Accounts:
 
 | E-Mail                  | Passwort   | Stufe   | Besonderheit        |
 | ----------------------- | ---------- | ------- | ------------------- |
-| demo@mariusmueller.media     | demo123    | Free    | Nur Basics-Modul    |
-| starter@mariusmueller.media  | starter123 | Starter | + Website & Leads   |
+| demo@mariusmueller.media     | demo123    | Pro     | Alle Inhalte        |
+| starter@mariusmueller.media  | starter123 | Pro     | Alle Inhalte        |
 | pro@mariusmueller.media      | pro123     | Pro     | Alle Inhalte        |
 | admin@mariusmueller.media    | admin123   | Pro     | + Admin-Bereich     |
+
+> ℹ️ Zum Testen stehen aktuell **alle** Demo-Accounts auf Pro. Zum Prüfen der
+> Freischaltungs-Logik die Stufe unter **Einstellungen → Account-Stufe**
+> umstellen — oder die Seeds in `src/lib/auth/users.ts` zurückdrehen.
 
 Registrierung funktioniert ebenfalls (neue Accounts starten als Free),
 gespeichert wird aber nur im RAM — nach einem Server-Neustart sind

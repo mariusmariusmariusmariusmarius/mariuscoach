@@ -22,12 +22,15 @@ export type User = {
 };
 
 const seedUsers: User[] = [
+  // Alle Demo-Accounts vorerst auf Pro, damit beim Testen überall Zugriff
+  // besteht. Die Namen bleiben, damit klar ist, welcher Account welche
+  // Stufe simulieren SOLL — zurückstellen geht in den Einstellungen oder hier.
   {
     id: "u_demo_free",
     name: "Demo Free",
     email: "demo@mariusmueller.media",
     password: "demo123",
-    tier: "free",
+    tier: "pro",
     role: "member",
     avatarColor: "from-sky-500 to-cyan-400",
     createdAt: "2026-01-10",
@@ -37,7 +40,7 @@ const seedUsers: User[] = [
     name: "Demo Starter",
     email: "starter@mariusmueller.media",
     password: "starter123",
-    tier: "starter",
+    tier: "pro",
     role: "member",
     avatarColor: "from-amber-400 to-orange-500",
     createdAt: "2026-02-02",

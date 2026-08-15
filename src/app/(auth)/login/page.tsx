@@ -55,10 +55,10 @@ export default function LoginPage() {
           Demo-Zugänge zum Testen
         </p>
         <ul className="space-y-1 font-mono text-xs text-zinc-400">
-          <li>demo@mariusmueller.media · demo123 <span className="text-sky-400">(Free)</span></li>
-          <li>starter@mariusmueller.media · starter123 <span className="text-amber-400">(Starter)</span></li>
+          <li>demo@mariusmueller.media · demo123 <span className="text-violet-400">(Pro)</span></li>
+          <li>starter@mariusmueller.media · starter123 <span className="text-violet-400">(Pro)</span></li>
           <li>pro@mariusmueller.media · pro123 <span className="text-violet-400">(Pro)</span></li>
-          <li>admin@mariusmueller.media · admin123 <span className="text-emerald-400">(Admin)</span></li>
+          <li>admin@mariusmueller.media · admin123 <span className="text-emerald-400">(Pro + Admin)</span></li>
         </ul>
       </div>
     </div>
