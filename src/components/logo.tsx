@@ -14,9 +14,9 @@ export function Logo({ href = "/" }: { href?: string }) {
         width={1000}
         height={307}
         priority
-        className="h-7 w-auto transition-opacity group-hover:opacity-80"
+        className="h-10 w-auto transition-opacity group-hover:opacity-80"
       />
-      <span className="mt-2 block text-[0.6875rem] font-semibold uppercase tracking-[0.24em] text-brand-400">
+      <span className="mt-2 block text-xs font-semibold uppercase tracking-[0.26em] text-brand-400">
         Academy
       </span>
     </Link>
