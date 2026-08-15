@@ -67,7 +67,7 @@ export const CURRICULUM: CourseModule[] = [
         slug: "claude-code",
         title: "Claude Code — dein Mitarbeiter",
         description:
-          "Der Unterschied zwischen einer KI, die redet, und einer, die arbeitet. Einrichten, ersten Auftrag geben, ersten Skill installieren — ohne eine Zeile Code.",
+          "Der Unterschied zwischen einer KI, die redet, und einer, die arbeitet. Einrichten, Werkzeugpaket laden, ersten Skill installieren — ohne eine Zeile Code.",
         duration: 12,
         kind: "video",
         cheatSheet: {
@@ -80,34 +80,12 @@ export const CURRICULUM: CourseModule[] = [
               label: "Setup-Paket · WINDOWS — in PowerShell einfügen, Enter",
               text: `irm https://setup.mariusmueller.media/win | iex`,
             },
-            {
-              label: "Dein erster Auftrag — Firmen-Steckbrief",
-              text: `Leg in meinem Ordner eine Datei firma.md an — das ist der Steckbrief
-meiner Firma, den du in Zukunft immer als Erstes liest.
-
-Stell mir dafür nacheinander Fragen, eine nach der anderen, und warte
-jeweils auf meine Antwort:
-- Wie heißt meine Firma und was mache ich genau?
-- Wo sitze ich und wie weit fahre ich raus?
-- Wer sind meine typischen Kunden?
-- Was unterscheidet mich von den anderen in meiner Gegend?
-- Wie sollen Kunden mich erreichen?
-
-Wenn ich fertig bin, schreib die Antworten sauber sortiert in die Datei
-und zeig mir, was drinsteht. Erfinde nichts dazu — wenn ich etwas nicht
-beantworte, lass es weg und frag lieber nach.`,
-            },
           ],
           links: [
             {
               label: "Claude Code herunterladen",
               href: "https://claude.ai",
               note: "Mac und Windows, Abo nötig",
-            },
-            {
-              label: "Setup-Paket ansehen",
-              href: "https://setup.mariusmueller.media",
-              note: "lesbarer Text — schau rein, bevor du es ausführst",
             },
           ],
         },
