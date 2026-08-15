@@ -7,7 +7,7 @@ export function Logo({ href = "/" }: { href?: string }) {
       <span className="relative block size-9 shrink-0 overflow-hidden rounded-xl shadow-lg shadow-brand-600/30 transition-transform group-hover:scale-105">
         <Image
           src="/logo.png"
-          alt="Marius Müller Media"
+          alt="gefundenwerden.online Academy"
           width={72}
           height={72}
           priority
@@ -15,9 +15,9 @@ export function Logo({ href = "/" }: { href?: string }) {
         />
       </span>
       <span className="font-display text-lg font-semibold leading-none tracking-tight text-white">
-        Marius Müller
+        gefundenwerden
         <span className="block text-xs font-medium uppercase tracking-[0.28em] text-brand-400">
-          Media
+          Academy
         </span>
       </span>
     </Link>

@@ -42,7 +42,7 @@ export default function FunnelPage() {
       <footer className="relative flex items-center justify-center gap-5 pb-8 text-xs text-zinc-600">
         <Link href="/impressum" className="transition hover:text-zinc-400">Impressum</Link>
         <Link href="/datenschutz" className="transition hover:text-zinc-400">Datenschutz</Link>
-        <span>© 2026 Marius Müller Media</span>
+        <span>© 2026 gefundenwerden.online</span>
       </footer>
     </div>
   );

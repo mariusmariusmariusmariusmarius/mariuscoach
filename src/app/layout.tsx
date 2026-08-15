@@ -19,11 +19,11 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Marius Müller Media — Websites bauen. Business starten.",
-    template: "%s · Marius Müller Media",
+    default: "gefundenwerden.online Academy — Websites bauen. Business starten.",
+    template: "%s · gefundenwerden.online Academy",
   },
   description:
-    "Die Lernplattform von Marius Müller Media: Eigene Websites, Shops und digitale Tools selbst bauen — von der Domain bis zur eigenen Admin-App. Kurse, Community und Praxis-Cases.",
+    "Die Lernplattform von gefundenwerden.online: Eigene Websites, Shops und digitale Tools selbst bauen — von der Domain bis zur eigenen Admin-App. Kurse, Community und Praxis-Cases.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

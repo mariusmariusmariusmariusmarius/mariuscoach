@@ -510,7 +510,7 @@ export default function LandingPage() {
             <Link href="/datenschutz" className="transition hover:text-white">Datenschutz</Link>
             <Link href="/agb" className="transition hover:text-white">AGB</Link>
           </nav>
-          <p className="text-sm text-zinc-500">© 2026 Marius Müller Media</p>
+          <p className="text-sm text-zinc-500">© 2026 gefundenwerden.online</p>
         </div>
       </footer>
     </div>
