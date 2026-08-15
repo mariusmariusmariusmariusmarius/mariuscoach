@@ -1,5 +1,6 @@
 import { ClipboardCopy, Link2 } from "lucide-react";
 import type { CheatSheet as CheatSheetData } from "@/lib/data/curriculum";
+import { CopyButton } from "@/components/ui/copy-button";
 
 function SectionLabel({
   icon: Icon,
@@ -34,13 +35,18 @@ export function CheatSheet({ sheet }: { sheet?: CheatSheetData }) {
             <SectionLabel icon={ClipboardCopy}>Zum Kopieren</SectionLabel>
             <div className="space-y-4">
               {prompts.map((prompt, i) => (
-                <div key={i}>
-                  {prompt.label ? (
-                    <p className="mb-1.5 text-xs font-medium text-zinc-400">
-                      {prompt.label}
+                <div
+                  key={i}
+                  className="overflow-hidden rounded-xl border border-white/10 bg-surface-950/60"
+                >
+                  <div className="flex items-start justify-between gap-3 border-b border-white/5 px-3 py-2">
+                    <p className="text-xs leading-relaxed text-zinc-400">
+                      {prompt.label ?? "Prompt"}
                     </p>
-                  ) : null}
-                  <pre className="overflow-x-auto whitespace-pre-wrap rounded-xl border border-white/10 bg-surface-950/60 p-3 font-mono text-xs leading-relaxed text-zinc-300">
+                    <CopyButton text={prompt.text} />
+                  </div>
+                  {/* lange Prompts scrollen INNERHALB der Box, statt die Seite zu strecken */}
+                  <pre className="max-h-56 overflow-auto whitespace-pre-wrap p-3 font-mono text-xs leading-relaxed text-zinc-300">
                     {prompt.text}
                   </pre>
                 </div>
