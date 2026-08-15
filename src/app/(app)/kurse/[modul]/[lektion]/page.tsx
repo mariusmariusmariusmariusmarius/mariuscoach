@@ -56,45 +56,50 @@ export default async function LessonPage({
         </h1>
       </div>
 
-      {/* Video-Platzhalter — später: echter Player (z. B. Mux, Bunny, Vimeo) */}
-      <div className="group relative aspect-video overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-surface-800 to-surface-950">
-        <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-10 ${courseModule.gradient}`} />
-        <div className="absolute inset-0 grid place-items-center">
-          <div className="text-center">
+      {/* Video links, Infos rechts — gleiche Höhe, Box scrollt mit */}
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.85fr)_minmax(20rem,1fr)] lg:items-start">
+        <div className="space-y-6">
+          {/* Video-Platzhalter — später: echter Player (z. B. Mux, Bunny, Vimeo) */}
+          <div className="group relative aspect-video overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-surface-800 to-surface-950">
+            <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-10 ${courseModule.gradient}`} />
+            <div className="absolute inset-0 grid place-items-center">
+              <div className="text-center">
+                <button
+                  type="button"
+                  className="mx-auto mb-4 grid size-20 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur transition group-hover:scale-105 group-hover:bg-brand-500/80"
+                  aria-label="Video abspielen"
+                >
+                  <Play className="size-8 translate-x-0.5" />
+                </button>
+                <p className="text-sm text-zinc-400">
+                  Video-Inhalt folgt — hier kommt später dein Kursvideo hin.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/8 bg-surface-900/70 p-8">
+            <h2 className="mb-3 text-lg font-semibold text-white">Worum geht&apos;s?</h2>
+            <p className="leading-relaxed text-zinc-300">{lesson.description}</p>
+            <div className="mt-6 rounded-2xl border border-dashed border-white/10 bg-surface-950/40 p-6 text-sm text-zinc-500">
+              Hier entstehen die Lektionsinhalte: Schritt-für-Schritt-Anleitung
+              und Anmerkungen. Die Inhalte werden später über den Admin-Bereich
+              gepflegt und aus der Datenbank geladen.
+            </div>
             <button
               type="button"
-              className="mx-auto mb-4 grid size-20 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur transition group-hover:scale-105 group-hover:bg-brand-500/80"
-              aria-label="Video abspielen"
+              className="mt-6 inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-2.5 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/20"
             >
-              <Play className="size-8 translate-x-0.5" />
+              <CheckCircle2 className="size-4" />
+              Als erledigt markieren
             </button>
-            <p className="text-sm text-zinc-400">
-              Video-Inhalt folgt — hier kommt später dein Kursvideo hin.
-            </p>
           </div>
         </div>
-      </div>
 
-      {/* Lektions-Inhalt + Info-Box */}
-      <div className="grid gap-6 lg:grid-cols-5">
-        <div className="rounded-3xl border border-white/8 bg-surface-900/70 p-8 lg:col-span-3">
-          <h2 className="mb-3 text-lg font-semibold text-white">Worum geht&apos;s?</h2>
-          <p className="leading-relaxed text-zinc-300">{lesson.description}</p>
-          <div className="mt-6 rounded-2xl border border-dashed border-white/10 bg-surface-950/40 p-6 text-sm text-zinc-500">
-            Hier entstehen die Lektionsinhalte: Schritt-für-Schritt-Anleitung
-            und Anmerkungen. Die Inhalte werden später über den Admin-Bereich
-            gepflegt und aus der Datenbank geladen.
-          </div>
-          <button
-            type="button"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-2.5 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/20"
-          >
-            <CheckCircle2 className="size-4" />
-            Als erledigt markieren
-          </button>
+        {/* bleibt beim Scrollen stehen, damit die Prompts immer greifbar sind */}
+        <div className="lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto">
+          <CheatSheet sheet={lesson.cheatSheet} />
         </div>
-
-        <CheatSheet sheet={lesson.cheatSheet} />
       </div>
 
       {/* Navigation */}

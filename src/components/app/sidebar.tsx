@@ -6,6 +6,7 @@ import { useState } from "react";
 import {
   GraduationCap,
   LayoutDashboard,
+  LogOut,
   Menu,
   MessagesSquare,
   Settings,
@@ -15,6 +16,9 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import type { Session } from "@/lib/auth/session";
+import { logoutAction } from "@/lib/auth/actions";
+import { Avatar } from "@/components/ui/avatar";
+import { TierBadge } from "@/components/ui/tier-badge";
 
 const NAV = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -73,6 +77,40 @@ export function AppSidebar({ session }: { session: Session }) {
     </Link>
   );
 
+  /** Account, Stufe und Logout — sitzen unten in der Leiste statt im Header */
+  const account = (
+    <div className="space-y-3 border-t border-white/5 pt-4">
+      <Link
+        href="/einstellungen"
+        onClick={() => setOpen(false)}
+        className="flex items-center gap-3 rounded-xl px-2 py-2 transition hover:bg-white/5"
+      >
+        <Avatar name={session.name} gradient={session.avatarColor} size="sm" />
+        <span className="min-w-0 flex-1">
+          <span className="block truncate text-sm font-medium text-white">
+            {session.name}
+          </span>
+          <span className="block truncate text-xs text-zinc-500">
+            {session.email}
+          </span>
+        </span>
+      </Link>
+
+      <div className="flex items-center justify-between gap-2 px-2">
+        <TierBadge tier={session.tier} />
+        <form action={logoutAction}>
+          <button
+            type="submit"
+            className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-medium text-zinc-400 transition hover:bg-white/5 hover:text-white"
+          >
+            <LogOut className="size-3.5" />
+            Ausloggen
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+
   return (
     <>
       {/* Mobile Toggle */}
@@ -109,6 +147,7 @@ export function AppSidebar({ session }: { session: Session }) {
         </div>
         {nav}
         {upsell}
+        {account}
       </aside>
     </>
   );

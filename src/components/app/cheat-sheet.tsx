@@ -25,21 +25,25 @@ export function CheatSheet({ sheet }: { sheet?: CheatSheetData }) {
   const hasContent = prompts.length > 0 || links.length > 0;
 
   return (
-    <aside className="rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6 lg:col-span-2">
+    <aside className="rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6">
       <h2 className="mb-5 text-lg font-semibold text-white">Infos zur Lektion</h2>
 
       <div className="space-y-5">
         {prompts.length > 0 ? (
           <div>
             <SectionLabel icon={ClipboardCopy}>Zum Kopieren</SectionLabel>
-            <div className="space-y-2">
+            <div className="space-y-4">
               {prompts.map((prompt, i) => (
-                <pre
-                  key={i}
-                  className="overflow-x-auto whitespace-pre-wrap rounded-xl border border-white/10 bg-surface-950/60 p-3 font-mono text-xs leading-relaxed text-zinc-300"
-                >
-                  {prompt}
-                </pre>
+                <div key={i}>
+                  {prompt.label ? (
+                    <p className="mb-1.5 text-xs font-medium text-zinc-400">
+                      {prompt.label}
+                    </p>
+                  ) : null}
+                  <pre className="overflow-x-auto whitespace-pre-wrap rounded-xl border border-white/10 bg-surface-950/60 p-3 font-mono text-xs leading-relaxed text-zinc-300">
+                    {prompt.text}
+                  </pre>
+                </div>
               ))}
             </div>
           </div>

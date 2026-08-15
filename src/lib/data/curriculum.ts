@@ -12,7 +12,8 @@ import type { Tier } from "@/lib/tiers";
  * Prompts zum Kopieren und die Links, wo es raufgeht. Erklärt wird im Video.
  */
 export type CheatSheet = {
-  prompts?: string[];
+  /** label steht ÜBER dem Block — im kopierbaren Text steht nur der Prompt */
+  prompts?: { label?: string; text: string }[];
   links?: { label: string; href: string; note?: string }[];
   /** Ersetzt den Platzhalter, wenn es in dieser Lektion bewusst nichts gibt */
   emptyNote?: string;
@@ -71,15 +72,17 @@ export const CURRICULUM: CourseModule[] = [
         kind: "video",
         cheatSheet: {
           prompts: [
-            `Setup-Paket · MAC — ins Terminal einfügen, Enter:
-
-curl -fsSL https://setup.mariusmueller.media | bash`,
-            `Setup-Paket · WINDOWS — in PowerShell einfügen, Enter:
-
-irm https://setup.mariusmueller.media/win | iex`,
-            `Dein erster Auftrag — Firmen-Steckbrief:
-
-Leg in meinem Ordner eine Datei firma.md an — das ist der Steckbrief
+            {
+              label: "Setup-Paket · MAC — ins Terminal einfügen, Enter",
+              text: `curl -fsSL https://setup.mariusmueller.media | bash`,
+            },
+            {
+              label: "Setup-Paket · WINDOWS — in PowerShell einfügen, Enter",
+              text: `irm https://setup.mariusmueller.media/win | iex`,
+            },
+            {
+              label: "Dein erster Auftrag — Firmen-Steckbrief",
+              text: `Leg in meinem Ordner eine Datei firma.md an — das ist der Steckbrief
 meiner Firma, den du in Zukunft immer als Erstes liest.
 
 Stell mir dafür nacheinander Fragen, eine nach der anderen, und warte
@@ -93,6 +96,7 @@ jeweils auf meine Antwort:
 Wenn ich fertig bin, schreib die Antworten sauber sortiert in die Datei
 und zeig mir, was drinsteht. Erfinde nichts dazu — wenn ich etwas nicht
 beantworte, lass es weg und frag lieber nach.`,
+            },
           ],
           links: [
             {
@@ -117,10 +121,9 @@ beantworte, lass es weg und frag lieber nach.`,
         kind: "video",
         cheatSheet: {
           prompts: [
-            `All-Inkl (KAS) mit Claude verbinden — zwei Stellen ausfüllen,
-geschweifte Klammern mit weglöschen:
-
-Ich will meinen Webhosting-Account bei All-Inkl von dir aus steuern können.
+            {
+              label: "All-Inkl (KAS) mit Claude verbinden — zwei Stellen ausfüllen, geschweifte Klammern mit weglöschen",
+              text: `Ich will meinen Webhosting-Account bei All-Inkl von dir aus steuern können.
 
 Meine Zugangsdaten:
 KAS_LOGIN = {DEINE-KAS-KENNUNG}       ← z. B. w01a2b3c
@@ -153,6 +156,7 @@ Geh so vor:
    und wohin zeigen sie.
 
 Frag mich, bevor du irgendetwas anlegst, änderst oder löschst.`,
+            },
           ],
           links: [
             {
@@ -177,10 +181,9 @@ Frag mich, bevor du irgendetwas anlegst, änderst oder löschst.`,
         kind: "video",
         cheatSheet: {
           prompts: [
-            `Cloudflare (DNS) mit Claude verbinden — zwei Stellen ausfüllen,
-geschweifte Klammern mit weglöschen:
-
-Ich will meine DNS-Einträge bei Cloudflare von dir aus steuern können.
+            {
+              label: "Cloudflare (DNS) mit Claude verbinden — zwei Stellen ausfüllen, geschweifte Klammern mit weglöschen",
+              text: `Ich will meine DNS-Einträge bei Cloudflare von dir aus steuern können.
 
 Mein Cloudflare-Token: {DEIN-CLOUDFLARE-TOKEN}
 Meine Domain: {DEINE-DOMAIN}
@@ -198,6 +201,7 @@ Geh so vor:
    All-Inkl zeigen.
 
 Nichts anlegen, nichts ändern, nichts löschen.`,
+            },
           ],
           links: [
             {
@@ -217,9 +221,9 @@ Nichts anlegen, nichts ändern, nichts löschen.`,
         kind: "video",
         cheatSheet: {
           prompts: [
-            `Postfächer anlegen — zwei Stellen ausfüllen:
-
-Leg mir Postfächer für meine Domain an.
+            {
+              label: "Postfächer anlegen — zwei Stellen ausfüllen",
+              text: `Leg mir Postfächer für meine Domain an.
 
 Domain: {DEINE-DOMAIN}
 Gewünschte Adressen: info@ und {DEIN-VORNAME}@
@@ -236,14 +240,16 @@ So gehst du vor:
    dir aus meinem Account, rate sie nicht.
 
 Nur anlegen, nichts löschen und nichts überschreiben.`,
-            `Und ab jetzt reichen Sätze wie diese:
-
-Zeig mir alle Postfächer auf meiner Domain.
+            },
+            {
+              label: "Und ab jetzt reichen Sätze wie diese",
+              text: `Zeig mir alle Postfächer auf meiner Domain.
 
 Leg mir noch buchhaltung@{DEINE-DOMAIN} an — nur anlegen,
 nichts löschen und nichts überschreiben.
 
 Richte eine Weiterleitung von kontakt@ auf info@ ein.`,
+            },
           ],
         },
       },
@@ -256,14 +262,15 @@ Richte eine Weiterleitung von kontakt@ auf info@ ein.`,
         kind: "video",
         cheatSheet: {
           prompts: [
-            `Am Tag davor — Umschaltzeit verkürzen:
-
-Setz bei meiner Domain {DEINE-DOMAIN} die Gültigkeitsdauer (TTL) der
+            {
+              label: "Am Tag davor — Umschaltzeit verkürzen",
+              text: `Setz bei meiner Domain {DEINE-DOMAIN} die Gültigkeitsdauer (TTL) der
 MX-Einträge auf 300 Sekunden runter. Nur die TTL ändern, sonst nichts —
 nichts löschen, keine anderen Einträge anfassen.`,
-            `Schritt 1 — Postfächer vorbereiten:
-
-Ich ziehe meine Domain {DEINE-DOMAIN} zu All-Inkl um.
+            },
+            {
+              label: "Schritt 1 — Postfächer vorbereiten",
+              text: `Ich ziehe meine Domain {DEINE-DOMAIN} zu All-Inkl um.
 
 Diese Adressen gibt es bisher beim alten Anbieter:
 {info@..., buchhaltung@..., ...}
@@ -274,9 +281,10 @@ Zugangsdaten (IMAP/SMTP).
 
 Nur anlegen, nichts löschen und nichts überschreiben. Ändere noch KEINE
 DNS-Einträge — das machen wir später.`,
-            `Schritt 2 — alte Mails kopieren (dauert bei großen Postfächern 1–2 Stunden):
-
-Kopier meine alten Mails ins neue Postfach.
+            },
+            {
+              label: "Schritt 2 — alte Mails kopieren (dauert bei großen Postfächern 1–2 Stunden)",
+              text: `Kopier meine alten Mails ins neue Postfach.
 
 ALT:  Server {alter-imap-server}, Benutzer {alt}, Passwort {alt}
 NEU:  Server {neuer-imap-server}, Benutzer {neu}, Passwort {neu}
@@ -288,10 +296,12 @@ Bau dir dafür ein kleines Python-Werkzeug mit imaplib. Wichtig:
 - am Ende sagen, wie viele Mails übertragen wurden
 
 Zeig mir vorher, was du vorhast, und frag nach, bevor du loslegst.`,
-            `Schritt 3 — umschalten:
-
-Stell die MX-Einträge meiner Domain {DEINE-DOMAIN} auf All-Inkl um.
+            },
+            {
+              label: "Schritt 3 — umschalten",
+              text: `Stell die MX-Einträge meiner Domain {DEINE-DOMAIN} auf All-Inkl um.
 Zeig mir vorher, was du änderst, und warte auf mein OK.`,
+            },
           ],
         },
       },
