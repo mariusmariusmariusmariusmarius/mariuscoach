@@ -1,7 +1,7 @@
 import { ClipboardCopy, Link2, Wrench } from "lucide-react";
 import type { CheatSheet as CheatSheetData } from "@/lib/data/curriculum";
 
-/** Erlaubt **fett** in den Cheat-Sheet-Texten — mehr Markdown brauchen wir hier nicht. */
+/** Erlaubt **fett** in den Info-Texten — mehr Markdown brauchen wir hier nicht. */
 function RichText({ text }: { text: string }) {
   return (
     <>
@@ -41,7 +41,7 @@ export function CheatSheet({ sheet }: { sheet?: CheatSheetData }) {
 
   return (
     <aside className="rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6 lg:col-span-2">
-      <h2 className="mb-1 text-lg font-semibold text-white">Cheat Sheet</h2>
+      <h2 className="mb-1 text-lg font-semibold text-white">Infos zur Lektion</h2>
       <p className="mb-5 text-xs text-zinc-500">
         Alles aus dieser Lektion zum Nachmachen.
       </p>
@@ -72,7 +72,7 @@ export function CheatSheet({ sheet }: { sheet?: CheatSheetData }) {
 
         {prompts.length > 0 ? (
           <div>
-            <SectionLabel icon={ClipboardCopy}>Prompts</SectionLabel>
+            <SectionLabel icon={ClipboardCopy}>Zum Kopieren</SectionLabel>
             <div className="space-y-2">
               {prompts.map((prompt, i) => (
                 <pre

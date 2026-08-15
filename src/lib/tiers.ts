@@ -42,7 +42,7 @@ export const TIER_INFO: Record<
       "Website bauen mit Claude (17 Lektionen)",
       "Leads & Automation",
       "SEO & Google — gefunden werden",
-      "Cheat Sheets: fertige Prompts zum Kopieren",
+      "Infos zu jeder Lektion: fertige Prompts zum Kopieren",
       "Community aktiv nutzen",
     ],
     highlight: true,

@@ -75,7 +75,7 @@ export default async function LessonPage({
         </div>
       </div>
 
-      {/* Lektions-Inhalt + Cheat Sheet */}
+      {/* Lektions-Inhalt + Info-Box */}
       <div className="grid gap-6 lg:grid-cols-5">
         <div className="rounded-3xl border border-white/8 bg-surface-900/70 p-8 lg:col-span-3">
           <h2 className="mb-3 text-lg font-semibold text-white">Worum geht&apos;s?</h2>

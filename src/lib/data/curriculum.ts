@@ -113,28 +113,453 @@ export const CURRICULUM: CourseModule[] = [
         },
       },
       {
+        slug: "claude-code",
+        title: "Claude Code — dein Mitarbeiter",
+        description:
+          "Der Unterschied zwischen einer KI, die redet, und einer, die arbeitet. Einrichten, ersten Auftrag geben, ersten Skill installieren — ohne eine Zeile Code.",
+        duration: 12,
+        kind: "video",
+        cheatSheet: {
+          blocks: [
+            {
+              title: "Der Unterschied",
+              items: [
+                "**Chat im Browser** — redet über die Arbeit. Du machst sie trotzdem selbst.",
+                "**Claude Code** — macht die Arbeit: legt Dateien an, führt Sachen aus, schließt sich an dein Hosting an.",
+              ],
+              quote:
+                "Claude Code ist nicht der Berater am Telefon. Das ist der Handwerker, der mit dem Werkzeugkasten in deine Werkstatt kommt.",
+            },
+            {
+              title: "Einrichten in 3 Schritten",
+              items: [
+                "Auf claude.ai Claude Code für Mac oder Windows laden",
+                "Mit dem Claude-Konto anmelden (Abo nötig)",
+                "**Firmenordner** anlegen und in Claude Code öffnen — außerhalb davon fasst er nichts an",
+              ],
+            },
+            {
+              title: "Terminal öffnen",
+              items: [
+                "**Mac:** Cmd + Leertaste → „terminal\" → Enter",
+                "**Windows:** Windows-Taste + R → „powershell\" → Enter",
+                "Dort nur einfügen und Enter — **du tippst keinen Buchstaben**",
+              ],
+            },
+            {
+              title: "Die drei Regeln",
+              items: [
+                "**Er fragt, bevor er handelt** — Frage lesen, dann erlauben",
+                "**Sag, was NICHT passieren soll:** „Nur anlegen, nichts löschen und nichts überschreiben.\"",
+                "**Fehler? Reinkopieren statt googeln** — „Das kam raus, was ist da los?\"",
+              ],
+              quote:
+                "Du kannst hier nichts kaputtmachen, was nicht reparierbar wäre. Das ist kein Bankkonto, das ist ein Ordner auf deinem Rechner.",
+            },
+            {
+              title: "Was ein Skill ist",
+              items: [
+                "**Eine Anleitung, die Claude vorher liest.** Ohne Skill: guter Allrounder. Mit Skill: Fachmann.",
+                "Liegt als Ordner mit einer Textdatei bei dir auf der Platte — kein Abo, keine Cloud",
+                "Ab jetzt reicht der Satz: **„Gibt\u2019s dafür einen Skill?\"**",
+              ],
+            },
+          ],
+          prompts: [
+            `Setup-Paket · MAC — ins Terminal einfügen, Enter:
+
+curl -fsSL https://setup.mariusmueller.media | bash`,
+            `Setup-Paket · WINDOWS — in PowerShell einfügen, Enter:
+
+irm https://setup.mariusmueller.media/win | iex`,
+            `Dein erster Auftrag — Firmen-Steckbrief:
+
+Leg in meinem Ordner eine Datei firma.md an — das ist der Steckbrief
+meiner Firma, den du in Zukunft immer als Erstes liest.
+
+Stell mir dafür nacheinander Fragen, eine nach der anderen, und warte
+jeweils auf meine Antwort:
+- Wie heißt meine Firma und was mache ich genau?
+- Wo sitze ich und wie weit fahre ich raus?
+- Wer sind meine typischen Kunden?
+- Was unterscheidet mich von den anderen in meiner Gegend?
+- Wie sollen Kunden mich erreichen?
+
+Wenn ich fertig bin, schreib die Antworten sauber sortiert in die Datei
+und zeig mir, was drinsteht. Erfinde nichts dazu — wenn ich etwas nicht
+beantworte, lass es weg und frag lieber nach.`,
+          ],
+          links: [
+            {
+              label: "Claude Code herunterladen",
+              href: "https://claude.ai",
+              note: "Mac und Windows, Abo nötig",
+            },
+            {
+              label: "Setup-Paket ansehen",
+              href: "https://setup.mariusmueller.media",
+              note: "lesbarer Text — schau rein, bevor du es ausführst",
+            },
+          ],
+          software: [
+            { name: "Claude Code", note: "Mac oder Windows" },
+            {
+              name: "Setup-Paket",
+              note: "installiert Node, git, GitHub-Werkzeug, Python, Beautiful Soup und den Skill find-skills",
+            },
+          ],
+        },
+      },
+      {
         slug: "was-ist-eine-domain",
         title: "Was ist eine Domain?",
         description:
-          "Deine Domain ist ein Vermögenswert und gehört IMMER dir. .de vs. .com, der richtige Anbieter für ~10 €/Jahr — und die Upsell-Fallen, die du dir sparst.",
+          "Deine Domain ist ein Vermögenswert und gehört IMMER dir. .de vs. .com, der richtige Anbieter — und am Ende hängt Claude direkt an deinem Hosting.",
         duration: 14,
         kind: "video",
+        cheatSheet: {
+          blocks: [
+            {
+              title: "Die eine Regel",
+              items: [
+                "Die Domain gehört **dir**. Nicht dem Designer, nicht der Agentur, nicht dem Neffen.",
+                "„Gehört dir\" heißt: **Du hast die Zugangsdaten**, du stehst als Inhaber drin, die Rechnung läuft auf dich.",
+              ],
+            },
+            {
+              title: "Anbieter: All-Inkl",
+              items: [
+                "Einziger Anbieter, dessen Schnittstelle auch **Postfächer** kann",
+                "IONOS: 75 Funktionen, **keine** für E-Mail · Strato: gar keine Schnittstelle",
+                "Paket **„Privat\", 4,95 €/Monat** — 3 Domains, 500 Postfächer, erster Monat gratis, keine Mindestlaufzeit",
+              ],
+            },
+            {
+              title: "Wir legen NEU an",
+              items: [
+                "Auch wenn du schon eine Domain hast — **lass sie erstmal in Ruhe**",
+                "Ein Umzug ist etwas anderes: da hängen deine E-Mails dran (→ Lektion 1.6)",
+              ],
+            },
+            {
+              title: "Zwei Logins — nicht verwechseln",
+              items: [
+                "**Members** = Vertrag, Rechnungen, Domains bestellen",
+                "**KAS** = Technik: Postfächer, DNS — **den hängen wir an Claude**",
+                "Die KAS-Kennung fängt mit einem kleinen **w** an, z. B. w01a2b3c",
+              ],
+            },
+            {
+              title: "Was du beim Kauf NICHT anklickst",
+              items: [
+                "Domain-Guard, Virenschutz, kostenpflichtiges SSL",
+                "Homepage-Baukasten, Backup-Service, „SEO-Booster\"",
+              ],
+              quote:
+                "Zehn Euro Domain sind kein Geschäftsmodell. Das Geld verdienen sie mit den Häkchen. Setz keins.",
+            },
+          ],
+          prompts: [
+            `All-Inkl (KAS) mit Claude verbinden — zwei Stellen ausfüllen,
+geschweifte Klammern mit weglöschen:
+
+Ich will meinen Webhosting-Account bei All-Inkl von dir aus steuern können.
+
+Meine Zugangsdaten:
+KAS_LOGIN = {DEINE-KAS-KENNUNG}       ← z. B. w01a2b3c
+KAS_PASSWORD = {DEIN-KAS-PASSWORT}
+
+Geh so vor:
+
+1. Lies die offizielle Doku:
+   https://kasapi.kasserver.com/dokumentation/phpdoc/packages/API-Funktionen.html
+   Zwei Dinge sind wichtig: Es gibt zwei SOAP-Endpunkte — KasAuth.php zum
+   Anmelden, KasApi.php für alles andere. Und alle Angaben werden als
+   JSON-String im Parameter "Params" übergeben.
+
+2. Leg meine Zugangsdaten in eine Datei .env.kas in meinem Projektordner,
+   setz sie auf chmod 600 und trag .env.kas in die .gitignore ein.
+   Schreib das Passwort in keine andere Datei und in keinen Code.
+
+3. Bau mir einen kleinen Client tools/kas.py — reines Python, ohne
+   Zusatzpakete. Er soll:
+   - sich zuerst ein Session-Token mit 600 Sekunden Laufzeit holen, damit
+     nicht bei jedem Aufruf mein Passwort mitgeschickt wird
+   - die SOAP-Antwort in lesbares JSON übersetzen
+   - alles, was löscht, zurücksetzt oder verschiebt (delete_, reset_,
+     move_), nur mit dem Flag --force ausführen
+
+4. Teste die Verbindung, nur lesend: get_domains und get_mailaccounts.
+   Nichts anlegen, nichts ändern, nichts löschen.
+
+5. Zeig mir am Ende eine Tabelle: welche Domains liegen in meinem Account
+   und wohin zeigen sie.
+
+Frag mich, bevor du irgendetwas anlegst, änderst oder löschst.`,
+          ],
+          links: [
+            {
+              label: "All-Inkl — Paket Privat",
+              href: "https://all-inkl.com/webhosting/privat/",
+              note: "4,95 €/Monat, erster Monat gratis",
+            },
+            {
+              label: "DENIC-Abfrage",
+              href: "https://www.denic.de/webservice/domainabfrage/",
+              note: "prüfen, wer als Inhaber einer .de-Domain eingetragen ist",
+            },
+          ],
+          software: [
+            { name: "Claude Code", note: "aus Lektion 1.2" },
+            { name: "All-Inkl KAS", note: "Zugangsdaten aus der Willkommensmail" },
+          ],
+        },
+      },
+      {
+        slug: "cloudflare-dns",
+        title: "Cloudflare — das Adressbuch deiner Domain",
+        description:
+          "DNS ist das Adressbuch des Internets. Wir holen es kostenlos zu Cloudflare — schneller, und Claude kann reinschreiben. Ohne dass die Mails ausfallen.",
+        duration: 12,
+        kind: "video",
+        cheatSheet: {
+          blocks: [
+            {
+              title: "DNS in einem Satz",
+              items: [
+                "Das **Adressbuch des Internets**: übersetzt deinen Domainnamen in die Nummer des Servers",
+                "**A** = hier liegt die Website · **MX** = hierhin gehen die Mails · **TXT** = beweist, dass deine Mails echt sind",
+              ],
+            },
+            {
+              title: "Warum Cloudflare",
+              items: [
+                "Im All-Inkl-Tarif „Privat\" ist DNS-Bearbeitung **gesperrt** — bei Cloudflare kostenlos",
+                "Beste Schnittstelle am Markt, weltweite Server",
+                "**Die Postfächer bleiben bei All-Inkl** — wir tauschen nur das Adressbuch, nicht das Postamt",
+              ],
+            },
+            {
+              title: "Umstellen — die Reihenfolge zählt",
+              items: [
+                "Kostenloses Cloudflare-Konto anlegen",
+                "Domain hinzufügen → **Free-Tarif** wählen (steht ganz unten)",
+                "**MX-Einträge prüfen** — da muss `kasserver.com` stehen",
+                "Die zwei Nameserver von Cloudflare im KAS eintragen",
+              ],
+              quote:
+                "Fehlt ein MX-Eintrag, kommt deine Post nicht mehr an. Vor dem Nameserverwechsel prüfen — im Zweifel Claude fragen. Rückgängig geht jederzeit.",
+            },
+            {
+              title: "Deine zwei Nameserver sind DEINE",
+              items: [
+                "Cloudflare gibt jedem Konto ein eigenes Namenspaar — sie sehen aus wie Vornamen",
+                "**Nicht aus dem Video abtippen** — nimm die zwei Namen, die dir dein eigenes Konto anzeigt",
+              ],
+            },
+            {
+              title: "Token erzeugen",
+              items: [
+                "Cloudflare → **Mein Profil → API-Tokens → Token erstellen**",
+                "Vorlage **„DNS bearbeiten\"** wählen, Geltungsbereich auf **eine** Zone (deine Domain)",
+                "Sofort kopieren — er wird nur einmal angezeigt",
+              ],
+            },
+          ],
+          prompts: [
+            `Cloudflare (DNS) mit Claude verbinden — zwei Stellen ausfüllen,
+geschweifte Klammern mit weglöschen:
+
+Ich will meine DNS-Einträge bei Cloudflare von dir aus steuern können.
+
+Mein Cloudflare-Token: {DEIN-CLOUDFLARE-TOKEN}
+Meine Domain: {DEINE-DOMAIN}
+
+Geh so vor:
+
+1. Leg den Token in eine Datei .env.cloudflare in meinem Projektordner,
+   setz sie auf chmod 600 und trag sie in die .gitignore ein.
+   Schreib ihn in keine andere Datei und in keinen Code.
+
+2. Teste die Verbindung, nur lesend: Zeig mir alle DNS-Einträge meiner
+   Domain als Tabelle — Typ, Name, Ziel.
+
+3. Sag mir in einem Satz, ob meine Mail-Einträge (MX) korrekt auf
+   All-Inkl zeigen.
+
+Nichts anlegen, nichts ändern, nichts löschen.`,
+          ],
+          links: [
+            {
+              label: "Cloudflare — kostenloses Konto",
+              href: "https://dash.cloudflare.com/sign-up",
+              note: "Free-Tarif reicht vollständig",
+            },
+          ],
+          software: [
+            { name: "Cloudflare-Konto", note: "kostenlos" },
+            { name: "Claude Code", note: "mit KAS-Verbindung aus 1.3" },
+          ],
+        },
       },
       {
         slug: "email-adressen-anlegen",
         title: "E-Mail-Adressen anlegen",
         description:
-          "In 4 Schritten zur info@-Adresse auf deiner Domain, eingerichtet auf jedem Gerät. IMAP statt POP3 — und der Signatur-Fact, den kaum jemand kennt.",
-        duration: 18,
+          "info@deine-firma.de — angelegt durch einen Satz an Claude statt durch acht Formularfelder. Danach aufs Handy: IMAP statt POP3.",
+        duration: 20,
         kind: "video",
+        cheatSheet: {
+          blocks: [
+            {
+              title: "Warum eigene Adresse",
+              items: [
+                "info@deine-firma.de statt firma@gmx.de — Grundausstattung, nicht Marketing",
+                "**500 Postfächer** sind im Paket drin. Kosten für dich: **0 €**",
+              ],
+            },
+            {
+              title: "IMAP — niemals POP3",
+              items: [
+                "**IMAP:** Mails bleiben auf dem Server, Handy und Rechner sehen dasselbe",
+                "**POP3:** holt die Mails runter und vom Server **weg** — Gerät kaputt, Mails weg",
+              ],
+              quote:
+                "Ich hatte Kunden mit drei Jahren Firmenkorrespondenz auf einem einzigen Laptop. Dann ging der Laptop kaputt.",
+            },
+            {
+              title: "Aufs Handy holen",
+              items: [
+                "**iPhone:** Einstellungen → Apps → Mail → Accounts → Account hinzufügen → **Andere**",
+                "**Android:** Gmail-App → Konto hinzufügen → **Andere**",
+                "Serverdaten stehen in Claudes Tabelle. Klemmt es: **Screenshot in Claude ziehen**",
+              ],
+            },
+            {
+              title: "Der Gratis-Fact",
+              items: [
+                "Die **Signatur hängt an der Mail-App**, nicht am Postfach",
+                "Am Rechner eingerichtet ≠ auf dem Handy vorhanden — zweimal machen",
+              ],
+            },
+          ],
+          prompts: [
+            `Postfächer anlegen — zwei Stellen ausfüllen:
+
+Leg mir Postfächer für meine Domain an.
+
+Domain: {DEINE-DOMAIN}
+Gewünschte Adressen: info@ und {DEIN-VORNAME}@
+
+So gehst du vor:
+1. Zeig mir zuerst, welche Postfächer es auf dieser Domain schon gibt.
+   Wenn eine der Adressen existiert, leg sie NICHT nochmal an, sondern
+   sag mir Bescheid.
+2. Denk dir für jedes neue Postfach ein sicheres Passwort aus — mindestens
+   16 Zeichen, keine Sonderzeichen, die man auf dem Handy schwer tippt.
+3. Leg die Postfächer an.
+4. Gib mir am Ende eine Tabelle mit: Adresse, Passwort, und den Daten für
+   mein Handy (IMAP-Server, Port, SMTP-Server, Port). Die Serverdaten hol
+   dir aus meinem Account, rate sie nicht.
+
+Nur anlegen, nichts löschen und nichts überschreiben.`,
+            `Und ab jetzt reichen Sätze wie diese:
+
+Zeig mir alle Postfächer auf meiner Domain.
+
+Leg mir noch buchhaltung@{DEINE-DOMAIN} an — nur anlegen,
+nichts löschen und nichts überschreiben.
+
+Richte eine Weiterleitung von kontakt@ auf info@ ein.`,
+          ],
+          software: [
+            { name: "Claude Code", note: "mit KAS-Verbindung aus 1.3" },
+            { name: "Dein Handy", note: "für die Einrichtung am Ende" },
+          ],
+        },
       },
       {
-        slug: "emails-die-ankommen",
-        title: "E-Mails, die ankommen",
+        slug: "domain-umziehen",
+        title: "Du hast schon eine Domain? So ziehst du um",
         description:
-          "Warum Mails im Spam landen (Stichwort Domain-Key) und wie du in Minuten auf 10/10 beim Mail-Test kommst.",
-        duration: 10,
+          "Optional — für alle mit bestehender Domain und laufender Post. Die Reihenfolge entscheidet: erst die neuen Postfächer, dann kopieren, dann umschalten.",
+        duration: 14,
         kind: "video",
+        cheatSheet: {
+          blocks: [
+            {
+              title: "Welcher Fall bist du?",
+              items: [
+                "**Fall A — nur die Post zieht um:** Domain bleibt, du änderst 2 Einträge. Dauer: Minuten. Für die meisten der richtige Weg.",
+                "**Fall B — die Domain wechselt den Anbieter:** braucht einen **Auth-Code** vom alten Anbieter, dauert einige Tage.",
+                "Alte **Website** vom Baukasten mitnehmen? Das ist Modul 2 — hier geht es nur um Domain und Postfächer.",
+              ],
+            },
+            {
+              title: "Die Reihenfolge — daran hängt alles",
+              items: [
+                "**Postfächer beim neuen Anbieter anlegen** — exakt dieselben Adressen",
+                "**Alte Mails rüberkopieren**",
+                "**Erst jetzt umschalten** (MX-Einträge)",
+                "**Nach 1–2 Tagen nochmal kopieren** — Nachzügler",
+              ],
+              quote:
+                "Eine Mail, die nie ankommt, meldet sich nicht. Deswegen baust du erst das Neue auf — und schaltest dann um.",
+            },
+            {
+              title: "Danach",
+              items: [
+                "**Testmail vom Handy** an dein eigenes info@",
+                "**Altes Postfach noch Wochen stehen lassen** — kostet nichts, ist dein Netz",
+              ],
+            },
+          ],
+          prompts: [
+            `Am Tag davor — Umschaltzeit verkürzen:
+
+Setz bei meiner Domain {DEINE-DOMAIN} die Gültigkeitsdauer (TTL) der
+MX-Einträge auf 300 Sekunden runter. Nur die TTL ändern, sonst nichts —
+nichts löschen, keine anderen Einträge anfassen.`,
+            `Schritt 1 — Postfächer vorbereiten:
+
+Ich ziehe meine Domain {DEINE-DOMAIN} zu All-Inkl um.
+
+Diese Adressen gibt es bisher beim alten Anbieter:
+{info@..., buchhaltung@..., ...}
+
+Leg sie bei All-Inkl mit exakt denselben Namen an, denk dir sichere
+Passwörter aus und gib mir eine Tabelle mit Adresse, Passwort und den
+Zugangsdaten (IMAP/SMTP).
+
+Nur anlegen, nichts löschen und nichts überschreiben. Ändere noch KEINE
+DNS-Einträge — das machen wir später.`,
+            `Schritt 2 — alte Mails kopieren (dauert bei großen Postfächern 1–2 Stunden):
+
+Kopier meine alten Mails ins neue Postfach.
+
+ALT:  Server {alter-imap-server}, Benutzer {alt}, Passwort {alt}
+NEU:  Server {neuer-imap-server}, Benutzer {neu}, Passwort {neu}
+
+Bau dir dafür ein kleines Python-Werkzeug mit imaplib. Wichtig:
+- Ordnerstruktur, Gelesen-Status und Datum mitnehmen
+- nur KOPIEREN, im alten Postfach nichts löschen
+- bei Abbruch fortsetzbar sein
+- am Ende sagen, wie viele Mails übertragen wurden
+
+Zeig mir vorher, was du vorhast, und frag nach, bevor du loslegst.`,
+            `Schritt 3 — umschalten:
+
+Stell die MX-Einträge meiner Domain {DEINE-DOMAIN} auf All-Inkl um.
+Zeig mir vorher, was du änderst, und warte auf mein OK.`,
+          ],
+          software: [
+            { name: "Claude Code", note: "mit KAS- und Cloudflare-Verbindung" },
+            {
+              name: "Zugangsdaten beider Postfächer",
+              note: "alt und neu — für den Kopiervorgang",
+            },
+          ],
+        },
       },
     ],
   },

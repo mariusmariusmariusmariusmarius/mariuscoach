@@ -47,7 +47,7 @@ const FEATURES = [
   },
   {
     icon: ClipboardCopy,
-    title: "Fertige Prompts & Cheat Sheets",
+    title: "Fertige Prompts & Infos",
     text: "Neben jedem Video: die exakten Prompts zum Kopieren, alle Skills mit Links, jede verwendete Software. Nachmachen statt rätseln.",
   },
   {
