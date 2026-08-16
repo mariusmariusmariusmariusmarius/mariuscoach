@@ -355,7 +355,7 @@ Zeig mir vorher, was du änderst, und warte auf mein OK.`,
         cheatSheet: {
           prompts: [
             {
-              label: "Der Start-Prompt — Claude interviewt dich und baut danach die App",
+              label: "Der Start-Prompt — Claude interviewt dich und baut erst danach",
               text: `Bau mir meine Website. Aber bevor du irgendetwas anlegst:
 interviewe mich.
 
@@ -368,25 +368,20 @@ MEIN BETRIEB
 - Was unterscheidet mich von den anderen in meiner Gegend?
 
 MEINE KUNDEN
-- Wer ruft bei mir an: Privatleute, Firmen, beides?
+- Wer kommt zu mir: Privatleute, Firmen, beides?
 - Was ist die typische Anfrage, mit der jemand zu mir kommt?
-- Was soll ein Besucher auf der Seite tun — anrufen, Formular
-  ausfüllen, Termin buchen?
+- Was soll jemand tun, der auf meiner Seite landet?
 
 MEINE LEISTUNGEN
 - Welche Leistungen biete ich an, und welche bringen das meiste Geld?
 - Gibt es Leistungen, die ich NICHT mehr machen will?
 - Feste Preise, Stundensatz oder Angebot auf Anfrage?
 
-DIE WEBSITE
-- Wie groß soll sie werden: eine Seite zum Runterscrollen oder mehrere
-  Unterseiten? Wenn mehrere — welche?
-- Was muss drauf: Leistungen, Referenzen, Team, Öffnungszeiten,
-  Anfahrt, Preise, Bewertungen?
-- Welche Funktionen brauche ich: Anfrageformular, Terminbuchung,
-  Bildergalerie, Karte, WhatsApp-Knopf?
-- Habe ich schon Logo und Fotos, oder fehlt das noch?
-- Gibt es Websites, die mir gefallen? Welche, und was genau daran?
+UMFANG DER SEITE
+- Eine Seite zum Runterscrollen oder mehrere Unterseiten?
+- Wenn mehrere: welche sollen es sein?
+- Welche Inhalte müssen drauf — Leistungen, Referenzen, Team,
+  Öffnungszeiten, Anfahrt, Preise, Bewertungen?
 
 Wenn ich alles beantwortet habe:
 1. Fass alles als kurzen Steckbrief zusammen und lass mich bestätigen,
@@ -396,8 +391,9 @@ Wenn ich alles beantwortet habe:
 3. Sag mir in zwei Sätzen, was du gebaut hast und wie ich die Seite auf
    meinem Rechner anschaue.
 
-Erfinde nichts über meine Firma dazu. Was ich nicht beantworte, lässt du
-weg oder fragst nochmal nach. Nichts löschen, nichts überschreiben.`,
+Frag mich noch nichts zu Technik, Funktionen oder Bildern — das kommt in
+den nächsten Lektionen. Erfinde nichts über meine Firma dazu. Was ich
+nicht beantworte, lässt du weg oder fragst nochmal nach.`,
             },
           ],
         },
