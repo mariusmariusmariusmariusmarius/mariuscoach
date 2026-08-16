@@ -388,6 +388,14 @@ Sag mir danach in einer Zeile pro Skill, was er kann.`,
         cheatSheet: {
           prompts: [
             {
+              label: "Skill 1 — UI/UX Pro Max (Mac und Windows gleich)",
+              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes`,
+            },
+            {
+              label: "Skill 2 — Designing Beautiful Websites",
+              text: `npx skills add tristanmanchester/agent-skills --skill designing-beautiful-websites --global --yes`,
+            },
+            {
               label: "Der Start-Prompt — Claude interviewt dich und baut erst danach",
               text: `Bau mir meine Website. Aber bevor du irgendetwas anlegst:
 interviewe mich.
@@ -428,6 +436,13 @@ Frag mich noch nichts zu Technik, Funktionen, Bildern, Logo, SEO oder
 rechtlichen Themen wie Impressum und Datenschutz — das machen wir alles
 später, eins nach dem anderen. Erfinde nichts über meine Firma dazu.
 Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
+            },
+          ],
+          links: [
+            {
+              label: "skills.sh — alle Skills durchsuchen",
+              href: "https://skills.sh",
+              note: "falls du noch einen für deine Branche suchst",
             },
           ],
         },
