@@ -388,12 +388,16 @@ Sag mir danach in einer Zeile pro Skill, was er kann.`,
         cheatSheet: {
           prompts: [
             {
-              label: "Skill 1 — UI/UX Pro Max (Mac und Windows gleich)",
-              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes`,
+              label: "Die zwei Design-Skills — ins Terminal einfügen, Enter",
+              os: "mac",
+              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes
+npx skills add tristanmanchester/agent-skills --skill designing-beautiful-websites --global --yes`,
             },
             {
-              label: "Skill 2 — Designing Beautiful Websites",
-              text: `npx skills add tristanmanchester/agent-skills --skill designing-beautiful-websites --global --yes`,
+              label: "Die zwei Design-Skills — in PowerShell einfügen, Enter",
+              os: "win",
+              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes
+npx skills add tristanmanchester/agent-skills --skill designing-beautiful-websites --global --yes`,
             },
             {
               label: "Der Start-Prompt — Claude interviewt dich und baut erst danach",
