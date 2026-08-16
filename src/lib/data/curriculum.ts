@@ -344,6 +344,39 @@ Zeig mir vorher, was du änderst, und warte auf mein OK.`,
           "Vorgefertigte Kontextdateien, die Claude zum Profi machen: Webdesign, Typografie, UI/UX, SEO. Einmal installieren, immer profitieren.",
         duration: 12,
         kind: "video",
+        cheatSheet: {
+          prompts: [
+            {
+              label: "UI/UX Pro Max installieren — ins Terminal einfügen, Enter",
+              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes`,
+            },
+            {
+              label: "Designing Beautiful Websites installieren",
+              text: `npx skills add tristanmanchester/agent-skills --skill designing-beautiful-websites --global --yes`,
+            },
+            {
+              label: "Oder alles auf einmal — sag es einfach Claude",
+              text: `Installier mir diese Skills, global:
+
+- ui-ux-pro-max aus nextlevelbuilder/ui-ux-pro-max-skill
+- designing-beautiful-websites aus tristanmanchester/agent-skills
+- frontend-design aus anthropics/skills
+- web-design-guidelines und vercel-react-best-practices aus
+  vercel-labs/agent-skills
+
+Der Befehl dafür ist npx skills add <repo> --skill <name> --global --yes
+
+Sag mir danach in einer Zeile pro Skill, was er kann.`,
+            },
+          ],
+          links: [
+            {
+              label: "skills.sh — alle Skills durchsuchen",
+              href: "https://skills.sh",
+              note: "Bibliothek, aus der die Befehle oben stammen",
+            },
+          ],
+        },
       },
       {
         slug: "erste-website-in-35-minuten",
