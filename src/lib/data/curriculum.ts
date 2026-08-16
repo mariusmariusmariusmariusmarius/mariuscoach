@@ -391,10 +391,10 @@ Wenn ich alles beantwortet habe:
 3. Sag mir in zwei Sätzen, was du gebaut hast und wie ich die Seite auf
    meinem Rechner anschaue.
 
-Frag mich noch nichts zu Technik, Funktionen, Bildern oder rechtlichen
-Themen wie Impressum und Datenschutz — das machen wir alles später,
-eins nach dem anderen. Erfinde nichts über meine Firma dazu. Was ich
-nicht beantworte, lässt du weg oder fragst nochmal nach.`,
+Frag mich noch nichts zu Technik, Funktionen, Bildern, Logo, SEO oder
+rechtlichen Themen wie Impressum und Datenschutz — das machen wir alles
+später, eins nach dem anderen. Erfinde nichts über meine Firma dazu.
+Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
             },
           ],
         },
