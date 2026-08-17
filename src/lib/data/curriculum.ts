@@ -461,15 +461,15 @@ Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
         steps: [
           "Eine Website suchen, die dir gefällt — Aufbau, Farben, Bildsprache. Ruhig aus einer ganz anderen Branche.",
           "Den Referenz-Prompt rechts kopieren, die Adresse eintragen und an Claude schicken.",
-          "Claude lädt die Seite in den Ordner referenz/ in deinem Projekt, legt eine LIESMICH.md dazu und beschreibt dir den Aufbau.",
-          "Dann sagst du ihm, was davon er für deine Seite übernehmen soll — Struktur und Wirkung, nie Texte oder Bilder.",
+          "Claude lädt die Seite in den Ordner referenz/ in deinem Projekt und legt eine LIESMICH.md dazu.",
+          "Dann baut ihr sie als deine Seite nach — gleicher Aufbau, aber mit deiner Firma drin: deine Texte, dein Logo, deine Farben.",
         ],
         cheatSheet: {
           prompts: [
             {
               label: "Der Referenz-Prompt — Adresse eintragen, Rest macht Claude",
-              text: `Ich habe eine Website gefunden, die ich als Vorlage für den
-Aufbau meiner eigenen Seite nutzen will.
+              text: `Ich habe eine Website gefunden, die ich als Vorlage für meine
+eigene Seite nutzen will.
 
 Referenz-Website: {ADRESSE-DER-WEBSITE}
 
@@ -482,20 +482,20 @@ Geh so vor:
 2. Leg den Download in meinem Projektordner unter referenz/ ab.
 
 3. Schreib eine Datei referenz/LIESMICH.md mit diesem Hinweis:
-   Dieser Ordner ist NUR Anschauungsmaterial. Nichts daraus wird in
-   meine Website übernommen — keine Texte, keine Bilder, kein Logo.
-   Er dient als Vorlage für Aufbau und Wirkung und gehört nicht zum
-   Projekt.
+   Dieser Ordner ist die Vorlage für den Aufbau meiner Website.
+   Er wird nicht verändert und geht nicht mit online — er dient
+   nur als Referenz beim Bauen.
 
 4. Falls mein Projekt ein Git-Repo ist: trag referenz/ in die
-   .gitignore ein, damit der Ordner nie mit hochgeladen wird.
+   .gitignore ein, damit der Ordner nicht mit hochgeladen wird.
 
-5. Schau dir die heruntergeladene Startseite an und beschreib mir in
-   fünf Sätzen, wie sie aufgebaut ist: Reihenfolge der Abschnitte,
-   was zuerst kommt, womit sie Vertrauen aufbaut.
+5. Sieh dir die Seite an. Danach bauen wir sie als meine Website
+   nach: gleicher Aufbau, aber mit meiner Firma drin — meine Texte,
+   mein Logo, meine Farben. Was aus der Vorlage brauchbar ist,
+   übernehmen wir. Frag bei Texten und Bildern kurz nach, bevor du
+   sie eins zu eins übernimmst.
 
-Danach warte auf meine Ansage, was wir davon übernehmen. Kopiere
-nichts automatisch in meine Website.`,
+Warte auf mein Go, bevor du mit dem Bauen anfängst.`,
             },
             {
               label: "Nur mal schnell ansehen, ohne Claude — Adresse hinten ersetzen",
