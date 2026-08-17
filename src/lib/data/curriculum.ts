@@ -458,6 +458,25 @@ Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
           "Websites, die dir gefallen, als Vorlage einsetzen: herunterladen, ins Repo, in deinem Stil nachbauen lassen.",
         duration: 12,
         kind: "video",
+        cheatSheet: {
+          links: [
+            {
+              label: "SiteSucker — für Mac",
+              href: "https://ricks-apps.com/osx/sitesucker/",
+              note: "im App Store, wenige Euro — lädt Seite samt Bildern und CSS",
+            },
+            {
+              label: "Cyotek WebCopy — für Windows",
+              href: "https://www.cyotek.com/cyotek-webcopy/downloads",
+              note: "kostenlos, gleiche Aufgabe wie SiteSucker",
+            },
+            {
+              label: "HTTrack — für Windows (Alternative)",
+              href: "https://www.httrack.com/",
+              note: "kostenlos und quelloffen, seit Jahren der Klassiker",
+            },
+          ],
+        },
       },
       {
         slug: "copywriting-mit-claude",
