@@ -59,7 +59,9 @@ export default async function LessonPage({
 
       {/* Video links, Infos rechts — gleiche Höhe, Box scrollt mit */}
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.85fr)_minmax(20rem,1fr)] lg:items-start">
-        <div className="space-y-6">
+        {/* min-w-0: sonst wächst die Spalte mit breitem Inhalt mit, statt ihn
+            seitlich scrollen zu lassen */}
+        <div className="min-w-0 space-y-6">
           {/* Video-Platzhalter — später: echter Player (z. B. Mux, Bunny, Vimeo) */}
           <div className="group relative aspect-video overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-surface-800 to-surface-950">
             <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-10 ${courseModule.gradient}`} />
