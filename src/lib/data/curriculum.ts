@@ -675,6 +675,11 @@ SCHRITT 1 — Frag mich zuerst, nacheinander:
 - Habe ich Firmenfarben, zum Beispiel vom Firmenwagen, vom Logo oder
   von der Arbeitskleidung? Wenn ja, welche?
 - Gibt es eine Farbe, die gar nicht passt?
+- Wie sollen die Ecken sein — bei Knöpfen, Karten, Bildern und
+  Eingabefeldern? Scharf und eckig (streng, technisch), leicht
+  abgerundet (der ruhige Mittelweg) oder stark abgerundet (weich und
+  freundlich)? Zeig mir die drei Varianten kurz, dann sag ich dir,
+  welche.
 
 SCHRITT 2 — Mach mir drei Vorschläge. Jeder besteht aus:
 - einer Farbkombination nach der 60-30-10-Regel: eine ruhige
@@ -708,6 +713,13 @@ TYPOGRAFIE
 - Genau eine H1 pro Seite, danach H2, dann H3. Keine Stufe
   überspringen, nur weil eine Größe gerade besser aussieht.
 
+ECKEN
+- Ein einziger Rundungswert für die ganze Seite, als Variable
+  angelegt. Große Flächen wie Karten dürfen etwas runder sein als
+  kleine Knöpfe, aber im selben Verhältnis. Keine Karte mit 8 Pixeln
+  neben einer mit 24.
+- Runde Ecken und scharfe Ecken nicht mischen.
+
 ABSTÄNDE UND CONTAINER
 - Leg ein Abstandssystem fest, alles in Vielfachen von 4 Pixeln, und
   halte dich überall daran. Keine einzelnen krummen Werte.
@@ -730,6 +742,8 @@ schauen:
   auftaucht, ersetzt du durch den passenden Wert aus der Staffel.
 - Zähl alle verwendeten Abstandswerte auf. Alles, was nicht ins
   Vierer-System passt, kommt weg.
+- Zähl alle Eckenrundungen auf. Es darf nur der eine festgelegte
+  Wert und sein größeres Gegenstück vorkommen.
 - Geh jeden Abschnitt einzeln durch: gleiche maximale Breite?
   Gleicher seitlicher Innenabstand? Fluchten die Kanten wirklich auf
   einer Linie?
