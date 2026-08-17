@@ -639,6 +639,112 @@ REGELN FÜR DIE TEXTE
           "Hierarchie, Typografie, Abstände, Layout-Rhythmus — die 1.000 kleinen Details, die Profi-Seiten von Baukasten-Seiten unterscheiden.",
         duration: 25,
         kind: "video",
+        steps: [
+          "Die zwei Design-Skills installieren — Befehle rechts, einmalig.",
+          "Farben und Schrift aussuchen: bei Realtime Colors siehst du sofort, wie deine Farben auf einer echten Seite wirken.",
+          "Bei Typewolf schauen, was gerade läuft — bei Google Fonts holst du die Schrift kostenlos.",
+          "Den Design-Prompt schicken: Claude fragt dich nach Branche und Farbgefühl und setzt es dann um.",
+          "Am Ende gegenprüfen lassen: Kontraste, Handy-Ansicht, Abstände.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Design-Skills installieren — beide Zeilen nacheinander, Mac wie Windows gleich",
+              os: "mac",
+              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes
+npx skills add anthropics/skills --skill frontend-design --global --yes`,
+            },
+            {
+              label: "Design-Skills installieren — beide Zeilen nacheinander, Mac wie Windows gleich",
+              os: "win",
+              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes
+npx skills add anthropics/skills --skill frontend-design --global --yes`,
+            },
+            {
+              label: "Der Design-Prompt — Claude fragt dich aus und setzt Farben und Schrift um",
+              text: `Überarbeite jetzt das Design meiner Website. Nutze dafür die
+Skills „ui-ux-pro-max" und „frontend-design".
+
+Bevor du etwas änderst, frag mich NACHEINANDER:
+
+- Was ist meine Branche, und welchen Eindruck soll die Seite machen:
+  bodenständig und verlässlich, hochwertig und ruhig, oder modern
+  und frisch?
+- Habe ich Firmenfarben, zum Beispiel vom Firmenwagen, vom Logo oder
+  von der Arbeitskleidung? Wenn ja, welche?
+- Gibt es eine Farbe, die gar nicht passt?
+
+Dann mach mir drei Vorschläge. Jeder Vorschlag besteht aus:
+- einer Farbkombination nach der 60-30-10-Regel: eine ruhige
+  Grundfarbe für den Hintergrund, eine dunkle für Text und Flächen,
+  eine kräftige Signalfarbe NUR für Knöpfe und wichtige Stellen
+- einer Schriftkombination: eine Schrift für Überschriften, eine gut
+  lesbare für Fließtext, beide von Google Fonts
+- einem Satz, warum das zu meiner Branche passt
+
+Zeig mir die drei Vorschläge als kleine Vorschau nebeneinander, ich
+suche einen aus. Erst danach baust du ihn ein.
+
+Beim Einbauen gilt:
+- Alle Farben als Variablen anlegen, nicht überall einzeln
+  reinschreiben. Ich will die Farbe später an EINER Stelle ändern
+  können.
+- Prüf die Kontraste: dunkler Text auf hellem Grund und umgekehrt,
+  Mindestverhältnis 4,5 zu 1. Grauer Text auf grauem Grund ist raus.
+- Höchstens zwei Schriftarten auf der ganzen Seite.
+- Zeig mir am Ende, wie die Seite auf dem Handy aussieht.`,
+            },
+            {
+              label: "Design-Check hinterher — findet die typischen Anfängerfehler",
+              text: `Geh meine Website einmal als Designer durch und sag mir ehrlich,
+was noch nach Baukasten aussieht. Achte besonders auf:
+
+- Abstände: sind sie überall gleichmäßig, oder klebt etwas aneinander?
+- Überschriften: erkennt man auf einen Blick, was wichtig ist?
+- Zu viele Farben oder zu viele Schriftgrößen?
+- Wirkt die Seite auf dem Handy gedrängt?
+
+Zeig mir pro Punkt, was du ändern würdest, und warte auf mein OK.`,
+            },
+          ],
+          links: [
+            {
+              label: "Realtime Colors",
+              href: "https://realtimecolors.com",
+              note: "Farben ausprobieren und sofort auf einer echten Seite sehen — der schnellste Weg zur Entscheidung",
+            },
+            {
+              label: "Coolors",
+              href: "https://coolors.co",
+              note: "Farbpaletten per Leertaste durchwürfeln, bis eine passt",
+            },
+            {
+              label: "Happy Hues",
+              href: "https://www.happyhues.co",
+              note: "fertige Paletten, jeweils direkt an einer Beispielseite gezeigt",
+            },
+            {
+              label: "Typewolf",
+              href: "https://www.typewolf.com",
+              note: "welche Schriften gerade im Trend sind — echte Websites, täglich neu",
+            },
+            {
+              label: "Google Fonts",
+              href: "https://fonts.google.com",
+              note: "über 1.500 Schriften, kostenlos, funktionieren überall",
+            },
+            {
+              label: "Fontshare",
+              href: "https://www.fontshare.com",
+              note: "hochwertige Schriften, kostenlos auch für Firmen — sieht weniger nach Standard aus",
+            },
+            {
+              label: "Fonts In Use",
+              href: "https://fontsinuse.com",
+              note: "wo welche Schrift wirklich eingesetzt wird — gut zum Abgucken",
+            },
+          ],
+        },
       },
       {
         slug: "eigene-bilder",
