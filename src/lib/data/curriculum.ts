@@ -644,7 +644,7 @@ REGELN FÜR DIE TEXTE
         fontSchau: true,
         steps: [
           "Die zwei Design-Skills installieren — Befehle rechts, einmalig.",
-          "Bei Realtime Colors Farben ausprobieren, bei Typewolf schauen was gerade läuft — nur zum Gefühl bekommen.",
+          "In der Schriftarten-Übersicht unten stöbern — nur zum Gefühl bekommen, welche Richtung zu dir passt.",
           "Den Design-Prompt schicken. Claude fragt dich nach Branche und Farbgefühl und macht drei Vorschläge.",
           "Einen aussuchen — Claude baut ihn ein, mit fester Schriftstaffel und Abständen im Vierer-System.",
           "Zum Schluss räumt er selbst auf: zählt alle Schriftgrößen, Abstände und Container durch und zeigt dir die Fundliste.",
@@ -739,43 +739,6 @@ schauen:
 Zeig mir die Fundliste mit Fundort und Vorschlag, bevor du diese
 letzten Änderungen machst. Danach zeigst du mir die fertige Seite am
 Rechner und auf dem Handy.`,
-            },
-          ],
-          links: [
-            {
-              label: "Realtime Colors",
-              href: "https://realtimecolors.com",
-              note: "Farben ausprobieren und sofort auf einer echten Seite sehen — der schnellste Weg zur Entscheidung",
-            },
-            {
-              label: "Coolors",
-              href: "https://coolors.co",
-              note: "Farbpaletten per Leertaste durchwürfeln, bis eine passt",
-            },
-            {
-              label: "Happy Hues",
-              href: "https://www.happyhues.co",
-              note: "fertige Paletten, jeweils direkt an einer Beispielseite gezeigt",
-            },
-            {
-              label: "Typewolf",
-              href: "https://www.typewolf.com",
-              note: "welche Schriften gerade im Trend sind — echte Websites, täglich neu",
-            },
-            {
-              label: "Google Fonts",
-              href: "https://fonts.google.com",
-              note: "über 1.500 Schriften, kostenlos, funktionieren überall",
-            },
-            {
-              label: "Fontshare",
-              href: "https://www.fontshare.com",
-              note: "hochwertige Schriften, kostenlos auch für Firmen — sieht weniger nach Standard aus",
-            },
-            {
-              label: "Fonts In Use",
-              href: "https://fontsinuse.com",
-              note: "wo welche Schrift wirklich eingesetzt wird — gut zum Abgucken",
             },
           ],
         },
