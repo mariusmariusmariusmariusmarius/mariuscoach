@@ -474,7 +474,7 @@ Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
             {
               label: "WebsiteLoader by Marius — Adresse hinten ersetzen",
               os: "win",
-              text: `python ~/mm-werkzeuge/websiteloader.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de --ansehen`,
+              text: `python $HOME\\mm-werkzeuge\\websiteloader.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de --ansehen`,
             },
             {
               label: "Mehr Unterseiten? Tiefe und Anzahl hochsetzen",
