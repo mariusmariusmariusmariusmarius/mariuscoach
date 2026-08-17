@@ -460,39 +460,52 @@ Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
         kind: "video",
         steps: [
           "Eine Website suchen, die dir gefällt — Aufbau, Farben, Bildsprache. Ruhig aus einer ganz anderen Branche.",
-          "Den WebsiteLoader-Befehl rechts kopieren, deine Wunschadresse einsetzen und ausführen. Die Seite landet als Ordner auf deinem Rechner. Das Werkzeug liegt seit dem Setup-Paket aus Lektion 1.1 auf deinem Rechner.",
-          "Den Ordner in Claude Code öffnen und ihm sagen, was dir daran gefällt.",
-          "Claude baut den Aufbau in deinem Stil nach — mit deinen Texten, deinen Farben, deinen Leistungen.",
+          "Den Referenz-Prompt rechts kopieren, die Adresse eintragen und an Claude schicken.",
+          "Claude lädt die Seite in den Ordner referenz/ in deinem Projekt, legt eine LIESMICH.md dazu und beschreibt dir den Aufbau.",
+          "Dann sagst du ihm, was davon er für deine Seite übernehmen soll — Struktur und Wirkung, nie Texte oder Bilder.",
         ],
         cheatSheet: {
           prompts: [
             {
-              label: "WebsiteLoader by Marius — Adresse hinten ersetzen",
+              label: "Der Referenz-Prompt — Adresse eintragen, Rest macht Claude",
+              text: `Ich habe eine Website gefunden, die ich als Vorlage für den
+Aufbau meiner eigenen Seite nutzen will.
+
+Referenz-Website: {ADRESSE-DER-WEBSITE}
+
+Geh so vor:
+
+1. Auf meinem Rechner liegt unser Download-Werkzeug: die Datei
+   websiteloader.py im Ordner mm-werkzeuge in meinem Benutzerordner.
+   Lade die Seite damit herunter, Tiefe 2 reicht.
+
+2. Leg den Download in meinem Projektordner unter referenz/ ab.
+
+3. Schreib eine Datei referenz/LIESMICH.md mit diesem Hinweis:
+   Dieser Ordner ist NUR Anschauungsmaterial. Nichts daraus wird in
+   meine Website übernommen — keine Texte, keine Bilder, kein Logo.
+   Er dient als Vorlage für Aufbau und Wirkung und gehört nicht zum
+   Projekt.
+
+4. Falls mein Projekt ein Git-Repo ist: trag referenz/ in die
+   .gitignore ein, damit der Ordner nie mit hochgeladen wird.
+
+5. Schau dir die heruntergeladene Startseite an und beschreib mir in
+   fünf Sätzen, wie sie aufgebaut ist: Reihenfolge der Abschnitte,
+   was zuerst kommt, womit sie Vertrauen aufbaut.
+
+Danach warte auf meine Ansage, was wir davon übernehmen. Kopiere
+nichts automatisch in meine Website.`,
+            },
+            {
+              label: "Nur mal schnell ansehen, ohne Claude — Adresse hinten ersetzen",
               os: "mac",
               text: `python3 ~/mm-werkzeuge/websiteloader.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de --ansehen`,
             },
             {
-              label: "WebsiteLoader by Marius — Adresse hinten ersetzen",
+              label: "Nur mal schnell ansehen, ohne Claude — Adresse hinten ersetzen",
               os: "win",
               text: `python $HOME\\mm-werkzeuge\\websiteloader.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de --ansehen`,
-            },
-            {
-              label: "Mehr Unterseiten? Tiefe und Anzahl hochsetzen",
-              text: `python3 ~/mm-werkzeuge/websiteloader.py https://beispiel.de --tiefe 3 --max 80`,
-            },
-            {
-              label: "Danach: Claude den Aufbau übernehmen lassen",
-              text: `Im Ordner „{ORDNERNAME}" liegt eine Website, die ich
-heruntergeladen habe. Sieh sie dir an.
-
-Mir gefällt daran: {WAS DIR GEFÄLLT — z. B. der Aufbau der Startseite,
-die ruhigen Farben, die großen Bilder}
-
-Bau den Aufbau für meine Seite nach — mit meinen Texten, meinen
-Leistungen und meinen Farben. Übernimm keine fremden Texte und keine
-fremden Bilder, das ist nur die Vorlage für die Struktur.
-
-Zeig mir vorher, was du vorhast.`,
             },
           ],
           links: [
