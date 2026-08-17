@@ -460,27 +460,25 @@ Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
         kind: "video",
         steps: [
           "Eine Website suchen, die dir gefällt — Aufbau, Farben, Bildsprache. Ruhig aus einer ganz anderen Branche.",
-          "Den Sauger-Befehl rechts kopieren, deine Wunschadresse einsetzen und ausführen. Die Seite landet als Ordner auf deinem Rechner.",
+          "Den WebsiteLoader-Befehl rechts kopieren, deine Wunschadresse einsetzen und ausführen. Die Seite landet als Ordner auf deinem Rechner. Das Werkzeug liegt seit dem Setup-Paket aus Lektion 1.1 auf deinem Rechner.",
           "Den Ordner in Claude Code öffnen und ihm sagen, was dir daran gefällt.",
           "Claude baut den Aufbau in deinem Stil nach — mit deinen Texten, deinen Farben, deinen Leistungen.",
         ],
         cheatSheet: {
           prompts: [
             {
-              label: "Website herunterladen — Adresse hinten ersetzen",
+              label: "WebsiteLoader by Marius — Adresse hinten ersetzen",
               os: "mac",
-              text: `curl -fsSL https://setup.mariusmueller.media/sauger -o sauger.py
-python3 sauger.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de`,
+              text: `python3 ~/mm-werkzeuge/websiteloader.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de`,
             },
             {
-              label: "Website herunterladen — Adresse hinten ersetzen",
+              label: "WebsiteLoader by Marius — Adresse hinten ersetzen",
               os: "win",
-              text: `irm https://setup.mariusmueller.media/sauger -OutFile sauger.py
-python sauger.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de`,
+              text: `python ~/mm-werkzeuge/websiteloader.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de`,
             },
             {
               label: "Mehr Unterseiten? Tiefe und Anzahl hochsetzen",
-              text: `python3 sauger.py https://beispiel.de --tiefe 3 --max 80`,
+              text: `python3 ~/mm-werkzeuge/websiteloader.py https://beispiel.de --tiefe 3 --max 80`,
             },
             {
               label: "Danach: Claude den Aufbau übernehmen lassen",
