@@ -644,7 +644,7 @@ REGELN FÜR DIE TEXTE
           "Farben und Schrift aussuchen: bei Realtime Colors siehst du sofort, wie deine Farben auf einer echten Seite wirken.",
           "Bei Typewolf schauen, was gerade läuft — bei Google Fonts holst du die Schrift kostenlos.",
           "Den Design-Prompt schicken: Claude fragt dich nach Branche und Farbgefühl und setzt es dann um.",
-          "Am Ende gegenprüfen lassen: Kontraste, Handy-Ansicht, Abstände.",
+          "Zum Schluss den Aufräum-Durchgang: Claude zählt alle Schriftgrößen, Abstände und Container durch und macht sie einheitlich.",
         ],
         cheatSheet: {
           prompts: [
@@ -686,25 +686,79 @@ Zeig mir die drei Vorschläge als kleine Vorschau nebeneinander, ich
 suche einen aus. Erst danach baust du ihn ein.
 
 Beim Einbauen gilt:
+
+FARBEN
 - Alle Farben als Variablen anlegen, nicht überall einzeln
   reinschreiben. Ich will die Farbe später an EINER Stelle ändern
   können.
 - Prüf die Kontraste: dunkler Text auf hellem Grund und umgekehrt,
   Mindestverhältnis 4,5 zu 1. Grauer Text auf grauem Grund ist raus.
+
+TYPOGRAFIE
 - Höchstens zwei Schriftarten auf der ganzen Seite.
-- Zeig mir am Ende, wie die Seite auf dem Handy aussieht.`,
+- Leg eine feste Größenstaffel an und benutz NUR diese Größen: eine
+  für die große Überschrift, eine für Abschnittsüberschriften, eine
+  für Zwischenüberschriften, eine für Fließtext, eine für Kleinkram.
+  Keine krummen Zwischengrößen, die nur an einer Stelle vorkommen.
+- Zeilenabstand: bei Fließtext locker (etwa 1,5), bei großen
+  Überschriften enger (etwa 1,1).
+- Fließtext nicht breiter als etwa 70 Zeichen pro Zeile, sonst
+  verliert man beim Lesen die Zeile.
+- Überschriften in der richtigen Reihenfolge: genau eine H1 pro
+  Seite, danach H2, dann H3. Keine Stufe überspringen, nur weil eine
+  Größe gerade besser aussieht.
+
+ABSTÄNDE UND CONTAINER
+- Leg ein Abstandssystem fest, alles in Vielfachen von 4 Pixeln, und
+  halte dich überall daran. Keine einzelnen krummen Werte.
+- Alle Abschnitte bekommen denselben Abstand nach oben und unten.
+  Wenn ein Abschnitt anders sein soll, sag mir warum.
+- Alle Container haben dieselbe maximale Breite und denselben
+  seitlichen Innenabstand. Alles muss an derselben Kante ausgerichtet
+  sein, von der obersten Leiste bis zum Fußbereich.
+- Gleichartige Elemente bekommen gleiche Abstände zueinander: alle
+  Karten in einem Raster denselben Zwischenraum, alle Listen
+  denselben.
+- Zusammengehörendes steht enger beieinander als Getrenntes. Eine
+  Überschrift gehört näher an ihren eigenen Text als an den Abschnitt
+  darüber.
+
+Zeig mir am Ende, wie die Seite auf dem Handy aussieht.`,
             },
             {
-              label: "Design-Check hinterher — findet die typischen Anfängerfehler",
-              text: `Geh meine Website einmal als Designer durch und sag mir ehrlich,
-was noch nach Baukasten aussieht. Achte besonders auf:
+              label: "Der Aufräum-Durchgang — jeden Container, jede Schriftgröße, jeden Abstand prüfen",
+              text: `Geh jetzt meine ganze Website systematisch durch und räum das
+Design auf. Nicht schätzen, sondern wirklich in jede Datei schauen.
 
-- Abstände: sind sie überall gleichmäßig, oder klebt etwas aneinander?
-- Überschriften: erkennt man auf einen Blick, was wichtig ist?
-- Zu viele Farben oder zu viele Schriftgrößen?
-- Wirkt die Seite auf dem Handy gedrängt?
+1. TYPOGRAFIE ZÄHLEN
+   Listet mir auf, welche Schriftgrößen, Schriftstärken und
+   Zeilenabstände auf der Seite tatsächlich vorkommen — und wie oft.
+   Alles, was nur ein- oder zweimal auftaucht, ist verdächtig: Sag
+   mir, auf welchen Wert aus der Staffel es stattdessen soll.
+   Prüf auch die Reihenfolge der Überschriften: genau eine H1,
+   danach keine übersprungenen Stufen.
 
-Zeig mir pro Punkt, was du ändern würdest, und warte auf mein OK.`,
+2. ABSTÄNDE ZÄHLEN
+   Listet mir alle verwendeten Abstandswerte auf. Alles, was nicht
+   ins Vierer-System passt oder nur einmal vorkommt, kommt auf die
+   Liste. Prüf besonders: haben alle Abschnitte denselben Abstand
+   nach oben und unten? Haben alle Karten in einem Raster denselben
+   Zwischenraum?
+
+3. CONTAINER PRÜFEN
+   Geh jeden Abschnitt durch und prüf: gleiche maximale Breite?
+   Gleicher seitlicher Innenabstand? Fluchten die Kanten von der
+   obersten Leiste bis zum Fußbereich wirklich auf einer Linie?
+   Wenn ein Abschnitt aus der Reihe tanzt, zeig mir wo.
+
+4. HANDY
+   Sind die Abstände auf dem Handy kleiner als am Rechner, oder
+   quetscht sich alles? Ist irgendwo etwas breiter als der
+   Bildschirm, sodass man seitlich schieben muss?
+
+Gib mir zuerst die komplette Liste mit Fundort und Vorschlag. Ändere
+noch nichts. Wenn ich sage „mach", räumst du auf — Punkt für Punkt,
+und du sagst mir, was du geändert hast.`,
             },
           ],
           links: [
