@@ -561,6 +561,76 @@ dazu. Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
           "Der Interview-Prompt: Claude fragt dich über dein Business aus und schreibt Texte, die sich heimisch anfühlen — ohne KI-Sound.",
         duration: 25,
         kind: "video",
+        steps: [
+          "Den Copywriting-Skill installieren — Befehl rechts, ein Mal, dauert Sekunden.",
+          "Den Copywriting-Prompt kopieren und an Claude schicken.",
+          "Das Interview beantworten: deine Sprache, deine Zielgruppe, echte Zahlen und echte Kundenstimmen.",
+          "Claude überarbeitet die Texte Seite für Seite — du siehst Vorher und Nachher und gibst jeweils dein OK.",
+          "Überall, wo [FEHLT: …] steht, die echte Information nachliefern. Nichts davon ist ausgedacht — genau das ist der Punkt.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Copywriting-Skill installieren — ins Terminal einfügen, Enter",
+              os: "mac",
+              text: `npx skills add coreyhaines31/marketingskills --skill copywriting --global --yes`,
+            },
+            {
+              label: "Copywriting-Skill installieren — in PowerShell einfügen, Enter",
+              os: "win",
+              text: `npx skills add coreyhaines31/marketingskills --skill copywriting --global --yes`,
+            },
+            {
+              label: "Der Copywriting-Prompt — Claude interviewt dich, dann werden die Texte überarbeitet",
+              text: `Überarbeite jetzt alle Texte meiner Website. Aber bevor du ein
+einziges Wort änderst: interviewe mich. Nutze für die Texte den
+Skill „copywriting".
+
+Stell mir die Fragen NACHEINANDER, eine nach der anderen, und warte
+jeweils auf meine Antwort. Frag nach, wenn eine Antwort zu vage ist.
+
+MEINE SPRACHE
+- Duzen wir die Besucher oder siezen wir sie?
+- Eher locker und direkt — oder eher sachlich und ruhig?
+- Welche Wörter oder Sprüche benutze ich ständig? Wie rede ich am
+  Telefon mit einem Kunden?
+- Was würde ich NIE sagen?
+
+MEINE ZIELGRUPPE
+- Wer genau soll sich angesprochen fühlen — und wer ausdrücklich
+  nicht?
+- Wie viel Ahnung haben meine Kunden vom Thema: muss ich viel
+  erklären oder kann ich abkürzen?
+- Was ist deren größte Sorge oder größter Wunsch, wenn sie jemanden
+  wie mich suchen?
+
+ECHTE BEWEISE
+- Gibt es Kundenstimmen oder Bewertungen, die ich einbauen darf?
+  Gib sie mir im Wortlaut — denk dir keine aus.
+- Welche Zahlen stimmen wirklich: seit wann gibt es die Firma, wie
+  viele Projekte, welche Garantien?
+
+Wenn ich alles beantwortet habe:
+1. Fass meine Sprache und Zielgruppe als kurzen Steckbrief zusammen
+   und lass mich bestätigen.
+2. Überarbeite dann die Texte der Website, Seite für Seite. Zeig mir
+   pro Seite Vorher und Nachher und warte auf mein OK, bevor du die
+   nächste anfasst.
+
+REGELN FÜR DIE TEXTE
+- Kein KI-Deutsch: keine Gedankenstriche als Stilmittel mitten im
+  Satz, keine Wörter wie „nahtlos", „ganzheitlich", „revolutionär",
+  „maßgeschneiderte Lösungen". Kurze Sätze. Schreib so, wie ich im
+  Interview geredet habe.
+- ERFINDE NICHTS: keine ausgedachten Zahlen, Namen, Zitate oder
+  Auszeichnungen. Fehlt dir eine Information, schreib an die Stelle
+  [FEHLT: was du brauchst] und frag mich am Ende gesammelt ab.
+- Stehen im Projekt schon Platzhalter oder ausgedachte Angaben, weise
+  mich darauf hin und frag, was wirklich dort stehen soll — statt sie
+  einfach schöner zu formulieren.`,
+            },
+          ],
+        },
       },
       {
         slug: "design-grundlagen",
