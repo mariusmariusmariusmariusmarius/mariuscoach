@@ -459,43 +459,77 @@ Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
         duration: 12,
         kind: "video",
         steps: [
-          "Eine Website suchen, die dir gefällt — Aufbau, Farben, Bildsprache. Ruhig aus einer ganz anderen Branche.",
+          "Die Vorlage aussuchen: deine bisherige Website, die du mitnehmen willst — oder irgendeine Seite, die dir gefällt.",
           "Den Referenz-Prompt rechts kopieren, die Adresse eintragen und an Claude schicken.",
-          "Claude lädt die Seite in den Ordner referenz/ in deinem Projekt und legt eine LIESMICH.md dazu.",
-          "Dann baut ihr sie als deine Seite nach — gleicher Aufbau, aber mit deiner Firma drin: deine Texte, dein Logo, deine Farben.",
+          "Claude lädt die Seite nach referenz/ und interviewt dich — auch dazu, ob es deine eigene ist und wie viel übernommen werden soll.",
+          "Steckbrief bestätigen. Dann baut er die erste Fassung als eigene Next.js-App: gleicher Aufbau und Stil, deine Firma drin.",
         ],
         cheatSheet: {
           prompts: [
             {
-              label: "Der Referenz-Prompt — Adresse eintragen, Rest macht Claude",
-              text: `Ich habe eine Website gefunden, die ich als Vorlage für meine
-eigene Seite nutzen will.
+              label: "Der Referenz-Prompt — Adresse eintragen, dann interviewt dich Claude",
+              text: `Bau mir meine Website nach einer Vorlage. Aber bevor du
+irgendetwas anlegst: interviewe mich.
 
 Referenz-Website: {ADRESSE-DER-WEBSITE}
 
-Geh so vor:
+Lade die Referenz zuerst herunter: Auf meinem Rechner liegt unser
+Download-Werkzeug — die Datei websiteloader.py im Ordner mm-werkzeuge
+in meinem Benutzerordner. Tiefe 2 reicht. Leg den Download in meinem
+Projektordner unter referenz/ ab, schreib eine kurze
+referenz/LIESMICH.md („Vorlage — wird nicht verändert, geht nicht mit
+online") und trag referenz/ in die .gitignore ein, falls mein Projekt
+ein Git-Repo ist.
 
-1. Auf meinem Rechner liegt unser Download-Werkzeug: die Datei
-   websiteloader.py im Ordner mm-werkzeuge in meinem Benutzerordner.
-   Lade die Seite damit herunter, Tiefe 2 reicht.
+Dann stell mir die Fragen NACHEINANDER, eine nach der anderen, und
+warte jeweils auf meine Antwort. Frag nach, wenn eine Antwort zu vage
+ist.
 
-2. Leg den Download in meinem Projektordner unter referenz/ ab.
+ZUR REFERENZ
+- Ist das meine eigene Website, die ich mitnehmen oder verbessern
+  will — oder eine fremde Seite, die mir einfach gefällt?
+- Was genau gefällt mir daran: Aufbau, Farben, Sprache, Bilder?
+- Wie viel soll übernommen werden — nur der Aufbau, auch Texte, auch
+  Bilder? (Bei einer fremden Seite gilt: Texte und Bilder sind nur
+  Platzhalter und werden später ersetzt.)
 
-3. Schreib eine Datei referenz/LIESMICH.md mit diesem Hinweis:
-   Dieser Ordner ist die Vorlage für den Aufbau meiner Website.
-   Er wird nicht verändert und geht nicht mit online — er dient
-   nur als Referenz beim Bauen.
+MEIN BETRIEB
+- Wie heißt meine Firma, was mache ich genau, seit wann?
+- Wo sitze ich und in welchem Umkreis arbeite ich?
+- Was unterscheidet mich von den anderen in meiner Gegend?
 
-4. Falls mein Projekt ein Git-Repo ist: trag referenz/ in die
-   .gitignore ein, damit der Ordner nicht mit hochgeladen wird.
+MEINE KUNDEN
+- Wer kommt zu mir: Privatleute, Firmen, beides?
+- Was ist die typische Anfrage, mit der jemand zu mir kommt?
+- Was soll jemand tun, der auf meiner Seite landet?
 
-5. Sieh dir die Seite an. Danach bauen wir sie als meine Website
-   nach: gleicher Aufbau, aber mit meiner Firma drin — meine Texte,
-   mein Logo, meine Farben. Was aus der Vorlage brauchbar ist,
-   übernehmen wir. Frag bei Texten und Bildern kurz nach, bevor du
-   sie eins zu eins übernimmst.
+MEINE LEISTUNGEN
+- Welche Leistungen biete ich an, und welche bringen das meiste Geld?
+- Gibt es Leistungen, die ich NICHT mehr machen will?
 
-Warte auf mein Go, bevor du mit dem Bauen anfängst.`,
+AUFBAU
+- Soll meine Seite genauso aufgebaut sein wie die Referenz — oder
+  gibt es Abschnitte, die raus sollen oder dazukommen?
+
+Wenn ich alles beantwortet habe:
+1. Fass alles als kurzen Steckbrief zusammen — auch, wie viel von der
+   Referenz übernommen wird — und lass mich bestätigen, bevor du
+   weitermachst.
+2. Leg dann eine neue, eigenständige Next.js-App an: React,
+   TypeScript, App Router, Tailwind CSS. Der Ordner referenz/ bleibt
+   dabei unverändert liegen.
+3. Bau die erste Fassung nach der Referenz: gleicher Aufbau,
+   ähnlicher Stil, ähnliche Sprache — aber mit meiner Firma drin.
+   Bilder aus referenz/ darfst du als Platzhalter in die Assets
+   übernehmen, die tauschen wir später aus. Texte je nachdem, was ich
+   oben geantwortet habe.
+4. Sag mir in zwei Sätzen, was du gebaut hast und wie ich die Seite
+   auf meinem Rechner anschaue.
+
+Frag mich noch nichts zu Technik, Funktionen, Logo, SEO oder
+rechtlichen Themen wie Impressum und Datenschutz — das machen wir
+alles später, eins nach dem anderen. Erfinde nichts über meine Firma
+dazu. Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
             },
             {
               label: "Nur mal schnell ansehen, ohne Claude — Adresse hinten ersetzen",
