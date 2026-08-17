@@ -458,7 +458,45 @@ Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
           "Websites, die dir gefallen, als Vorlage einsetzen: herunterladen, ins Repo, in deinem Stil nachbauen lassen.",
         duration: 12,
         kind: "video",
+        steps: [
+          "Eine Website suchen, die dir gefällt — Aufbau, Farben, Bildsprache. Ruhig aus einer ganz anderen Branche.",
+          "Den Sauger-Befehl rechts kopieren, deine Wunschadresse einsetzen und ausführen. Die Seite landet als Ordner auf deinem Rechner.",
+          "Den Ordner in Claude Code öffnen und ihm sagen, was dir daran gefällt.",
+          "Claude baut den Aufbau in deinem Stil nach — mit deinen Texten, deinen Farben, deinen Leistungen.",
+        ],
         cheatSheet: {
+          prompts: [
+            {
+              label: "Website herunterladen — Adresse hinten ersetzen",
+              os: "mac",
+              text: `curl -fsSL https://setup.mariusmueller.media/sauger -o sauger.py
+python3 sauger.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de`,
+            },
+            {
+              label: "Website herunterladen — Adresse hinten ersetzen",
+              os: "win",
+              text: `irm https://setup.mariusmueller.media/sauger -OutFile sauger.py
+python sauger.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de`,
+            },
+            {
+              label: "Mehr Unterseiten? Tiefe und Anzahl hochsetzen",
+              text: `python3 sauger.py https://beispiel.de --tiefe 3 --max 80`,
+            },
+            {
+              label: "Danach: Claude den Aufbau übernehmen lassen",
+              text: `Im Ordner „{ORDNERNAME}" liegt eine Website, die ich
+heruntergeladen habe. Sieh sie dir an.
+
+Mir gefällt daran: {WAS DIR GEFÄLLT — z. B. der Aufbau der Startseite,
+die ruhigen Farben, die großen Bilder}
+
+Bau den Aufbau für meine Seite nach — mit meinen Texten, meinen
+Leistungen und meinen Farben. Übernimm keine fremden Texte und keine
+fremden Bilder, das ist nur die Vorlage für die Struktur.
+
+Zeig mir vorher, was du vorhast.`,
+            },
+          ],
           links: [
             {
               label: "SiteSucker — für Mac",
