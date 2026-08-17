@@ -29,6 +29,8 @@ export type Lesson = {
   /** Minuten, rein informativ */
   duration: number;
   kind: "video" | "text" | "case";
+  /** zeigt die Schriftarten-Übersicht unter „Worum geht's?" */
+  fontSchau?: boolean;
   cheatSheet?: CheatSheet;
 };
 
@@ -639,6 +641,7 @@ REGELN FÜR DIE TEXTE
           "Hierarchie, Typografie, Abstände, Layout-Rhythmus — die 1.000 kleinen Details, die Profi-Seiten von Baukasten-Seiten unterscheiden.",
         duration: 25,
         kind: "video",
+        fontSchau: true,
         steps: [
           "Die zwei Design-Skills installieren — Befehle rechts, einmalig.",
           "Bei Realtime Colors Farben ausprobieren, bei Typewolf schauen was gerade läuft — nur zum Gefühl bekommen.",

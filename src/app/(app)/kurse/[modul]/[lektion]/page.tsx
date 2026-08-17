@@ -12,6 +12,7 @@ import { hasAccess } from "@/lib/tiers";
 import { getLesson } from "@/lib/data/curriculum";
 import { TierBadge } from "@/components/ui/tier-badge";
 import { CheatSheet } from "@/components/app/cheat-sheet";
+import { FontSchau } from "@/components/app/font-schau";
 
 export default async function LessonPage({
   params,
@@ -111,6 +112,8 @@ export default async function LessonPage({
               Als erledigt markieren
             </button>
           </div>
+
+          {lesson.fontSchau ? <FontSchau /> : null}
         </div>
 
         {/* bleibt beim Scrollen stehen, damit die Prompts immer greifbar sind */}
