@@ -737,6 +737,7 @@ Zeig mir die Fundliste mit Fundort und Vorschlag, bevor du diese
 letzten Änderungen machst. Danach zeigst du mir die fertige Seite am
 Rechner und auf dem Handy.`,
             },
+          ],
           links: [
             {
               label: "Realtime Colors",
