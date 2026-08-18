@@ -944,6 +944,59 @@ Regeln:
           "5 Fingerklicks, 2 Minuten warten: deine Website ist online — für 0 € im Monat statt Baukasten-Gebühren.",
         duration: 15,
         kind: "video",
+        steps: [
+          "Konto bei Vercel anlegen — Link rechts. Am einfachsten mit deinem GitHub-Konto anmelden, dann hängt beides gleich zusammen.",
+          "Zu den Tokens gehen (Link rechts), einen neuen Token erstellen und den angezeigten Wert sofort kopieren — er wird nur ein einziges Mal gezeigt.",
+          "Den Prompt rechts kopieren, den Token an der markierten Stelle einsetzen und abschicken.",
+          "Claude veröffentlicht deine Seite und gibt dir die Adresse zurück. Ab jetzt ist sie im Internet erreichbar.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Der Prompt — Token einsetzen, dann geht deine Seite live",
+              text: `Bring meine Website live. Wir nutzen dafür Vercel.
+
+VERCEL_TOKEN = {HIER-DEINEN-TOKEN-EINSETZEN}
+
+So gehst du vor:
+
+1. Lies dir an, wie man mit Vercel veröffentlicht:
+   https://vercel.com/docs/rest-api
+   Nutz den Token oben zur Anmeldung. Schreib ihn NICHT in eine
+   Datei, die zu meinem Projekt gehört — er gehört in die
+   Umgebungsvariablen meines Rechners.
+
+2. Zeig mir zuerst, welche Projekte in meinem Vercel-Konto schon
+   liegen. Wenn dort noch nichts ist, ist das richtig so.
+
+3. Veröffentliche mein aktuelles Projekt als neues Projekt. Nimm
+   den Namen meiner Firma als Projektnamen, klein geschrieben und
+   mit Bindestrichen.
+
+4. Wenn beim Veröffentlichen etwas schiefgeht, lies die
+   Fehlermeldung, sag mir in einem Satz was los ist, und behebe es.
+   Häufig sind es Kleinigkeiten im Code, die lokal nicht auffallen.
+
+5. Wenn es steht, gib mir die Adresse und sag mir, wie ich künftig
+   eine Änderung veröffentliche.
+
+Nur anlegen und veröffentlichen. Lösch keine Projekte und ändere
+keine Einstellungen an anderen Projekten in meinem Konto.`,
+            },
+          ],
+          links: [
+            {
+              label: "Vercel — Konto erstellen",
+              href: "https://vercel.com/signup",
+              note: "kostenlos; am besten mit deinem GitHub-Konto anmelden",
+            },
+            {
+              label: "Vercel — Token erstellen",
+              href: "https://vercel.com/account/tokens",
+              note: "„Create Token\" — der Wert wird nur einmal angezeigt, also gleich kopieren",
+            },
+          ],
+        },
       },
       {
         slug: "domain-verbinden",
