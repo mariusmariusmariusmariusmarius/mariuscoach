@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { BookOpen, Database, GraduationCap, Users } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import { listUsers } from "@/lib/auth/users";
+import { LIMIT_USD, verbrauchVon } from "@/lib/api/verbrauch";
 import { CURRICULUM, totalLessons } from "@/lib/data/curriculum";
 import { TierBadge } from "@/components/ui/tier-badge";
 import { Avatar } from "@/components/ui/avatar";
@@ -81,6 +82,46 @@ export default async function AdminPage() {
         </div>
         <p className="mt-4 text-xs text-zinc-600">
           Aktionen (Stufe ändern, sperren, löschen) kommen mit der Datenbank-Anbindung.
+        </p>
+      </section>
+
+      {/* Bewertungs-API: wer verbraucht wie viel */}
+      <section className="rounded-3xl border border-white/8 bg-surface-900/70 p-7">
+        <h2 className="mb-4 text-lg font-semibold text-white">
+          Bewertungs-API — Verbrauch im laufenden Monat
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[560px] text-left text-sm">
+            <thead>
+              <tr className="border-b border-white/10 text-xs uppercase tracking-widest text-zinc-500">
+                <th className="pb-3 pr-4">Konto</th>
+                <th className="pb-3 pr-4">Schlüssel</th>
+                <th className="pb-3 pr-4">Anfragen</th>
+                <th className="pb-3 pr-4">Kosten (USD)</th>
+                <th className="pb-3">Limit</th>
+              </tr>
+            </thead>
+            <tbody>
+              {listUsers().map((u) => {
+                const v = verbrauchVon(u.id);
+                return (
+                  <tr key={u.id} className="border-b border-white/5">
+                    <td className="py-3 pr-4 text-zinc-200">{u.email}</td>
+                    <td className="py-3 pr-4 font-mono text-xs text-zinc-500">
+                      …{u.apiKey.slice(-8)}
+                    </td>
+                    <td className="py-3 pr-4 text-zinc-300">{v.anfragen}</td>
+                    <td className="py-3 pr-4 text-zinc-300">{v.kostenUsd.toFixed(4)}</td>
+                    <td className="py-3 text-zinc-300">{LIMIT_USD[u.tier]} USD</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 text-xs text-zinc-600">
+          Die Kosten stammen aus dem cost-Feld jeder DataForSEO-Antwort — hier
+          in deren Einkaufspreis. Dein Verkaufspreis ist deine Sache.
         </p>
       </section>
 

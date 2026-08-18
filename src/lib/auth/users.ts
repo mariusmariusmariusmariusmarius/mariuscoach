@@ -19,6 +19,8 @@ export type User = {
   role: Role;
   avatarColor: string;
   createdAt: string;
+  /** Persönlicher Schlüssel für die Bewertungs-API (mm_…) */
+  apiKey: string;
 };
 
 const seedUsers: User[] = [
@@ -34,6 +36,7 @@ const seedUsers: User[] = [
     role: "member",
     avatarColor: "from-sky-500 to-cyan-400",
     createdAt: "2026-01-10",
+    apiKey: "mm_demo_free_0000000000000000000000000000",
   },
   {
     id: "u_demo_starter",
@@ -44,6 +47,7 @@ const seedUsers: User[] = [
     role: "member",
     avatarColor: "from-amber-400 to-orange-500",
     createdAt: "2026-02-02",
+    apiKey: "mm_demo_starter_00000000000000000000000000",
   },
   {
     id: "u_demo_pro",
@@ -54,6 +58,7 @@ const seedUsers: User[] = [
     role: "member",
     avatarColor: "from-violet-500 to-fuchsia-500",
     createdAt: "2026-03-15",
+    apiKey: "mm_demo_pro_000000000000000000000000000000",
   },
   {
     id: "u_marius",
@@ -64,8 +69,16 @@ const seedUsers: User[] = [
     role: "admin",
     avatarColor: "from-emerald-500 to-teal-400",
     createdAt: "2025-12-01",
+    apiKey: "mm_admin_0000000000000000000000000000000000",
   },
 ];
+
+/** mm_ + 40 Hex-Zeichen — pro Account einmalig, zeigt nie Systeminternas */
+export function neuerApiKey(): string {
+  const b = new Uint8Array(20);
+  crypto.getRandomValues(b);
+  return "mm_" + [...b].map((x) => x.toString(16).padStart(2, "0")).join("");
+}
 
 // globalThis, damit der Store Hot-Reloads im Dev-Modus überlebt
 const store = globalThis as unknown as { __mcUsers?: Map<string, User> };
@@ -73,6 +86,11 @@ if (!store.__mcUsers) {
   store.__mcUsers = new Map(seedUsers.map((u) => [u.email, u]));
 }
 const users = store.__mcUsers;
+
+// Bestehende Einträge (aus früheren Dev-Läufen) ohne Schlüssel nachrüsten
+for (const u of users.values()) {
+  if (!u.apiKey) u.apiKey = neuerApiKey();
+}
 
 export function findUserByEmail(email: string): User | undefined {
   return users.get(email.trim().toLowerCase());
@@ -105,9 +123,17 @@ export function createUser(input: {
     role: "member",
     avatarColor: "from-brand-500 to-accent-500",
     createdAt: new Date().toISOString().slice(0, 10),
+    apiKey: neuerApiKey(),
   };
   users.set(email, user);
   return { user };
+}
+
+export function findUserByApiKey(apiKey: string): User | undefined {
+  for (const u of users.values()) {
+    if (u.apiKey === apiKey) return u;
+  }
+  return undefined;
 }
 
 export function listUsers(): User[] {

@@ -1,5 +1,8 @@
-import { Check, CreditCard, Mail } from "lucide-react";
+import { Check, CreditCard, KeyRound, Mail } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
+import { findUserByEmail } from "@/lib/auth/users";
+import { LIMIT_USD, verbrauchVon } from "@/lib/api/verbrauch";
+import { CopyButton } from "@/components/ui/copy-button";
 import { changeTierAction } from "@/lib/auth/actions";
 import { TIERS, TIER_INFO } from "@/lib/tiers";
 import { Avatar } from "@/components/ui/avatar";
@@ -9,6 +12,8 @@ export const metadata = { title: "Einstellungen" };
 
 export default async function SettingsPage() {
   const session = (await getSession())!;
+  const user = findUserByEmail(session.email);
+  const verbrauch = user ? verbrauchVon(user.id) : null;
 
   return (
     <div className="space-y-8">
@@ -39,6 +44,52 @@ export default async function SettingsPage() {
           Profil bearbeiten (Name, Avatar, Passwort ändern) kommt mit der
           echten Datenbank-Anbindung.
         </p>
+      </section>
+
+      {/* Persönlicher API-Schlüssel für die Bewertungs-API */}
+      <section className="rounded-3xl border border-white/8 bg-surface-900/70 p-7">
+        <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold text-white">
+          <KeyRound className="size-5 text-brand-300" />
+          Dein API-Schlüssel
+        </h2>
+        <p className="mb-5 text-sm text-zinc-400">
+          Damit holt Claude deine Bewertungen von Google, Trustpilot &amp; Co. —
+          der Schlüssel gehört nur dir. Behandle ihn wie ein Passwort.
+        </p>
+        {user ? (
+          <>
+            <div className="flex items-center justify-between gap-3 rounded-2xl border border-white/8 bg-surface-950/60 px-4 py-3">
+              <code className="min-w-0 truncate font-mono text-sm text-zinc-200">
+                {user.apiKey}
+              </code>
+              <CopyButton text={user.apiKey} />
+            </div>
+            {verbrauch ? (
+              <dl className="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm">
+                <div>
+                  <dt className="text-xs uppercase tracking-widest text-zinc-500">
+                    Monat
+                  </dt>
+                  <dd className="font-medium text-zinc-200">{verbrauch.monat}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs uppercase tracking-widest text-zinc-500">
+                    Anfragen
+                  </dt>
+                  <dd className="font-medium text-zinc-200">{verbrauch.anfragen}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs uppercase tracking-widest text-zinc-500">
+                    Verbrauch
+                  </dt>
+                  <dd className="font-medium text-zinc-200">
+                    {verbrauch.kostenUsd.toFixed(4)} von {LIMIT_USD[session.tier]} USD
+                  </dd>
+                </div>
+              </dl>
+            ) : null}
+          </>
+        ) : null}
       </section>
 
       {/* Account-Stufe */}
