@@ -1,4 +1,4 @@
-import { ClipboardCopy, Link2 } from "lucide-react";
+import { ClipboardCopy, KeyRound, Link2 } from "lucide-react";
 import type { CheatSheet as CheatSheetData } from "@/lib/data/curriculum";
 import { CopyButton } from "@/components/ui/copy-button";
 import { OsIcon } from "@/components/ui/os-icon";
@@ -21,7 +21,13 @@ function SectionLabel({
  * Die Box rechts neben dem Video: bewusst nur das Handwerkszeug —
  * Prompts zum Kopieren und die Links, wo es raufgeht. Erklärt wird im Video.
  */
-export function CheatSheet({ sheet }: { sheet?: CheatSheetData }) {
+export function CheatSheet({
+  sheet,
+  apiKey,
+}: {
+  sheet?: CheatSheetData;
+  apiKey?: string;
+}) {
   const prompts = sheet?.prompts ?? [];
   const links = sheet?.links ?? [];
   const hasContent = prompts.length > 0 || links.length > 0;
@@ -31,6 +37,22 @@ export function CheatSheet({ sheet }: { sheet?: CheatSheetData }) {
       <h2 className="mb-5 text-lg font-semibold text-white">Infos zur Lektion</h2>
 
       <div className="space-y-5">
+        {apiKey ? (
+          <div>
+            <SectionLabel icon={KeyRound}>Deine API</SectionLabel>
+            <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-surface-950/60 px-3 py-2.5">
+              <code className="min-w-0 truncate font-mono text-xs text-zinc-200">
+                {apiKey}
+              </code>
+              <CopyButton text={apiKey} />
+            </div>
+            <p className="mt-2 text-xs leading-relaxed text-zinc-500">
+              Dein persönlicher Schlüssel — im Prompt unten schon eingesetzt.
+              Behandle ihn wie ein Passwort.
+            </p>
+          </div>
+        ) : null}
+
         {prompts.length > 0 ? (
           <div>
             <SectionLabel icon={ClipboardCopy}>Zum Kopieren</SectionLabel>

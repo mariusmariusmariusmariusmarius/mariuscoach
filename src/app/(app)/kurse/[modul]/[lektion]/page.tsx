@@ -8,6 +8,7 @@ import {
   Play,
 } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
+import { findUserByEmail } from "@/lib/auth/users";
 import { hasAccess } from "@/lib/tiers";
 import { getLesson } from "@/lib/data/curriculum";
 import { TierBadge } from "@/components/ui/tier-badge";
@@ -32,6 +33,20 @@ export default async function LessonPage({
 
   const prev = courseModule.lessons[index - 1];
   const next = courseModule.lessons[index + 1];
+
+  // Persönlichen API-Schlüssel des Nutzers in die Prompts einsetzen —
+  // so ist der kopierte Prompt schon fertig, ohne Bastelei.
+  const user = findUserByEmail(session.email);
+  const sheet =
+    lesson.cheatSheet && user
+      ? {
+          ...lesson.cheatSheet,
+          prompts: lesson.cheatSheet.prompts?.map((p) => ({
+            ...p,
+            text: p.text.replaceAll("{DEIN-API-KEY}", user.apiKey),
+          })),
+        }
+      : lesson.cheatSheet;
 
   return (
     <div className="space-y-8">
@@ -120,7 +135,10 @@ export default async function LessonPage({
 
         {/* bleibt beim Scrollen stehen, damit die Prompts immer greifbar sind */}
         <div className="xl:sticky xl:top-6 xl:max-h-[calc(100vh-3rem)] xl:overflow-y-auto">
-          <CheatSheet sheet={lesson.cheatSheet} />
+          <CheatSheet
+            sheet={sheet}
+            apiKey={sheet?.apiKeyHint ? user?.apiKey : undefined}
+          />
         </div>
       </div>
 

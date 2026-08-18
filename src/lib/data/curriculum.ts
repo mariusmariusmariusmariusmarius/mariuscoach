@@ -12,6 +12,8 @@ import type { Tier } from "@/lib/tiers";
  * Prompts zum Kopieren und die Links, wo es raufgeht. Erklärt wird im Video.
  */
 export type CheatSheet = {
+  /** zeigt oben in der Box den persönlichen API-Schlüssel des Nutzers */
+  apiKeyHint?: boolean;
   /** label steht ÜBER dem Block — im kopierbaren Text steht nur der Prompt.
    *  os blendet ein Apple- bzw. Windows-Zeichen davor ein. */
   prompts?: { label?: string; os?: "mac" | "win"; text: string }[];
@@ -1004,6 +1006,76 @@ keine Einstellungen an anderen Projekten in meinem Konto.`,
               label: "Vercel — Konto erstellen",
               href: "https://vercel.com/signup",
               note: "kostenlos; am besten mit deinem GitHub-Konto anmelden",
+            },
+          ],
+        },
+      },
+      {
+        slug: "bewertungen-einbinden",
+        title: "Deine Bewertungen auf die Website",
+        description:
+          "Google, Trustpilot & Co.: Claude holt deine echten Bewertungen über unsere API und baut sie ein — mit Quellen-Link und rechtssicherem Hinweis.",
+        duration: 20,
+        kind: "video",
+        steps: [
+          "Rechts oben steht dein persönlicher API-Schlüssel — er ist im Prompt schon eingesetzt. Behandle ihn wie ein Passwort.",
+          "Deine Profile raussuchen: Google-Eintrag (Firmenname und Stadt reichen), Trustpilot- oder Tripadvisor-Link, falls vorhanden.",
+          "Den Prompt kopieren, Profile eintragen, abschicken. Was du nicht hast, löschst du einfach raus.",
+          "Claude holt die Bewertungen und zeigt dir die stärksten Zitate — du entscheidest, welche auf die Seite kommen.",
+          "Eingebaut wird jede Bewertung mit Link zum Original und dem Echtheits-Hinweis darunter — das ist die rechtssichere Variante.",
+        ],
+        cheatSheet: {
+          apiKeyHint: true,
+          prompts: [
+            {
+              label: "Der Bewertungs-Prompt — Profile eintragen, dein Schlüssel steckt schon drin",
+              text: `Hol meine echten Kundenbewertungen und bau sie in meine Website
+ein.
+
+MEINE PROFILE (was es nicht gibt, einfach rauslöschen):
+- Google: {FIRMENNAME-UND-STADT-ODER-LINK-ZUM-EINTRAG}
+- Trustpilot: {DEINE-DOMAIN-AUF-TRUSTPILOT}
+- Tripadvisor: {LINK-ZU-DEINEM-EINTRAG}
+
+MEIN ZUGANG
+Wir nutzen die Bewertungs-API meiner Kursplattform.
+Adresse: https://mariuscoach.vercel.app/api/bewertungen
+Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
+
+So funktioniert sie:
+- POST mit JSON { "pfad": "...", "daten": [...] } — pfad ist ein
+  business_data-Endpunkt von DataForSEO, deren Doku liest du hier:
+  https://docs.dataforseo.com/v3/business_data/
+- Ablauf je Plattform: Aufgabe mit task_post anlegen, kurz warten,
+  mit tasks_ready nachsehen und mit task_get abholen.
+- GET auf dieselbe Adresse zeigt dir meinen Verbrauch und mein
+  Monatslimit. Geh sparsam mit Abfragen um: erst denken, dann
+  abfragen — und bleib deutlich unter dem Limit.
+
+SO GEHST DU VOR
+1. Hol zu jedem Profil oben alle Bewertungen: Text, Sterne, Name,
+   Datum und den Link zur Originalbewertung.
+2. Zeig mir eine Übersicht: Anzahl und Durchschnitt pro Plattform,
+   dazu die fünf stärksten Zitate. Zeig mir auch die schlechten —
+   ich entscheide, wie wir damit umgehen.
+3. Frag mich, welche Bewertungen auf die Website sollen und wohin:
+   Startseite, eigene Bewertungsseite oder beides.
+4. Bau den Bewertungsbereich: Zitat, Sterne, Vorname, Datum und die
+   Quelle als Link zur Originalbewertung auf der Plattform.
+5. Direkt darunter setzt du diesen Hinweis, angepasst an die
+   Plattformen, die wir wirklich zeigen:
+   "Diese Bewertungen stammen unverändert von Google und
+   Trustpilot. Wir prüfen sie nicht selbst — jeder Link führt zur
+   Originalbewertung."
+
+REGELN
+- Nur echte Bewertungen, wortgleich übernommen. Nichts umschreiben,
+  nichts erfinden, keine Namen dazudichten. Auch Tippfehler der
+  Kunden bleiben drin — die machen es glaubwürdig.
+- Volle Nachnamen kürzt du auf den ersten Buchstaben ab.
+- Wenn du ein Profil nicht findest, sag es mir, statt zu raten.
+- Der API-Schlüssel bleibt in diesem Chat. Schreib ihn in keine
+  Datei meines Projekts.`,
             },
           ],
         },
