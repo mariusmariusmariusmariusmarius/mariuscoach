@@ -872,16 +872,12 @@ etwas Ähnliches zu nehmen.`,
         steps: [
           "Bei Higgsfield anmelden — Link rechts. Der Gratis-Zugang reicht zum Ausprobieren.",
           "In Claude die Einstellungen öffnen und zu den Connectors gehen.",
-          "Auf „Connector hinzufügen\" klicken, die Higgsfield-Adresse rechts einfügen und speichern.",
+          "Higgsfield in der Liste auswählen und verbinden.",
           "Im Browser mit deinem Higgsfield-Konto anmelden und den Zugriff bestätigen — kein Schlüssel zum Abtippen.",
           "Die drei Skills installieren, Claude Code einmal neu starten, dann den Bilder-Prompt schicken.",
         ],
         cheatSheet: {
           prompts: [
-            {
-              label: "Higgsfield-Adresse — beim Connector in das Adressfeld einfügen",
-              text: `https://mcp.higgsfield.ai/mcp`,
-            },
             {
               label: "Die Skills installieren — drei Zeilen nacheinander ins Terminal",
               text: `npx skills add higgsfield-ai/skills --skill higgsfield-generate --global --yes
