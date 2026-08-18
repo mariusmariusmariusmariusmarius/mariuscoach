@@ -874,7 +874,7 @@ etwas Ähnliches zu nehmen.`,
           "In Claude die Einstellungen öffnen und zu den Connectors gehen.",
           "Auf „Connector hinzufügen\" klicken, die Higgsfield-Adresse rechts einfügen und speichern.",
           "Im Browser mit deinem Higgsfield-Konto anmelden und den Zugriff bestätigen — kein Schlüssel zum Abtippen.",
-          "Die zwei Skills installieren, Claude Code einmal neu starten, dann den Bilder-Prompt schicken.",
+          "Die drei Skills installieren, Claude Code einmal neu starten, dann den Bilder-Prompt schicken.",
         ],
         cheatSheet: {
           prompts: [
@@ -883,9 +883,10 @@ etwas Ähnliches zu nehmen.`,
               text: `https://mcp.higgsfield.ai/mcp`,
             },
             {
-              label: "Die Skills installieren — beide Zeilen nacheinander ins Terminal",
+              label: "Die Skills installieren — drei Zeilen nacheinander ins Terminal",
               text: `npx skills add higgsfield-ai/skills --skill higgsfield-generate --global --yes
-npx skills add higgsfield-ai/skills --skill higgsfield-product-photoshoot --global --yes`,
+npx skills add higgsfield-ai/skills --skill higgsfield-product-photoshoot --global --yes
+npx skills add mariusmariusmariusmariusmarius/nanorealism --global --yes`,
             },
             {
               label: "Der Bilder-Prompt — was fehlt, wird erzeugt; der Rest bleibt echt",
@@ -906,7 +907,9 @@ täuscht — Hintergrundflächen, abstrakte Muster, freigestellte
 Symbolbilder.
 
 Für die zweite Liste: Nutz Higgsfield über die eingebaute
-Verbindung und die Skills. Frag mich vorher, welche Bildsprache
+Verbindung und die Skills. Wenn auf einem Bild Menschen oder
+echt wirkende Räume vorkommen sollen, nimm zusätzlich den Skill
+„nanorealism" — der sorgt dafür, dass es nicht nach KI aussieht. Frag mich vorher, welche Bildsprache
 passen soll, und richte dich nach den Farben und der Stimmung,
 die meine Seite schon hat.
 
