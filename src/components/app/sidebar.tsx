@@ -116,7 +116,7 @@ export function AppSidebar({ session }: { session: Session }) {
       {/* Mobile Toggle */}
       <button
         onClick={() => setOpen(true)}
-        className="fixed left-4 top-4 z-40 grid size-10 place-items-center rounded-xl glass text-white lg:hidden"
+        className="fixed left-4 top-4 z-40 grid size-10 place-items-center rounded-xl glass text-white xl:hidden"
         aria-label="Menü öffnen"
       >
         <Menu className="size-5" />
@@ -125,13 +125,13 @@ export function AppSidebar({ session }: { session: Session }) {
       {/* Mobile Overlay */}
       {open && (
         <div
-          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm xl:hidden"
           onClick={() => setOpen(false)}
         />
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-72 flex-col gap-8 border-r border-white/5 bg-surface-900/95 p-6 backdrop-blur transition-transform lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-72 flex-col gap-8 border-r border-white/5 bg-surface-900/95 p-6 backdrop-blur transition-transform xl:translate-x-0 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -139,7 +139,7 @@ export function AppSidebar({ session }: { session: Session }) {
           <Logo href="/dashboard" />
           <button
             onClick={() => setOpen(false)}
-            className="grid size-8 place-items-center rounded-lg text-zinc-400 hover:text-white lg:hidden"
+            className="grid size-8 place-items-center rounded-lg text-zinc-400 hover:text-white xl:hidden"
             aria-label="Menü schließen"
           >
             <X className="size-5" />

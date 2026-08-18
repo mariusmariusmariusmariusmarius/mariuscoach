@@ -720,6 +720,18 @@ ECKEN
   neben einer mit 24.
 - Runde Ecken und scharfe Ecken nicht mischen.
 
+NAVIGATION
+- Die Menüleiste muss lieber FRÜHER einknicken als zu eng zu werden.
+  Sobald die Menüpunkte anfangen zu drängeln, umzubrechen oder
+  abgeschnitten zu werden, machst du daraus ein Burger-Menü — nicht
+  erst beim Handy. Lieber ein Burger-Menü zu früh als eine gequetschte
+  Leiste.
+- Kein Menüpunkt wird abgeschnitten, bricht um oder liegt über
+  anderem Text. Ein aufklappender Menü-Knopf muss eigenen Platz haben
+  und darf nichts überdecken.
+- Prüf das bei 1280, 1024, 768 und 375 Pixeln Breite. Sag mir für
+  jede Breite, ob die Leiste offen oder eingeklappt ist.
+
 ABSTÄNDE UND CONTAINER
 - Leg ein Abstandssystem fest, alles in Vielfachen von 4 Pixeln, und
   halte dich überall daran. Keine einzelnen krummen Werte.
@@ -749,6 +761,10 @@ schauen:
   einer Linie?
 - Prüf das Handy: quetscht sich irgendwo etwas, ist etwas breiter als
   der Bildschirm?
+- Zieh das Fenster gedanklich langsam schmaler und sag mir, bei
+  welcher Breite es zum ersten Mal eng wird — dort muss das Layout
+  umbrechen, nicht erst später. Nichts darf sich dabei überlappen
+  oder abgeschnitten werden.
 
 Zeig mir die Fundliste mit Fundort und Vorschlag, bevor du diese
 letzten Änderungen machst. Danach zeigst du mir die fertige Seite am

@@ -58,7 +58,7 @@ export default async function LessonPage({
       </div>
 
       {/* Video links, Infos rechts — gleiche Höhe, Box scrollt mit */}
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.85fr)_minmax(20rem,1fr)] lg:items-start">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.85fr)_minmax(20rem,1fr)] xl:items-start">
         {/* min-w-0: sonst wächst die Spalte mit breitem Inhalt mit, statt ihn
             seitlich scrollen zu lassen */}
         <div className="min-w-0 space-y-6">
@@ -119,7 +119,7 @@ export default async function LessonPage({
         </div>
 
         {/* bleibt beim Scrollen stehen, damit die Prompts immer greifbar sind */}
-        <div className="lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto">
+        <div className="xl:sticky xl:top-6 xl:max-h-[calc(100vh-3rem)] xl:overflow-y-auto">
           <CheatSheet sheet={lesson.cheatSheet} />
         </div>
       </div>
