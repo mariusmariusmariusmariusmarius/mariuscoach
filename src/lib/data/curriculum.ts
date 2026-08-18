@@ -992,6 +992,7 @@ So gehst du vor:
 Nur anlegen und veröffentlichen. Lösch keine Projekte und ändere
 keine Einstellungen an anderen Projekten in meinem Konto.`,
             },
+          ],
           links: [
             {
               label: "Vercel — Konto erstellen",
