@@ -780,6 +780,87 @@ Rechner und auf dem Handy.`,
           "Der Ordnerstruktur-Trick: Bilder sortieren, Dateipfad an Claude — fertig eingebunden, komprimiert und zugeschnitten.",
         duration: 15,
         kind: "video",
+        steps: [
+          "Einen Ordner auf dem Rechner anlegen — zum Beispiel „Bilder-Website\" auf dem Schreibtisch.",
+          "Darin Unterordner nach dem, was drauf zu sehen ist: leistungen, produkte, vorher-nachher, team, betrieb.",
+          "Fotos reinwerfen. Nicht umbenennen, nicht zuschneiden, nicht verkleinern — das macht Claude.",
+          "Den Prompt kopieren, den Ordnerpfad einsetzen und abschicken.",
+          "Claude sortiert, baut ein und sagt dir am Ende, wo noch Bilder fehlen.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Der Bilder-Prompt — Ordnerpfad einsetzen, Rest macht Claude",
+              text: `Bau meine eigenen Fotos in die Website ein.
+
+Mein Bilder-Ordner: {PFAD-ZUM-ORDNER}
+
+Den Pfad bekommst du so: Ordner im Finder beziehungsweise Explorer
+suchen und einfach ins Chatfenster ziehen.
+
+SCHRITT 1 — Schau dir den Ordner an
+Geh alle Bilder durch und sag mir, was du gefunden hast: wie viele
+Bilder, wie sie sortiert sind und was jeweils drauf zu sehen ist.
+Wenn ein Bild unklar ist, frag mich, statt zu raten.
+
+SCHRITT 2 — Einsortieren
+Kopiere die Bilder in mein Projekt und benenn sie sinnvoll: kleine
+Buchstaben, Bindestriche statt Leerzeichen, sprechender Name statt
+IMG_4711. Die Originale im Ordner lässt du unangetastet.
+
+SCHRITT 3 — Einbauen
+Entscheide selbst, welches Bild wohin passt, und sag mir zu jedem
+kurz, warum. Dabei gilt:
+- Jedes Bild bekommt einen Alt-Text, der beschreibt, was wirklich
+  drauf ist — kein Stichwort-Salat.
+- Kein Bild wird verzerrt. Wenn ein Format nicht passt, schneidest du
+  mittig zu, statt zu quetschen.
+- Gleichartige Bilder in einer Reihe bekommen dasselbe Seitenverhältnis,
+  damit die Kanten fluchten.
+- Vorher-Nachher gehört nebeneinander und gleich groß, sonst kann man
+  es nicht vergleichen.
+- Nutz die eingebaute Bildkomponente von Next.js, damit die Bilder
+  automatisch verkleinert und in modernen Formaten ausgeliefert
+  werden. Das Bild ganz oben lädt sofort, alle anderen erst beim
+  Runterscrollen.
+- Für jedes Bild wird die Größe von vornherein reserviert, damit beim
+  Laden nichts springt.
+
+SCHRITT 4 — Danach prüfen
+Sieh dir die fertige Seite auf Handy, Tablet und Rechner an. Achte
+darauf, dass kein Bild abgeschnitten wird, an der falschen Stelle
+zugeschnitten ist (Köpfe!), unscharf wirkt oder das Layout sprengt.
+Sag mir, was du geprüft hast.
+
+SCHRITT 5 — Ehrlich sein
+Sag mir am Ende:
+- Für welche Stellen auf der Website habe ich noch KEIN passendes
+  Bild? Beschreib mir, was ich fotografieren soll.
+- Welche Bilder sind zu klein oder zu schlecht aufgelöst für die
+  Stelle, an der sie stehen?
+- Welche Bilder hast du übrig gelassen und warum?
+
+Setz kein Platzhalterbild und kein Bild aus dem Internet ein. Wenn
+für eine Stelle nichts Passendes da ist, sagst du mir das, statt
+etwas Ähnliches zu nehmen.`,
+            },
+            {
+              label: "So sortierst du den Ordner — als Vorlage",
+              text: `Bilder-Website/
+  leistungen/
+    badsanierung-fliesen.jpg
+    heizung-einbau.jpg
+  produkte/
+  vorher-nachher/
+    bad-mueller-vorher.jpg
+    bad-mueller-nachher.jpg
+  team/
+  betrieb/
+    werkstatt.jpg
+    firmenwagen.jpg`,
+            },
+          ],
+        },
       },
       {
         slug: "ki-bilder-vs-eigene",
