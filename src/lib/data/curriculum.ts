@@ -859,21 +859,6 @@ Setz kein Platzhalterbild und kein Bild aus dem Internet ein. Wenn
 für eine Stelle nichts Passendes da ist, sagst du mir das, statt
 etwas Ähnliches zu nehmen.`,
             },
-            {
-              label: "So sortierst du den Ordner — als Vorlage",
-              text: `Bilder-Website/
-  leistungen/
-    badsanierung-fliesen.jpg
-    heizung-einbau.jpg
-  produkte/
-  vorher-nachher/
-    bad-mueller-vorher.jpg
-    bad-mueller-nachher.jpg
-  team/
-  betrieb/
-    werkstatt.jpg
-    firmenwagen.jpg`,
-            },
           ],
         },
       },
