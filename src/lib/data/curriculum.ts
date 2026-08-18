@@ -946,54 +946,57 @@ Regeln:
         kind: "video",
         steps: [
           "Konto bei Vercel anlegen — Link rechts. Am einfachsten mit deinem GitHub-Konto anmelden, dann hängt beides gleich zusammen.",
-          "Zu den Tokens gehen (Link rechts), einen neuen Token erstellen und den angezeigten Wert sofort kopieren — er wird nur ein einziges Mal gezeigt.",
-          "Den Prompt rechts kopieren, den Token an der markierten Stelle einsetzen und abschicken.",
+          "Den Anmelde-Befehl rechts ins Terminal. Es öffnet sich der Browser, dort auf „Bestätigen\" klicken — fertig, kein Schlüssel zum Abtippen.",
+          "Den Prompt rechts kopieren und abschicken.",
           "Claude veröffentlicht deine Seite und gibt dir die Adresse zurück. Ab jetzt ist sie im Internet erreichbar.",
         ],
         cheatSheet: {
           prompts: [
             {
-              label: "Der Prompt — Token einsetzen, dann geht deine Seite live",
-              text: `Bring meine Website live. Wir nutzen dafür Vercel.
-
-VERCEL_TOKEN = {HIER-DEINEN-TOKEN-EINSETZEN}
+              label: "1. Bei Vercel anmelden — ins Terminal, dann im Browser bestätigen",
+              os: "mac",
+              text: `npx vercel login`,
+            },
+            {
+              label: "1. Bei Vercel anmelden — in PowerShell, gleicher Befehl",
+              os: "win",
+              text: `npx vercel login`,
+            },
+            {
+              label: "2. Der Prompt — damit geht deine Seite live",
+              text: `Bring meine Website live. Wir nutzen dafür Vercel. Ich bin im
+Terminal schon angemeldet, du kannst das Vercel-Werkzeug direkt
+benutzen.
 
 So gehst du vor:
 
-1. Lies dir an, wie man mit Vercel veröffentlicht:
-   https://vercel.com/docs/rest-api
-   Nutz den Token oben zur Anmeldung. Schreib ihn NICHT in eine
-   Datei, die zu meinem Projekt gehört — er gehört in die
-   Umgebungsvariablen meines Rechners.
-
-2. Zeig mir zuerst, welche Projekte in meinem Vercel-Konto schon
+1. Zeig mir zuerst, welche Projekte in meinem Vercel-Konto schon
    liegen. Wenn dort noch nichts ist, ist das richtig so.
 
-3. Veröffentliche mein aktuelles Projekt als neues Projekt. Nimm
+2. Veröffentliche mein aktuelles Projekt als neues Projekt. Nimm
    den Namen meiner Firma als Projektnamen, klein geschrieben und
    mit Bindestrichen.
 
-4. Wenn beim Veröffentlichen etwas schiefgeht, lies die
+3. Wenn beim Veröffentlichen etwas schiefgeht, lies die
    Fehlermeldung, sag mir in einem Satz was los ist, und behebe es.
-   Häufig sind es Kleinigkeiten im Code, die lokal nicht auffallen.
+   Häufig sind es Kleinigkeiten im Code, die auf meinem Rechner
+   nicht auffallen.
 
-5. Wenn es steht, gib mir die Adresse und sag mir, wie ich künftig
+4. Wenn es steht, prüf selbst, ob die Seite unter der Adresse
+   wirklich lädt — nicht nur, ob die Veröffentlichung durchgelaufen
+   ist.
+
+5. Gib mir die Adresse und sag mir in zwei Sätzen, wie ich künftig
    eine Änderung veröffentliche.
 
 Nur anlegen und veröffentlichen. Lösch keine Projekte und ändere
 keine Einstellungen an anderen Projekten in meinem Konto.`,
             },
-          ],
           links: [
             {
               label: "Vercel — Konto erstellen",
               href: "https://vercel.com/signup",
               note: "kostenlos; am besten mit deinem GitHub-Konto anmelden",
-            },
-            {
-              label: "Vercel — Token erstellen",
-              href: "https://vercel.com/account/tokens",
-              note: "„Create Token\" — der Wert wird nur einmal angezeigt, also gleich kopieren",
             },
           ],
         },
