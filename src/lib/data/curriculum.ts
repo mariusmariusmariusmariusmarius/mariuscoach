@@ -871,29 +871,19 @@ etwas Ähnliches zu nehmen.`,
         kind: "video",
         steps: [
           "Bei Higgsfield anmelden — Link rechts. Der Gratis-Zugang reicht zum Ausprobieren.",
-          "Higgsfield an Claude hängen: den ersten Befehl ins Terminal, dann /mcp eingeben und im Browser anmelden. Kein Schlüssel zum Abtippen.",
-          "Die zwei Skills installieren — damit Claude weiß, wie man die Modelle richtig ansteuert.",
-          "Claude Code einmal neu starten.",
-          "Den Bilder-Prompt schicken. Claude erzeugt nur das, was mit echten Fotos nicht geht — und sagt dir, wo du selbst zur Kamera greifen musst.",
+          "In Claude die Einstellungen öffnen und zu den Connectors gehen.",
+          "Auf „Connector hinzufügen\" klicken, die Higgsfield-Adresse rechts einfügen und speichern.",
+          "Im Browser mit deinem Higgsfield-Konto anmelden und den Zugriff bestätigen — kein Schlüssel zum Abtippen.",
+          "Die zwei Skills installieren, Claude Code einmal neu starten, dann den Bilder-Prompt schicken.",
         ],
         cheatSheet: {
           prompts: [
             {
-              label: "1. Higgsfield an Claude hängen — ins Terminal, Mac wie Windows gleich",
-              os: "mac",
-              text: `claude mcp add --transport http --scope user higgsfield https://mcp.higgsfield.ai/mcp`,
+              label: "Higgsfield-Adresse — beim Connector in das Adressfeld einfügen",
+              text: `https://mcp.higgsfield.ai/mcp`,
             },
             {
-              label: "1. Higgsfield an Claude hängen — in PowerShell, gleicher Befehl",
-              os: "win",
-              text: `claude mcp add --transport http --scope user higgsfield https://mcp.higgsfield.ai/mcp`,
-            },
-            {
-              label: "2. Anmelden — das tippst du IN Claude Code, nicht ins Terminal",
-              text: `/mcp`,
-            },
-            {
-              label: "3. Die Skills installieren — beide Zeilen nacheinander",
+              label: "Die Skills installieren — beide Zeilen nacheinander ins Terminal",
               text: `npx skills add higgsfield-ai/skills --skill higgsfield-generate --global --yes
 npx skills add higgsfield-ai/skills --skill higgsfield-product-photoshoot --global --yes`,
             },
