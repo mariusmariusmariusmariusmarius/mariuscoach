@@ -36,7 +36,7 @@ const seedUsers: User[] = [
     role: "member",
     avatarColor: "from-sky-500 to-cyan-400",
     createdAt: "2026-01-10",
-    apiKey: "mm_demo_free_0000000000000000000000000000",
+    apiKey: "mm_5238f34aeca1cc431858154e79788d776341a330",
   },
   {
     id: "u_demo_starter",
@@ -47,7 +47,7 @@ const seedUsers: User[] = [
     role: "member",
     avatarColor: "from-amber-400 to-orange-500",
     createdAt: "2026-02-02",
-    apiKey: "mm_demo_starter_00000000000000000000000000",
+    apiKey: "mm_aaf29a274b4e906208e62edc2386677cd85582a9",
   },
   {
     id: "u_demo_pro",
@@ -58,7 +58,7 @@ const seedUsers: User[] = [
     role: "member",
     avatarColor: "from-violet-500 to-fuchsia-500",
     createdAt: "2026-03-15",
-    apiKey: "mm_demo_pro_000000000000000000000000000000",
+    apiKey: "mm_29713c65bfc80c7b8b0400e17704daef3602a89b",
   },
   {
     id: "u_marius",
@@ -69,7 +69,7 @@ const seedUsers: User[] = [
     role: "admin",
     avatarColor: "from-emerald-500 to-teal-400",
     createdAt: "2025-12-01",
-    apiKey: "mm_admin_0000000000000000000000000000000000",
+    apiKey: "mm_b7a2e3ea0ec71552d8bb998fa46cfe7c53226552",
   },
 ];
 
