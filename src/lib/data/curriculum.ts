@@ -869,6 +869,84 @@ etwas Ähnliches zu nehmen.`,
           "Wann KI gewinnt (Speed, Produktbilder) und wann echte Fotos unschlagbar sind (Vertrauen). Plus: den KI-Look erkennen und vermeiden.",
         duration: 15,
         kind: "video",
+        steps: [
+          "Bei Higgsfield anmelden — Link rechts. Der Gratis-Zugang reicht zum Ausprobieren.",
+          "Higgsfield an Claude hängen: den ersten Befehl ins Terminal, dann /mcp eingeben und im Browser anmelden. Kein Schlüssel zum Abtippen.",
+          "Die zwei Skills installieren — damit Claude weiß, wie man die Modelle richtig ansteuert.",
+          "Claude Code einmal neu starten.",
+          "Den Bilder-Prompt schicken. Claude erzeugt nur das, was mit echten Fotos nicht geht — und sagt dir, wo du selbst zur Kamera greifen musst.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "1. Higgsfield an Claude hängen — ins Terminal, Mac wie Windows gleich",
+              os: "mac",
+              text: `claude mcp add --transport http --scope user higgsfield https://mcp.higgsfield.ai/mcp`,
+            },
+            {
+              label: "1. Higgsfield an Claude hängen — in PowerShell, gleicher Befehl",
+              os: "win",
+              text: `claude mcp add --transport http --scope user higgsfield https://mcp.higgsfield.ai/mcp`,
+            },
+            {
+              label: "2. Anmelden — das tippst du IN Claude Code, nicht ins Terminal",
+              text: `/mcp`,
+            },
+            {
+              label: "3. Die Skills installieren — beide Zeilen nacheinander",
+              text: `npx skills add higgsfield-ai/skills --skill higgsfield-generate --global --yes
+npx skills add higgsfield-ai/skills --skill higgsfield-product-photoshoot --global --yes`,
+            },
+            {
+              label: "Der Bilder-Prompt — was fehlt, wird erzeugt; der Rest bleibt echt",
+              text: `Geh meine Website durch und schau, wo Bilder fehlen oder wo ein
+Platzhalter steht.
+
+Sortier das Ergebnis in zwei Listen:
+
+ECHTES FOTO NÖTIG
+Alles, wo man meinen Betrieb, meine Arbeit, meine Leute oder meine
+Ergebnisse sieht. Dafür wird NICHTS erzeugt. Sag mir stattdessen
+genau, was ich fotografieren soll: welches Motiv, welche
+Tageszeit, hoch oder quer.
+
+KI-BILD SINNVOLL
+Alles, was nur Stimmung, Hintergrund oder Deko ist und niemanden
+täuscht — Hintergrundflächen, abstrakte Muster, freigestellte
+Symbolbilder.
+
+Für die zweite Liste: Nutz Higgsfield über die eingebaute
+Verbindung und die Skills. Frag mich vorher, welche Bildsprache
+passen soll, und richte dich nach den Farben und der Stimmung,
+die meine Seite schon hat.
+
+Erzeug pro Stelle zwei Varianten zur Auswahl. Zeig sie mir, ich
+entscheide. Erst danach baust du sie ein — mit Alt-Text und im
+richtigen Seitenverhältnis für die Stelle.
+
+Regeln:
+- Keine erfundenen Menschen, die wie meine Mitarbeiter oder Kunden
+  aussehen sollen. Kein Bild, das eine Arbeit zeigt, die ich so nie
+  gemacht habe.
+- Keine erfundenen Räume, Baustellen oder Ergebnisse, die als meine
+  durchgehen könnten.
+- Wenn du unsicher bist, ob etwas in Liste eins oder zwei gehört,
+  frag mich.`,
+            },
+          ],
+          links: [
+            {
+              label: "Higgsfield",
+              href: "https://higgsfield.ai",
+              note: "hier anmelden — Bilder, Videos und Produktaufnahmen aus einem Zugang",
+            },
+            {
+              label: "Higgsfield-Verbindung (MCP)",
+              href: "https://higgsfield.ai/mcp",
+              note: "die offizielle Seite zur Verbindung — falls beim Anmelden etwas klemmt",
+            },
+          ],
+        },
       },
       {
         slug: "live-gehen-mit-vercel",
