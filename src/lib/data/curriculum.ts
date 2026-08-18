@@ -785,7 +785,8 @@ Rechner und auf dem Handy.`,
           "Darin Unterordner nach dem, was drauf zu sehen ist: leistungen, produkte, vorher-nachher, team, betrieb.",
           "Fotos reinwerfen. Nicht umbenennen, nicht zuschneiden, nicht verkleinern — das macht Claude.",
           "Den Prompt kopieren, den Ordnerpfad einsetzen und abschicken.",
-          "Claude sortiert, baut ein und sagt dir am Ende, wo noch Bilder fehlen.",
+          "Claude sortiert, baut ein und fragt nach, falls dein Logo an einer Stelle einfarbig besser aussieht.",
+          "Am Ende sagt er dir, wo noch Bilder fehlen und was du dafür fotografieren sollst.",
         ],
         cheatSheet: {
           prompts: [
@@ -826,13 +827,27 @@ kurz, warum. Dabei gilt:
 - Für jedes Bild wird die Größe von vornherein reserviert, damit beim
   Laden nichts springt.
 
-SCHRITT 4 — Danach prüfen
+SCHRITT 4 — Logo prüfen
+Schau dir mein Logo an der Stelle an, wo es steht — oben im Kopfbereich
+und unten im Fußbereich. Prüf, ob es sich vom Hintergrund abhebt.
+
+Wenn es dort farblich untergeht oder sich mit dem Hintergrund beißt,
+schlag mir vor, es an dieser Stelle einfarbig zu setzen: nur die
+Silhouette in Weiß oder in Schwarz, je nachdem was besser steht. Das
+kann auch nur an einer Stelle nötig sein — zum Beispiel farbig oben
+und weiß unten im dunklen Fußbereich.
+
+Sag mir, welche Stelle du meinst, wie es aktuell wirkt und welche
+Variante du empfiehlst. Warte auf mein Ja, bevor du das Logo
+anfasst. Das farbige Original bleibt auf jeden Fall erhalten.
+
+SCHRITT 5 — Danach prüfen
 Sieh dir die fertige Seite auf Handy, Tablet und Rechner an. Achte
 darauf, dass kein Bild abgeschnitten wird, an der falschen Stelle
 zugeschnitten ist (Köpfe!), unscharf wirkt oder das Layout sprengt.
 Sag mir, was du geprüft hast.
 
-SCHRITT 5 — Ehrlich sein
+SCHRITT 6 — Ehrlich sein
 Sag mir am Ende:
 - Für welche Stellen auf der Website habe ich noch KEIN passendes
   Bild? Beschreib mir, was ich fotografieren soll.
