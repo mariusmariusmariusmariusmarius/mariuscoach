@@ -946,24 +946,30 @@ Regeln:
         kind: "video",
         steps: [
           "Konto bei Vercel anlegen — Link rechts. Am einfachsten mit deinem GitHub-Konto anmelden, dann hängt beides gleich zusammen.",
-          "Den Anmelde-Befehl rechts ins Terminal. Es öffnet sich der Browser, dort auf „Bestätigen\" klicken — fertig, kein Schlüssel zum Abtippen.",
-          "Den Prompt rechts kopieren und abschicken.",
-          "Claude veröffentlicht deine Seite und gibt dir die Adresse zurück. Ab jetzt ist sie im Internet erreichbar.",
+          "Den ersten Prompt schicken. Claude startet die Anmeldung und gibt dir einen Link mit einem kurzen Code.",
+          "Link öffnen, Code bestätigen — fertig. Kein Schlüssel zum Abtippen, kein Terminal.",
+          "Den zweiten Prompt schicken. Claude veröffentlicht deine Seite und gibt dir die Adresse zurück.",
         ],
         cheatSheet: {
           prompts: [
             {
-              label: "1. Bei Vercel anmelden — ins Terminal, dann im Browser bestätigen",
-              os: "mac",
-              text: `npx vercel login`,
+              label: "1. Anmeldung — Claude macht das, du bestätigst nur im Browser",
+              text: `Melde mich bei Vercel an.
+
+Führ dazu „npx vercel login" im Hintergrund aus — der Befehl wartet
+auf mich und würde dich sonst blockieren.
+
+In der Ausgabe steht eine Adresse mit einem kurzen Code, ungefähr so:
+vercel.com/oauth/device?user_code=XXXX-XXXX
+
+Gib mir diese Adresse. Ich öffne sie und bestätige im Browser.
+
+Danach prüfst du mit „npx vercel whoami", ob die Anmeldung
+angekommen ist, und sagst mir, mit welchem Konto ich jetzt
+angemeldet bin.`,
             },
             {
-              label: "1. Bei Vercel anmelden — in PowerShell, gleicher Befehl",
-              os: "win",
-              text: `npx vercel login`,
-            },
-            {
-              label: "2. Der Prompt — damit geht deine Seite live",
+              label: "2. Veröffentlichen — damit geht deine Seite live",
               text: `Bring meine Website live. Wir nutzen dafür Vercel. Ich bin im
 Terminal schon angemeldet, du kannst das Vercel-Werkzeug direkt
 benutzen.
