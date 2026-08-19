@@ -12,6 +12,17 @@ import { NextRequest, NextResponse } from "next/server";
  * 404 heißt: nicht registriert, also frei.
  */
 
+/**
+ * Endungen, die im IANA-Verzeichnis fehlen — die Länderstellen melden ihre
+ * RDAP-Server dort teils nicht. Hier direkt eintragen; alle drei geprüft:
+ * vergebene Domain → 200, freie → 404.
+ */
+const EIGENE: Record<string, string> = {
+  de: "https://rdap.denic.de",
+  ch: "https://rdap.nic.ch",
+  li: "https://rdap.nic.li",
+};
+
 type Verzeichnis = Map<string, string>;
 let verzeichnis: Verzeichnis | null = null;
 let geladenAm = 0;
@@ -56,9 +67,9 @@ export async function GET(req: NextRequest) {
   const endung = domain.slice(domain.lastIndexOf(".") + 1);
 
   try {
-    let basis: string | undefined;
+    let basis: string | undefined = EIGENE[endung];
     try {
-      basis = (await holeVerzeichnis()).get(endung);
+      if (!basis) basis = (await holeVerzeichnis()).get(endung);
     } catch {
       // Verzeichnis nicht erreichbar — unten fällt es auf rdap.org zurück
     }
