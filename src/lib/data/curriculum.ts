@@ -35,6 +35,8 @@ export type Lesson = {
   fontSchau?: boolean;
   /** zeigt das Domain-Anschließen-Feld (DNS-Zentrale) */
   dnsTool?: boolean;
+  /** zeigt die Wunschdomain-Abfrage (frei / vergeben) */
+  domainCheck?: boolean;
   cheatSheet?: CheatSheet;
 };
 
@@ -105,6 +107,7 @@ export const CURRICULUM: CourseModule[] = [
           "Deine Domain ist ein Vermögenswert und gehört IMMER dir. .de vs. .com, der richtige Anbieter — und am Ende hängt Claude direkt an deinem Hosting.",
         duration: 14,
         kind: "video",
+        domainCheck: true,
         steps: [
           "Bei All-Inkl das Paket \u201EPrivat\u201C bestellen (4,95 €/Monat, erster Monat gratis) und dabei deine Wunschdomain registrieren.",
           "Die Login-Daten fürs KAS aufschreiben — Kennung und Passwort stehen in der Willkommensmail.",
