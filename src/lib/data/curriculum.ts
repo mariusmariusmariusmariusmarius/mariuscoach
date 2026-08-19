@@ -33,6 +33,8 @@ export type Lesson = {
   kind: "video" | "text" | "case";
   /** zeigt die Schriftarten-Übersicht unter „Worum geht's?" */
   fontSchau?: boolean;
+  /** zeigt das Domain-Anschließen-Feld (DNS-Zentrale) */
+  dnsTool?: boolean;
   cheatSheet?: CheatSheet;
 };
 
@@ -1084,9 +1086,60 @@ REGELN
         slug: "domain-verbinden",
         title: "Domain verbinden",
         description:
-          "Zwei DNS-Einträge, copy & paste, fertig — mit Gratis-SSL. Und warum du NIEMALS die Nameserver anfasst (deine Mails danken es dir).",
+          "Domain unten anschließen, Nameserver beim Registrar eintragen — ab dann verwaltet Claude deine DNS-Einträge mit deinem eigenen Token. Egal, wo deine Domain liegt.",
         duration: 12,
         kind: "video",
+        dnsTool: true,
+        steps: [
+          "Deine Domain unten in die Box eintragen und auf Anschließen klicken — du bekommst zwei Nameserver und dein DNS-Token.",
+          "Beim Registrar (wo deine Domain liegt) die zwei Nameserver eintragen. Bei All-Inkl: Members-Bereich, wie in Lektion 1.4. Das machst du genau einmal.",
+          "Warten, bis der Status in der Box auf aktiv springt — das dauert Minuten bis ein paar Stunden.",
+          "Den Prompt rechts kopieren, Domain und Token einsetzen, an Claude schicken — er verbindet die Domain mit deiner Vercel-Seite samt Zertifikat.",
+          "Deine E-Mails bleiben unberührt: Bestehende Mail-Einträge fasst Claude nicht an.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Der Domain-Prompt — Domain und Token aus der Box einsetzen",
+              text: `Verbinde meine Domain mit meiner Website.
+
+Meine Domain: {DEINE-DOMAIN}
+Mein DNS-Token: {TOKEN-AUS-DER-BOX}
+
+Das Token ist ein Cloudflare-Token und darf ausschließlich die
+DNS-Einträge meiner Domain ändern. Benutz die Cloudflare-API
+(api.cloudflare.com/client/v4, Kopfzeile "Authorization: Bearer …",
+Zone über /zones?name=… finden).
+
+So gehst du vor:
+
+1. Prüf zuerst, ob die Zone schon auf "active" steht. Wenn nicht,
+   sind die Nameserver beim Registrar noch nicht durch — sag mir
+   das, erklär mir kurz, wie ich es prüfen kann, und hör hier auf.
+
+2. Zeig mir die bestehenden DNS-Einträge, BEVOR du irgendetwas
+   änderst.
+
+3. Verbinde die Domain mit meinem Vercel-Projekt: Ich bin im
+   Terminal bei Vercel angemeldet, füg die Domain dort dem Projekt
+   hinzu. Dann setz die Einträge:
+   - A-Eintrag für die nackte Domain auf 76.76.21.21
+   - CNAME für www auf cname.vercel-dns.com
+   Beide als "DNS only" — den orangenen Cloudflare-Proxy lässt du
+   AUS, sonst klemmt das Zertifikat.
+
+4. Warte, bis das Zertifikat da ist, und prüf selbst, ob die Seite
+   unter https://… wirklich lädt — mit und ohne www.
+
+5. E-Mail: Bestehende MX-, SPF- und Mail-Einträge lässt du exakt so,
+   wie sie sind. Fehlen MX-Einträge komplett und meine Postfächer
+   liegen bei All-Inkl, frag mich, bevor du welche setzt.
+
+Nur diese Einträge anlegen. Nichts löschen, nichts überschreiben
+ohne mein ausdrückliches Ja.`,
+            },
+          ],
+        },
       },
       {
         slug: "anfragebogen-lead-friction",

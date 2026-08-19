@@ -14,6 +14,7 @@ import { getLesson } from "@/lib/data/curriculum";
 import { TierBadge } from "@/components/ui/tier-badge";
 import { CheatSheet } from "@/components/app/cheat-sheet";
 import { FontSchau } from "@/components/app/font-schau";
+import { DnsTool } from "@/components/app/dns-tool";
 
 export default async function LessonPage({
   params,
@@ -131,6 +132,7 @@ export default async function LessonPage({
           </div>
 
           {lesson.fontSchau ? <FontSchau /> : null}
+          {lesson.dnsTool ? <DnsTool /> : null}
         </div>
 
         {/* bleibt beim Scrollen stehen, damit die Prompts immer greifbar sind */}
