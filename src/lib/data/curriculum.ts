@@ -1304,9 +1304,55 @@ ohne mein ausdrückliches Ja.`,
         slug: "rechtstexte-barrierefreiheit",
         title: "Rechtstexte & Barrierefreiheit",
         description:
-          "Impressum, Datenschutz und BFSG ohne Anwaltstermin: Der Legal-Skill liest dein Projekt und schreibt alles korrekt — plus die ehrliche Einordnung zur Abmahn-Panik.",
+          "Impressum und Datenschutz ohne Anwaltstermin: Der Skill durchsucht dein Projekt, erkennt deine Dienste und schreibt daraus die passenden Seiten — plus die ehrliche Einordnung zur Abmahn-Panik.",
         duration: 18,
         kind: "video",
+        steps: [
+          "Den Skill installieren — Befehl rechts, einmalig. Claude Code danach einmal neu starten.",
+          "Den Prompt schicken. Claude durchsucht dein Projekt und zeigt dir, welche Dienste er gefunden hat: Formular, Hosting, Schriften, Karten, WhatsApp.",
+          "Die Liste bestätigen oder korrigieren — nur was du wirklich nutzt, kommt in die Texte.",
+          "Fünf Fragen beantworten, die im Code nicht stehen: Rechtsform, Anschrift, Kontakt, Steuernummer, Berufsangaben.",
+          "Claude baut /impressum und /datenschutz im Stil deiner Seite und verlinkt sie im Fußbereich. Am Ende bekommst du eine Liste, was du noch selbst erledigen musst.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Den Rechtstexte-Skill installieren — ins Terminal, Mac wie Windows gleich",
+              text: `npx skills add mariusmariusmariusmariusmarius/rechtstexte-de --global --yes`,
+            },
+            {
+              label: "Der Rechtstexte-Prompt — Claude liest dein Projekt und fragt den Rest",
+              text: `Erstelle die Rechtstexte für diese Website. Nutz dafür den Skill
+„rechtstexte-de".
+
+Wichtig dabei:
+
+- Durchsuch zuerst mein Projekt und zeig mir als Tabelle, welche
+  Dienste du gefunden hast — Hosting, Formular, Schriften,
+  Karten, WhatsApp, Tracking. Ich bestätige oder streiche, bevor
+  du schreibst.
+- Nimm NUR auf, was ich wirklich einsetze. Keine Bausteine für
+  Dienste, die ich nicht nutze, und nichts weglassen, was ich nutze.
+- Stell mir dann die Fragen, die im Code nicht stehen können —
+  gesammelt in einer Nachricht, nicht einzeln.
+- Erfinde nichts. Keine ausgedachte Steuernummer, keine geratene
+  Handelsregisternummer, keine erfundene Aufsichtsbehörde. Was du
+  nicht von mir hast, bleibt als deutlich markierte Lücke stehen,
+  und du fragst mich am Ende gesammelt danach.
+- Bau /impressum und /datenschutz im Stil meiner Seite und verlink
+  beide im Fußbereich, sodass sie von jeder Seite aus in maximal
+  zwei Klicks erreichbar sind. Der Link im Datenschutz-Häkchen
+  meines Anfrage-Formulars zeigt bisher ins Leere — der muss jetzt
+  auf die neue Seite zeigen.
+- Setz ein Stand-Datum unter jede Seite.
+- Gib mir am Ende eine Checkliste: was erledigt ist, und was ich
+  selbst noch tun muss.
+
+Und sag mir zum Schluss in einem Satz, was diese Texte sind und was
+sie nicht sind.`,
+            },
+          ],
+        },
       },
       {
         slug: "pagespeed-mobile",
