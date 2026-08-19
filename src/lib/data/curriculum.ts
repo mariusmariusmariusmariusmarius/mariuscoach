@@ -1086,6 +1086,91 @@ REGELN
         },
       },
       {
+        slug: "anfragen-empfangen",
+        title: "Anfragen empfangen: das Formular",
+        description:
+          "Kontaktformular einbauen, das wirklich ankommt: Anfrage landet in deinem Postfach, der Kunde bekommt sofort eine Bestätigung. Ohne fremde Anbieter im Seitenquelltext.",
+        duration: 20,
+        kind: "video",
+        steps: [
+          "Konto bei Resend anlegen — Link rechts, kostenlos, 100 Mails am Tag.",
+          "Einen API-Schlüssel erstellen und sofort kopieren — er wird nur einmal gezeigt.",
+          "Den Prompt kopieren, Schlüssel und deine Empfangsadresse einsetzen, abschicken.",
+          "Claude baut das Formular, verschickt eine Testanfrage und zeigt dir, dass sie angekommen ist.",
+          "Absender ist zunächst die Testadresse von Resend. Auf deine eigene Domain stellen wir um, sobald sie in der nächsten Lektion angeschlossen ist.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Der Formular-Prompt — Schlüssel und Empfangsadresse einsetzen",
+              text: `Bau ein Kontaktformular in meine Website ein, mit dem Anfragen
+wirklich bei mir ankommen.
+
+RESEND_API_KEY = {DEIN-SCHLUESSEL-VON-RESEND}
+Meine Empfangsadresse: {DEINE-E-MAIL}
+
+WICHTIG ZUM SCHLÜSSEL
+Er gehört in die Umgebungsvariablen, NICHT in eine Datei, die zu
+meinem Projekt gehört, und niemals in den Code, der im Browser
+landet. Leg ihn in .env.local an und prüf, dass .env.local in der
+.gitignore steht. Wenn ich später über Vercel veröffentliche, trägst
+du ihn dort als Umgebungsvariable ein.
+
+DAS FORMULAR
+Frag mich zuerst, welche Felder rein sollen. Mein Vorschlag zum
+Abnicken: Name, Telefon, E-Mail, "worum geht's" als Auswahl aus
+meinen Leistungen, und ein Freitextfeld. Je weniger Felder, desto
+mehr Anfragen — aber desto unverbindlicher. Sag mir, was du
+empfiehlst, und warte auf meine Entscheidung.
+
+Beim Bauen gilt:
+- Das Versenden passiert auf dem Server, nicht im Browser.
+- Pflichtfelder werden geprüft, bevor abgeschickt wird — mit
+  freundlichen deutschen Hinweisen direkt am Feld.
+- Während des Absendens ist der Knopf gesperrt und zeigt, dass etwas
+  passiert. Doppelklick darf keine zwei Anfragen auslösen.
+- Nach dem Absenden sieht der Kunde eine klare Bestätigung auf der
+  Seite, keine leere Seite und keinen Sprung.
+- Ein verstecktes Feld gegen Werbemüll: Wenn ein Roboter es ausfüllt,
+  wird die Anfrage still verworfen.
+- Pflicht-Häkchen für den Datenschutzhinweis, verlinkt auf meine
+  Datenschutzseite. Falls es die noch nicht gibt, sag es mir — wir
+  machen sie später, das Häkchen bleibt schon mal drin.
+
+ZWEI MAILS PRO ANFRAGE
+1. An mich: alle Felder übersichtlich untereinander, im Betreff der
+   Name und worum es geht. Die Kundenadresse setzt du als
+   Antwortadresse, damit ich direkt antworten kann.
+2. An den Kunden: kurze Bestätigung in meinem Ton — dass die Anfrage
+   da ist, wann ich mich melde, und meine Telefonnummer für den
+   eiligen Fall.
+
+ABSENDER
+Meine Domain ist bei Resend noch nicht bestätigt. Nimm deshalb
+vorerst onboarding@resend.dev als Absender. Sobald meine Domain
+läuft, stellen wir das um — sag mir das am Ende in einem Satz.
+
+ZUM SCHLUSS
+Schick eine echte Testanfrage über das fertige Formular ab und zeig
+mir, was Resend zurückmeldet. Wenn etwas nicht ankommt, lies die
+Fehlermeldung und behebe es, bevor du mir sagst, es sei fertig.`,
+            },
+          ],
+          links: [
+            {
+              label: "Resend — Konto erstellen",
+              href: "https://resend.com/signup",
+              note: "kostenlos, 100 Mails am Tag — mehr braucht kein Handwerksbetrieb",
+            },
+            {
+              label: "Resend — API-Schlüssel erstellen",
+              href: "https://resend.com/api-keys",
+              note: "„Create API Key\" — der Wert wird nur einmal gezeigt, also gleich kopieren",
+            },
+          ],
+        },
+      },
+      {
         slug: "domain-verbinden",
         title: "Domain verbinden",
         description:
@@ -1149,7 +1234,7 @@ ohne mein ausdrückliches Ja.`,
         slug: "anfragebogen-lead-friction",
         title: "Anfragebogen & Lead-Friction",
         description:
-          "Wenig Felder = viele kalte Leads, viel Friction = heiße Leads. Du entscheidest — die Technik (Formular → Mail an beide Seiten) steht in Minuten.",
+          "Das Formular steht — jetzt die Strategie: Wenig Felder bringen viele kalte Anfragen, mehr Felder wenige heiße. Wir bauen den Bogen um, der zu deinem Betrieb passt.",
         duration: 20,
         kind: "video",
       },
