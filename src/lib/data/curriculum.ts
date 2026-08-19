@@ -1089,32 +1089,39 @@ REGELN
         slug: "anfragen-empfangen",
         title: "Das Anfrage-Formular",
         description:
-          "Der Bogen, über den Kunden dich erreichen: Felder, Pflichtangaben, Schutz vor Werbemüll, saubere Bestätigung. Wo die Anfragen landen, machen wir in Modul 3.",
+          "Der Bogen, über den Kunden dich erreichen — plus eine versteckte Übersichtsseite, auf der du alle Anfragen siehst. Mails und Automatisierung kommen in Modul 3.",
         duration: 20,
         kind: "video",
         steps: [
-          "Den Prompt schicken. Claude fragt dich zuerst, welche Felder rein sollen.",
-          "Felder festlegen — Faustregel: nur, was du wirklich brauchst, um zurückrufen zu können.",
-          "Claude baut das Formular samt Prüfung der Pflichtfelder, Schutz vor Werbemüll und Bestätigung.",
-          "Selbst ausprobieren: einmal richtig ausfüllen, einmal Felder leer lassen — beides muss sich gut anfühlen.",
-          "Die Anfragen werden vorerst im Projekt gesammelt. In Modul 3 landen sie in deiner Admin-App und kommen per Mail.",
+          "Ersten Prompt schicken. Claude fragt dich, welche Felder rein sollen — dann baut er den Bogen, passend zum Rest deiner Seite.",
+          "Anschauen am Rechner und auf dem Handy. Der Absende-Knopf läuft hier noch ins Leere, das ist so gewollt.",
+          "Zweiten Prompt schicken: Jetzt wird angeschlossen — die Anfragen landen im Projekt.",
+          "Im selben Schritt entsteht deine Übersichtsseite unter /admin, mit Passwort, Zahlen und allen Anfragen.",
+          "Testanfrage abschicken und in der Übersicht nachsehen. Mails und Automatisierung folgen in Modul 3.",
         ],
         cheatSheet: {
           prompts: [
             {
-              label: "Der Formular-Prompt — Felder besprichst du mit Claude",
+              label: "1. Das Formular — nur der Bogen, noch ohne Anschluss",
               text: `Bau ein Anfrage-Formular in meine Website ein.
 
-Noch ohne E-Mail-Versand — das kommt später. Die Anfragen sollen
-erstmal sicher im Projekt landen, damit ich das Formular testen
-kann.
+Erstmal nur den Bogen selbst: wie er aussieht, was drinsteht, wie er
+sich anfühlt. Angeschlossen wird er im nächsten Schritt — bau also
+noch keine Speicherung und verschick noch keine Mails.
 
 SCHRITT 1 — Frag mich, welche Felder rein sollen
 Mach mir einen Vorschlag und begründe ihn kurz. Meine Faustregel:
 nur, was du brauchst, um mich zurückrufen zu können. Jedes Feld
 mehr kostet Anfragen.
 
-SCHRITT 2 — Bau das Formular
+SCHRITT 2 — Bau den Bogen
+- Er soll aussehen wie der Rest meiner Seite: gleiche Farben,
+  gleiche Schrift, gleiche Ecken, gleiche Abstände.
+- Überschrift und ein, zwei Sätze darüber, die zum Anfragen
+  einladen — in meinem Ton, keine Floskeln.
+- Wenn es zur Seite passt, ein Bild daneben: ich bei der Arbeit,
+  mein Team oder mein Firmenwagen. Sag mir, welches Bild aus meinem
+  Bilder-Ordner du nehmen würdest, oder ob es ohne besser wirkt.
 - Pflichtfelder werden geprüft, bevor abgeschickt wird — mit
   freundlichen deutschen Hinweisen direkt am Feld, nicht als
   Fehlerblock oben.
@@ -1133,16 +1140,61 @@ SCHRITT 2 — Bau das Formular
 - Auf dem Handy: große Felder, richtige Tastatur je Feld (Zahlen bei
   Telefon, @ bei E-Mail), nichts, wofür man zoomen muss.
 
-SCHRITT 3 — Wohin die Anfragen gehen
-Leg eine Empfangsstelle im Projekt an, die die Anfragen mit Datum
-speichert. Halt das bewusst einfach — in Modul 3 hängen wir daran
-meine Admin-App und den Mailversand. Bau nichts, was wir dafür
-wieder einreißen müssen.
+SCHRITT 3 — Zeig ihn mir
+Zeig mir den fertigen Bogen am Rechner und auf dem Handy. Der
+Absende-Knopf darf noch ins Leere laufen — sag mir nur klar, dass er
+noch nicht angeschlossen ist, damit ich mich nicht wundere.`,
+            },
+            {
+              label: "2. Anschließen und Übersicht — wo die Anfragen landen",
+              text: `Jetzt schließen wir das Formular an.
 
-SCHRITT 4 — Selbst testen
-Schick eine Testanfrage ab und zeig mir, dass sie angekommen ist.
-Probier auch den Fehlerfall: Pflichtfeld leer lassen. Sag mir, was
-du geprüft hast.`,
+TEIL 1 — Die Anfragen müssen irgendwo landen
+Leg eine Empfangsstelle im Projekt an, die jede Anfrage mit Datum
+und Uhrzeit speichert. Halt das bewusst einfach: In Modul 3 hängen
+wir daran den Mailversand und die Automatisierung. Bau nichts, was
+wir dafür wieder einreißen müssen.
+
+TEIL 2 — Meine Übersichtsseite
+Erreichbar unter /admin. Nirgends auf der Website verlinkt — weder
+im Menü noch im Fußbereich noch in der Sitemap. Setz sie außerdem
+auf "noindex", damit Google sie nicht in den Suchergebnissen zeigt.
+
+PASSWORT — nicht optional
+Nicht verlinkt heißt nicht geschützt: Wer die Adresse errät, sieht
+sonst die Namen, Telefonnummern und Adressen meiner Kunden. Das sind
+personenbezogene Daten, dafür hafte ich.
+
+Bau deshalb einen einfachen Passwortschutz davor. Das Passwort kommt
+in die Umgebungsvariablen, nicht in den Code. Denk dir eins aus, sag
+es mir, und erinner mich daran, es in meinem Passwort-Manager zu
+speichern. Ohne richtiges Passwort ist unter /admin nichts zu sehen —
+auch keine Zahlen.
+
+DIE SEITE
+Oben eine Zeile mit den Zahlen, die mich wirklich interessieren:
+- Anfragen heute
+- Anfragen diese Woche
+- Anfragen gesamt
+- die häufigste Anfrageart
+
+Darunter die Anfragen als Liste, neueste zuerst. Pro Eintrag: Datum
+und Uhrzeit, Name, Telefonnummer, E-Mail, worum es geht, und die
+Nachricht. Telefonnummer und E-Mail als anklickbare Verweise — damit
+ich vom Handy aus direkt anrufen kann.
+
+Dazu pro Anfrage ein Haken "erledigt", der sich merkt. Erledigte
+rutschen nach unten oder lassen sich ausblenden — zeig mir, was du
+für sinnvoller hältst.
+
+Halt es schlicht: Das ist mein Arbeitswerkzeug, kein Schaufenster.
+Gut lesbar auf dem Handy ist wichtiger als schön.
+
+TEIL 3 — Selbst testen
+Schick eine echte Testanfrage über das Formular ab. Dann ruf /admin
+auf — einmal ohne Passwort, einmal mit — und zeig mir, dass die
+Anfrage dort steht. Probier auch den Fehlerfall: Pflichtfeld leer
+lassen.`,
             },
           ],
         },
