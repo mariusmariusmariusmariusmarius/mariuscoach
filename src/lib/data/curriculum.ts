@@ -1087,85 +1087,62 @@ REGELN
       },
       {
         slug: "anfragen-empfangen",
-        title: "Anfragen empfangen: das Formular",
+        title: "Das Anfrage-Formular",
         description:
-          "Kontaktformular einbauen, das wirklich ankommt: Anfrage landet in deinem Postfach, der Kunde bekommt sofort eine Bestätigung. Ohne fremde Anbieter im Seitenquelltext.",
+          "Der Bogen, über den Kunden dich erreichen: Felder, Pflichtangaben, Schutz vor Werbemüll, saubere Bestätigung. Wo die Anfragen landen, machen wir in Modul 3.",
         duration: 20,
         kind: "video",
         steps: [
-          "Konto bei Resend anlegen — Link rechts, kostenlos, 100 Mails am Tag.",
-          "Einen API-Schlüssel erstellen und sofort kopieren — er wird nur einmal gezeigt.",
-          "Den Prompt kopieren, Schlüssel und deine Empfangsadresse einsetzen, abschicken.",
-          "Claude baut das Formular, verschickt eine Testanfrage und zeigt dir, dass sie angekommen ist.",
-          "Absender ist zunächst die Testadresse von Resend. Auf deine eigene Domain stellen wir um, sobald sie in der nächsten Lektion angeschlossen ist.",
+          "Den Prompt schicken. Claude fragt dich zuerst, welche Felder rein sollen.",
+          "Felder festlegen — Faustregel: nur, was du wirklich brauchst, um zurückrufen zu können.",
+          "Claude baut das Formular samt Prüfung der Pflichtfelder, Schutz vor Werbemüll und Bestätigung.",
+          "Selbst ausprobieren: einmal richtig ausfüllen, einmal Felder leer lassen — beides muss sich gut anfühlen.",
+          "Die Anfragen werden vorerst im Projekt gesammelt. In Modul 3 landen sie in deiner Admin-App und kommen per Mail.",
         ],
         cheatSheet: {
           prompts: [
             {
-              label: "Der Formular-Prompt — Schlüssel und Empfangsadresse einsetzen",
-              text: `Bau ein Kontaktformular in meine Website ein, mit dem Anfragen
-wirklich bei mir ankommen.
+              label: "Der Formular-Prompt — Felder besprichst du mit Claude",
+              text: `Bau ein Anfrage-Formular in meine Website ein.
 
-RESEND_API_KEY = {DEIN-SCHLUESSEL-VON-RESEND}
-Meine Empfangsadresse: {DEINE-E-MAIL}
+Noch ohne E-Mail-Versand — das kommt später. Die Anfragen sollen
+erstmal sicher im Projekt landen, damit ich das Formular testen
+kann.
 
-WICHTIG ZUM SCHLÜSSEL
-Er gehört in die Umgebungsvariablen, NICHT in eine Datei, die zu
-meinem Projekt gehört, und niemals in den Code, der im Browser
-landet. Leg ihn in .env.local an und prüf, dass .env.local in der
-.gitignore steht. Wenn ich später über Vercel veröffentliche, trägst
-du ihn dort als Umgebungsvariable ein.
+SCHRITT 1 — Frag mich, welche Felder rein sollen
+Mach mir einen Vorschlag und begründe ihn kurz. Meine Faustregel:
+nur, was du brauchst, um mich zurückrufen zu können. Jedes Feld
+mehr kostet Anfragen.
 
-DAS FORMULAR
-Frag mich zuerst, welche Felder rein sollen. Mein Vorschlag zum
-Abnicken: Name, Telefon, E-Mail, "worum geht's" als Auswahl aus
-meinen Leistungen, und ein Freitextfeld. Je weniger Felder, desto
-mehr Anfragen — aber desto unverbindlicher. Sag mir, was du
-empfiehlst, und warte auf meine Entscheidung.
-
-Beim Bauen gilt:
-- Das Versenden passiert auf dem Server, nicht im Browser.
+SCHRITT 2 — Bau das Formular
 - Pflichtfelder werden geprüft, bevor abgeschickt wird — mit
-  freundlichen deutschen Hinweisen direkt am Feld.
+  freundlichen deutschen Hinweisen direkt am Feld, nicht als
+  Fehlerblock oben.
+- Telefonnummer und E-Mail nur grob prüfen. Lieber eine Anfrage mit
+  krummer Nummer als eine abgewiesene echte Anfrage.
 - Während des Absendens ist der Knopf gesperrt und zeigt, dass etwas
   passiert. Doppelklick darf keine zwei Anfragen auslösen.
-- Nach dem Absenden sieht der Kunde eine klare Bestätigung auf der
-  Seite, keine leere Seite und keinen Sprung.
-- Ein verstecktes Feld gegen Werbemüll: Wenn ein Roboter es ausfüllt,
+- Danach sieht der Kunde eine klare Bestätigung auf der Seite: dass
+  die Anfrage da ist und wann ich mich melde. Keine leere Seite,
+  kein Sprung nach oben.
+- Ein verstecktes Feld gegen Werbemüll: Füllt ein Roboter es aus,
   wird die Anfrage still verworfen.
 - Pflicht-Häkchen für den Datenschutzhinweis, verlinkt auf meine
-  Datenschutzseite. Falls es die noch nicht gibt, sag es mir — wir
-  machen sie später, das Häkchen bleibt schon mal drin.
+  Datenschutzseite. Gibt es die noch nicht, sag es mir — die machen
+  wir später, das Häkchen bleibt schon drin.
+- Auf dem Handy: große Felder, richtige Tastatur je Feld (Zahlen bei
+  Telefon, @ bei E-Mail), nichts, wofür man zoomen muss.
 
-ZWEI MAILS PRO ANFRAGE
-1. An mich: alle Felder übersichtlich untereinander, im Betreff der
-   Name und worum es geht. Die Kundenadresse setzt du als
-   Antwortadresse, damit ich direkt antworten kann.
-2. An den Kunden: kurze Bestätigung in meinem Ton — dass die Anfrage
-   da ist, wann ich mich melde, und meine Telefonnummer für den
-   eiligen Fall.
+SCHRITT 3 — Wohin die Anfragen gehen
+Leg eine Empfangsstelle im Projekt an, die die Anfragen mit Datum
+speichert. Halt das bewusst einfach — in Modul 3 hängen wir daran
+meine Admin-App und den Mailversand. Bau nichts, was wir dafür
+wieder einreißen müssen.
 
-ABSENDER
-Meine Domain ist bei Resend noch nicht bestätigt. Nimm deshalb
-vorerst onboarding@resend.dev als Absender. Sobald meine Domain
-läuft, stellen wir das um — sag mir das am Ende in einem Satz.
-
-ZUM SCHLUSS
-Schick eine echte Testanfrage über das fertige Formular ab und zeig
-mir, was Resend zurückmeldet. Wenn etwas nicht ankommt, lies die
-Fehlermeldung und behebe es, bevor du mir sagst, es sei fertig.`,
-            },
-          ],
-          links: [
-            {
-              label: "Resend — Konto erstellen",
-              href: "https://resend.com/signup",
-              note: "kostenlos, 100 Mails am Tag — mehr braucht kein Handwerksbetrieb",
-            },
-            {
-              label: "Resend — API-Schlüssel erstellen",
-              href: "https://resend.com/api-keys",
-              note: "„Create API Key\" — der Wert wird nur einmal gezeigt, also gleich kopieren",
+SCHRITT 4 — Selbst testen
+Schick eine Testanfrage ab und zeig mir, dass sie angekommen ist.
+Probier auch den Fehlerfall: Pflichtfeld leer lassen. Sag mir, was
+du geprüft hast.`,
             },
           ],
         },
