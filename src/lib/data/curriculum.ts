@@ -1135,8 +1135,11 @@ SCHRITT 2 — Bau den Bogen
 - Ein verstecktes Feld gegen Werbemüll: Füllt ein Roboter es aus,
   wird die Anfrage still verworfen.
 - Pflicht-Häkchen für den Datenschutzhinweis, verlinkt auf meine
-  Datenschutzseite. Gibt es die noch nicht, sag es mir — die machen
-  wir später, das Häkchen bleibt schon drin.
+  Datenschutzseite. Die gibt es noch nicht und du baust sie AUCH
+  NICHT — die kommt später in einer eigenen Lektion, zusammen mit
+  Impressum und den anderen Rechtstexten. Setz den Link trotzdem
+  schon, auch wenn er vorerst ins Leere zeigt, und erinner mich am
+  Ende in einem Satz daran, dass das noch offen ist.
 - Auf dem Handy: große Felder, richtige Tastatur je Feld (Zahlen bei
   Telefon, @ bei E-Mail), nichts, wofür man zoomen muss.
 
