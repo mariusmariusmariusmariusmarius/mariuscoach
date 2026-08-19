@@ -1089,15 +1089,15 @@ REGELN
         slug: "anfragen-empfangen",
         title: "Das Anfrage-Formular",
         description:
-          "Der Bogen, über den Kunden dich erreichen — plus eine versteckte Übersichtsseite, auf der du alle Anfragen siehst. Mails und Automatisierung kommen in Modul 3.",
+          "Der Bogen, über den Kunden dich erreichen — plus deine eigene kleine Admin-App unter /admin, in der jede Anfrage ihre Stufe hat: neu, in Bearbeitung, Angebot raus, Termin steht.",
         duration: 20,
         kind: "video",
         steps: [
           "Ersten Prompt schicken. Claude fragt dich, welche Felder rein sollen — dann baut er den Bogen, passend zum Rest deiner Seite.",
           "Anschauen am Rechner und auf dem Handy. Der Absende-Knopf läuft hier noch ins Leere, das ist so gewollt.",
-          "Zweiten Prompt schicken: Jetzt wird angeschlossen — die Anfragen landen im Projekt.",
-          "Im selben Schritt entsteht deine Übersichtsseite unter /admin, mit Passwort, Zahlen und allen Anfragen.",
-          "Testanfrage abschicken und in der Übersicht nachsehen. Mails und Automatisierung folgen in Modul 3.",
+          "Zweiten Prompt schicken. Claude fragt dich, welche Pipeline-Stufen zu deinem Betrieb passen.",
+          "Stufen bestätigen — dann baut er deine Admin-App unter /admin: mit Passwort, Zahlen und den Anfragen als Karten in Spalten.",
+          "Testanfrage abschicken, in der Admin-App eine Stufe weiterschieben, Seite neu laden — der Status muss bleiben.",
         ],
         cheatSheet: {
           prompts: [
@@ -1149,16 +1149,15 @@ Absende-Knopf darf noch ins Leere laufen — sag mir nur klar, dass er
 noch nicht angeschlossen ist, damit ich mich nicht wundere.`,
             },
             {
-              label: "2. Anschließen und Übersicht — wo die Anfragen landen",
-              text: `Jetzt schließen wir das Formular an.
+              label: "2. Deine Admin-App — Anfragen sehen und nachhalten",
+              text: `Jetzt schließen wir das Formular an und bauen mir eine kleine
+Admin-App dazu.
 
 TEIL 1 — Die Anfragen müssen irgendwo landen
 Leg eine Empfangsstelle im Projekt an, die jede Anfrage mit Datum
-und Uhrzeit speichert. Halt das bewusst einfach: In Modul 3 hängen
-wir daran den Mailversand und die Automatisierung. Bau nichts, was
-wir dafür wieder einreißen müssen.
+und Uhrzeit speichert.
 
-TEIL 2 — Meine Übersichtsseite
+TEIL 2 — Die Admin-App
 Erreichbar unter /admin. Nirgends auf der Website verlinkt — weder
 im Menü noch im Fußbereich noch in der Sitemap. Setz sie außerdem
 auf "noindex", damit Google sie nicht in den Suchergebnissen zeigt.
@@ -1174,21 +1173,36 @@ es mir, und erinner mich daran, es in meinem Passwort-Manager zu
 speichern. Ohne richtiges Passwort ist unter /admin nichts zu sehen —
 auch keine Zahlen.
 
-DIE SEITE
-Oben eine Zeile mit den Zahlen, die mich wirklich interessieren:
+ZAHLEN OBEN
 - Anfragen heute
 - Anfragen diese Woche
 - Anfragen gesamt
-- die häufigste Anfrageart
+- wie viele davon noch unbearbeitet sind
 
-Darunter die Anfragen als Liste, neueste zuerst. Pro Eintrag: Datum
-und Uhrzeit, Name, Telefonnummer, E-Mail, worum es geht, und die
-Nachricht. Telefonnummer und E-Mail als anklickbare Verweise — damit
-ich vom Handy aus direkt anrufen kann.
+DIE PIPELINE — das Herzstück
+Jede Anfrage hat einen Status. Frag mich ZUERST, welche Stufen zu
+meinem Betrieb passen, und schlag mir diese vor:
 
-Dazu pro Anfrage ein Haken "erledigt", der sich merkt. Erledigte
-rutschen nach unten oder lassen sich ausblenden — zeig mir, was du
-für sinnvoller hältst.
+  neu → in Bearbeitung → Angebot geschickt → Termin vereinbart
+  → gewonnen / verloren
+
+Ich kann Stufen streichen, umbenennen oder eigene ergänzen. Erst
+wenn ich bestätigt habe, baust du.
+
+Bau die Anfragen dann als Pipeline: die Stufen nebeneinander als
+Spalten, jede Anfrage als Karte in ihrer Spalte. Ich will eine Karte
+von einer Stufe in die nächste schieben oder per Auswahlfeld
+umstellen können — nimm das, was auf dem Handy zuverlässiger
+funktioniert, und sag mir, warum du dich so entschieden hast.
+
+Auf jeder Karte: Datum, Name, Telefonnummer, E-Mail, worum es geht.
+Telefonnummer und E-Mail als anklickbare Verweise, damit ich vom
+Handy aus direkt anrufen kann. Karte antippen zeigt die ganze
+Nachricht. Dazu ein Notizfeld pro Anfrage, in das ich reinschreiben
+kann, was besprochen wurde.
+
+Gewonnen und verloren blende ich normalerweise aus — die hole ich
+mir über einen Schalter dazu.
 
 Halt es schlicht: Das ist mein Arbeitswerkzeug, kein Schaufenster.
 Gut lesbar auf dem Handy ist wichtiger als schön.
@@ -1196,8 +1210,8 @@ Gut lesbar auf dem Handy ist wichtiger als schön.
 TEIL 3 — Selbst testen
 Schick eine echte Testanfrage über das Formular ab. Dann ruf /admin
 auf — einmal ohne Passwort, einmal mit — und zeig mir, dass die
-Anfrage dort steht. Probier auch den Fehlerfall: Pflichtfeld leer
-lassen.`,
+Anfrage dort in der Spalte "neu" steht. Schieb sie einmal eine Stufe
+weiter und lad die Seite neu: Der Status muss erhalten bleiben.`,
             },
           ],
         },
