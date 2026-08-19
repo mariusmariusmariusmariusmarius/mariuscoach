@@ -26,10 +26,16 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const antwort = await fetch(
-      `https://rdap.org/domain/${encodeURIComponent(domain)}`,
-      { redirect: "follow", signal: AbortSignal.timeout(10_000) }
-    );
+    // rdap.org kennt fast alle Endungen — aber ausgerechnet .de nicht
+    // zuverlässig (meldet vergebene Domains als 404). Deshalb geht .de
+    // direkt zur DENIC.
+    const quelle = domain.endsWith(".de")
+      ? `https://rdap.denic.de/domain/${encodeURIComponent(domain)}`
+      : `https://rdap.org/domain/${encodeURIComponent(domain)}`;
+    const antwort = await fetch(quelle, {
+      redirect: "follow",
+      signal: AbortSignal.timeout(10_000),
+    });
 
     if (antwort.status === 404) {
       return NextResponse.json({ domain, status: "frei" });
