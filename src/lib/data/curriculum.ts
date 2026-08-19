@@ -1093,6 +1093,7 @@ REGELN
         duration: 12,
         kind: "video",
         dnsTool: true,
+        domainCheck: true,
         steps: [
           "Deine Domain unten in die Box eintragen und auf Anschließen klicken — du bekommst zwei Nameserver und dein DNS-Token.",
           "Beim Registrar (wo deine Domain liegt) die zwei Nameserver eintragen. Bei All-Inkl: Members-Bereich, wie in Lektion 1.4. Das machst du genau einmal.",

@@ -8,6 +8,7 @@ import { DataIcon } from "@/components/icon-map";
 import { TierBadge } from "@/components/ui/tier-badge";
 import { Avatar } from "@/components/ui/avatar";
 import { DailyChecklist } from "@/components/app/daily-checklist";
+import { DomainCheck } from "@/components/app/domain-check";
 
 export const metadata = { title: "Dashboard" };
 
@@ -138,7 +139,8 @@ export default async function DashboardPage() {
         </section>
 
         {/* Community-Feed */}
-        <section className="lg:col-span-2">
+        <section className="lg:col-span-2 space-y-6">
+          <DomainCheck />
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-semibold text-white">Aus der Community</h2>
             <Link
