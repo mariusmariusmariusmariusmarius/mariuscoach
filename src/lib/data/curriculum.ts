@@ -1414,67 +1414,77 @@ Mail zu tun haben.`,
         slug: "anfragen-per-mail",
         title: "Anfragen landen im Postfach",
         description:
-          "Zwei Mails schließen die Kette: eine Bestätigung an den Kunden, eine Benachrichtigung an dich — verschickt über Resend, damit sie zuverlässig ankommen.",
+          "Die Kette wird geschlossen: Jede Anfrage löst zwei Mails aus — eine Bestätigung an den Kunden, eine Benachrichtigung an dich. Verschickt über dein eigenes Postfach aus der letzten Lektion.",
         duration: 18,
         kind: "video",
         steps: [
-          "Bei resend.com anmelden — kostenlos, 3.000 Mails im Monat reichen dicke.",
-          "Den Prompt schicken. Claude sagt dir, was du bei Resend klicken musst, und wartet auf deinen Schlüssel.",
-          "Domain bestätigen: Claude setzt die nötigen Einträge über dein DNS-Token selbst.",
-          "Claude baut die zwei Mails ein — Bestätigung an den Kunden, Benachrichtigung an dich.",
-          "Testanfrage abschicken. Beide Mails müssen ankommen und dürfen nicht im Spam landen.",
+          "Die Zugangsdaten aus der letzten Lektion bereitlegen: Adresse, Passwort, Postausgangsserver.",
+          "Den Prompt schicken. Claude legt die Zugangsdaten sicher ab und baut beide Mails ein.",
+          "Testanfrage über dein Formular abschicken.",
+          "Prüfen: Kommt die Bestätigung beim Kunden an? Kommt die Benachrichtigung bei dir an? Landet etwas im Spam?",
+          "In der Admin-App nachsehen — dort steht jetzt auch, ob der Versand geklappt hat.",
         ],
         cheatSheet: {
           prompts: [
             {
-              label: "Der Versand-Prompt — Domain eintragen, Rest macht Claude",
-              text: `Bau den Mailversand für mein Anfrage-Formular über Resend ein.
+              label: "Der Versand-Prompt — Zugangsdaten aus der letzten Lektion einsetzen",
+              text: `Verschick ab jetzt zwei E-Mails, wenn jemand mein
+Anfrage-Formular abschickt. Wir nutzen dafür mein Postfach.
 
-Meine Domain: {DEINE-DOMAIN}
-Meine Adresse: {z. B. info@meine-firma.de}
+MEIN POSTFACH (aus der letzten Lektion)
+Adresse: {DEINE-ADRESSE, z. B. info@meine-firma.de}
+Passwort: {DAS PASSWORT DIESES POSTFACHS}
+Postausgangsserver und Port: {AUS DER TABELLE VON VORHIN}
 
-SCHRITT 1 — Anmeldung
-Sag mir in kurzen Schritten, was ich bei resend.com tun muss: Konto
-anlegen, meine Domain hinzufügen, API-Schlüssel erzeugen. Dann warte,
-bis ich dir sage, dass ich den Schlüssel habe.
+Die Zugangsdaten kommen als Umgebungsvariablen ins Projekt und bei
+Vercel in die Projekteinstellungen — niemals in eine Datei, die zu
+meinem Code gehört. Sag mir, wie ich sie bei Vercel hinterlege.
 
-SCHRITT 2 — Domain bestätigen
-Resend verlangt DNS-Einträge, damit ich von meiner Domain senden
-darf. Meine DNS läuft über die Kursplattform — ich gebe dir mein
-DNS-Token, dann setzt du die Einträge selbst.
-Rate die Werte nicht: Nimm genau die, die Resend mir anzeigt. Prüf
-danach, ob die Domain dort als bestätigt gilt.
+MAIL 1 — an den Kunden
+Bestätigung, dass seine Anfrage angekommen ist: wann ich mich melde,
+meine Telefonnummer für Eiliges, und seine eigenen Angaben zum
+Nachlesen. Absender ist meine Adresse mit meinem Firmennamen.
 
-SCHRITT 3 — Die zwei Mails
-- An den Kunden: Bestätigung, dass die Anfrage da ist, wann ich mich
-  melde, meine Telefonnummer für Eiliges, dazu seine Angaben zum
-  Nachlesen.
-- An mich: Betreff mit Name und Anliegen, damit ich ihn auf dem Handy
-  erfassen kann. Alle Angaben untereinander. Antworten-an auf die
-  Adresse des Kunden, damit ich mit einem Tipp auf "Antworten" direkt
-  bei ihm lande.
-- Absender ist meine eigene Adresse mit meinem Firmennamen.
-- Der API-Schlüssel kommt in die Umgebungsvariablen, nie in eine
-  Datei meines Projekts.
+MAIL 2 — an mich
+Betreff so, dass ich ihn auf dem Handy erfassen kann: Name und
+worum es geht. Darunter alle Angaben aus dem Formular, ordentlich
+untereinander.
+WICHTIG: Antworten-an auf die Adresse des Kunden setzen. Dann lande
+ich mit einem Tipp auf "Antworten" direkt bei ihm.
 
 REGELN
-- Erst die Anfrage speichern, dann senden. Klemmt der Versand, muss
-  der Lead trotzdem in meiner Admin-App stehen.
-- Geht eine Mail nicht raus, sag es mir — still verschlucken gilt
-  nicht.
-- Keine Anhänge, keine Verfolgungspixel. Einfacher Text kommt am
-  zuverlässigsten an.
+- Erst die Anfrage speichern, dann die Mails verschicken. Wenn der
+  Versand klemmt, muss der Lead trotzdem in meiner Admin-App stehen.
+- Halt in der Admin-App pro Anfrage fest, ob die Mails rausgingen.
+  Ging etwas schief, will ich das dort sehen — still verschlucken
+  gilt nicht.
+- Der Versand darf die Antwort an den Kunden nicht aufhalten: Er
+  sieht seine Bestätigung auf der Seite sofort, auch wenn die Mail
+  ein paar Sekunden braucht.
+- Keine Anhänge, keine Bilder, keine Verfolgungspixel. Einfacher
+  Text kommt am zuverlässigsten an.
 
 ZUM SCHLUSS
-Testanfrage abschicken, beide Mails zeigen, und mir sagen, ob etwas
-im Spam gelandet ist.`,
+Schick eine Testanfrage ab und zeig mir beide Mails. Prüf auch den
+Spam-Ordner — wenn dort etwas landet, sag mir, welcher DNS-Eintrag
+noch fehlt.`,
             },
-          ],
-          links: [
             {
-              label: "Resend — Konto erstellen",
-              href: "https://resend.com/signup",
-              note: "kostenlos: 3.000 Mails im Monat, 100 am Tag",
+              label: "Nur bei Problemen: Versand über Resend statt über dein Postfach",
+              text: `Der Versand über mein Postfach klappt nicht zuverlässig. Bau ihn
+auf Resend um.
+
+Meine Domain: {DEINE-DOMAIN}
+
+1. Sag mir in kurzen Schritten, was ich bei resend.com tun muss:
+   Konto anlegen, Domain hinzufügen, API-Schlüssel erzeugen.
+2. Resend verlangt DNS-Einträge zur Bestätigung. Meine DNS läuft
+   über die Kursplattform — ich gebe dir mein DNS-Token, dann setzt
+   du sie selbst. Nimm genau die Werte, die Resend mir anzeigt.
+3. Stell die beiden Mails auf Resend um, Inhalte bleiben gleich.
+4. Der Schlüssel kommt in die Umgebungsvariablen.
+
+Danach eine Testanfrage, bei der du mir beide Mails zeigst.`,
             },
           ],
         },
