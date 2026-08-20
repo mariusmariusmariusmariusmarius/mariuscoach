@@ -16,6 +16,7 @@ import { CheatSheet } from "@/components/app/cheat-sheet";
 import { FontSchau } from "@/components/app/font-schau";
 import { DnsTool } from "@/components/app/dns-tool";
 import { DomainCheck } from "@/components/app/domain-check";
+import { MailPrompt } from "@/components/app/mail-prompt";
 
 export default async function LessonPage({
   params,
@@ -135,6 +136,7 @@ export default async function LessonPage({
           {lesson.fontSchau ? <FontSchau /> : null}
           {lesson.dnsTool ? <DnsTool /> : null}
           {lesson.domainCheck ? <DomainCheck /> : null}
+          {lesson.mailPrompt ? <MailPrompt /> : null}
         </div>
 
         {/* bleibt beim Scrollen stehen, damit die Prompts immer greifbar sind */}

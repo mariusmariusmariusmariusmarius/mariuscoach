@@ -37,6 +37,8 @@ export type Lesson = {
   dnsTool?: boolean;
   /** zeigt die Wunschdomain-Abfrage (frei / vergeben) */
   domainCheck?: boolean;
+  /** zeigt den Baukasten für den Versand-Prompt (nutzt die eigenen Postfächer) */
+  mailPrompt?: boolean;
   cheatSheet?: CheatSheet;
 };
 
@@ -1417,44 +1419,16 @@ Mail zu tun haben.`,
           "Die Kette wird geschlossen: Jede Anfrage löst zwei Mails aus — eine Bestätigung an den Kunden, eine Benachrichtigung an dich. Verschickt über dein eigenes Postfach aus der letzten Lektion.",
         duration: 18,
         kind: "video",
+        mailPrompt: true,
         steps: [
           "Im selben Chat weitermachen wie in der letzten Lektion — Claude kennt dein Postfach dann schon.",
-          "Im Prompt zwei Zeilen ausfüllen: wohin deine Benachrichtigung soll und was in der Bestätigung grob stehen soll.",
+          "Im Baukasten unten die Adressen anklicken und in einem Satz sagen, was in der Bestätigung stehen soll — der fertige Prompt entsteht darunter.",
           "Testanfrage über dein Formular abschicken.",
           "Prüfen: Kommt die Bestätigung beim Kunden an? Kommt die Benachrichtigung bei dir an? Landet etwas im Spam?",
           "In der Admin-App nachsehen — dort steht jetzt auch, ob der Versand geklappt hat.",
         ],
         cheatSheet: {
           prompts: [
-            {
-              label: "Der Versand-Prompt — zwei Zeilen ausfüllen, fertig",
-              text: `Verschick zwei E-Mails, wenn jemand mein Anfrage-Formular
-abschickt. Nutz dafür das Postfach, das wir gerade eingerichtet
-haben — die Zugangsdaten kennst du.
-
-Meine Benachrichtigung soll an: {ADRESSE — weglassen, wenn dieselbe}
-
-In der Bestätigung an den Kunden soll grob stehen:
-{z. B. danke für die Anfrage, ich melde mich innerhalb von
-24 Stunden, bei Notfällen direkt anrufen unter 0170 1234567}
-
-Die Mail an mich gestaltest du selbst. Hauptsache, ich sehe auf dem
-Handy sofort, wer was will — und lande mit einem Tipp auf
-"Antworten" direkt beim Kunden.
-
-REGELN
-- Zugangsdaten als Umgebungsvariablen, auch bei Vercel. Sag mir, wie
-  ich sie dort hinterlege.
-- Erst die Anfrage speichern, dann senden. Klemmt der Versand, steht
-  der Lead trotzdem in meiner Admin-App — und ich sehe dort, dass
-  die Mail nicht rausging.
-- Der Kunde sieht seine Bestätigung auf der Seite sofort, auch wenn
-  die Mail ein paar Sekunden braucht.
-- Einfacher Text, keine Anhänge, keine Verfolgungspixel.
-
-Zum Schluss: Testanfrage abschicken, beide Mails zeigen, Spam-Ordner
-prüfen.`,
-            },
             {
               label: "Nur bei Problemen: Versand über Resend statt über dein Postfach",
               text: `Der Versand über mein Postfach klappt nicht zuverlässig. Bau ihn
