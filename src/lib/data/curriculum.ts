@@ -1327,6 +1327,17 @@ So gehst du vor:
 Nur diese Einträge anlegen. Nichts löschen, nichts überschreiben
 ohne mein ausdrückliches Ja.`,
             },
+            {
+              label: "Kurz: nur die DNS-Einträge zeigen",
+              text: `Sag mir, welche DNS-Einträge ich brauchen, damit meine Domain
+auf meine Website zeigt.
+
+Meine Domain: {DEINE-DOMAIN}
+
+Gib mir nur eine Tabelle mit Typ, Name, Ziel und Proxy-Einstellung —
+einmal für die Domain ohne www und einmal mit www. Keine langen
+Erklärungen, ich trage sie selbst ein.`,
+            },
           ],
         },
       },
