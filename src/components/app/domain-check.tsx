@@ -7,6 +7,7 @@ type Ergebnis = {
   domain: string;
   status: "frei" | "vergeben" | "unbekannt";
   ablauf?: string | null;
+  alternativen?: string[];
   fehler?: string;
 };
 
@@ -69,8 +70,7 @@ export function DomainCheck() {
           <p className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-300">
             <strong className="font-semibold">{ergebnis.domain}</strong> ist schon
             vergeben
-            {ergebnis.ablauf ? ` (läuft am ${ergebnis.ablauf} aus)` : ""} — probier
-            eine Variante: mit Ort, mit Bindestrich oder anderer Endung.
+            {ergebnis.ablauf ? ` (läuft am ${ergebnis.ablauf} aus)` : ""}.
           </p>
         ) : (
           <p className="mt-4 rounded-xl border border-white/10 bg-surface-950/40 px-4 py-3 text-sm text-zinc-400">
@@ -78,6 +78,28 @@ export function DomainCheck() {
             direkt bei deinem Registrar.
           </p>
         )
+      ) : null}
+
+      {ergebnis?.alternativen?.length ? (
+        <div className="mt-4">
+          <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500">
+            {ergebnis.status === "frei" ? "Auch noch frei" : "Diese sind frei"}
+          </p>
+          <ul className="flex flex-wrap gap-2">
+            {ergebnis.alternativen.map((a) => (
+              <li key={a}>
+                <button
+                  type="button"
+                  onClick={() => setEingabe(a)}
+                  title="In das Suchfeld übernehmen"
+                  className="rounded-xl border border-emerald-500/25 bg-emerald-500/10 px-3 py-1.5 font-mono text-xs text-emerald-300 transition hover:border-emerald-500/50 hover:bg-emerald-500/20"
+                >
+                  {a}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       ) : null}
     </div>
   );
