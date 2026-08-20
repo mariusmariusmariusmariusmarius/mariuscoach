@@ -3,6 +3,7 @@ import { getSession } from "@/lib/auth/session";
 import { findUserByEmail } from "@/lib/auth/users";
 import { LIMIT_USD, verbrauchVon } from "@/lib/api/verbrauch";
 import { CopyButton } from "@/components/ui/copy-button";
+import { DomainUebersicht } from "@/components/app/domain-uebersicht";
 import { changeTierAction } from "@/lib/auth/actions";
 import { TIERS, TIER_INFO } from "@/lib/tiers";
 import { Avatar } from "@/components/ui/avatar";
@@ -91,6 +92,8 @@ export default async function SettingsPage() {
           </>
         ) : null}
       </section>
+
+      <DomainUebersicht />
 
       {/* Account-Stufe */}
       <section className="rounded-3xl border border-white/8 bg-surface-900/70 p-7">
