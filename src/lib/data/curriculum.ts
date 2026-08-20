@@ -1342,37 +1342,38 @@ Erklärungen, ich trage sie selbst ein.`,
         },
       },
       {
-        slug: "anfragen-per-mail",
-        title: "Anfragen landen im Postfach",
+        slug: "firmen-email-anlegen",
+        title: "Deine Firmen-E-Mail",
         description:
-          "Zwei Wege, wie deine Anfragen als E-Mail ankommen: der empfohlene über die Kursplattform — Claude legt dir Postfächer an und richtet alles ein. Und einer über Resend, falls du schon ein Postfach hast.",
-        duration: 20,
+          "info@deine-firma.de statt gmx: Claude legt dir die Postfächer an, setzt die nötigen Einträge und richtet alles fürs Handy ein — mit dem Schlüssel aus dieser Lektion.",
+        duration: 15,
         kind: "video",
         steps: [
-          "Weg 1 ist der empfohlene: Du brauchst nur den Schlüssel aus der Box rechts. Claude legt deine Postfächer an, setzt die DNS-Einträge und baut den Versand ein.",
-          "Voraussetzung dafür: Für diese Domain läuft noch keine Mail. Sonst würde die Umstellung deine bisherige Post umleiten.",
-          "Weg 2 ist für alle, die schon ein Postfach haben: einmal bei Resend anmelden, Domain bestätigen lassen, fertig.",
-          "In beiden Fällen baut Claude die zwei Mails: Bestätigung an den Kunden, Benachrichtigung an dich.",
-          "Testanfrage abschicken. Beide Mails müssen ankommen — und nicht im Spam landen.",
+          "Kurz prüfen: Läuft für deine Domain schon Mail? Wenn ja, überspring diese Lektion — dein Postfach bleibt, wie es ist.",
+          "Den Prompt rechts kopieren, deine Domain eintragen. Der Schlüssel steckt schon drin.",
+          "Claude legt die Postfächer an und setzt die Einträge, damit Mail ankommt und rausgeht.",
+          "Die Zugangsdaten sofort in den Passwort-Manager. Du brauchst sie gleich fürs Handy.",
+          "Postfach auf dem Handy einrichten — Claude sagt dir die Serverdaten.",
         ],
         cheatSheet: {
           apiKeyHint: true,
           prompts: [
             {
-              label: "Weg 1 — empfohlen: Postfach und Versand über die Kursplattform",
-              text: `Richte meine Firmen-E-Mail komplett neu ein und lass mein
-Anfrage-Formular darüber verschicken.
+              label: "Der Postfach-Prompt — Domain eintragen, dein Schlüssel steckt drin",
+              text: `Leg mir Postfächer für meine Firmen-Domain an.
 
-Ich habe für diese Domain noch KEIN Postfach. Falls doch schon Mail
-dafür läuft, sag mir das und hör auf, bevor du DNS-Einträge änderst —
-sonst kommt meine Post nicht mehr an.
+Meine Domain: {DEINE-DOMAIN}
+
+WICHTIG ZUERST
+Für diese Domain läuft noch keine Mail — wir richten sie neu ein.
+Prüf das bitte trotzdem: Gibt es schon MX-Einträge, sag mir das und
+hör auf, bevor du irgendetwas änderst. Eine Umstellung würde sonst
+meine bisherige Post umleiten.
 
 MEIN ZUGANG
 Adresse: https://mariuscoach.vercel.app/api/mail
 Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
-Meine Domain: {DEINE-DOMAIN}
 
-So funktioniert die Schnittstelle:
 - POST { "aktion": "domain",   "domain": "..." }
 - POST { "aktion": "postfach", "domain": "...", "adresse": "info",
          "name": "Firmenname", "passwort": "..." }
@@ -1380,40 +1381,62 @@ So funktioniert die Schnittstelle:
          "ziele": ["info@..."] }
 - GET  auf dieselbe Adresse zeigt meine Domains und Postfächer.
 
-SCHRITT 1 — Postfächer anlegen
-Leg meine Domain an, dann ein Postfach info@ und eins mit meinem
-Vornamen. Denk dir sichere Passwörter aus (mindestens 16 Zeichen),
-zeig sie mir als Tabelle und erinner mich, sie im Passwort-Manager
-zu speichern.
+SCHRITT 1 — Anlegen
+Leg meine Domain an, dann zwei Postfächer: info@ und eins mit meinem
+Vornamen. Frag mich vorher, wie mein Firmenname als Absender
+erscheinen soll.
+Denk dir sichere Passwörter aus, mindestens 16 Zeichen, ohne
+Sonderzeichen, die man auf dem Handy schwer tippt.
 
-SCHRITT 2 — DNS setzen
-Die Postfächer brauchen MX-, SPF- und DKIM-Einträge. Meine DNS läuft
-über die Plattform, ich gebe dir mein DNS-Token.
+SCHRITT 2 — Einträge setzen
+Damit die Postfächer Mail empfangen und senden dürfen, brauchen sie
+MX-, SPF- und DKIM-Einträge. Meine DNS läuft über die Kursplattform,
+ich gebe dir mein DNS-Token.
+
 Rate die Werte NICHT. Lies die aktuell gültigen Einträge auf
 migadu.com nach, zeig sie mir zur Bestätigung, und setz sie erst
-dann. Prüf danach per DNS-Abfrage, ob sie greifen.
+dann. Prüf danach per DNS-Abfrage, ob sie wirklich greifen.
 
-SCHRITT 3 — Die zwei Mails
-Wie gehabt: Bestätigung an den Kunden, Benachrichtigung an mich mit
-Antworten-an auf seine Adresse. Verschickt wird über das neue
-Postfach, Zugangsdaten in die Umgebungsvariablen.
-Erst speichern, dann senden.
+SCHRITT 3 — Übergeben
+Gib mir eine Tabelle mit: Adresse, Passwort, und den Daten fürs
+Handy (IMAP-Server, Port, Postausgangsserver, Port). Erinner mich
+daran, die Passwörter im Passwort-Manager zu speichern.
+Sag mir zum Schluss in drei Schritten, wie ich das Postfach aufs
+Handy hole — und dass ich dabei IMAP nehme, niemals POP3.
 
-SCHRITT 4 — Testen
-Testanfrage abschicken, beide Mails zeigen, Spam-Ordner prüfen. Und
-zeig mir, wie ich das neue Postfach aufs Handy hole.`,
+Nur anlegen. Lösch nichts und ändere keine Einträge, die nichts mit
+Mail zu tun haben.`,
             },
+          ],
+        },
+      },
+      {
+        slug: "anfragen-per-mail",
+        title: "Anfragen landen im Postfach",
+        description:
+          "Zwei Mails schließen die Kette: eine Bestätigung an den Kunden, eine Benachrichtigung an dich — verschickt über Resend, damit sie zuverlässig ankommen.",
+        duration: 18,
+        kind: "video",
+        steps: [
+          "Bei resend.com anmelden — kostenlos, 3.000 Mails im Monat reichen dicke.",
+          "Den Prompt schicken. Claude sagt dir, was du bei Resend klicken musst, und wartet auf deinen Schlüssel.",
+          "Domain bestätigen: Claude setzt die nötigen Einträge über dein DNS-Token selbst.",
+          "Claude baut die zwei Mails ein — Bestätigung an den Kunden, Benachrichtigung an dich.",
+          "Testanfrage abschicken. Beide Mails müssen ankommen und dürfen nicht im Spam landen.",
+        ],
+        cheatSheet: {
+          prompts: [
             {
-              label: "Weg 2 — du hast schon ein Postfach: über Resend",
+              label: "Der Versand-Prompt — Domain eintragen, Rest macht Claude",
               text: `Bau den Mailversand für mein Anfrage-Formular über Resend ein.
 
 Meine Domain: {DEINE-DOMAIN}
-Meine Postfach-Adresse: {z. B. info@meine-firma.de}
+Meine Adresse: {z. B. info@meine-firma.de}
 
 SCHRITT 1 — Anmeldung
 Sag mir in kurzen Schritten, was ich bei resend.com tun muss: Konto
-anlegen, meine Domain hinzufügen, API-Schlüssel erzeugen. Warte, bis
-ich dir sage, dass ich den Schlüssel habe.
+anlegen, meine Domain hinzufügen, API-Schlüssel erzeugen. Dann warte,
+bis ich dir sage, dass ich den Schlüssel habe.
 
 SCHRITT 2 — Domain bestätigen
 Resend verlangt DNS-Einträge, damit ich von meiner Domain senden
@@ -1445,6 +1468,13 @@ REGELN
 ZUM SCHLUSS
 Testanfrage abschicken, beide Mails zeigen, und mir sagen, ob etwas
 im Spam gelandet ist.`,
+            },
+          ],
+          links: [
+            {
+              label: "Resend — Konto erstellen",
+              href: "https://resend.com/signup",
+              note: "kostenlos: 3.000 Mails im Monat, 100 am Tag",
             },
           ],
         },
