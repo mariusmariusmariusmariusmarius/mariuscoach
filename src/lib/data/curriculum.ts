@@ -1419,6 +1419,7 @@ Mail zu tun haben.`,
         kind: "video",
         steps: [
           "Die Zugangsdaten aus der letzten Lektion bereitlegen: Adresse, Passwort, Postausgangsserver.",
+          "Im Prompt den Block oben ausfüllen: Absender, wohin deine Benachrichtigung soll, und was in der Bestätigung stehen soll.",
           "Den Prompt schicken. Claude legt die Zugangsdaten sicher ab und baut beide Mails ein.",
           "Testanfrage über dein Formular abschicken.",
           "Prüfen: Kommt die Bestätigung beim Kunden an? Kommt die Benachrichtigung bei dir an? Landet etwas im Spam?",
@@ -1427,40 +1428,53 @@ Mail zu tun haben.`,
         cheatSheet: {
           prompts: [
             {
-              label: "Der Versand-Prompt — Zugangsdaten aus der letzten Lektion einsetzen",
-              text: `Verschick ab jetzt zwei E-Mails, wenn jemand mein
-Anfrage-Formular abschickt. Wir nutzen dafür mein Postfach.
+              label: "Der Versand-Prompt — oben ausfüllen, Rest macht Claude",
+              text: `Verschick zwei E-Mails, wenn jemand mein Anfrage-Formular
+abschickt.
 
-MEIN POSTFACH (aus der letzten Lektion)
-Adresse: {DEINE-ADRESSE, z. B. info@meine-firma.de}
-Passwort: {DAS PASSWORT DIESES POSTFACHS}
-Postausgangsserver und Port: {AUS DER TABELLE VON VORHIN}
+────────── HIER AUSFÜLLEN ──────────
 
-Die Zugangsdaten kommen als Umgebungsvariablen ins Projekt und bei
-Vercel in die Projekteinstellungen — niemals in eine Datei, die zu
-meinem Code gehört. Sag mir, wie ich sie bei Vercel hinterlege.
+ABSENDER (von dieser Adresse gehen beide Mails raus)
+  Adresse:            {z. B. info@meine-firma.de}
+  Passwort:           {Passwort dieses Postfachs}
+  Postausgangsserver: {aus der Tabelle der letzten Lektion}
+  Angezeigter Name:   {z. B. Müller Heizung & Sanitär}
+
+BENACHRICHTIGUNG GEHT AN (wo ICH die Anfragen lesen will)
+  {z. B. info@meine-firma.de — darf auch eine andere sein,
+   etwa dein privates Postfach oder das vom Büro}
+
+DIE ADRESSE DES KUNDEN
+  kommt aus dem Formular, die trägst du nicht ein
+
+WAS IN DER BESTÄTIGUNG STEHEN SOLL (grob, in deinen Worten)
+  {z. B.: Danke für die Anfrage, ich melde mich innerhalb von
+   24 Stunden, bei Notfällen direkt anrufen unter 0170 1234567}
+
+─────────────────────────────────────
 
 MAIL 1 — an den Kunden
-Bestätigung, dass seine Anfrage angekommen ist: wann ich mich melde,
-meine Telefonnummer für Eiliges, und seine eigenen Angaben zum
-Nachlesen. Absender ist meine Adresse mit meinem Firmennamen.
+Bau daraus eine freundliche Bestätigung in meinem Ton. Darunter
+seine eigenen Angaben zum Nachlesen. Absender ist die Adresse oben
+mit meinem angezeigten Namen.
 
-MAIL 2 — an mich
+MAIL 2 — an mich, an die Benachrichtigungsadresse oben
 Betreff so, dass ich ihn auf dem Handy erfassen kann: Name und
 worum es geht. Darunter alle Angaben aus dem Formular, ordentlich
 untereinander.
 WICHTIG: Antworten-an auf die Adresse des Kunden setzen. Dann lande
 ich mit einem Tipp auf "Antworten" direkt bei ihm.
 
-REGELN
-- Erst die Anfrage speichern, dann die Mails verschicken. Wenn der
-  Versand klemmt, muss der Lead trotzdem in meiner Admin-App stehen.
+TECHNIK
+- Die Zugangsdaten kommen als Umgebungsvariablen ins Projekt und bei
+  Vercel in die Projekteinstellungen — niemals in eine Datei, die zu
+  meinem Code gehört. Sag mir, wie ich sie bei Vercel hinterlege.
+- Erst die Anfrage speichern, dann die Mails verschicken. Klemmt der
+  Versand, muss der Lead trotzdem in meiner Admin-App stehen.
 - Halt in der Admin-App pro Anfrage fest, ob die Mails rausgingen.
-  Ging etwas schief, will ich das dort sehen — still verschlucken
-  gilt nicht.
-- Der Versand darf die Antwort an den Kunden nicht aufhalten: Er
-  sieht seine Bestätigung auf der Seite sofort, auch wenn die Mail
-  ein paar Sekunden braucht.
+  Ging etwas schief, will ich das dort sehen.
+- Der Kunde sieht seine Bestätigung auf der Seite sofort, auch wenn
+  die Mail ein paar Sekunden braucht.
 - Keine Anhänge, keine Bilder, keine Verfolgungspixel. Einfacher
   Text kommt am zuverlässigsten an.
 
