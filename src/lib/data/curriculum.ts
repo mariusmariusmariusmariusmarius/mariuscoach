@@ -1342,6 +1342,85 @@ Erklärungen, ich trage sie selbst ein.`,
         },
       },
       {
+        slug: "anfragen-per-mail",
+        title: "Anfragen landen im Postfach",
+        description:
+          "Zwei Mails schließen die Kette: eine Bestätigung an den Kunden, eine Benachrichtigung an dich — verschickt aus deinem eigenen Postfach, ohne neuen Dienst.",
+        duration: 18,
+        kind: "video",
+        steps: [
+          "Zugangsdaten deines Postfachs bereitlegen: Adresse, Passwort, Postausgangsserver. Die hast du seit Lektion 1.4.",
+          "Den ersten Prompt schicken. Claude baut den Versand ein — erst speichern, dann senden, damit kein Lead verlorengeht.",
+          "Testanfrage abschicken: Beide Mails müssen ankommen, deine und die des Kunden.",
+          "Den zweiten Prompt nur, falls du noch kein Postfach hast oder mehr Komfort willst — dann läuft es über einen Versanddienst.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "1. Die zwei Mails — aus deinem eigenen Postfach",
+              text: `Verschick ab jetzt zwei E-Mails, wenn jemand mein
+Anfrage-Formular abschickt.
+
+MEIN POSTFACH
+Adresse: {DEINE-ADRESSE, z. B. info@meine-firma.de}
+Passwort: {DAS PASSWORT DIESES POSTFACHS}
+Postausgangsserver: {STEHT IN DEN ZUGANGSDATEN DEINES ANBIETERS}
+
+Die Zugangsdaten kommen in die Umgebungsvariablen, niemals in eine
+Datei, die zu meinem Projekt gehört.
+
+MAIL 1 — an den Kunden (Bestätigung)
+- Absender: meine Adresse, Anzeigename ist mein Firmenname.
+- Betreff und Text kurz und in meinem Ton: Anfrage ist da, wann ich
+  mich melde, meine Telefonnummer für Eiliges.
+- Schreib rein, was er angefragt hat, damit er es nachlesen kann.
+
+MAIL 2 — an mich (Benachrichtigung)
+- Betreff so, dass ich ihn auf dem Handy erfassen kann: Name und
+  worum es geht.
+- Alle Angaben aus dem Formular, ordentlich untereinander.
+- WICHTIG: Antworten-an auf die Adresse des Kunden setzen. Dann
+  lande ich mit einem Tipp auf "Antworten" direkt bei ihm.
+
+REGELN
+- Erst die Anfrage speichern, dann die Mails verschicken. Wenn der
+  Versand klemmt, muss der Lead trotzdem in meiner Admin-App stehen.
+- Wenn eine Mail nicht rausgeht, sag es mir in der Übersicht — still
+  verschlucken gilt nicht.
+- Keine Anhänge, keine Bilder, keine Verfolgungspixel. Reiner Text
+  mit einfacher Formatierung kommt am zuverlässigsten an.
+- Der Absender muss zu meiner Domain passen, sonst landet alles im
+  Spam.
+
+ZUM SCHLUSS
+Schick eine Testanfrage ab und zeig mir, dass beide Mails angekommen
+sind. Prüf auch, ob die Bestätigung im Spam-Ordner gelandet ist —
+dann sag mir, was wir an den DNS-Einträgen verbessern sollten.`,
+            },
+            {
+              label: "2. Nur falls du noch kein Postfach hast — über einen Versanddienst",
+              text: `Ich habe noch kein eigenes Postfach für den Versand. Bau den
+Mailversand meines Anfrage-Formulars über Resend.
+
+So gehst du vor:
+1. Sag mir, was ich bei resend.com tun muss: Konto anlegen, meine
+   Domain hinzufügen, API-Schlüssel erzeugen. Kurz und in Schritten.
+2. Für die Domain verlangt Resend DNS-Einträge zur Bestätigung.
+   Meine DNS läuft über die Kursplattform — ich gebe dir gleich mein
+   DNS-Token, dann setzt du die Einträge selbst und wartest, bis die
+   Domain bestätigt ist.
+3. Dann baust du die zwei Mails ein: Bestätigung an den Kunden,
+   Benachrichtigung an mich mit Antworten-an auf seine Adresse.
+4. Der API-Schlüssel kommt in die Umgebungsvariablen, nicht in den
+   Code.
+
+Es gilt dasselbe wie vorher: erst speichern, dann senden. Und am
+Ende eine Testanfrage, bei der du mir beide Mails zeigst.`,
+            },
+          ],
+        },
+      },
+      {
         slug: "anfragebogen-lead-friction",
         title: "Anfragebogen & Lead-Friction",
         description:
