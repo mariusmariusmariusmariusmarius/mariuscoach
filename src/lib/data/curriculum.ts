@@ -1345,27 +1345,70 @@ Erklärungen, ich trage sie selbst ein.`,
         slug: "anfragen-per-mail",
         title: "Anfragen landen im Postfach",
         description:
-          "Drei Wege, wie deine Anfragen als E-Mail ankommen — inklusive dem bequemsten: Postfach und Versand komplett über Claude, mit dem Schlüssel aus dieser Lektion.",
+          "Zwei Wege, wie deine Anfragen als E-Mail ankommen: über Resend mit deinem eigenen Postfach — oder komplett über Claude, wenn du noch keins hast.",
         duration: 20,
         kind: "video",
         steps: [
-          "Kurz überlegen, welcher der drei Wege deiner ist — hast du schon ein Postfach für deine Domain oder nicht?",
-          "Weg A (empfohlen, ohne eigenes Postfach): Prompt 1 schicken. Claude legt dir Postfächer an, setzt die DNS-Einträge und baut die Mails ein.",
-          "Weg B (Postfach vorhanden): Prompt 2 — Versand direkt aus deinem bestehenden Postfach.",
-          "Weg C (Postfach vorhanden, mehr Komfort): Prompt 3 — über den Versanddienst Resend, mit Protokoll und Rückläufer-Meldungen.",
-          "Immer zum Schluss: Testanfrage abschicken. Beide Mails müssen ankommen — deine und die des Kunden.",
+          "Eine Frage entscheidet alles: Hast du schon ein Postfach auf deiner Domain, oder noch keins?",
+          "Postfach vorhanden (oder du legst dir beim Anbieter eins an) → Weg 1: bei Resend anmelden, Domain bestätigen lassen, fertig.",
+          "Noch kein Postfach → Weg 2: Schlüssel aus der Box rechts an Claude geben. Er legt Postfächer an und richtet den Versand ein.",
+          "In beiden Fällen baut Claude die zwei Mails: Bestätigung an den Kunden, Benachrichtigung an dich.",
+          "Testanfrage abschicken. Beide Mails müssen ankommen — und nicht im Spam landen.",
         ],
         cheatSheet: {
           apiKeyHint: true,
           prompts: [
             {
-              label: "Weg A — Postfach und Versand über die Kursplattform (empfohlen)",
-              text: `Richte meine Firmen-E-Mail ein und lass mein Anfrage-Formular
-darüber verschicken.
+              label: "Weg 1 — du hast ein Postfach: Versand über Resend",
+              text: `Bau den Mailversand für mein Anfrage-Formular über Resend ein.
 
-Ich habe für meine Domain noch KEIN Postfach — wir legen also eins
-neu an. Wichtig: Falls doch schon Mail für diese Domain läuft, sag
-mir das und hör auf, bevor du DNS-Einträge änderst.
+Meine Domain: {DEINE-DOMAIN}
+Meine Postfach-Adresse: {z. B. info@meine-firma.de}
+
+SCHRITT 1 — Anmeldung
+Sag mir in kurzen Schritten, was ich bei resend.com tun muss: Konto
+anlegen, meine Domain hinzufügen, API-Schlüssel erzeugen. Warte, bis
+ich dir sage, dass ich den Schlüssel habe.
+
+SCHRITT 2 — Domain bestätigen
+Resend verlangt DNS-Einträge, damit ich von meiner Domain senden
+darf. Meine DNS läuft über die Kursplattform — ich gebe dir mein
+DNS-Token, dann setzt du die Einträge selbst.
+Rate die Werte nicht: Nimm genau die, die Resend mir anzeigt. Prüf
+danach, ob die Domain dort als bestätigt gilt.
+
+SCHRITT 3 — Die zwei Mails
+- An den Kunden: Bestätigung, dass die Anfrage da ist, wann ich mich
+  melde, meine Telefonnummer für Eiliges, dazu seine Angaben zum
+  Nachlesen.
+- An mich: Betreff mit Name und Anliegen, damit ich ihn auf dem Handy
+  erfassen kann. Alle Angaben untereinander. Antworten-an auf die
+  Adresse des Kunden, damit ich mit einem Tipp auf "Antworten" direkt
+  bei ihm lande.
+- Absender ist meine eigene Adresse mit meinem Firmennamen.
+- Der API-Schlüssel kommt in die Umgebungsvariablen, nie in eine
+  Datei meines Projekts.
+
+REGELN
+- Erst die Anfrage speichern, dann senden. Klemmt der Versand, muss
+  der Lead trotzdem in meiner Admin-App stehen.
+- Geht eine Mail nicht raus, sag es mir — still verschlucken gilt
+  nicht.
+- Keine Anhänge, keine Verfolgungspixel. Einfacher Text kommt am
+  zuverlässigsten an.
+
+ZUM SCHLUSS
+Testanfrage abschicken, beide Mails zeigen, und mir sagen, ob etwas
+im Spam gelandet ist.`,
+            },
+            {
+              label: "Weg 2 — noch kein Postfach: alles über Claude einrichten",
+              text: `Richte meine Firmen-E-Mail komplett neu ein und lass mein
+Anfrage-Formular darüber verschicken.
+
+Ich habe für diese Domain noch KEIN Postfach. Falls doch schon Mail
+dafür läuft, sag mir das und hör auf, bevor du DNS-Einträge änderst —
+sonst kommt meine Post nicht mehr an.
 
 MEIN ZUGANG
 Adresse: https://mariuscoach.vercel.app/api/mail
@@ -1387,81 +1430,21 @@ zeig sie mir als Tabelle und erinner mich, sie im Passwort-Manager
 zu speichern.
 
 SCHRITT 2 — DNS setzen
-Damit die Postfächer Mail empfangen und senden dürfen, brauchen sie
-MX-, SPF- und DKIM-Einträge. Meine DNS läuft über die Plattform, ich
-gebe dir gleich mein DNS-Token.
-
+Die Postfächer brauchen MX-, SPF- und DKIM-Einträge. Meine DNS läuft
+über die Plattform, ich gebe dir mein DNS-Token.
 Rate die Werte NICHT. Lies die aktuell gültigen Einträge auf
 migadu.com nach, zeig sie mir zur Bestätigung, und setz sie erst
-dann. Prüf danach selbst per DNS-Abfrage, ob sie greifen.
+dann. Prüf danach per DNS-Abfrage, ob sie greifen.
 
-SCHRITT 3 — Die zwei Mails einbauen
-- An den Kunden: Bestätigung, dass die Anfrage da ist, wann ich mich
-  melde, meine Telefonnummer für Eiliges, dazu seine Angaben zum
-  Nachlesen.
-- An mich: Betreff mit Name und Anliegen, alle Angaben untereinander,
-  und Antworten-an auf die Adresse des Kunden.
-- Verschickt wird über das neue Postfach. Zugangsdaten kommen in die
-  Umgebungsvariablen, nie in eine Projektdatei.
-- Erst die Anfrage speichern, dann senden. Klemmt der Versand, muss
-  der Lead trotzdem in meiner Admin-App stehen.
+SCHRITT 3 — Die zwei Mails
+Wie gehabt: Bestätigung an den Kunden, Benachrichtigung an mich mit
+Antworten-an auf seine Adresse. Verschickt wird über das neue
+Postfach, Zugangsdaten in die Umgebungsvariablen.
+Erst speichern, dann senden.
 
 SCHRITT 4 — Testen
-Schick eine Testanfrage ab, zeig mir beide Mails, und sag mir, ob
-etwas im Spam gelandet ist. Zeig mir außerdem, wie ich das Postfach
-aufs Handy hole.`,
-            },
-            {
-              label: "Weg B — du hast schon ein Postfach: Versand direkt darüber",
-              text: `Verschick zwei E-Mails, wenn jemand mein Anfrage-Formular
-abschickt. Wir nutzen mein bestehendes Postfach.
-
-MEIN POSTFACH
-Adresse: {DEINE-ADRESSE, z. B. info@meine-firma.de}
-Passwort: {DAS PASSWORT DIESES POSTFACHS}
-Postausgangsserver: {STEHT IN DEN ZUGANGSDATEN DEINES ANBIETERS}
-
-Die Zugangsdaten kommen in die Umgebungsvariablen, niemals in eine
-Datei meines Projekts.
-
-MAIL 1 — an den Kunden: Bestätigung, dass die Anfrage da ist, wann
-ich mich melde, meine Telefonnummer für Eiliges, dazu seine Angaben
-zum Nachlesen. Absender ist meine Adresse mit meinem Firmennamen.
-
-MAIL 2 — an mich: Betreff mit Name und Anliegen, damit ich ihn auf
-dem Handy erfassen kann. Alle Angaben untereinander. Antworten-an
-auf die Adresse des Kunden, dann lande ich mit einem Tipp auf
-"Antworten" direkt bei ihm.
-
-REGELN
-- Erst speichern, dann senden. Klemmt der Versand, steht der Lead
-  trotzdem in meiner Admin-App.
-- Geht eine Mail nicht raus, sag es mir — still verschlucken gilt
-  nicht.
-- Keine Anhänge, keine Verfolgungspixel. Einfacher Text kommt am
-  zuverlässigsten an.
-
-Zum Schluss: Testanfrage abschicken, beide Mails zeigen, und sagen,
-ob etwas im Spam gelandet ist.`,
-            },
-            {
-              label: "Weg C — über den Versanddienst Resend",
-              text: `Bau den Mailversand meines Anfrage-Formulars über Resend.
-
-So gehst du vor:
-1. Sag mir in kurzen Schritten, was ich bei resend.com tun muss:
-   Konto anlegen, Domain hinzufügen, API-Schlüssel erzeugen.
-2. Für die Domain verlangt Resend DNS-Einträge zur Bestätigung.
-   Meine DNS läuft über die Kursplattform — ich gebe dir mein
-   DNS-Token, dann setzt du die Einträge selbst und wartest, bis die
-   Domain bestätigt ist.
-3. Dann die zwei Mails einbauen: Bestätigung an den Kunden,
-   Benachrichtigung an mich mit Antworten-an auf seine Adresse.
-4. Der API-Schlüssel kommt in die Umgebungsvariablen, nicht in den
-   Code.
-
-Es gilt dasselbe: erst speichern, dann senden. Am Ende eine
-Testanfrage, bei der du mir beide Mails zeigst.`,
+Testanfrage abschicken, beide Mails zeigen, Spam-Ordner prüfen. Und
+zeig mir, wie ich das neue Postfach aufs Handy hole.`,
             },
           ],
         },
