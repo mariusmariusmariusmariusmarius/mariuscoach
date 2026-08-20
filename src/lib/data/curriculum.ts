@@ -1345,13 +1345,13 @@ Erklärungen, ich trage sie selbst ein.`,
         slug: "anfragen-per-mail",
         title: "Anfragen landen im Postfach",
         description:
-          "Zwei Wege, wie deine Anfragen als E-Mail ankommen: über Resend mit deinem eigenen Postfach — oder komplett über Claude, wenn du noch keins hast.",
+          "Zwei Wege, wie deine Anfragen als E-Mail ankommen: der empfohlene über die Kursplattform — Claude legt dir Postfächer an und richtet alles ein. Und einer über Resend, falls du schon ein Postfach hast.",
         duration: 20,
         kind: "video",
         steps: [
-          "Eine Frage entscheidet alles: Hast du schon ein Postfach auf deiner Domain, oder noch keins?",
-          "Postfach vorhanden (oder du legst dir beim Anbieter eins an) → Weg 1: bei Resend anmelden, Domain bestätigen lassen, fertig.",
-          "Noch kein Postfach → Weg 2: Schlüssel aus der Box rechts an Claude geben. Er legt Postfächer an und richtet den Versand ein.",
+          "Weg 1 ist der empfohlene: Du brauchst nur den Schlüssel aus der Box rechts. Claude legt deine Postfächer an, setzt die DNS-Einträge und baut den Versand ein.",
+          "Voraussetzung dafür: Für diese Domain läuft noch keine Mail. Sonst würde die Umstellung deine bisherige Post umleiten.",
+          "Weg 2 ist für alle, die schon ein Postfach haben: einmal bei Resend anmelden, Domain bestätigen lassen, fertig.",
           "In beiden Fällen baut Claude die zwei Mails: Bestätigung an den Kunden, Benachrichtigung an dich.",
           "Testanfrage abschicken. Beide Mails müssen ankommen — und nicht im Spam landen.",
         ],
@@ -1359,50 +1359,7 @@ Erklärungen, ich trage sie selbst ein.`,
           apiKeyHint: true,
           prompts: [
             {
-              label: "Weg 1 — du hast ein Postfach: Versand über Resend",
-              text: `Bau den Mailversand für mein Anfrage-Formular über Resend ein.
-
-Meine Domain: {DEINE-DOMAIN}
-Meine Postfach-Adresse: {z. B. info@meine-firma.de}
-
-SCHRITT 1 — Anmeldung
-Sag mir in kurzen Schritten, was ich bei resend.com tun muss: Konto
-anlegen, meine Domain hinzufügen, API-Schlüssel erzeugen. Warte, bis
-ich dir sage, dass ich den Schlüssel habe.
-
-SCHRITT 2 — Domain bestätigen
-Resend verlangt DNS-Einträge, damit ich von meiner Domain senden
-darf. Meine DNS läuft über die Kursplattform — ich gebe dir mein
-DNS-Token, dann setzt du die Einträge selbst.
-Rate die Werte nicht: Nimm genau die, die Resend mir anzeigt. Prüf
-danach, ob die Domain dort als bestätigt gilt.
-
-SCHRITT 3 — Die zwei Mails
-- An den Kunden: Bestätigung, dass die Anfrage da ist, wann ich mich
-  melde, meine Telefonnummer für Eiliges, dazu seine Angaben zum
-  Nachlesen.
-- An mich: Betreff mit Name und Anliegen, damit ich ihn auf dem Handy
-  erfassen kann. Alle Angaben untereinander. Antworten-an auf die
-  Adresse des Kunden, damit ich mit einem Tipp auf "Antworten" direkt
-  bei ihm lande.
-- Absender ist meine eigene Adresse mit meinem Firmennamen.
-- Der API-Schlüssel kommt in die Umgebungsvariablen, nie in eine
-  Datei meines Projekts.
-
-REGELN
-- Erst die Anfrage speichern, dann senden. Klemmt der Versand, muss
-  der Lead trotzdem in meiner Admin-App stehen.
-- Geht eine Mail nicht raus, sag es mir — still verschlucken gilt
-  nicht.
-- Keine Anhänge, keine Verfolgungspixel. Einfacher Text kommt am
-  zuverlässigsten an.
-
-ZUM SCHLUSS
-Testanfrage abschicken, beide Mails zeigen, und mir sagen, ob etwas
-im Spam gelandet ist.`,
-            },
-            {
-              label: "Weg 2 — noch kein Postfach: alles über Claude einrichten",
+              label: "Weg 1 — empfohlen: Postfach und Versand über die Kursplattform",
               text: `Richte meine Firmen-E-Mail komplett neu ein und lass mein
 Anfrage-Formular darüber verschicken.
 
@@ -1445,6 +1402,49 @@ Erst speichern, dann senden.
 SCHRITT 4 — Testen
 Testanfrage abschicken, beide Mails zeigen, Spam-Ordner prüfen. Und
 zeig mir, wie ich das neue Postfach aufs Handy hole.`,
+            },
+            {
+              label: "Weg 2 — du hast schon ein Postfach: über Resend",
+              text: `Bau den Mailversand für mein Anfrage-Formular über Resend ein.
+
+Meine Domain: {DEINE-DOMAIN}
+Meine Postfach-Adresse: {z. B. info@meine-firma.de}
+
+SCHRITT 1 — Anmeldung
+Sag mir in kurzen Schritten, was ich bei resend.com tun muss: Konto
+anlegen, meine Domain hinzufügen, API-Schlüssel erzeugen. Warte, bis
+ich dir sage, dass ich den Schlüssel habe.
+
+SCHRITT 2 — Domain bestätigen
+Resend verlangt DNS-Einträge, damit ich von meiner Domain senden
+darf. Meine DNS läuft über die Kursplattform — ich gebe dir mein
+DNS-Token, dann setzt du die Einträge selbst.
+Rate die Werte nicht: Nimm genau die, die Resend mir anzeigt. Prüf
+danach, ob die Domain dort als bestätigt gilt.
+
+SCHRITT 3 — Die zwei Mails
+- An den Kunden: Bestätigung, dass die Anfrage da ist, wann ich mich
+  melde, meine Telefonnummer für Eiliges, dazu seine Angaben zum
+  Nachlesen.
+- An mich: Betreff mit Name und Anliegen, damit ich ihn auf dem Handy
+  erfassen kann. Alle Angaben untereinander. Antworten-an auf die
+  Adresse des Kunden, damit ich mit einem Tipp auf "Antworten" direkt
+  bei ihm lande.
+- Absender ist meine eigene Adresse mit meinem Firmennamen.
+- Der API-Schlüssel kommt in die Umgebungsvariablen, nie in eine
+  Datei meines Projekts.
+
+REGELN
+- Erst die Anfrage speichern, dann senden. Klemmt der Versand, muss
+  der Lead trotzdem in meiner Admin-App stehen.
+- Geht eine Mail nicht raus, sag es mir — still verschlucken gilt
+  nicht.
+- Keine Anhänge, keine Verfolgungspixel. Einfacher Text kommt am
+  zuverlässigsten an.
+
+ZUM SCHLUSS
+Testanfrage abschicken, beide Mails zeigen, und mir sagen, ob etwas
+im Spam gelandet ist.`,
             },
           ],
         },
