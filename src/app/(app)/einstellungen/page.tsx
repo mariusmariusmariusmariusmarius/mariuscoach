@@ -54,8 +54,9 @@ export default async function SettingsPage() {
           Dein API-Schlüssel
         </h2>
         <p className="mb-5 text-sm text-zinc-400">
-          Damit holt Claude deine Bewertungen von Google, Trustpilot &amp; Co. —
-          der Schlüssel gehört nur dir. Behandle ihn wie ein Passwort.
+          Ein Schlüssel für alles: Bewertungen von Google und Trustpilot, deine
+          DNS-Einträge und deine Postfächer. Er gehört nur dir — behandle ihn
+          wie ein Passwort.
         </p>
         {user ? (
           <>
