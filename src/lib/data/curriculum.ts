@@ -1418,9 +1418,8 @@ Mail zu tun haben.`,
         duration: 18,
         kind: "video",
         steps: [
-          "Die Zugangsdaten aus der letzten Lektion bereitlegen: Adresse, Passwort, Postausgangsserver.",
-          "Im Prompt den Block oben ausfüllen: Absender, wohin deine Benachrichtigung soll, und was in der Bestätigung stehen soll.",
-          "Den Prompt schicken. Claude legt die Zugangsdaten sicher ab und baut beide Mails ein.",
+          "Im selben Chat weitermachen wie in der letzten Lektion — Claude kennt dein Postfach dann schon.",
+          "Im Prompt zwei Zeilen ausfüllen: wohin deine Benachrichtigung soll und was in der Bestätigung grob stehen soll.",
           "Testanfrage über dein Formular abschicken.",
           "Prüfen: Kommt die Bestätigung beim Kunden an? Kommt die Benachrichtigung bei dir an? Landet etwas im Spam?",
           "In der Admin-App nachsehen — dort steht jetzt auch, ob der Versand geklappt hat.",
@@ -1428,60 +1427,33 @@ Mail zu tun haben.`,
         cheatSheet: {
           prompts: [
             {
-              label: "Der Versand-Prompt — oben ausfüllen, Rest macht Claude",
+              label: "Der Versand-Prompt — zwei Zeilen ausfüllen, fertig",
               text: `Verschick zwei E-Mails, wenn jemand mein Anfrage-Formular
-abschickt.
+abschickt. Nutz dafür das Postfach, das wir gerade eingerichtet
+haben — die Zugangsdaten kennst du.
 
-────────── HIER AUSFÜLLEN ──────────
+Meine Benachrichtigung soll an: {ADRESSE — weglassen, wenn dieselbe}
 
-ABSENDER (von dieser Adresse gehen beide Mails raus)
-  Adresse:            {z. B. info@meine-firma.de}
-  Passwort:           {Passwort dieses Postfachs}
-  Postausgangsserver: {aus der Tabelle der letzten Lektion}
-  Angezeigter Name:   {z. B. Müller Heizung & Sanitär}
+In der Bestätigung an den Kunden soll grob stehen:
+{z. B. danke für die Anfrage, ich melde mich innerhalb von
+24 Stunden, bei Notfällen direkt anrufen unter 0170 1234567}
 
-BENACHRICHTIGUNG GEHT AN (wo ICH die Anfragen lesen will)
-  {z. B. info@meine-firma.de — darf auch eine andere sein,
-   etwa dein privates Postfach oder das vom Büro}
+Die Mail an mich gestaltest du selbst. Hauptsache, ich sehe auf dem
+Handy sofort, wer was will — und lande mit einem Tipp auf
+"Antworten" direkt beim Kunden.
 
-DIE ADRESSE DES KUNDEN
-  kommt aus dem Formular, die trägst du nicht ein
-
-WAS IN DER BESTÄTIGUNG STEHEN SOLL (grob, in deinen Worten)
-  {z. B.: Danke für die Anfrage, ich melde mich innerhalb von
-   24 Stunden, bei Notfällen direkt anrufen unter 0170 1234567}
-
-─────────────────────────────────────
-
-MAIL 1 — an den Kunden
-Bau daraus eine freundliche Bestätigung in meinem Ton. Darunter
-seine eigenen Angaben zum Nachlesen. Absender ist die Adresse oben
-mit meinem angezeigten Namen.
-
-MAIL 2 — an mich, an die Benachrichtigungsadresse oben
-Betreff so, dass ich ihn auf dem Handy erfassen kann: Name und
-worum es geht. Darunter alle Angaben aus dem Formular, ordentlich
-untereinander.
-WICHTIG: Antworten-an auf die Adresse des Kunden setzen. Dann lande
-ich mit einem Tipp auf "Antworten" direkt bei ihm.
-
-TECHNIK
-- Die Zugangsdaten kommen als Umgebungsvariablen ins Projekt und bei
-  Vercel in die Projekteinstellungen — niemals in eine Datei, die zu
-  meinem Code gehört. Sag mir, wie ich sie bei Vercel hinterlege.
-- Erst die Anfrage speichern, dann die Mails verschicken. Klemmt der
-  Versand, muss der Lead trotzdem in meiner Admin-App stehen.
-- Halt in der Admin-App pro Anfrage fest, ob die Mails rausgingen.
-  Ging etwas schief, will ich das dort sehen.
+REGELN
+- Zugangsdaten als Umgebungsvariablen, auch bei Vercel. Sag mir, wie
+  ich sie dort hinterlege.
+- Erst die Anfrage speichern, dann senden. Klemmt der Versand, steht
+  der Lead trotzdem in meiner Admin-App — und ich sehe dort, dass
+  die Mail nicht rausging.
 - Der Kunde sieht seine Bestätigung auf der Seite sofort, auch wenn
   die Mail ein paar Sekunden braucht.
-- Keine Anhänge, keine Bilder, keine Verfolgungspixel. Einfacher
-  Text kommt am zuverlässigsten an.
+- Einfacher Text, keine Anhänge, keine Verfolgungspixel.
 
-ZUM SCHLUSS
-Schick eine Testanfrage ab und zeig mir beide Mails. Prüf auch den
-Spam-Ordner — wenn dort etwas landet, sag mir, welcher DNS-Eintrag
-noch fehlt.`,
+Zum Schluss: Testanfrage abschicken, beide Mails zeigen, Spam-Ordner
+prüfen.`,
             },
             {
               label: "Nur bei Problemen: Versand über Resend statt über dein Postfach",
