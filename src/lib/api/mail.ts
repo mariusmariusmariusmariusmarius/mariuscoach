@@ -19,6 +19,24 @@ export type MailDomain = {
 /** Markierung im Beschreibungsfeld der Migadu-Domain */
 const marke = (userId: string) => `mm:${userId}`;
 
+/**
+ * Nutzereingaben, die in einen Migadu-Pfad wandern, müssen streng geprüft
+ * werden: fetch löst "../" in URLs auf, ein Punkt-Segment im Postfachnamen
+ * würde also auf eine FREMDE Domain zeigen. Deshalb hier Weißlisten statt
+ * Maskierung — und zusätzlich encodeURIComponent beim Zusammenbauen.
+ */
+const DOMAIN_MUSTER = /^[a-z0-9äöüß-]+(\.[a-z0-9-]+)+$/;
+const TEIL_MUSTER = /^[a-z0-9]([a-z0-9._+-]{0,62}[a-z0-9])?$/;
+
+function pruefeDomain(domain: string): string | null {
+  return DOMAIN_MUSTER.test(domain) ? domain : null;
+}
+
+function pruefeTeil(teil: string): string | null {
+  const t = teil.trim().toLowerCase();
+  return TEIL_MUSTER.test(t) ? t : null;
+}
+
 export const MAX_MAIL_DOMAINS = 3;
 export const MAX_POSTFAECHER = 10;
 /** Tageslimit je Postfach — schützt die Zustellbarkeit aller Teilnehmer */
@@ -55,7 +73,8 @@ export async function mailDomainsVon(userId: string): Promise<MailDomain[]> {
 }
 
 export async function gehoertNutzer(userId: string, domain: string): Promise<boolean> {
-  const r = await migadu(`/domains/${domain}`);
+  if (!pruefeDomain(domain)) return false;
+  const r = await migadu(`/domains/${encodeURIComponent(domain)}`);
   return r.ok && (r.daten.description as string) === marke(userId);
 }
 
@@ -114,7 +133,7 @@ export async function domainAnlegen(
     return { fehler: `Migadu meldet: ${r.daten.error ?? r.status}` };
   }
   // Zuordnung dauerhaft bei Migadu hinterlegen
-  await migadu(`/domains/${domain}`, {
+  await migadu(`/domains/${encodeURIComponent(domain)}`, {
     method: "PUT",
     body: { description: marke(userId) },
   });
@@ -122,7 +141,8 @@ export async function domainAnlegen(
 }
 
 export async function postfaecherVon(domain: string) {
-  const r = await migadu(`/domains/${domain}/mailboxes`);
+  if (!pruefeDomain(domain)) return [];
+  const r = await migadu(`/domains/${encodeURIComponent(domain)}/mailboxes`);
   const liste = (r.daten.mailboxes ?? []) as Record<string, unknown>[];
   return liste.map((m) => ({
     adresse: m.address as string,
@@ -137,13 +157,16 @@ export async function postfachAnlegen(
   name: string,
   passwort: string
 ): Promise<{ adresse?: string; fehler?: string }> {
-  if ((await postfaecherVon(domain)).length >= MAX_POSTFAECHER) {
+  const d = pruefeDomain(domain);
+  const t = pruefeTeil(teil);
+  if (!d || !t) return { fehler: "Ungültige Adresse." };
+  if ((await postfaecherVon(d)).length >= MAX_POSTFAECHER) {
     return { fehler: `Mehr als ${MAX_POSTFAECHER} Postfächer pro Domain gehen nicht.` };
   }
-  const r = await migadu(`/domains/${domain}/mailboxes`, {
+  const r = await migadu(`/domains/${encodeURIComponent(d)}/mailboxes`, {
     method: "POST",
     body: {
-      local_part: teil,
+      local_part: t,
       name,
       password: passwort,
       daily_outgoing_limit: TAGESLIMIT,
@@ -154,7 +177,13 @@ export async function postfachAnlegen(
 }
 
 export async function postfachLoeschen(domain: string, teil: string) {
-  const r = await migadu(`/domains/${domain}/mailboxes/${teil}`, { method: "DELETE" });
+  const d = pruefeDomain(domain);
+  const t = pruefeTeil(teil);
+  if (!d || !t) return false;
+  const r = await migadu(
+    `/domains/${encodeURIComponent(d)}/mailboxes/${encodeURIComponent(t)}`,
+    { method: "DELETE" }
+  );
   return r.ok;
 }
 
@@ -163,9 +192,16 @@ export async function aliasAnlegen(
   teil: string,
   ziele: string[]
 ): Promise<{ adresse?: string; fehler?: string }> {
-  const r = await migadu(`/domains/${domain}/aliases`, {
+  const d = pruefeDomain(domain);
+  const t = pruefeTeil(teil);
+  if (!d || !t) return { fehler: "Ungültige Adresse." };
+  // Ziele dürfen nur echte Adressen sein
+  if (!ziele.every((z) => /^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(z.trim()))) {
+    return { fehler: "Ungültige Zieladresse." };
+  }
+  const r = await migadu(`/domains/${encodeURIComponent(d)}/aliases`, {
     method: "POST",
-    body: { local_part: teil, destinations: ziele },
+    body: { local_part: t, destinations: ziele.map((z) => z.trim()) },
   });
   if (!r.ok) return { fehler: `Migadu meldet: ${r.daten.error ?? r.status}` };
   return { adresse: r.daten.address as string };
