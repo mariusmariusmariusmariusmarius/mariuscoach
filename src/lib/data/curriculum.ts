@@ -1546,10 +1546,12 @@ Ein GET auf dieselbe Adresse zeigt meinen Verbrauch und mein
 Monatslimit. Schau am Ende nach und sag mir, was der Audit gekostet
 hat.
 
-Nutz die installierten SEO-Skills. Der Rundum-Audit ist „seo-audit";
-zieh dazu die passenden Spezialisten heran — „seo-technical",
-„seo-local", „seo-maps", „seo-images", „seo-schema", „seo-geo" für die
-KI-Suche und „seo-page" für einzelne Seiten.
+Nutz die installierten SEO-Skills. Der Rundum-Audit ist „seo-audit" —
+der verteilt selbst an Spezialisten. Zieh je nach Befund dazu:
+„seo-technical", „seo-local", „seo-maps", „seo-images", „seo-schema",
+„seo-sitemap", „seo-content", „seo-backlinks", „seo-geo" für die
+KI-Suche und „seo-page" für einzelne Seiten. Die übrigen Skills aus
+dem Paket nimmst du nur, wenn ihr Thema wirklich auftaucht.
 Arbeite gründlich — ich will lieber zehn Minuten warten als eine
 oberflächliche Liste.
 
