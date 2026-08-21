@@ -1504,20 +1504,44 @@ Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
 POST mit { "pfad": "...", "daten": [...] } — dahinter steckt
 DataForSEO, Doku: https://docs.dataforseo.com
 
-Erlaubt sind vier Bereiche:
-  on_page          Seiten-Audit, sehr günstig (~0,00015 USD je Seite)
-  dataforseo_labs  Rankings, Keyword-Ideen, Konkurrenz (~0,013 je Abfrage)
-  keywords_data    Suchvolumen
-  business_data    Bewertungen
+DIESE ABFRAGEN SIND GEPRÜFT — nimm sie so, such nichts anderes:
+
+  Seite prüfen (Technik, Meta, Score)        ~0,0002 USD
+    pfad: "on_page/instant_pages"
+    daten: [{"url":"https://meine-seite.de/unterseite"}]
+
+  Meine Rankings                             ~0,013 USD
+    pfad: "dataforseo_labs/google/ranked_keywords/live"
+    daten: [{"target":"meine-domain.de","location_code":2276,
+             "language_code":"de","limit":50}]
+
+  Keyword-Ideen mit Suchvolumen              ~0,013 USD
+    pfad: "dataforseo_labs/google/keyword_suggestions/live"
+    daten: [{"keyword":"heizung reparatur","location_code":2276,
+             "language_code":"de","limit":50}]
+
+  Wer ist meine Konkurrenz                   ~0,012 USD
+    pfad: "dataforseo_labs/google/competitors_domain/live"
+    daten: [{"target":"meine-domain.de","location_code":2276,
+             "language_code":"de","limit":10}]
+
+location_code 2276 ist Deutschland, language_code "de".
+Die Antwort steckt in tasks[0].result[0].items — status_code 20000
+heißt in Ordnung.
 
 GEH SPARSAM DAMIT UM
-Seiten darfst du großzügig prüfen — das kostet fast nichts. Aber eine
-Ranking-Abfrage kostet rund achtzigmal so viel wie eine Seite. Also:
-erst überlegen, welche Abfrage wirklich nötig ist, mehrere Plattformen
-parallel starten statt nacheinander zu warten, und keine Abfrage zweimal
-schicken. Ein GET auf dieselbe Adresse zeigt dir meinen Verbrauch und
-mein Monatslimit — schau am Ende nach und sag mir, was der Audit
-gekostet hat.
+Seiten prüfen kostet fast nichts, da darfst du großzügig sein. Eine
+Ranking- oder Keyword-Abfrage kostet rund achtzigmal so viel wie eine
+Seite. Also: nur nötige Abfragen, mehrere parallel starten statt
+nacheinander zu warten, nie dieselbe zweimal.
+
+Finger weg von "keywords_data/google_ads/search_volume" — das kostet
+0,09 USD pro Abfrage, also das Siebenfache. Suchvolumen bekommst du
+günstiger über keyword_suggestions oben.
+
+Ein GET auf dieselbe Adresse zeigt meinen Verbrauch und mein
+Monatslimit. Schau am Ende nach und sag mir, was der Audit gekostet
+hat.
 
 Nutz die installierten SEO-Skills. Der Rundum-Audit ist „seo-audit";
 zieh dazu die passenden Spezialisten heran — „seo-technical",
