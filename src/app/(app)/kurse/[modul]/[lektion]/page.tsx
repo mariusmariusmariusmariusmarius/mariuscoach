@@ -136,11 +136,11 @@ export default async function LessonPage({
           {lesson.fontSchau ? <FontSchau /> : null}
           {lesson.dnsTool ? <DnsTool /> : null}
           {lesson.domainCheck ? <DomainCheck /> : null}
-          {lesson.mailPrompt ? <MailPrompt /> : null}
         </div>
 
         {/* bleibt beim Scrollen stehen, damit die Prompts immer greifbar sind */}
-        <div className="xl:sticky xl:top-6 xl:max-h-[calc(100vh-3rem)] xl:overflow-y-auto">
+        <div className="space-y-6 xl:sticky xl:top-6 xl:max-h-[calc(100vh-3rem)] xl:overflow-y-auto">
+          {lesson.mailPrompt ? <MailPrompt /> : null}
           <CheatSheet
             sheet={sheet}
             apiKey={sheet?.apiKeyHint ? user?.apiKey : undefined}

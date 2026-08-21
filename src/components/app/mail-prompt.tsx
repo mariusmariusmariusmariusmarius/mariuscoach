@@ -83,12 +83,12 @@ prüfen.`;
   const auswahl = (postfaecher ?? []).filter((p) => !p.adresse.startsWith("admin@"));
 
   return (
-    <div className="rounded-3xl border border-white/8 bg-surface-900/70 p-8">
-      <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold text-white">
+    <div className="rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6">
+      <h2 className="mb-1 flex items-center gap-2 text-base font-semibold text-white">
         <Mail className="size-5 text-brand-300" />
         Deinen Prompt zusammenklicken
       </h2>
-      <p className="mb-6 max-w-[60ch] text-sm leading-relaxed text-zinc-400">
+      <p className="mb-5 text-xs leading-relaxed text-zinc-400">
         Adressen auswählen, in einem Satz sagen, was in der Bestätigung stehen
         soll — der fertige Prompt steht darunter.
       </p>
@@ -100,7 +100,7 @@ prüfen.`;
         </p>
       ) : null}
 
-      <div className="mb-6 grid gap-5 sm:grid-cols-2">
+      <div className="mb-5 space-y-4">
         <div>
           <label className="mb-2 block text-xs uppercase tracking-widest text-zinc-500">
             Absender — von hier gehen die Mails raus
