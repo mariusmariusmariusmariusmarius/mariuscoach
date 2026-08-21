@@ -15,7 +15,7 @@ const BEISPIEL =
  * Anklicken statt abtippen — die Adressen holt die Seite aus der
  * Postfach-Zentrale.
  */
-export function MailPrompt() {
+export function MailPrompt({ apiKey }: { apiKey?: string }) {
   const [postfaecher, setPostfaecher] = useState<Postfach[] | null>(null);
   const [absender, setAbsender] = useState("");
   const [empfaenger, setEmpfaenger] = useState("");
@@ -49,13 +49,24 @@ export function MailPrompt() {
 abschickt. Nutz dafür mein Postfach.
 
 SO FUNKTIONIERT DAS (damit du nichts nachschlagen musst)
-Mein Postfach liegt bei Migadu. Du hast es selbst angelegt, das
-Passwort hast du mir dabei genannt — nimm dieses. Falls du es nicht
-mehr hast, frag mich danach oder setz über meinen API-Zugang ein
-neues; erfinde keins.
+Mein Postfach liegt bei Migadu. Verschickt wird über:
 
   Postausgang (SMTP): smtp.migadu.com, Port 465, SSL
   Benutzername: die Absender-Adresse unten
+
+Das Passwort hast du beim Anlegen selbst vergeben — nimm dieses,
+erfinde keins. Falls du es nicht mehr hast, setz über meinen Zugang
+unten ein neues und sag es mir.
+
+MEIN ZUGANG ZU DEN POSTFÄCHERN
+Adresse: https://mariuscoach.vercel.app/api/mail
+Anmeldung: Kopfzeile "Authorization: Bearer ${apiKey ?? "{DEIN-API-KEY}"}"
+
+- GET zeigt meine Domains und Postfächer
+- POST { "aktion": "postfach", "domain": "...", "adresse": "info",
+         "name": "Firmenname", "passwort": "..." }
+  legt ein Postfach an — mit einer vorhandenen Adresse setzt es das
+  Passwort neu
 
 Absender: ${von}
 Meine Benachrichtigung geht an: ${an}${gleich ? " (dieselbe Adresse)" : ""}
@@ -68,8 +79,9 @@ Handy sofort, wer was will — und lande mit einem Tipp auf
 "Antworten" direkt beim Kunden.
 
 REGELN
-- Zugangsdaten als Umgebungsvariablen, auch bei Vercel. Sag mir, wie
-  ich sie dort hinterlege.
+- Leg die Zugangsdaten als Umgebungsvariablen an, lokal und bei
+  Vercel. Ich bin im Terminal bei Vercel angemeldet — mach das
+  selbst, ich will nichts im Dashboard klicken.
 - Erst die Anfrage speichern, dann senden. Klemmt der Versand, steht
   der Lead trotzdem in meiner Admin-App — und ich sehe dort, dass die
   Mail nicht rausging.
@@ -79,7 +91,7 @@ REGELN
 
 Zum Schluss: Testanfrage abschicken, beide Mails zeigen, Spam-Ordner
 prüfen.`;
-  }, [absender, zielAdresse, inhalt]);
+  }, [absender, zielAdresse, inhalt, apiKey]);
 
   const auswahl = (postfaecher ?? []).filter((p) => !p.adresse.startsWith("admin@"));
 

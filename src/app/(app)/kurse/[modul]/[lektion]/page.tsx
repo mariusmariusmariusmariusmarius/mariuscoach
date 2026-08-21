@@ -140,7 +140,7 @@ export default async function LessonPage({
 
         {/* bleibt beim Scrollen stehen, damit die Prompts immer greifbar sind */}
         <div className="space-y-6 xl:sticky xl:top-6 xl:max-h-[calc(100vh-3rem)] xl:overflow-y-auto">
-          {lesson.mailPrompt ? <MailPrompt /> : null}
+          {lesson.mailPrompt ? <MailPrompt apiKey={user?.apiKey} /> : null}
           <CheatSheet
             sheet={sheet}
             apiKey={sheet?.apiKeyHint ? user?.apiKey : undefined}
