@@ -1471,7 +1471,7 @@ Mail zu tun haben.`,
         duration: 30,
         kind: "video",
         steps: [
-          "Die SEO-Skills installieren — der Befehl rechts holt das ganze Paket auf einmal.",
+          "Prüfen, ob die SEO-Skills da sind — sie kommen mit dem Setup-Paket. Falls nicht: die zwei Befehle rechts.",
           "Claude Code einmal neu starten, damit er die neuen Skills kennt.",
           "Den Audit-Prompt schicken — nur dein Einzugsgebiet eintragen, den Rest liest Claude aus deinem Projekt. Das dauert ein paar Minuten.",
           "Die Fundliste durchgehen: Sie ist nach Wirkung sortiert, oben steht, was am meisten bringt.",
@@ -1481,8 +1481,9 @@ Mail zu tun haben.`,
           apiKeyHint: true,
           prompts: [
             {
-              label: "Alle SEO-Skills auf einmal installieren — ins Terminal, Mac wie Windows gleich",
-              text: `npx skills add agricidaniel/claude-seo --global --yes`,
+              label: "Die SEO-Skills installieren — beide Zeilen, Mac wie Windows gleich (im Setup-Paket schon dabei)",
+              text: `npx skills add agricidaniel/claude-seo --global --yes
+npx skills add mariusmariusmariusmariusmarius/akademie-seo-daten --global --yes`,
             },
             {
               label: "Der Audit-Prompt — Domain eintragen, dann arbeitet Claude",
@@ -1497,7 +1498,9 @@ Einzugsgebiet oben ist das Einzige, was nirgends steht.
 
 MEIN ZUGANG ZU LIVE-SEO-DATEN
 Suchvolumen, Rankings und Konkurrenzdaten stehen nicht auf meiner
-Website — die holst du über die Kursplattform:
+Website — die holst du über die Kursplattform. Nutz dafür den Skill
+„akademie-seo-daten": Der kennt alle Bereiche, die geprüften Abfragen
+und die Kosten. Zur Sicherheit hier das Wichtigste:
 
 Adresse: {PLATTFORM-URL}/api/bewertungen
 Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
