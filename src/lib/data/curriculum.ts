@@ -1473,7 +1473,7 @@ Mail zu tun haben.`,
         steps: [
           "Die SEO-Skills installieren — der Befehl rechts holt das ganze Paket auf einmal.",
           "Claude Code einmal neu starten, damit er die neuen Skills kennt.",
-          "Den Audit-Prompt schicken und deine Domain eintragen. Das dauert ein paar Minuten — Claude arbeitet die Seite Stück für Stück durch.",
+          "Den Audit-Prompt schicken — nur dein Einzugsgebiet eintragen, den Rest liest Claude aus deinem Projekt. Das dauert ein paar Minuten.",
           "Die Fundliste durchgehen: Sie ist nach Wirkung sortiert, oben steht, was am meisten bringt.",
           "Nichts sofort umsetzen. Erst lesen, dann entscheiden, was du zuerst angehst — abgearbeitet wird in den nächsten Lektionen.",
         ],
@@ -1488,10 +1488,13 @@ Mail zu tun haben.`,
               text: `Mach einen vollständigen SEO-Audit für meine Website.
 
 Meine Domain: {DEINE-DOMAIN}
-Mein Standort und Einzugsgebiet: {ORT + UMKREIS, z. B. Musterstadt und 30 km}
-Meine Branche: {z. B. Heizung und Sanitär}
+Mein Einzugsgebiet: {z. B. 30 km um Musterstadt}
 
-Nutz dafür die installierten SEO-Skills, allen voran „seo-audit".
+Branche, Leistungen und Standort stehen auf meiner Website — zieh dir
+das selbst aus dem Projekt, das musst du mich nicht fragen. Das
+Einzugsgebiet oben ist das Einzige, was nirgends steht.
+
+Nutz die installierten SEO-Skills, allen voran „seo-audit".
 Arbeite gründlich — ich will lieber zehn Minuten warten als eine
 oberflächliche Liste.
 
