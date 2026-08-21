@@ -17,12 +17,7 @@ const KM_STUFEN = [10, 20, 30, 40, 50, 70, 100, 150, 200, 250];
 const STUFEN: Stufe[] = [
   ...KM_STUFEN.map((km) => ({
     anzeige: `${km} km`,
-    promptText:
-      `${km} km um meinen Standort. Liegt in diesem Umkreis ein ` +
-      `Nachbarland, bezieh es mit ein — Abfragen dann zusätzlich mit ` +
-      `dessen location_code (immer 2 + ISO-Ländernummer: Österreich 2040, ` +
-      `Schweiz 2756, Frankreich 2250, Niederlande 2528, Belgien 2056, ` +
-      `Luxemburg 2442, Polen 2616, Tschechien 2203, Dänemark 2208).`,
+    promptText: `${km} km um meinen Standort — Nachbarländer im Umkreis zählen mit`,
   })),
   {
     anzeige: "Deutschland",
