@@ -22,6 +22,7 @@ export function MailPrompt({ apiKey }: { apiKey?: string }) {
   const [empfaenger, setEmpfaenger] = useState("");
   const [andere, setAndere] = useState("");
   const [inhalt, setInhalt] = useState("");
+  const [weg, setWeg] = useState<"postfach" | "resend">("postfach");
 
   useEffect(() => {
     fetch("/api/mail")
@@ -45,6 +46,48 @@ export function MailPrompt({ apiKey }: { apiKey?: string }) {
     const an = zielAdresse || "{WOHIN DEINE BENACHRICHTIGUNG SOLL}";
     const text = inhalt.trim() || `{${BEISPIEL}}`;
     const gleich = an === von;
+    const domain = von.includes("@") ? von.split("@")[1] : "{DEINE-DOMAIN}";
+
+    const gemeinsam = `Absender: ${von}
+Meine Benachrichtigung geht an: ${an}${gleich ? " (dieselbe Adresse)" : ""}
+
+In der Bestätigung an den Kunden soll grob stehen:
+${text}
+
+Die Mail an mich gestaltest du selbst. Hauptsache, ich sehe auf dem
+Handy sofort, wer was will — und lande mit einem Tipp auf
+"Antworten" direkt beim Kunden.
+
+REGELN
+- Leg die Zugangsdaten als Umgebungsvariablen an, lokal und bei
+  Vercel. Ich bin im Terminal bei Vercel angemeldet — mach das
+  selbst, ich will nichts im Dashboard klicken.
+- Erst die Anfrage speichern, dann senden. Klemmt der Versand, steht
+  der Lead trotzdem in meiner Admin-App — und ich sehe dort, dass die
+  Mail nicht rausging.
+- Der Kunde sieht seine Bestätigung auf der Seite sofort, auch wenn
+  die Mail ein paar Sekunden braucht.
+- Einfacher Text, keine Anhänge, keine Verfolgungspixel.
+
+Zum Schluss: Testanfrage abschicken, beide Mails zeigen, Spam-Ordner
+prüfen.`;
+
+    if (weg === "resend") {
+      return `Bau den Mailversand für mein Anfrage-Formular über Resend.
+
+Meine Domain: ${domain}
+Mein Resend-Schlüssel: {HIER-EINSETZEN — beginnt mit re_}
+
+SCHRITT 1 — Domain bestätigen
+Damit ich von meiner eigenen Adresse senden darf, muss die Domain bei
+Resend bestätigt sein. Leg sie dort an, hol dir die geforderten
+DNS-Einträge und setz sie selbst — du hast meinen DNS-Zugang bereits.
+Nimm genau die Werte, die Resend vorgibt, rate nichts. Prüf danach,
+ob die Domain als bestätigt gilt.
+
+SCHRITT 2 — Die zwei Mails
+${gemeinsam}`;
+    }
 
     return `Verschick zwei E-Mails, wenn jemand mein Anfrage-Formular
 abschickt. Nutz dafür mein Postfach.
@@ -70,30 +113,8 @@ Anmeldung: Kopfzeile "Authorization: Bearer ${apiKey ?? "{DEIN-API-KEY}"}"
          "neuesPasswort": "..." } setzt das Passwort eines vorhandenen
   Postfachs neu (Postfach bleibt erhalten)
 
-Absender: ${von}
-Meine Benachrichtigung geht an: ${an}${gleich ? " (dieselbe Adresse)" : ""}
-
-In der Bestätigung an den Kunden soll grob stehen:
-${text}
-
-Die Mail an mich gestaltest du selbst. Hauptsache, ich sehe auf dem
-Handy sofort, wer was will — und lande mit einem Tipp auf
-"Antworten" direkt beim Kunden.
-
-REGELN
-- Leg die Zugangsdaten als Umgebungsvariablen an, lokal und bei
-  Vercel. Ich bin im Terminal bei Vercel angemeldet — mach das
-  selbst, ich will nichts im Dashboard klicken.
-- Erst die Anfrage speichern, dann senden. Klemmt der Versand, steht
-  der Lead trotzdem in meiner Admin-App — und ich sehe dort, dass die
-  Mail nicht rausging.
-- Der Kunde sieht seine Bestätigung auf der Seite sofort, auch wenn
-  die Mail ein paar Sekunden braucht.
-- Einfacher Text, keine Anhänge, keine Verfolgungspixel.
-
-Zum Schluss: Testanfrage abschicken, beide Mails zeigen, Spam-Ordner
-prüfen.`;
-  }, [absender, zielAdresse, inhalt, apiKey]);
+${gemeinsam}`;
+  }, [absender, zielAdresse, inhalt, apiKey, weg]);
 
   const auswahl = (postfaecher ?? []).filter((p) => !p.adresse.startsWith("admin@"));
 
@@ -116,6 +137,33 @@ prüfen.`;
       ) : null}
 
       <div className="mb-5 space-y-4">
+        <div>
+          <label className="mb-2 block text-xs uppercase tracking-widest text-zinc-500">
+            Versandweg
+          </label>
+          <div className="flex gap-2">
+            {(
+              [
+                ["postfach", "Mein Postfach"],
+                ["resend", "Resend"],
+              ] as const
+            ).map(([wert, text]) => (
+              <button
+                key={wert}
+                type="button"
+                onClick={() => setWeg(wert)}
+                className={`flex-1 rounded-xl border px-3 py-2 text-xs font-medium transition ${
+                  weg === wert
+                    ? "border-brand-500/50 bg-brand-500/15 text-white"
+                    : "border-white/10 bg-surface-950/60 text-zinc-400 hover:text-white"
+                }`}
+              >
+                {text}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div>
           <label className="mb-2 block text-xs uppercase tracking-widest text-zinc-500">
             Absender — von hier gehen die Mails raus
