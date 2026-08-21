@@ -1046,7 +1046,7 @@ MEINE PROFILE (was es nicht gibt, einfach rauslöschen):
 
 MEIN ZUGANG
 Wir nutzen die Bewertungs-API meiner Kursplattform.
-Adresse: https://mariuscoach.vercel.app/api/bewertungen
+Adresse: {PLATTFORM-URL}/api/bewertungen
 Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
 
 So funktioniert sie:
@@ -1379,7 +1379,7 @@ sehen, meine Plattform spricht für mich mit Migadu. Sie lässt dabei
 nur Domains durch, die zu meinem Konto gehören.
 
 MEIN ZUGANG
-Adresse: https://mariuscoach.vercel.app/api/mail
+Adresse: {PLATTFORM-URL}/api/mail
 Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
 
 - POST { "aktion": "domain",   "domain": "..." }

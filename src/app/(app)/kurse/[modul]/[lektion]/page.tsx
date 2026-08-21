@@ -11,6 +11,7 @@ import { getSession } from "@/lib/auth/session";
 import { findUserByEmail } from "@/lib/auth/users";
 import { hasAccess } from "@/lib/tiers";
 import { getLesson } from "@/lib/data/curriculum";
+import { PLATTFORM_URL } from "@/lib/config";
 import { TierBadge } from "@/components/ui/tier-badge";
 import { CheatSheet } from "@/components/app/cheat-sheet";
 import { FontSchau } from "@/components/app/font-schau";
@@ -46,10 +47,18 @@ export default async function LessonPage({
           ...lesson.cheatSheet,
           prompts: lesson.cheatSheet.prompts?.map((p) => ({
             ...p,
-            text: p.text.replaceAll("{DEIN-API-KEY}", user.apiKey),
+            text: p.text
+              .replaceAll("{DEIN-API-KEY}", user.apiKey)
+              .replaceAll("{PLATTFORM-URL}", PLATTFORM_URL),
           })),
         }
-      : lesson.cheatSheet;
+      : lesson.cheatSheet && {
+          ...lesson.cheatSheet,
+          prompts: lesson.cheatSheet.prompts?.map((p) => ({
+            ...p,
+            text: p.text.replaceAll("{PLATTFORM-URL}", PLATTFORM_URL),
+          })),
+        };
 
   return (
     <div className="space-y-8">

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Mail } from "lucide-react";
 import { CopyButton } from "@/components/ui/copy-button";
+import { PLATTFORM_URL } from "@/lib/config";
 
 type Postfach = { adresse: string; name: string };
 type Antwort = { domains: { domain: string; postfaecher: Postfach[] }[] };
@@ -59,7 +60,7 @@ erfinde keins. Falls du es nicht mehr hast, setz über meinen Zugang
 unten ein neues und sag es mir.
 
 MEIN ZUGANG ZU DEN POSTFÄCHERN
-Adresse: https://mariuscoach.vercel.app/api/mail
+Adresse: ${PLATTFORM_URL}/api/mail
 Anmeldung: Kopfzeile "Authorization: Bearer ${apiKey ?? "{DEIN-API-KEY}"}"
 
 - GET zeigt meine Domains und Postfächer
