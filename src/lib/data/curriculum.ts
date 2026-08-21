@@ -1494,7 +1494,10 @@ Branche, Leistungen und Standort stehen auf meiner Website — zieh dir
 das selbst aus dem Projekt, das musst du mich nicht fragen. Das
 Einzugsgebiet oben ist das Einzige, was nirgends steht.
 
-Nutz die installierten SEO-Skills, allen voran „seo-audit".
+Nutz die installierten SEO-Skills. Der Rundum-Audit ist „seo-audit";
+zieh dazu die passenden Spezialisten heran — „seo-technical",
+„seo-local", „seo-maps", „seo-images", „seo-schema", „seo-geo" für die
+KI-Suche und „seo-page" für einzelne Seiten.
 Arbeite gründlich — ich will lieber zehn Minuten warten als eine
 oberflächliche Liste.
 
