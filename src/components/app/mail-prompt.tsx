@@ -49,12 +49,13 @@ export function MailPrompt() {
 abschickt. Nutz dafür mein Postfach.
 
 SO FUNKTIONIERT DAS (damit du nichts nachschlagen musst)
-Mein Postfach liegt bei Migadu, angelegt über die Kursplattform. Zum
-Verschicken aus meiner Website nimmst du den Postausgang von Migadu:
+Mein Postfach liegt bei Migadu. Du hast es selbst angelegt, das
+Passwort hast du mir dabei genannt — nimm dieses. Falls du es nicht
+mehr hast, frag mich danach oder setz über meinen API-Zugang ein
+neues; erfinde keins.
 
   Postausgang (SMTP): smtp.migadu.com, Port 465, SSL
   Benutzername: die Absender-Adresse unten
-  Passwort: das Postfach-Passwort aus der letzten Lektion
 
 Absender: ${von}
 Meine Benachrichtigung geht an: ${an}${gleich ? " (dieselbe Adresse)" : ""}
