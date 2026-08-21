@@ -12,6 +12,7 @@ import { findUserByEmail } from "@/lib/auth/users";
 import { hasAccess } from "@/lib/tiers";
 import { getLesson } from "@/lib/data/curriculum";
 import { PLATTFORM_URL } from "@/lib/config";
+import { mailDomainsVon } from "@/lib/api/mail";
 import { TierBadge } from "@/components/ui/tier-badge";
 import { CheatSheet } from "@/components/app/cheat-sheet";
 import { FontSchau } from "@/components/app/font-schau";
@@ -41,6 +42,17 @@ export default async function LessonPage({
   // Persönlichen API-Schlüssel des Nutzers in die Prompts einsetzen —
   // so ist der kopierte Prompt schon fertig, ohne Bastelei.
   const user = findUserByEmail(session.email);
+
+  // Wenn ein Prompt nach der Domain fragt: die des Nutzers einsetzen. Sie
+  // steht in der Postfach-Zentrale (bei Migadu hinterlegt, überlebt Neustarts).
+  const brauchtDomain = lesson.cheatSheet?.prompts?.some((p) =>
+    p.text.includes("{DEINE-DOMAIN}")
+  );
+  const eigeneDomain =
+    brauchtDomain && user
+      ? (await mailDomainsVon(user.id).catch(() => []))[0]?.domain
+      : undefined;
+
   const sheet =
     lesson.cheatSheet && user
       ? {
@@ -49,7 +61,8 @@ export default async function LessonPage({
             ...p,
             text: p.text
               .replaceAll("{DEIN-API-KEY}", user.apiKey)
-              .replaceAll("{PLATTFORM-URL}", PLATTFORM_URL),
+              .replaceAll("{PLATTFORM-URL}", PLATTFORM_URL)
+              .replaceAll("{DEINE-DOMAIN}", eigeneDomain ?? "{DEINE-DOMAIN}"),
           })),
         }
       : lesson.cheatSheet && {
