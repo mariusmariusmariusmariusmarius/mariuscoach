@@ -19,6 +19,7 @@ import { FontSchau } from "@/components/app/font-schau";
 import { DnsTool } from "@/components/app/dns-tool";
 import { DomainCheck } from "@/components/app/domain-check";
 import { MailPrompt } from "@/components/app/mail-prompt";
+import { ResendPrompt } from "@/components/app/resend-prompt";
 
 export default async function LessonPage({
   params,
@@ -45,9 +46,9 @@ export default async function LessonPage({
 
   // Wenn ein Prompt nach der Domain fragt: die des Nutzers einsetzen. Sie
   // steht in der Postfach-Zentrale (bei Migadu hinterlegt, überlebt Neustarts).
-  const brauchtDomain = lesson.cheatSheet?.prompts?.some((p) =>
-    p.text.includes("{DEINE-DOMAIN}")
-  );
+  const brauchtDomain =
+    lesson.resendPrompt ||
+    lesson.cheatSheet?.prompts?.some((p) => p.text.includes("{DEINE-DOMAIN}"));
   const eigeneDomain =
     brauchtDomain && user
       ? (await mailDomainsVon(user.id).catch(() => []))[0]?.domain
@@ -163,6 +164,7 @@ export default async function LessonPage({
         {/* bleibt beim Scrollen stehen, damit die Prompts immer greifbar sind */}
         <div className="space-y-6 xl:sticky xl:top-6 xl:max-h-[calc(100vh-3rem)] xl:overflow-y-auto">
           {lesson.mailPrompt ? <MailPrompt apiKey={user?.apiKey} /> : null}
+          {lesson.resendPrompt ? <ResendPrompt domain={eigeneDomain} /> : null}
           <CheatSheet
             sheet={sheet}
             apiKey={sheet?.apiKeyHint ? user?.apiKey : undefined}

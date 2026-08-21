@@ -39,6 +39,8 @@ export type Lesson = {
   domainCheck?: boolean;
   /** zeigt den Baukasten für den Versand-Prompt (nutzt die eigenen Postfächer) */
   mailPrompt?: boolean;
+  /** zeigt den Resend-Baukasten (Adressen von Hand eintragen) */
+  resendPrompt?: boolean;
   cheatSheet?: CheatSheet;
 };
 
@@ -1441,6 +1443,7 @@ Mail zu tun haben.`,
         duration: 18,
         kind: "video",
         mailPrompt: true,
+        resendPrompt: true,
         steps: [
           "Im selben Chat weitermachen wie bei den Postfächern — Claude kennt dein Postfach dann schon.",
           "Im Baukasten unten die Adressen anklicken und in einem Satz sagen, was in der Bestätigung stehen soll.",
@@ -1450,47 +1453,6 @@ Mail zu tun haben.`,
         ],
         cheatSheet: {
           prompts: [
-            {
-              label: "Alternative: Versand über Resend — Schlüssel einsetzen, Rest macht Claude",
-              text: `Bau den Mailversand für mein Anfrage-Formular über Resend.
-
-Meine Domain: {DEINE-DOMAIN}
-Mein Resend-Schlüssel: {HIER-EINSETZEN — beginnt mit re_}
-Absender (von hier gehen die Mails raus): {z. B. info@meine-firma.de}
-Meine Benachrichtigung geht an: {wo ich die Anfragen lese — darf auch
-  eine andere Adresse sein, etwa privat}
-
-SCHRITT 1 — Domain bestätigen
-Damit ich von meiner eigenen Adresse senden darf, muss die Domain bei
-Resend bestätigt sein. Leg sie dort an, hol dir die geforderten
-DNS-Einträge und setz sie selbst — du hast meinen DNS-Zugang bereits.
-Nimm genau die Werte, die Resend vorgibt, rate nichts. Prüf danach,
-ob die Domain als bestätigt gilt.
-
-SCHRITT 2 — Die zwei Mails
-- An den Kunden: Bestätigung, dass die Anfrage angekommen ist, wann
-  ich mich melde, meine Telefonnummer für Eiliges, dazu seine Angaben
-  zum Nachlesen.
-- An mich: Betreff mit Name und Anliegen, damit ich ihn auf dem Handy
-  erfassen kann. Alle Angaben untereinander. Antworten-an auf die
-  Adresse des Kunden, damit ich mit einem Tipp auf "Antworten" direkt
-  bei ihm lande.
-- Absender ist meine eigene Adresse mit meinem Firmennamen.
-
-REGELN
-- Der Schlüssel kommt als Umgebungsvariable ins Projekt und zu Vercel.
-  Ich bin im Terminal bei Vercel angemeldet — mach das selbst, ich
-  will nichts im Dashboard klicken. Niemals in eine Datei meines
-  Codes schreiben.
-- Erst die Anfrage speichern, dann senden. Klemmt der Versand, steht
-  der Lead trotzdem in meiner Admin-App.
-- Geht eine Mail nicht raus, sag es mir — still verschlucken gilt
-  nicht.
-- Einfacher Text, keine Anhänge, keine Verfolgungspixel.
-
-ZUM SCHLUSS
-Testanfrage abschicken, beide Mails zeigen, Spam-Ordner prüfen.`,
-            },
           ],
           links: [
             {
