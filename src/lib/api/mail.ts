@@ -206,3 +206,51 @@ export async function aliasAnlegen(
   if (!r.ok) return { fehler: `Migadu meldet: ${r.daten.error ?? r.status}` };
   return { adresse: r.daten.address as string };
 }
+
+/** Passwort (oder Name/Limit) eines bestehenden Postfachs ändern — PUT.
+ *  POST würde bei vorhandener Adresse mit 400 antworten. */
+export async function postfachAendern(
+  domain: string,
+  teil: string,
+  aenderung: { passwort?: string; name?: string }
+): Promise<{ adresse?: string; fehler?: string }> {
+  const d = pruefeDomain(domain);
+  const t = pruefeTeil(teil);
+  if (!d || !t) return { fehler: "Ungültige Adresse." };
+  if (aenderung.passwort && aenderung.passwort.length < 12) {
+    return { fehler: "Das Passwort muss mindestens 12 Zeichen haben." };
+  }
+  const body: Record<string, unknown> = {};
+  if (aenderung.passwort) body.password = aenderung.passwort;
+  if (aenderung.name) body.name = aenderung.name;
+  if (Object.keys(body).length === 0) return { fehler: "Nichts zu ändern." };
+  const r = await migadu(
+    `/domains/${encodeURIComponent(d)}/mailboxes/${encodeURIComponent(t)}`,
+    { method: "PUT", body }
+  );
+  if (!r.ok) return { fehler: `Migadu meldet: ${r.daten.error ?? r.status}` };
+  return { adresse: r.daten.address as string };
+}
+
+/** Die von Migadu geforderten DNS-Einträge holen — inkl. individuellem
+ *  hosted-email-verify. So muss nichts geraten werden. */
+export async function domainRecords(domain: string) {
+  const d = pruefeDomain(domain);
+  if (!d) return null;
+  const r = await migadu(`/domains/${encodeURIComponent(d)}/records`);
+  return r.ok ? r.daten : null;
+}
+
+/** Domain freischalten, wenn die DNS-Einträge stehen. */
+export async function domainAktivieren(
+  domain: string
+): Promise<{ state?: string; fehler?: string }> {
+  const d = pruefeDomain(domain);
+  if (!d) return { fehler: "Ungültige Domain." };
+  const r = await migadu(`/domains/${encodeURIComponent(d)}/activate`);
+  if (!r.ok) {
+    return { fehler: (r.daten.message as string) ?? (r.daten.error as string) ?? "Aktivierung fehlgeschlagen." };
+  }
+  return { state: r.daten.state as string };
+}
+

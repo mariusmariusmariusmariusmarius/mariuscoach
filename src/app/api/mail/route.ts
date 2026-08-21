@@ -7,9 +7,12 @@ import {
   gehoertNutzer,
   mailDomainsVon,
   mailKonfiguriert,
+  postfachAendern,
   postfachAnlegen,
   postfachLoeschen,
   postfaecherVon,
+  domainRecords,
+  domainAktivieren,
   TAGESLIMIT,
 } from "@/lib/api/mail";
 
@@ -20,6 +23,9 @@ import {
  * POST   { aktion: "domain",   domain }
  *        { aktion: "postfach", domain, adresse, name, passwort }
  *        { aktion: "alias",    domain, alias, ziele: [...] }
+ *        { aktion: "passwort", domain, adresse, neuesPasswort }
+ *        { aktion: "records",   domain }   → geforderte DNS-Einträge
+ *        { aktion: "aktivieren",domain }   → Domain freischalten
  * DELETE { domain, adresse }
  *
  * Anmeldung: eingeloggte Sitzung ODER Bearer mm_… (damit Claude es kann).
@@ -69,6 +75,7 @@ export async function POST(req: NextRequest) {
     passwort?: string;
     alias?: string;
     ziele?: string[];
+    neuesPasswort?: string;
   };
   try {
     b = await req.json();
@@ -132,8 +139,36 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ adresse });
   }
 
+  if (b.aktion === "passwort") {
+    if (!b.adresse || !b.neuesPasswort) {
+      return NextResponse.json(
+        { fehler: "adresse und neuesPasswort werden gebraucht." },
+        { status: 400 }
+      );
+    }
+    const { adresse, fehler } = await postfachAendern(
+      domain,
+      b.adresse.split("@")[0],
+      { passwort: b.neuesPasswort }
+    );
+    if (fehler) return NextResponse.json({ fehler }, { status: 400 });
+    return NextResponse.json({ adresse, geaendert: true });
+  }
+
+  if (b.aktion === "records") {
+    const records = await domainRecords(domain);
+    if (!records) return NextResponse.json({ fehler: "Konnte die Einträge nicht laden." }, { status: 400 });
+    return NextResponse.json({ records });
+  }
+
+  if (b.aktion === "aktivieren") {
+    const { state, fehler } = await domainAktivieren(domain);
+    if (fehler) return NextResponse.json({ fehler }, { status: 400 });
+    return NextResponse.json({ state });
+  }
+
   return NextResponse.json(
-    { fehler: 'aktion muss "domain", "postfach" oder "alias" sein.' },
+    { fehler: 'aktion muss "domain", "postfach", "passwort", "alias", "records" oder "aktivieren" sein.' },
     { status: 400 }
   );
 }
