@@ -10,12 +10,22 @@ import { LIMIT_USD, verbrauchBuchen, verbrauchVon } from "@/lib/api/verbrauch";
  * Feld `cost`; das wird pro Account im Verbrauchsbuch aufsummiert und über
  * das Monatslimit der Stufe gedeckelt.
  *
- * POST  { pfad: "business_data/google/reviews/task_post", daten: [...] }
+ * POST  { pfad: "business_data/… | on_page/… | dataforseo_labs/… | keywords_data/…", daten: [...] }
  * GET   → eigener Verbrauch (Monat, Anfragen, Kosten, Limit)
  * Auth  Authorization: Bearer mm_…
  */
 
-const ERLAUBTE_PFADE = /^business_data\/[a-z0-9_/-]+$/;
+/**
+ * Erlaubte DataForSEO-Bereiche. Bewusst eine Weißliste: Alles andere
+ * (z. B. teure Massen-Endpunkte) bleibt gesperrt.
+ *
+ *   business_data   Bewertungen — Google, Trustpilot, Tripadvisor
+ *   on_page         Seiten-Audit (sehr günstig, ~0,00015 USD je Seite)
+ *   dataforseo_labs Rankings, Keyword-Ideen, Konkurrenz (~0,01 je Abfrage)
+ *   keywords_data   Suchvolumen
+ */
+const ERLAUBTE_PFADE =
+  /^(business_data|on_page|dataforseo_labs|keywords_data)\/[a-z0-9_/-]+$/;
 
 function basicAuth(): string | null {
   const b64 = process.env.DATAFORSEO_B64;
@@ -96,7 +106,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         fehler:
-          "Nur Bewertungs-Endpunkte sind erlaubt: pfad muss mit business_data/ beginnen.",
+          "Erlaubt sind nur: business_data (Bewertungen), on_page (Seiten-Audit), dataforseo_labs (Rankings) und keywords_data (Suchvolumen).",
       },
       { status: 400 }
     );

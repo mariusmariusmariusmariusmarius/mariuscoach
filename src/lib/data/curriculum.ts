@@ -1478,6 +1478,7 @@ Mail zu tun haben.`,
           "Nichts sofort umsetzen. Erst lesen, dann entscheiden, was du zuerst angehst — abgearbeitet wird in den nächsten Lektionen.",
         ],
         cheatSheet: {
+          apiKeyHint: true,
           prompts: [
             {
               label: "Alle SEO-Skills auf einmal installieren — ins Terminal, Mac wie Windows gleich",
@@ -1493,6 +1494,30 @@ Mein Einzugsgebiet: {z. B. 30 km um Musterstadt}
 Branche, Leistungen und Standort stehen auf meiner Website — zieh dir
 das selbst aus dem Projekt, das musst du mich nicht fragen. Das
 Einzugsgebiet oben ist das Einzige, was nirgends steht.
+
+MEIN ZUGANG ZU LIVE-SEO-DATEN
+Suchvolumen, Rankings und Konkurrenzdaten stehen nicht auf meiner
+Website — die holst du über die Kursplattform:
+
+Adresse: {PLATTFORM-URL}/api/bewertungen
+Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
+POST mit { "pfad": "...", "daten": [...] } — dahinter steckt
+DataForSEO, Doku: https://docs.dataforseo.com
+
+Erlaubt sind vier Bereiche:
+  on_page          Seiten-Audit, sehr günstig (~0,00015 USD je Seite)
+  dataforseo_labs  Rankings, Keyword-Ideen, Konkurrenz (~0,013 je Abfrage)
+  keywords_data    Suchvolumen
+  business_data    Bewertungen
+
+GEH SPARSAM DAMIT UM
+Seiten darfst du großzügig prüfen — das kostet fast nichts. Aber eine
+Ranking-Abfrage kostet rund achtzigmal so viel wie eine Seite. Also:
+erst überlegen, welche Abfrage wirklich nötig ist, mehrere Plattformen
+parallel starten statt nacheinander zu warten, und keine Abfrage zweimal
+schicken. Ein GET auf dieselbe Adresse zeigt dir meinen Verbrauch und
+mein Monatslimit — schau am Ende nach und sag mir, was der Audit
+gekostet hat.
 
 Nutz die installierten SEO-Skills. Der Rundum-Audit ist „seo-audit";
 zieh dazu die passenden Spezialisten heran — „seo-technical",
