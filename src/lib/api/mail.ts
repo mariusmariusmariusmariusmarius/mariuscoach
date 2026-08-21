@@ -5,8 +5,10 @@
  * Konto. Deshalb bekommt ihn kein Teilnehmer zu sehen: Er benutzt seinen
  * mm_-Schlüssel, und diese Schicht lässt nur Domains durch, die IHM gehören.
  *
- * Zuordnung wie überall in-memory (bis die Datenbank kommt) — die Daten
- * selbst leben bei Migadu und überstehen jeden Neustart.
+ * Wem eine Domain gehört, steht im Beschreibungsfeld der Domain BEI MIGADU
+ * ("mm:<userId>") — nicht im Arbeitsspeicher. Auf Vercel beantwortet sonst
+ * mal die eine, mal die andere Instanz die Anfrage, und die Zuordnung wäre
+ * beim nächsten Aufruf weg.
  */
 
 export type MailDomain = {
@@ -14,11 +16,8 @@ export type MailDomain = {
   angelegt: string;
 };
 
-const store = globalThis as unknown as {
-  __mcMailDomains?: Map<string, MailDomain[]>;
-};
-if (!store.__mcMailDomains) store.__mcMailDomains = new Map();
-const registry = store.__mcMailDomains;
+/** Markierung im Beschreibungsfeld der Migadu-Domain */
+const marke = (userId: string) => `mm:${userId}`;
 
 export const MAX_MAIL_DOMAINS = 3;
 export const MAX_POSTFAECHER = 10;
@@ -38,19 +37,26 @@ function kopf() {
   return { Authorization: `Basic ${auth}`, "Content-Type": "application/json" };
 }
 
-export function mailDomainsVon(userId: string): MailDomain[] {
-  return registry.get(userId) ?? [];
+/** Alle Domains des Kontos bei Migadu holen */
+async function alleDomains(): Promise<
+  { name: string; description: string; created?: string }[]
+> {
+  const r = await migadu("/domains");
+  const liste = (r.daten.domains ?? []) as Record<string, unknown>[];
+  return liste.map((d) => ({
+    name: d.name as string,
+    description: (d.description as string) ?? "",
+  }));
 }
 
-export function gehoertNutzer(userId: string, domain: string): boolean {
-  return mailDomainsVon(userId).some((d) => d.domain === domain);
+export async function mailDomainsVon(userId: string): Promise<MailDomain[]> {
+  const meine = (await alleDomains()).filter((d) => d.description === marke(userId));
+  return meine.map((d) => ({ domain: d.name, angelegt: "" }));
 }
 
-function schonVergeben(domain: string): boolean {
-  for (const liste of registry.values()) {
-    if (liste.some((d) => d.domain === domain)) return true;
-  }
-  return false;
+export async function gehoertNutzer(userId: string, domain: string): Promise<boolean> {
+  const r = await migadu(`/domains/${domain}`);
+  return r.ok && (r.daten.description as string) === marke(userId);
 }
 
 async function migadu(
@@ -86,11 +92,22 @@ export async function domainAnlegen(
   if (!/^[a-z0-9äöüß-]+(\.[a-z0-9-]+)+$/.test(domain)) {
     return { fehler: "Das sieht nicht wie eine Domain aus. Beispiel: meine-firma.de" };
   }
-  if (gehoertNutzer(userId, domain)) return { domain };
-  if (schonVergeben(domain)) {
-    return { fehler: "Diese Domain ist bereits einem anderen Konto zugeordnet." };
+  // Gibt es die Domain schon im Konto? Dann entscheidet die Markierung.
+  const vorhanden = (await alleDomains()).find((d) => d.name === domain);
+  if (vorhanden) {
+    if (vorhanden.description === marke(userId)) return { domain };
+    if (vorhanden.description.startsWith("mm:")) {
+      return { fehler: "Diese Domain ist bereits einem anderen Konto zugeordnet." };
+    }
+    // Domain existiert, gehört aber noch niemandem — übernehmen
+    await migadu(`/domains/${domain}`, {
+      method: "PUT",
+      body: { description: marke(userId) },
+    });
+    return { domain };
   }
-  if (mailDomainsVon(userId).length >= MAX_MAIL_DOMAINS) {
+
+  if ((await mailDomainsVon(userId)).length >= MAX_MAIL_DOMAINS) {
     return { fehler: `Mehr als ${MAX_MAIL_DOMAINS} Domains pro Konto gehen nicht — meld dich bei uns.` };
   }
 
@@ -98,10 +115,11 @@ export async function domainAnlegen(
   if (!r.ok) {
     return { fehler: `Migadu meldet: ${r.daten.error ?? r.status}` };
   }
-  registry.set(userId, [
-    ...mailDomainsVon(userId),
-    { domain, angelegt: new Date().toISOString().slice(0, 10) },
-  ]);
+  // Zuordnung dauerhaft bei Migadu hinterlegen
+  await migadu(`/domains/${domain}`, {
+    method: "PUT",
+    body: { description: marke(userId) },
+  });
   return { domain };
 }
 

@@ -40,8 +40,9 @@ export async function GET(req: NextRequest) {
   const user = await nutzer(req);
   if (!user) return NextResponse.json({ fehler: "Nicht angemeldet." }, { status: 401 });
 
+  const meine = await mailDomainsVon(user.id);
   const domains = await Promise.all(
-    mailDomainsVon(user.id).map(async (d) => ({
+    meine.map(async (d) => ({
       domain: d.domain,
       angelegt: d.angelegt,
       postfaecher: await postfaecherVon(d.domain).catch(() => []),
@@ -88,7 +89,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Alles Weitere setzt voraus, dass die Domain dem Konto gehört
-  if (!gehoertNutzer(user.id, domain)) {
+  if (!(await gehoertNutzer(user.id, domain))) {
     return NextResponse.json(
       { fehler: "Diese Domain gehört nicht zu deinem Konto." },
       { status: 403 }
@@ -148,7 +149,7 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ fehler: "JSON erwartet." }, { status: 400 });
   }
   const domain = (b.domain ?? "").trim().toLowerCase();
-  if (!gehoertNutzer(user.id, domain)) {
+  if (!(await gehoertNutzer(user.id, domain))) {
     return NextResponse.json(
       { fehler: "Diese Domain gehört nicht zu deinem Konto." },
       { status: 403 }
