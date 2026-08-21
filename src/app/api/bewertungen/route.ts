@@ -16,16 +16,13 @@ import { LIMIT_USD, verbrauchBuchen, verbrauchVon } from "@/lib/api/verbrauch";
  */
 
 /**
- * Erlaubte DataForSEO-Bereiche. Bewusst eine Weißliste: Alles andere
- * (z. B. teure Massen-Endpunkte) bleibt gesperrt.
- *
- *   business_data   Bewertungen — Google, Trustpilot, Tripadvisor
- *   on_page         Seiten-Audit (sehr günstig, ~0,00015 USD je Seite)
- *   dataforseo_labs Rankings, Keyword-Ideen, Konkurrenz (~0,01 je Abfrage)
- *   keywords_data   Suchvolumen
+ * Erlaubte DataForSEO-Bereiche — Weißliste. Gesperrt bleiben nur:
+ *   appendix   (Kontodaten/Guthaben des Plattform-Kontos)
+ *   databases  (Massen-Datenbankexporte, Enterprise)
+ * Alles andere ist offen; die Monatslimits je Stufe deckeln den Verbrauch.
  */
 const ERLAUBTE_PFADE =
-  /^(business_data|on_page|dataforseo_labs|keywords_data)\/[a-z0-9_/-]+$/;
+  /^(business_data|on_page|dataforseo_labs|keywords_data|serp|ai_optimization|domain_analytics|backlinks|content_analysis|merchant|app_data|dataforseo_trends)\/[a-z0-9_/.-]+$/;
 
 function basicAuth(): string | null {
   const b64 = process.env.DATAFORSEO_B64;
@@ -106,7 +103,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         fehler:
-          "Erlaubt sind nur: business_data (Bewertungen), on_page (Seiten-Audit), dataforseo_labs (Rankings) und keywords_data (Suchvolumen).",
+          "Dieser Bereich ist nicht freigeschaltet. Offen sind: serp, keywords_data, dataforseo_labs, on_page, backlinks, domain_analytics, content_analysis, business_data, ai_optimization, merchant, app_data, dataforseo_trends.",
       },
       { status: 400 }
     );
