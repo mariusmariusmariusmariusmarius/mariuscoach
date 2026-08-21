@@ -1456,6 +1456,9 @@ Mail zu tun haben.`,
 
 Meine Domain: {DEINE-DOMAIN}
 Mein Resend-Schlüssel: {HIER-EINSETZEN — beginnt mit re_}
+Absender (von hier gehen die Mails raus): {z. B. info@meine-firma.de}
+Meine Benachrichtigung geht an: {wo ich die Anfragen lese — darf auch
+  eine andere Adresse sein, etwa privat}
 
 SCHRITT 1 — Domain bestätigen
 Damit ich von meiner eigenen Adresse senden darf, muss die Domain bei

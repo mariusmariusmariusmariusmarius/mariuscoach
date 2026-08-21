@@ -22,7 +22,6 @@ export function MailPrompt({ apiKey }: { apiKey?: string }) {
   const [empfaenger, setEmpfaenger] = useState("");
   const [andere, setAndere] = useState("");
   const [inhalt, setInhalt] = useState("");
-  const [weg, setWeg] = useState<"postfach" | "resend">("postfach");
 
   useEffect(() => {
     fetch("/api/mail")
@@ -46,7 +45,6 @@ export function MailPrompt({ apiKey }: { apiKey?: string }) {
     const an = zielAdresse || "{WOHIN DEINE BENACHRICHTIGUNG SOLL}";
     const text = inhalt.trim() || `{${BEISPIEL}}`;
     const gleich = an === von;
-    const domain = von.includes("@") ? von.split("@")[1] : "{DEINE-DOMAIN}";
 
     const gemeinsam = `Absender: ${von}
 Meine Benachrichtigung geht an: ${an}${gleich ? " (dieselbe Adresse)" : ""}
@@ -71,23 +69,6 @@ REGELN
 
 Zum Schluss: Testanfrage abschicken, beide Mails zeigen, Spam-Ordner
 prüfen.`;
-
-    if (weg === "resend") {
-      return `Bau den Mailversand für mein Anfrage-Formular über Resend.
-
-Meine Domain: ${domain}
-Mein Resend-Schlüssel: {HIER-EINSETZEN — beginnt mit re_}
-
-SCHRITT 1 — Domain bestätigen
-Damit ich von meiner eigenen Adresse senden darf, muss die Domain bei
-Resend bestätigt sein. Leg sie dort an, hol dir die geforderten
-DNS-Einträge und setz sie selbst — du hast meinen DNS-Zugang bereits.
-Nimm genau die Werte, die Resend vorgibt, rate nichts. Prüf danach,
-ob die Domain als bestätigt gilt.
-
-SCHRITT 2 — Die zwei Mails
-${gemeinsam}`;
-    }
 
     return `Verschick zwei E-Mails, wenn jemand mein Anfrage-Formular
 abschickt. Nutz dafür mein Postfach.
@@ -114,7 +95,7 @@ Anmeldung: Kopfzeile "Authorization: Bearer ${apiKey ?? "{DEIN-API-KEY}"}"
   Postfachs neu (Postfach bleibt erhalten)
 
 ${gemeinsam}`;
-  }, [absender, zielAdresse, inhalt, apiKey, weg]);
+  }, [absender, zielAdresse, inhalt, apiKey]);
 
   const auswahl = (postfaecher ?? []).filter((p) => !p.adresse.startsWith("admin@"));
 
@@ -137,33 +118,6 @@ ${gemeinsam}`;
       ) : null}
 
       <div className="mb-5 space-y-4">
-        <div>
-          <label className="mb-2 block text-xs uppercase tracking-widest text-zinc-500">
-            Versandweg
-          </label>
-          <div className="flex gap-2">
-            {(
-              [
-                ["postfach", "Mein Postfach"],
-                ["resend", "Resend"],
-              ] as const
-            ).map(([wert, text]) => (
-              <button
-                key={wert}
-                type="button"
-                onClick={() => setWeg(wert)}
-                className={`flex-1 rounded-xl border px-3 py-2 text-xs font-medium transition ${
-                  weg === wert
-                    ? "border-brand-500/50 bg-brand-500/15 text-white"
-                    : "border-white/10 bg-surface-950/60 text-zinc-400 hover:text-white"
-                }`}
-              >
-                {text}
-              </button>
-            ))}
-          </div>
-        </div>
-
         <div>
           <label className="mb-2 block text-xs uppercase tracking-widest text-zinc-500">
             Absender — von hier gehen die Mails raus
