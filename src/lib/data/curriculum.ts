@@ -41,6 +41,8 @@ export type Lesson = {
   mailPrompt?: boolean;
   /** zeigt den Resend-Baukasten (Adressen von Hand eintragen) */
   resendPrompt?: boolean;
+  /** zeigt den Audit-Prompt mit Einzugsgebiets-Regler */
+  seoPrompt?: boolean;
   cheatSheet?: CheatSheet;
 };
 
@@ -1470,10 +1472,11 @@ Mail zu tun haben.`,
           "Einmal alles auf den Tisch: Claude durchleuchtet deine Seite von A bis Z — Technik, Inhalte, Bilder, lokale Sichtbarkeit, Keywords, Konkurrenz — und legt dir eine Liste hin, die du abarbeiten kannst.",
         duration: 30,
         kind: "video",
+        seoPrompt: true,
         steps: [
           "Prüfen, ob die SEO-Skills da sind — sie kommen mit dem Setup-Paket. Falls nicht: die zwei Befehle rechts.",
           "Claude Code einmal neu starten, damit er die neuen Skills kennt.",
-          "Den Audit-Prompt schicken — nur dein Einzugsgebiet eintragen, den Rest liest Claude aus deinem Projekt. Das dauert ein paar Minuten.",
+          "Am Regler rechts dein Einzugsgebiet einstellen — von 10 km bis Europa. Der Prompt passt sich von selbst an.",
           "Die Fundliste durchgehen: Sie ist nach Wirkung sortiert, oben steht, was am meisten bringt.",
           "Nichts sofort umsetzen. Erst lesen, dann entscheiden, was du zuerst angehst — abgearbeitet wird in den nächsten Lektionen.",
         ],
@@ -1490,7 +1493,7 @@ npx skills add mariusmariusmariusmariusmarius/akademie-seo-daten --global --yes`
               text: `Mach einen vollständigen SEO-Audit für meine Website.
 
 Meine Domain: {DEINE-DOMAIN}
-Mein Einzugsgebiet: {z. B. 30 km um Musterstadt}
+Mein Einzugsgebiet: {EINZUGSGEBIET}
 
 Branche, Leistungen und Standort stehen auf meiner Website — zieh dir
 das selbst aus dem Projekt, das musst du mich nicht fragen. Das

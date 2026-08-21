@@ -20,6 +20,7 @@ import { DnsTool } from "@/components/app/dns-tool";
 import { DomainCheck } from "@/components/app/domain-check";
 import { MailPrompt } from "@/components/app/mail-prompt";
 import { ResendPrompt } from "@/components/app/resend-prompt";
+import { SeoPrompt } from "@/components/app/seo-prompt";
 
 export default async function LessonPage({
   params,
@@ -73,6 +74,20 @@ export default async function LessonPage({
             text: p.text.replaceAll("{PLATTFORM-URL}", PLATTFORM_URL),
           })),
         };
+
+  // Der Audit-Prompt wandert in den Regler-Baukasten statt in die Info-Box
+  const seoPromptText = lesson.seoPrompt
+    ? sheet?.prompts?.find((p) => p.text.includes("{EINZUGSGEBIET}"))?.text
+    : undefined;
+  const sheetOhneSeo =
+    lesson.seoPrompt && sheet
+      ? {
+          ...sheet,
+          prompts: sheet.prompts?.filter(
+            (p) => !p.text.includes("{EINZUGSGEBIET}")
+          ),
+        }
+      : sheet;
 
   return (
     <div className="space-y-8">
@@ -164,9 +179,10 @@ export default async function LessonPage({
         {/* bleibt beim Scrollen stehen, damit die Prompts immer greifbar sind */}
         <div className="space-y-6 xl:sticky xl:top-6 xl:max-h-[calc(100vh-3rem)] xl:overflow-y-auto">
           {lesson.mailPrompt ? <MailPrompt apiKey={user?.apiKey} /> : null}
+          {seoPromptText ? <SeoPrompt prompt={seoPromptText} /> : null}
           {lesson.resendPrompt ? <ResendPrompt domain={eigeneDomain} /> : null}
           <CheatSheet
-            sheet={sheet}
+            sheet={sheetOhneSeo}
             apiKey={sheet?.apiKeyHint ? user?.apiKey : undefined}
           />
         </div>
