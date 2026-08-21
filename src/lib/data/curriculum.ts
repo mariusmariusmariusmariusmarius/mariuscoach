@@ -1372,6 +1372,12 @@ Prüf das bitte trotzdem: Gibt es schon MX-Einträge, sag mir das und
 hör auf, bevor du irgendetwas änderst. Eine Umstellung würde sonst
 meine bisherige Post umleiten.
 
+SO FUNKTIONIERT DAS (damit du nichts nachschlagen musst)
+Die Postfächer liegen bei Migadu. Der Zugang läuft über den Schlüssel
+der Kursplattform — den Migadu-Schlüssel selbst bekomme ich nie zu
+sehen, meine Plattform spricht für mich mit Migadu. Sie lässt dabei
+nur Domains durch, die zu meinem Konto gehören.
+
 MEIN ZUGANG
 Adresse: https://mariuscoach.vercel.app/api/mail
 Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
@@ -1392,17 +1398,32 @@ Sonderzeichen, die man auf dem Handy schwer tippt.
 
 SCHRITT 2 — Einträge setzen
 Damit die Postfächer Mail empfangen und senden dürfen, brauchen sie
-MX-, SPF- und DKIM-Einträge. Meine DNS läuft über die Kursplattform,
-ich gebe dir mein DNS-Token.
+diese Einträge. Meine DNS läuft über die Kursplattform, ich gebe dir
+mein DNS-Token.
 
-Rate die Werte NICHT. Lies die aktuell gültigen Einträge auf
-migadu.com nach, zeig sie mir zur Bestätigung, und setz sie erst
-dann. Prüf danach per DNS-Abfrage, ob sie wirklich greifen.
+  MX    @   aspmx1.migadu.com   Priorität 10
+  MX    @   aspmx2.migadu.com   Priorität 20
+  TXT   @   v=spf1 include:spf.migadu.com -all
+  CNAME key1._domainkey   key1.MEINE-DOMAIN._domainkey.migadu.com
+  CNAME key2._domainkey   key2.MEINE-DOMAIN._domainkey.migadu.com
+  CNAME key3._domainkey   key3.MEINE-DOMAIN._domainkey.migadu.com
+
+Alle ohne Cloudflare-Proxy (DNS only). MEINE-DOMAIN ersetzt du durch
+meine echte Domain.
+
+Zeig mir die Einträge kurz, bevor du sie setzt. Prüf danach per
+DNS-Abfrage, ob sie greifen, und sag mir, wenn Migadu die Domain
+weiterhin als inaktiv führt.
 
 SCHRITT 3 — Übergeben
-Gib mir eine Tabelle mit: Adresse, Passwort, und den Daten fürs
-Handy (IMAP-Server, Port, Postausgangsserver, Port). Erinner mich
-daran, die Passwörter im Passwort-Manager zu speichern.
+Gib mir eine Tabelle mit Adresse, Passwort und den Daten fürs Handy.
+Die Serverdaten sind bei Migadu für alle gleich:
+
+  Posteingang (IMAP): imap.migadu.com, Port 993, SSL
+  Postausgang (SMTP): smtp.migadu.com, Port 465, SSL
+  Benutzername: die volle E-Mail-Adresse
+
+Erinner mich daran, die Passwörter im Passwort-Manager zu speichern.
 Sag mir zum Schluss in drei Schritten, wie ich das Postfach aufs
 Handy hole — und dass ich dabei IMAP nehme, niemals POP3.
 

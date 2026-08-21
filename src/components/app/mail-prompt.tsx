@@ -46,8 +46,15 @@ export function MailPrompt() {
     const gleich = an === von;
 
     return `Verschick zwei E-Mails, wenn jemand mein Anfrage-Formular
-abschickt. Nutz dafür das Postfach, das wir eingerichtet haben — die
-Zugangsdaten kennst du.
+abschickt. Nutz dafür mein Postfach.
+
+SO FUNKTIONIERT DAS (damit du nichts nachschlagen musst)
+Mein Postfach liegt bei Migadu, angelegt über die Kursplattform. Zum
+Verschicken aus meiner Website nimmst du den Postausgang von Migadu:
+
+  Postausgang (SMTP): smtp.migadu.com, Port 465, SSL
+  Benutzername: die Absender-Adresse unten
+  Passwort: das Postfach-Passwort aus der letzten Lektion
 
 Absender: ${von}
 Meine Benachrichtigung geht an: ${an}${gleich ? " (dieselbe Adresse)" : ""}
