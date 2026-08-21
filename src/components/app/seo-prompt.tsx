@@ -12,14 +12,18 @@ import { CopyButton } from "@/components/ui/copy-button";
 
 type Stufe = { anzeige: string; promptText: string };
 
+const KM_STUFEN = [10, 20, 30, 40, 50, 70, 100, 150, 200, 250];
+
 const STUFEN: Stufe[] = [
-  ...Array.from({ length: 10 }, (_, i) => {
-    const km = (i + 1) * 10;
-    return {
-      anzeige: `${km} km`,
-      promptText: `${km} km um meinen Standort`,
-    };
-  }),
+  ...KM_STUFEN.map((km) => ({
+    anzeige: `${km} km`,
+    promptText:
+      `${km} km um meinen Standort. Liegt in diesem Umkreis ein ` +
+      `Nachbarland, bezieh es mit ein — Abfragen dann zusätzlich mit ` +
+      `dessen location_code (immer 2 + ISO-Ländernummer: Österreich 2040, ` +
+      `Schweiz 2756, Frankreich 2250, Niederlande 2528, Belgien 2056, ` +
+      `Luxemburg 2442, Polen 2616, Tschechien 2203, Dänemark 2208).`,
+  })),
   {
     anzeige: "Deutschland",
     promptText: "ganz Deutschland (location_code 2276)",
@@ -75,11 +79,13 @@ export function SeoPrompt({ prompt }: { prompt: string }) {
           aria-label="Einzugsgebiet"
         />
         <div className="mt-1 flex justify-between text-[0.65rem] text-zinc-600">
-          <span>10 km</span>
-          <span>100 km</span>
+          <span>10</span>
+          <span>50</span>
+          <span>100</span>
+          <span>250 km</span>
           <span>DE</span>
           <span>D-A-CH</span>
-          <span>Europa</span>
+          <span>EU</span>
         </div>
       </div>
 
