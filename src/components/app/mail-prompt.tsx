@@ -65,9 +65,10 @@ Anmeldung: Kopfzeile "Authorization: Bearer ${apiKey ?? "{DEIN-API-KEY}"}"
 
 - GET zeigt meine Domains und Postfächer
 - POST { "aktion": "postfach", "domain": "...", "adresse": "info",
-         "name": "Firmenname", "passwort": "..." }
-  legt ein Postfach an — mit einer vorhandenen Adresse setzt es das
-  Passwort neu
+         "name": "Firmenname", "passwort": "..." } legt ein Postfach an
+- POST { "aktion": "passwort", "domain": "...", "adresse": "info",
+         "neuesPasswort": "..." } setzt das Passwort eines vorhandenen
+  Postfachs neu (Postfach bleibt erhalten)
 
 Absender: ${von}
 Meine Benachrichtigung geht an: ${an}${gleich ? " (dieselbe Adresse)" : ""}
