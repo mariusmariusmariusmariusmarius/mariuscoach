@@ -1442,30 +1442,64 @@ Mail zu tun haben.`,
         kind: "video",
         mailPrompt: true,
         steps: [
-          "Im selben Chat weitermachen wie in der letzten Lektion — Claude kennt dein Postfach dann schon.",
-          "Im Baukasten unten die Adressen anklicken und in einem Satz sagen, was in der Bestätigung stehen soll — der fertige Prompt entsteht darunter.",
-          "Testanfrage über dein Formular abschicken.",
-          "Prüfen: Kommt die Bestätigung beim Kunden an? Kommt die Benachrichtigung bei dir an? Landet etwas im Spam?",
-          "In der Admin-App nachsehen — dort steht jetzt auch, ob der Versand geklappt hat.",
+          "Im selben Chat weitermachen wie bei den Postfächern — Claude kennt dein Postfach dann schon.",
+          "Im Baukasten unten die Adressen anklicken und in einem Satz sagen, was in der Bestätigung stehen soll.",
+          "Prompt kopieren, abschicken — Claude baut beide Mails ein und verschickt über dein Postfach.",
+          "Lieber einen Versanddienst statt des eigenen Postfachs? Dann den Resend-Prompt rechts nehmen: Konto anlegen, API Keys, Create API Key, Schlüssel einsetzen.",
+          "Testanfrage abschicken. Beide Mails müssen ankommen und dürfen nicht im Spam landen.",
         ],
         cheatSheet: {
           prompts: [
             {
-              label: "Nur bei Problemen: Versand über Resend statt über dein Postfach",
-              text: `Der Versand über mein Postfach klappt nicht zuverlässig. Bau ihn
-auf Resend um.
+              label: "Alternative: Versand über Resend — Konto anlegen, Schlüssel einsetzen",
+              text: `Bau den Mailversand für mein Anfrage-Formular über Resend.
 
 Meine Domain: {DEINE-DOMAIN}
+Mein Resend-Schlüssel: {HIER-EINSETZEN — beginnt mit re_}
 
-1. Sag mir in kurzen Schritten, was ich bei resend.com tun muss:
-   Konto anlegen, Domain hinzufügen, API-Schlüssel erzeugen.
-2. Resend verlangt DNS-Einträge zur Bestätigung. Meine DNS läuft
-   über die Kursplattform — ich gebe dir mein DNS-Token, dann setzt
-   du sie selbst. Nimm genau die Werte, die Resend mir anzeigt.
-3. Stell die beiden Mails auf Resend um, Inhalte bleiben gleich.
-4. Der Schlüssel kommt in die Umgebungsvariablen.
+So kommst du an den Schlüssel (sag es mir, falls ich ihn noch nicht
+habe): auf resend.com ein kostenloses Konto anlegen, dann links auf
+"API Keys", oben rechts "Create API Key", Namen vergeben, erstellen —
+und den Wert sofort kopieren. Er wird nur einmal gezeigt.
 
-Danach eine Testanfrage, bei der du mir beide Mails zeigst.`,
+SCHRITT 1 — Domain bestätigen
+Damit ich von meiner eigenen Adresse senden darf, muss die Domain bei
+Resend bestätigt sein. Leg sie dort an und sag mir, welche
+DNS-Einträge Resend verlangt.
+Meine DNS läuft über die Kursplattform — ich gebe dir mein DNS-Token,
+dann setzt du die Einträge selbst. Nimm genau die Werte, die Resend
+anzeigt, rate nichts. Prüf danach, ob die Domain als bestätigt gilt.
+
+SCHRITT 2 — Die zwei Mails
+- An den Kunden: Bestätigung, dass die Anfrage angekommen ist, wann
+  ich mich melde, meine Telefonnummer für Eiliges, dazu seine Angaben
+  zum Nachlesen.
+- An mich: Betreff mit Name und Anliegen, damit ich ihn auf dem Handy
+  erfassen kann. Alle Angaben untereinander. Antworten-an auf die
+  Adresse des Kunden, damit ich mit einem Tipp auf "Antworten" direkt
+  bei ihm lande.
+- Absender ist meine eigene Adresse mit meinem Firmennamen.
+
+REGELN
+- Der Schlüssel kommt als Umgebungsvariable ins Projekt und zu Vercel.
+  Ich bin im Terminal bei Vercel angemeldet — mach das selbst, ich
+  will nichts im Dashboard klicken. Niemals in eine Datei meines
+  Codes schreiben.
+- Erst die Anfrage speichern, dann senden. Klemmt der Versand, steht
+  der Lead trotzdem in meiner Admin-App.
+- Geht eine Mail nicht raus, sag es mir — still verschlucken gilt
+  nicht.
+- Einfacher Text, keine Anhänge, keine Verfolgungspixel.
+
+ZUM SCHLUSS
+Testanfrage abschicken, beide Mails zeigen, Spam-Ordner prüfen.`,
+            },
+          ],
+          links: [
+            {
+              label: "Resend — Konto erstellen",
+              href: "https://resend.com/signup",
+              note: "kostenlos: 3.000 Mails im Monat, 100 am Tag — Schlüssel unter API Keys",
             },
           ],
         },
