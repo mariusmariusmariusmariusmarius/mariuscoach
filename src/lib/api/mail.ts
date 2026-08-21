@@ -96,15 +96,13 @@ export async function domainAnlegen(
   const vorhanden = (await alleDomains()).find((d) => d.name === domain);
   if (vorhanden) {
     if (vorhanden.description === marke(userId)) return { domain };
-    if (vorhanden.description.startsWith("mm:")) {
-      return { fehler: "Diese Domain ist bereits einem anderen Konto zugeordnet." };
-    }
-    // Domain existiert, gehört aber noch niemandem — übernehmen
-    await migadu(`/domains/${domain}`, {
-      method: "PUT",
-      body: { description: marke(userId) },
-    });
-    return { domain };
+    // Alles andere wird abgelehnt — auch Domains ohne Markierung. Wer eine
+    // fremde oder unzugeordnete Domain einfach beanspruchen könnte, käme
+    // sonst an deren Postfächer.
+    return {
+      fehler:
+        "Diese Domain liegt schon im System und gehört nicht zu deinem Konto. Melde dich bei uns, wenn das ein Irrtum ist.",
+    };
   }
 
   if ((await mailDomainsVon(userId)).length >= MAX_MAIL_DOMAINS) {
