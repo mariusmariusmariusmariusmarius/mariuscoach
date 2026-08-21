@@ -1464,6 +1464,93 @@ Mail zu tun haben.`,
         },
       },
       {
+        slug: "seo-audit",
+        title: "Der große SEO-Audit",
+        description:
+          "Einmal alles auf den Tisch: Claude durchleuchtet deine Seite von A bis Z — Technik, Inhalte, Bilder, lokale Sichtbarkeit, Keywords, Konkurrenz — und legt dir eine Liste hin, die du abarbeiten kannst.",
+        duration: 30,
+        kind: "video",
+        steps: [
+          "Die SEO-Skills installieren — der Befehl rechts holt das ganze Paket auf einmal.",
+          "Claude Code einmal neu starten, damit er die neuen Skills kennt.",
+          "Den Audit-Prompt schicken und deine Domain eintragen. Das dauert ein paar Minuten — Claude arbeitet die Seite Stück für Stück durch.",
+          "Die Fundliste durchgehen: Sie ist nach Wirkung sortiert, oben steht, was am meisten bringt.",
+          "Nichts sofort umsetzen. Erst lesen, dann entscheiden, was du zuerst angehst — abgearbeitet wird in den nächsten Lektionen.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Alle SEO-Skills auf einmal installieren — ins Terminal, Mac wie Windows gleich",
+              text: `npx skills add agricidaniel/claude-seo --global --yes`,
+            },
+            {
+              label: "Der Audit-Prompt — Domain eintragen, dann arbeitet Claude",
+              text: `Mach einen vollständigen SEO-Audit für meine Website.
+
+Meine Domain: {DEINE-DOMAIN}
+Mein Standort und Einzugsgebiet: {ORT + UMKREIS, z. B. Musterstadt und 30 km}
+Meine Branche: {z. B. Heizung und Sanitär}
+
+Nutz dafür die installierten SEO-Skills, allen voran „seo-audit".
+Arbeite gründlich — ich will lieber zehn Minuten warten als eine
+oberflächliche Liste.
+
+WAS ICH GEPRÜFT HABEN WILL
+
+Technik
+- Ist die Seite für Google auffindbar und indexierbar? robots.txt,
+  Sitemap, Weiterleitungen, Statuscodes.
+- Ladezeit und Core Web Vitals, getrennt für Handy und Rechner.
+- HTTPS, saubere Adressen, Handy-Tauglichkeit.
+
+Auffindbarkeit auf jeder Seite
+- Meta-Titel und Beschreibung: vorhanden, richtige Länge, nicht
+  doppelt, mit dem Ort drin?
+- Überschriftenstruktur: genau eine H1, sinnvolle Reihenfolge.
+- Favicon vorhanden und in allen Größen?
+- Open-Graph-Bild und -Text — was sieht man, wenn jemand meine Seite
+  bei WhatsApp oder Facebook teilt? Zeig mir, wie die Vorschau
+  aussieht.
+
+Bilder
+- Alt-Texte, Dateigrößen, moderne Formate, Bildmaße.
+- Sprechende Dateinamen statt IMG_4711.
+
+Strukturierte Daten
+- Sind meine Firmendaten für Google maschinenlesbar hinterlegt
+  (LocalBusiness): Name, Adresse, Telefon, Öffnungszeiten,
+  Leistungen, Bewertungen?
+
+Lokal
+- Wie stehe ich für mein Einzugsgebiet da? Google-Unternehmensprofil,
+  Einheitlichkeit von Name, Adresse und Telefonnummer, Bewertungen.
+- Welche Ortsbezüge fehlen auf der Website?
+
+KI-Suche
+- Werde ich von KI-Suchen wie ChatGPT oder Perplexity gefunden und
+  zitiert? Was fehlt dafür — llms.txt, klare Fakten, Quellenlage?
+
+Keywords und Konkurrenz
+- Wonach suchen meine Kunden wirklich? Gib mir die wichtigsten
+  Suchbegriffe mit Suchvolumen und Schwierigkeit.
+- Wer steht bei diesen Begriffen vor mir, und warum?
+- Welche Seiten fehlen mir, die meine Konkurrenz hat?
+
+SO WILL ICH DAS ERGEBNIS
+1. Eine Gesamtnote mit einem Satz Begründung.
+2. Eine Liste aller Funde, sortiert nach Wirkung: was bringt am
+   meisten, was ist Kosmetik. Pro Punkt: was ist das Problem, warum
+   ist es eins, was wäre zu tun, und wie aufwendig ist es.
+3. Die fünf Dinge, die ich als Erstes angehen sollte.
+
+Ändere noch NICHTS an meiner Website. Ich will erst die Liste sehen
+und selbst entscheiden. Erfinde keine Zahlen — wenn du etwas nicht
+messen kannst, schreib das hin.`,
+            },
+          ],
+        },
+      },
+      {
         slug: "anfragebogen-lead-friction",
         title: "Anfragebogen & Lead-Friction",
         description:
