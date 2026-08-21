@@ -1550,8 +1550,20 @@ Nutz die installierten SEO-Skills. Der Rundum-Audit ist „seo-audit" —
 der verteilt selbst an Spezialisten. Zieh je nach Befund dazu:
 „seo-technical", „seo-local", „seo-maps", „seo-images", „seo-schema",
 „seo-sitemap", „seo-content", „seo-backlinks", „seo-geo" für die
-KI-Suche und „seo-page" für einzelne Seiten. Die übrigen Skills aus
-dem Paket nimmst du nur, wenn ihr Thema wirklich auftaucht.
+KI-Suche und „seo-page" für einzelne Seiten.
+
+Für die Auswertung und die Empfehlungen am Ende außerdem:
+- „seo-plan" — um die Funde zu einem Fahrplan zu ordnen
+- „seo-cluster" — welche Themen zusammengehören und welche Seiten
+  sich Suchbegriffe streitig machen
+- „seo-competitor-pages" — welche Seiten die Konkurrenz hat, die mir
+  fehlen
+- „seo-content-brief" — für die wichtigsten fehlenden Seiten gleich
+  eine Gliederung vorschlagen (nur vorschlagen, nicht bauen)
+- „seo-hreflang" — nur falls meine Website mehrsprachig ist
+
+Die übrigen Skills aus dem Paket nimmst du nur, wenn ihr Thema
+wirklich auftaucht.
 Arbeite gründlich — ich will lieber zehn Minuten warten als eine
 oberflächliche Liste.
 
