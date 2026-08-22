@@ -1626,6 +1626,94 @@ messen kannst, schreib das hin.`,
         },
       },
       {
+        slug: "programmatic-seo",
+        title: "Lokale Landingpages: mehr Seiten, ohne Google zu verärgern",
+        description:
+          "Niemand sucht ‚Heizungsbauer' — gesucht wird ‚Heizung Reparatur Leverkusen'. Claude baut dir die Orts-Leistungs-Seiten, für die es echte Nachfrage gibt. Und nur die: Seiten ohne echten Inhalt sind gefährlicher als keine.",
+        duration: 25,
+        kind: "video",
+        seoPrompt: true,
+        steps: [
+          "Am Regler rechts das Einzugsgebiet einstellen — daraus wird die Ortsliste.",
+          "Prompt schicken. Claude zieht die Matrix Leistungen × Orte mit Suchvolumen — kostet ein paar Cent.",
+          "Das Interview: Zu jeder Kombi fragt Claude, was du über diesen Ort weißt. Eine Referenz, eine Besonderheit, eine Anfahrtszeit — was dir nichts einfällt, wird nicht gebaut.",
+          "Claude baut höchstens zehn Seiten, mit Übersichtsseite und Verlinkung. Gleiche Vorlage, aber jede Seite mit echtem Ortsbezug.",
+          "Vier Wochen warten, dann Rankings prüfen. Erst wenn die ersten Seiten greifen, kommt die nächste Runde.",
+        ],
+        cheatSheet: {
+          apiKeyHint: true,
+          prompts: [
+            {
+              label: "Der Landingpage-Prompt — Einzugsgebiet am Regler, Rest macht Claude",
+              text: `Bau mir lokale Landingpages für meine Leistungen — aber nur die,
+für die es echte Nachfrage und echten Inhalt gibt.
+
+Mein Einzugsgebiet: {EINZUGSGEBIET}
+
+Meine Leistungen und meinen Standort liest du aus dem Projekt. Nutz
+den Skill „seo-programmatic" für Aufbau und Schutzregeln und
+„akademie-seo-daten" für die Zahlen.
+
+MEIN ZUGANG ZU LIVE-SEO-DATEN
+Adresse: {PLATTFORM-URL}/api/bewertungen
+Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
+Keyword-Ideen samt Suchvolumen (~0,013 USD je Abfrage):
+  pfad: "dataforseo_labs/google/keyword_suggestions/live"
+  daten: [{"keyword":"LEISTUNG ORT","location_code":2276,
+           "language_code":"de","limit":30}]
+Eine Abfrage je Leistung reicht — die Orts-Varianten kommen mit.
+
+SCHRITT 1 — Die Matrix
+Nimm die Orte in meinem Einzugsgebiet (die größeren zuerst) und meine
+Leistungen. Frag je Leistung die Suchbegriffe ab und bau mir eine
+Tabelle: Leistung × Ort, Suchvolumen, Wettbewerb. Zeig sie mir.
+
+Wichtig: Kleine Orte zeigen oft „0" Suchvolumen, obwohl dort gesucht
+wird — die Zahl ist nur zu klein für die Statistik. Orte im
+Einzugsgebiet bleiben deshalb in der Liste, markier sie als
+„Nachfrage unbekannt".
+
+SCHRITT 2 — Das Interview (Pflicht, nicht überspringen)
+Geh die Kombis der Reihe nach durch und frag mich zu JEDEM Ort,
+einen nach dem anderen:
+- Hast du dort schon gearbeitet? Was genau?
+- Gibt es etwas, das diesen Ort für meine Arbeit besonders macht —
+  Altbau, Neubaugebiet, viele Ölheizungen, enge Straßen, was auch
+  immer?
+- Wie lange brauchst du dorthin?
+
+Die Regel: KEINE ANTWORT, KEINE SEITE. Eine Seite, die sich von der
+nächsten nur im Ortsnamen unterscheidet, wertet Google als leeren
+Inhalt ab — und das kann meine ganze Domain nach unten ziehen. Lieber
+fünf Seiten mit echtem Ortsbezug als fünfzig Hüllen.
+
+SCHRITT 3 — Bauen, höchstens zehn
+Aus den Kombis mit Nachfrage UND meinen Antworten baust du Seiten:
+- Eine Vorlage, aber jede Seite mit dem echten Inhalt aus dem
+  Interview — die Referenz, die Besonderheit, die Anfahrtszeit.
+- Adresse nach dem Muster /leistung/ort, klein, mit Bindestrichen.
+- Meta-Titel und Beschreibung je Seite mit Ort drin, eine H1.
+- LocalBusiness-Daten auf jeder Seite, areaServed mit dem Ort.
+- Eine Übersichtsseite „Einsatzgebiete", die alle verlinkt, und von
+  jeder Seite zurück. Alle neuen Seiten in die Sitemap.
+- Mein Anfrage-Formular auf jeder Seite, mit dem Ort vorausgefüllt.
+Höchstens zehn Seiten in dieser Runde. Wenn mehr Kombis gut sind,
+leg sie als Liste für später ab.
+
+SCHRITT 4 — Ehrlich sein
+Zeig mir am Ende:
+- Welche Seiten du gebaut hast und warum genau diese.
+- Welche Kombis du NICHT gebaut hast und was dafür fehlt.
+- Was die Abfragen gekostet haben (GET auf die Adresse oben).
+
+Setz noch nichts live, bevor ich alle Seiten gesehen habe. Erfinde
+keine Referenzen, keine Zahlen, keine Ortsdetails — was nicht von mir
+kommt, steht nicht auf der Seite.`,
+            },
+          ],
+        },
+      },
+      {
         slug: "anfragebogen-lead-friction",
         title: "Anfragebogen & Lead-Friction",
         description:
