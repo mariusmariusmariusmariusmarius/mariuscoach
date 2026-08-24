@@ -33,7 +33,7 @@ export default async function ModulePage({
 
       {/* Modul-Header */}
       <div className="relative overflow-hidden rounded-3xl border border-white/8 bg-surface-900/70 p-8">
-        <div className={`pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-gradient-to-br opacity-20 blur-3xl ${courseModule.gradient}`} />
+        <div className={`pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-gradient-to-br opacity-30 [mask-image:radial-gradient(closest-side,black,transparent)] ${courseModule.gradient}`} />
         <div className="relative flex flex-wrap items-start justify-between gap-6">
           <div className="flex items-start gap-5">
             <span className={`grid size-16 shrink-0 place-items-center rounded-2xl bg-gradient-to-br text-white ${courseModule.gradient}`}>

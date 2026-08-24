@@ -33,7 +33,8 @@ export default async function CoursesPage() {
                   : "border-white/5 bg-surface-900/40"
               }`}
             >
-              <div className={`pointer-events-none absolute -right-16 -top-16 size-44 rounded-full bg-gradient-to-br blur-2xl transition ${mod.gradient} ${unlocked ? "opacity-15 group-hover:opacity-30" : "opacity-5"}`} />
+              {/* Eckenschein: radial ausgeblendet statt geblurrt — sonst sieht man die Kreiskante */}
+              <div className={`pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-gradient-to-br [mask-image:radial-gradient(closest-side,black,transparent)] transition-opacity duration-300 ${mod.gradient} ${unlocked ? "opacity-25 group-hover:opacity-45" : "opacity-10"}`} />
               <div className="mb-5 flex items-start justify-between">
                 <span className={`grid size-12 place-items-center rounded-2xl bg-gradient-to-br text-white ${mod.gradient} ${unlocked ? "" : "opacity-40 grayscale"}`}>
                   <DataIcon name={mod.icon} className="size-6" />

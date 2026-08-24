@@ -79,7 +79,7 @@ export default async function DashboardPage() {
           href={`/kurse/${nextModule.slug}/${nextLesson.slug}`}
           className="group relative block overflow-hidden rounded-3xl border border-brand-500/25 bg-gradient-to-br from-brand-600/15 via-surface-900 to-surface-900 p-7 transition hover:border-brand-500/50"
         >
-          <div className="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-brand-600/20 blur-3xl" />
+          <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-brand-600/30 [mask-image:radial-gradient(closest-side,black,transparent)]" />
           <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-brand-400">
             Hier weitermachen
           </p>

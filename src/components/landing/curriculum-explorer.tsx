@@ -65,7 +65,7 @@ export function CurriculumExplorer() {
             {/* Modul-Info */}
             <div className="relative overflow-hidden border-b border-white/8 p-8 lg:col-span-2 lg:border-b-0 lg:border-r">
               <div
-                className={`pointer-events-none absolute -left-20 -top-20 size-64 rounded-full bg-gradient-to-br opacity-20 blur-3xl ${active.gradient}`}
+                className={`pointer-events-none absolute -left-24 -top-24 size-80 rounded-full bg-gradient-to-br opacity-30 [mask-image:radial-gradient(closest-side,black,transparent)] ${active.gradient}`}
               />
               <div className="relative">
                 <span
