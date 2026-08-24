@@ -120,12 +120,15 @@ export default async function LessonPage({
         <div className="min-w-0 space-y-6">
           {lesson.videoUrl ? (
             <div className="overflow-hidden rounded-3xl border border-white/10 bg-black">
+              {/* Bildschirmaufnahmen sind 1670×1080 — das Fenster folgt dem
+                  Video, nicht 16:9, sonst gibt es Balken links und rechts */}
               <video
                 src={lesson.videoUrl}
                 controls
                 playsInline
                 preload="metadata"
-                className="aspect-video w-full"
+                className="block w-full"
+                style={{ aspectRatio: "1670 / 1080" }}
               />
             </div>
           ) : (
