@@ -118,24 +118,35 @@ export default async function LessonPage({
         {/* min-w-0: sonst wächst die Spalte mit breitem Inhalt mit, statt ihn
             seitlich scrollen zu lassen */}
         <div className="min-w-0 space-y-6">
-          {/* Video-Platzhalter — später: echter Player (z. B. Mux, Bunny, Vimeo) */}
-          <div className="group relative aspect-video overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-surface-800 to-surface-950">
-            <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-10 ${courseModule.gradient}`} />
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="text-center">
-                <button
-                  type="button"
-                  className="mx-auto mb-4 grid size-20 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur transition group-hover:scale-105 group-hover:bg-brand-500/80"
-                  aria-label="Video abspielen"
-                >
-                  <Play className="size-8 translate-x-0.5" />
-                </button>
-                <p className="text-sm text-zinc-400">
-                  Video-Inhalt folgt — hier kommt später dein Kursvideo hin.
-                </p>
+          {lesson.videoUrl ? (
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-black">
+              <video
+                src={lesson.videoUrl}
+                controls
+                playsInline
+                preload="metadata"
+                className="aspect-video w-full"
+              />
+            </div>
+          ) : (
+            <div className="group relative aspect-video overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-surface-800 to-surface-950">
+              <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-10 ${courseModule.gradient}`} />
+              <div className="absolute inset-0 grid place-items-center">
+                <div className="text-center">
+                  <button
+                    type="button"
+                    className="mx-auto mb-4 grid size-20 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur transition group-hover:scale-105 group-hover:bg-brand-500/80"
+                    aria-label="Video abspielen"
+                  >
+                    <Play className="size-8 translate-x-0.5" />
+                  </button>
+                  <p className="text-sm text-zinc-400">
+                    Video-Inhalt folgt — hier kommt später dein Kursvideo hin.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           <div className="rounded-3xl border border-white/8 bg-surface-900/70 p-8">
             <h2 className="mb-3 text-lg font-semibold text-white">Worum geht&apos;s?</h2>

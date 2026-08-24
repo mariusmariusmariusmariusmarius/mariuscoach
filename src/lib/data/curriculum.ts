@@ -31,6 +31,8 @@ export type Lesson = {
   /** Minuten, rein informativ */
   duration: number;
   kind: "video" | "text" | "case";
+  /** Pfad zum Kursvideo (unter public/), z. B. "/videos/modul-1/….mp4" */
+  videoUrl?: string;
   /** zeigt die Schriftarten-Übersicht unter „Worum geht's?" */
   fontSchau?: boolean;
   /** zeigt das Domain-Anschließen-Feld (DNS-Zentrale) */
@@ -75,6 +77,7 @@ export const CURRICULUM: CourseModule[] = [
         // Video: „erstes.mp4" + „skill 2.mp4"
         slug: "claude-code-dein-mitarbeiter",
         title: "Claude Code, dein Mitarbeiter?",
+        videoUrl: "/videos/modul-1/claude-code-dein-mitarbeiter.mp4",
         description:
           "Claude Code ist das Herzstück dieses Kurses — die zentrale Steuerung für alles: Website, Hosting, Automationen, E-Mail-Marketing, Werbekampagnen. Hier richten wir es ein und laden die Werkzeuge, die Claude braucht.",
         duration: 12,
@@ -117,6 +120,7 @@ export const CURRICULUM: CourseModule[] = [
         // Video: „Claude - 16 August 2026.mp4"
         slug: "erste-website",
         title: "Die erste Website in 35 Minuten",
+        videoUrl: "/videos/modul-1/erste-website.mp4",
         description:
           "Wir starten direkt in Claude Code — mit einem echten Kundenauftrag: ein mittelständischer Möbel-Händler. Zwei Design-Skills, ein Start-Prompt, deine Antworten — und Claude baut das Fundament deiner Website.",
         duration: 40,
@@ -199,6 +203,7 @@ Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
         // Video: „part 1.mp4" + „part 2.mp4"
         slug: "referenz-websites-nutzen",
         title: "Referenz-Websites nutzen",
+        videoUrl: "/videos/modul-1/referenz-websites-nutzen.mp4",
         description:
           "Der zweite Weg: Du hast schon eine Website und willst sie mitnehmen — oder dir gefällt eine fremde Seite und du willst sie als Vorlage. Das Download-Werkzeug aus dem Setup holt die komplette Seite, Claude baut sie mit deinen Inhalten nach. So kommst du auch raus aus Wix, IONOS oder WordPress.",
         duration: 15,
