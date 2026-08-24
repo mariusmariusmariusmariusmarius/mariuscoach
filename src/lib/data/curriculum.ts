@@ -306,6 +306,90 @@ dazu. Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
           ],
         },
       },
+      {
+        // Video: „Claude - 17 August 2026.mp4"
+        slug: "copywriting-mit-claude",
+        title: "Copywriting mit Claude",
+        videoUrl: "/videos/modul-1/copywriting-mit-claude.mp4",
+        description:
+          "Das Fundament steht — jetzt die Feinheiten. Erst siehst du, wie leicht sich die Seite in einfacher Sprache umbauen lässt, dann gehen wir an die Texte: Was die KI erfunden hat, fliegt raus — dein Ton, deine Zielgruppe, deine echten Daten rein.",
+        duration: 25,
+        kind: "video",
+        steps: [
+          "Warmwerden: Sag Claude in eigenen Worten, was dich stört — „großes Bild als Hintergrund in der ersten Sektion, Text darüber“ oder „diese Textpassage raus“. Er setzt es direkt um, und responsiv bleibt es von selbst.",
+          "Den Copywriting-Skill installieren — Befehl rechts, einmal ins Terminal.",
+          "Stimmen die Kontaktdaten nicht? Mach einen Screenshot vom Google-Unternehmensprofil und zieh ihn in den Chat — Claude übernimmt Adresse, Telefonnummer und Öffnungszeiten daraus.",
+          "Den Copywriting-Prompt schicken und den Fragebogen beantworten: duzen oder siezen, wer deine Kunden sind — Privatleute, Mittelstand, gehobene Klasse. Davon hängt die ganze Sprache ab.",
+          "Fragt Claude nach Bewertungen, Logo, Bildern oder Farben: Bewertungen kannst du schon von Hand einfügen, die richtige Einbindung kommt später — und Logo, Bilder und Farben kommen gebündelt in der nächsten Lektion. Diese Fragen einfach überspringen.",
+          "Zusammenfassung kontrollieren, dann Go geben. Claude überarbeitet die Seite inhaltlich — Seite für Seite, mit deinem OK.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Copywriting-Skill installieren — ins Terminal einfügen, Enter",
+              os: "mac",
+              text: `npx skills add coreyhaines31/marketingskills --skill copywriting --global --yes`,
+            },
+            {
+              label: "Copywriting-Skill installieren — in PowerShell einfügen, Enter",
+              os: "win",
+              text: `npx skills add coreyhaines31/marketingskills --skill copywriting --global --yes`,
+            },
+            {
+              label: "Der Copywriting-Prompt — Claude interviewt dich, dann werden die Texte überarbeitet",
+              text: `Überarbeite jetzt alle Texte meiner Website. Aber bevor du ein
+einziges Wort änderst: interviewe mich. Nutze für die Texte den
+Skill „copywriting".
+
+Stell mir die Fragen NACHEINANDER, eine nach der anderen, und warte
+jeweils auf meine Antwort. Frag nach, wenn eine Antwort zu vage ist.
+
+MEINE SPRACHE
+- Duzen wir die Besucher oder siezen wir sie?
+- Eher locker und direkt — oder eher sachlich und ruhig?
+- Welche Wörter oder Sprüche benutze ich ständig? Wie rede ich am
+  Telefon mit einem Kunden?
+- Was würde ich NIE sagen?
+
+MEINE ZIELGRUPPE
+- Wer genau soll sich angesprochen fühlen — und wer ausdrücklich
+  nicht?
+- Wie viel Ahnung haben meine Kunden vom Thema: muss ich viel
+  erklären oder kann ich abkürzen?
+- Was ist deren größte Sorge oder größter Wunsch, wenn sie jemanden
+  wie mich suchen?
+
+ECHTE BEWEISE
+- Gibt es Kundenstimmen oder Bewertungen, die ich einbauen darf?
+  Gib sie mir im Wortlaut — denk dir keine aus.
+- Welche Zahlen stimmen wirklich: seit wann gibt es die Firma, wie
+  viele Projekte, welche Garantien?
+
+Wenn ich alles beantwortet habe:
+1. Fass meine Sprache und Zielgruppe als kurzen Steckbrief zusammen
+   und lass mich bestätigen.
+2. Überarbeite dann die Texte der Website, Seite für Seite. Zeig mir
+   pro Seite Vorher und Nachher und warte auf mein OK, bevor du die
+   nächste anfasst.
+
+REGELN FÜR DIE TEXTE
+- Kein KI-Deutsch: keine Gedankenstriche als Stilmittel mitten im
+  Satz, keine Wörter wie „nahtlos", „ganzheitlich", „revolutionär",
+  „maßgeschneiderte Lösungen". Kurze Sätze. Schreib so, wie ich im
+  Interview geredet habe.
+- ERFINDE NICHTS: keine ausgedachten Zahlen, Namen, Zitate oder
+  Auszeichnungen. Fehlt dir eine Information, schreib an die Stelle
+  [FEHLT: was du brauchst] und frag mich am Ende gesammelt ab.
+- Stehen im Projekt schon Platzhalter oder ausgedachte Angaben, weise
+  mich darauf hin und frag, was wirklich dort stehen soll — statt sie
+  einfach schöner zu formulieren.
+
+Fragen zu Logo, Bildern, Farben oder SEO stellst du mir jetzt noch
+nicht — das kommt gleich danach, gebündelt.`,
+            },
+          ],
+        },
+      },
     ],
   },
   {
