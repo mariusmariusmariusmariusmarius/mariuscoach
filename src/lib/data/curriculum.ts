@@ -1717,14 +1717,14 @@ kommt, steht nicht auf der Seite.`,
         slug: "favicon-und-vorschaubild",
         title: "Favicon & Vorschaubild: Der erste Eindruck vor dem Klick",
         description:
-          "Bevor jemand deine Seite sieht, sieht er zwei Dinge: das kleine Icon im Browser-Tab und die Vorschau, wenn dein Link bei WhatsApp landet. Beides bauen wir jetzt — das Favicon aus deinem Logo, das Vorschaubild mit Higgsfield.",
+          "Bevor jemand deine Seite sieht, sieht er zwei Dinge: das kleine Icon im Browser-Tab und die Vorschau, wenn dein Link bei WhatsApp landet. Beides bauen wir jetzt — das Favicon aus deinem Logo, das Vorschaubild erzeugt Claude selbst über Higgsfield.",
         duration: 20,
         kind: "video",
         steps: [
           "Der Audit hat es schon angemeckert: Favicon fehlt oder ist unvollständig, beim Teilen erscheint nichts oder das Falsche. Genau das räumen wir jetzt auf.",
           "Erster Prompt: Claude nimmt dein Logo aus dem Projekt und baut daraus alle Favicon-Größen — Browser-Tab, Handy-Startbildschirm, Google-Suchergebnis.",
-          "Zweiter Prompt, Runde 1: Claude schreibt dir einen Bild-Prompt für Higgsfield, zugeschnitten auf deine Branche. Den kopierst du in Higgsfield und lädst das schönste Ergebnis herunter.",
-          "Runde 2: Bild in den Projektordner legen, Claude Bescheid sagen — er schneidet es aufs richtige Maß, drückt die Dateigröße und baut es auf allen Seiten ein.",
+          "Einmalig Higgsfield anschließen: der Befehl rechts, danach in Claude Code /mcp eintippen und bei Higgsfield anmelden — der Browser geht auf, einloggen, fertig.",
+          "Zweiter Prompt: Claude denkt sich das Motiv aus deiner Branche aus, erzeugt zwei Varianten direkt über Higgsfield und zeigt sie dir. Du wählst — er holt die Datei, schneidet sie zu und baut sie auf allen Seiten ein.",
           "Der Test: Schick dir den Link selbst per WhatsApp. Jetzt steht da dein Bild, dein Titel, deine Beschreibung — statt einem nackten Link.",
         ],
         cheatSheet: {
@@ -1760,40 +1760,47 @@ Zum Schluss: einmal bauen, prüfen, dass jede Datei wirklich
 erreichbar ist, und mir sagen, wo ich das Icon jetzt überall sehe.`,
             },
             {
-              label: "Der Vorschaubild-Prompt — Runde 1 schreibt deinen Higgsfield-Prompt, Runde 2 baut das Bild ein",
-              text: `Wir bauen das Vorschaubild für meine Website — das Bild, das
-erscheint, wenn jemand meinen Link bei WhatsApp, Facebook oder
-LinkedIn teilt. Das läuft in zwei Runden.
+              label: "Higgsfield anschließen — einmalig, danach kann Claude selbst Bilder erzeugen (dann /mcp und anmelden)",
+              text: `claude mcp add --transport http higgsfield https://mcp.higgsfield.ai/mcp`,
+            },
+            {
+              label: "Der Vorschaubild-Prompt — Claude erzeugt das Bild über Higgsfield und baut es gleich ein",
+              text: `Bau das Vorschaubild für meine Website — das Bild, das erscheint,
+wenn jemand meinen Link bei WhatsApp, Facebook oder LinkedIn teilt.
 
-RUNDE 1 — Schreib mir den Bild-Prompt
-Das Bild erzeuge ich mit einem KI-Bildtool (Higgsfield). Du
-schreibst mir den Prompt dafür, auf Englisch, fertig zum Einfügen:
-- Das Motiv kommt aus meiner Branche und meiner Arbeit — beides
-  steht auf meiner Website, zieh es dir aus dem Projekt.
+Das Bild erzeugst du selbst: Higgsfield ist als MCP-Server
+angeschlossen. Siehst du ihn nicht, sag mir das sofort — dann fehlt
+die Anmeldung — und fang nicht ohne ihn an.
+
+SCHRITT 1 — Das Motiv
+Denk dir das Motiv aus meiner Branche und meiner Arbeit aus — beides
+steht auf meiner Website, zieh es dir aus dem Projekt. Regeln für
+das Bild:
 - Fotorealistisch, warmes Licht, wie von einem guten Fotografen —
   kein Comic, kein Hochglanz-Katalog.
 - Querformat, das Wichtigste in der Mitte — die Ränder werden beim
   Teilen abgeschnitten.
-- KEIN Text im Bild, keine Logos: Schrift aus Bildtools sieht
-  falsch aus, und in der kleinen Vorschau liest sie ohnehin
-  niemand.
+- KEIN Text im Bild, keine Logos: KI-Schrift sieht falsch aus, und
+  in der kleinen Vorschau liest sie ohnehin niemand.
 - Keine erkennbaren Gesichter, keine fremden Marken.
-Gib mir zwei Varianten zur Auswahl. Dann hol ich mir das Bild und
-melde mich wieder.
+Erzeug über Higgsfield zwei Varianten und zeig sie mir. Ich sag dir,
+welche ich nehme — oder was anders soll.
 
-RUNDE 2 — Einbauen (sobald ich das Bild habe)
-Ich lege die Datei ins Projekt und sag dir, wo sie liegt.
-- Schneide sie auf 1200 × 630 Pixel zu und drück die Dateigröße
-  unter 300 KB, ohne dass man es sieht.
-- Bau sie als Open-Graph-Bild ein — mit vollständiger Adresse
+SCHRITT 2 — Einbauen
+Die gewählte Datei lädst du selbst herunter und legst sie ins
+Projekt — ich fasse dabei nichts an.
+- Auf 1200 × 630 Pixel zuschneiden und die Dateigröße unter 300 KB
+  drücken, ohne dass man es sieht.
+- Als Open-Graph-Bild einbauen — mit vollständiger Adresse
   (https://…), sonst zeigen WhatsApp und Facebook nichts an.
 - Dazu auf jeder Seite: og:title und og:description, passend zur
   jeweiligen Seite statt überall gleich, und die Twitter-Karte im
   großen Format.
-- Zum Schluss sagst du mir, wie ich die Vorschau teste. Und warn
-  mich vor: WhatsApp merkt sich die Vorschau eine Weile — hab ich
-  den Link vorher schon mal verschickt, hilft beim Testen ein
-  Anhängsel wie ?v=2.`,
+
+Zum Schluss sagst du mir, wie ich die Vorschau teste. Und warn
+mich vor: WhatsApp merkt sich die Vorschau eine Weile — hab ich
+den Link vorher schon mal verschickt, hilft beim Testen ein
+Anhängsel wie ?v=2.`,
             },
           ],
         },
