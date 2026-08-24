@@ -1723,7 +1723,7 @@ kommt, steht nicht auf der Seite.`,
         steps: [
           "Der Audit hat es schon angemeckert: Favicon fehlt oder ist unvollständig, beim Teilen erscheint nichts oder das Falsche. Genau das räumen wir jetzt auf.",
           "Erster Prompt: Claude nimmt dein Logo aus dem Projekt und baut daraus alle Favicon-Größen — Browser-Tab, Handy-Startbildschirm, Google-Suchergebnis.",
-          "Einmalig Higgsfield anschließen: der Befehl rechts, danach in Claude Code /mcp eintippen und bei Higgsfield anmelden — der Browser geht auf, einloggen, fertig.",
+          "Einmalig Higgsfield verbinden: auf claude.ai unter Einstellungen → Connectors nach Higgsfield suchen, hinzufügen, anmelden. Danach kann dein Claude selbst Bilder erzeugen — auch in Claude Code.",
           "Zweiter Prompt: Claude denkt sich das Motiv aus deiner Branche aus, erzeugt zwei Varianten direkt über Higgsfield und zeigt sie dir. Du wählst — er holt die Datei, schneidet sie zu und baut sie auf allen Seiten ein.",
           "Der Test: Schick dir den Link selbst per WhatsApp. Jetzt steht da dein Bild, dein Titel, deine Beschreibung — statt einem nackten Link.",
         ],
@@ -1760,17 +1760,13 @@ Zum Schluss: einmal bauen, prüfen, dass jede Datei wirklich
 erreichbar ist, und mir sagen, wo ich das Icon jetzt überall sehe.`,
             },
             {
-              label: "Higgsfield anschließen — einmalig, danach kann Claude selbst Bilder erzeugen (dann /mcp und anmelden)",
-              text: `claude mcp add --transport http higgsfield https://mcp.higgsfield.ai/mcp`,
-            },
-            {
               label: "Der Vorschaubild-Prompt — Claude erzeugt das Bild über Higgsfield und baut es gleich ein",
               text: `Bau das Vorschaubild für meine Website — das Bild, das erscheint,
 wenn jemand meinen Link bei WhatsApp, Facebook oder LinkedIn teilt.
 
-Das Bild erzeugst du selbst: Higgsfield ist als MCP-Server
+Das Bild erzeugst du selbst: Higgsfield ist als Connector
 angeschlossen. Siehst du ihn nicht, sag mir das sofort — dann fehlt
-die Anmeldung — und fang nicht ohne ihn an.
+die Verbindung oder die Anmeldung — und fang nicht ohne ihn an.
 
 SCHRITT 1 — Das Motiv
 Denk dir das Motiv aus meiner Branche und meiner Arbeit aus — beides
