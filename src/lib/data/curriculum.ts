@@ -60,10 +60,253 @@ export type CourseModule = {
 };
 
 export const CURRICULUM: CourseModule[] = [
+  // ── Modul 1 (NEU): folgt den gedrehten Videos. Die Module darunter sind
+  //    die alte Planung und bleiben zur Orientierung stehen, bis Marius sie
+  //    ausdrücklich streicht.
+  {
+    slug: "modul-1-basics",
+    title: "Modul 1: Basics",
+    subtitle: "Claude Code einrichten, die erste Website bauen, Vorlagen nachbauen — die Grundlage für alles",
+    tier: "free",
+    icon: "rocket",
+    gradient: "from-emerald-500/80 to-teal-400/80",
+    lessons: [
+      {
+        // Video: „erstes.mp4" + „skill 2.mp4"
+        slug: "claude-code-dein-mitarbeiter",
+        title: "Claude Code, dein Mitarbeiter?",
+        description:
+          "Claude Code ist das Herzstück dieses Kurses — die zentrale Steuerung für alles: Website, Hosting, Automationen, E-Mail-Marketing, Werbekampagnen. Hier richten wir es ein und laden die Werkzeuge, die Claude braucht.",
+        duration: 12,
+        kind: "video",
+        steps: [
+          "Die Claude-Desktop-App herunterladen — es gibt sie für Mac und für Windows.",
+          "Den Pro-Tarif abschließen (18 € im Monat). Das ist die einzige laufende Ausgabe, die der Kurs wirklich braucht.",
+          "Terminal öffnen: Mac mit Cmd + Leertaste und „terminal“, Windows mit Windows-Taste + R und „powershell“.",
+          "Den Setup-Befehl rechts kopieren, einfügen, Enter. Das installiert die Entwicklerwerkzeuge — Pakete und Bibliotheken, die Claude braucht, um Websites lokal zu bauen und Verbindungen herzustellen. Claude kann nur mit dem arbeiten, was da ist.",
+          "Skills verstehen: kurze Anleitungen, die Claude zum Spezialisten machen — auf skills.sh gibt es tausende. Bestes Beispiel: der SEO-Audit-Skill, den wir später oft verwenden.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Terminal öffnen: Cmd + Leertaste → „terminal“ → Enter. Dann einfügen, Enter:",
+              os: "mac",
+              text: `curl -fsSL https://setup.mariusmueller.media | bash`,
+            },
+            {
+              label: "PowerShell öffnen: Windows-Taste + R → „powershell“ → Enter. Dann einfügen, Enter:",
+              os: "win",
+              text: `irm https://setup.mariusmueller.media/win | iex`,
+            },
+          ],
+          links: [
+            {
+              label: "Claude herunterladen",
+              href: "https://claude.ai",
+              note: "Desktop-App für Mac und Windows, Pro-Tarif nötig",
+            },
+            {
+              label: "skills.sh — alle Skills durchsuchen",
+              href: "https://skills.sh",
+              note: "die Bibliothek, aus der unsere Skills kommen",
+            },
+          ],
+        },
+      },
+      {
+        // Video: „Claude - 16 August 2026.mp4"
+        slug: "erste-website",
+        title: "Die erste Website in 35 Minuten",
+        description:
+          "Wir starten direkt in Claude Code — mit einem echten Kundenauftrag: ein mittelständischer Möbel-Händler. Zwei Design-Skills, ein Start-Prompt, deine Antworten — und Claude baut das Fundament deiner Website.",
+        duration: 40,
+        kind: "video",
+        steps: [
+          "In der Claude-App oben „Code“ auswählen und einen Ordner anlegen, in dem das Projekt lebt.",
+          "Die zwei Design-Skills installieren — sie sorgen für das richtige Design und die richtige Typografie. Befehle rechts, einmal ins Terminal.",
+          "Den Start-Prompt rechts kopieren und abschicken. Claude interviewt dich: Firma, Kunden, Leistungen — eine Frage nach der anderen.",
+          "Antworten, Zusammenfassung prüfen, bestätigen. Dann baut Claude — das dauert ruhig 20 Minuten, lass ihn arbeiten.",
+          "Zum Modell: Opus reicht völlig aus. Fable wäre für so eine Aufgabe Overkill.",
+          "Ergebnis ansehen: oben rechts das Welt-Symbol — der eingebaute Browser mit deinem lokalen Server. Auch die mobile Ansicht prüfen. Platzhalter-Texte und -Bilder sind normal, das ist das Fundament — die nächsten Schritte folgen.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Die zwei Design-Skills — ins Terminal einfügen, Enter",
+              os: "mac",
+              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes
+npx skills add tristanmanchester/agent-skills --skill designing-beautiful-websites --global --yes`,
+            },
+            {
+              label: "Die zwei Design-Skills — in PowerShell einfügen, Enter",
+              os: "win",
+              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes
+npx skills add tristanmanchester/agent-skills --skill designing-beautiful-websites --global --yes`,
+            },
+            {
+              label: "Der Start-Prompt — Claude interviewt dich und baut erst danach",
+              text: `Bau mir meine Website. Aber bevor du irgendetwas anlegst:
+interviewe mich.
+
+Stell mir die Fragen NACHEINANDER, eine nach der anderen, und warte
+jeweils auf meine Antwort. Frag nach, wenn eine Antwort zu vage ist.
+
+MEIN BETRIEB
+- Wie heißt meine Firma, was mache ich genau, seit wann?
+- Wo sitze ich und in welchem Umkreis arbeite ich?
+- Was unterscheidet mich von den anderen in meiner Gegend?
+
+MEINE KUNDEN
+- Wer kommt zu mir: Privatleute, Firmen, beides?
+- Was ist die typische Anfrage, mit der jemand zu mir kommt?
+- Was soll jemand tun, der auf meiner Seite landet?
+
+MEINE LEISTUNGEN
+- Welche Leistungen biete ich an, und welche bringen das meiste Geld?
+- Gibt es Leistungen, die ich NICHT mehr machen will?
+- Feste Preise, Stundensatz oder Angebot auf Anfrage?
+
+UMFANG DER SEITE
+- Eine Seite zum Runterscrollen oder mehrere Unterseiten?
+- Wenn mehrere: welche sollen es sein?
+- Welche Inhalte müssen drauf — Leistungen, Referenzen, Team,
+  Öffnungszeiten, Anfahrt, Preise, Bewertungen?
+
+Wenn ich alles beantwortet habe:
+1. Fass alles als kurzen Steckbrief zusammen und lass mich bestätigen,
+   bevor du weitermachst.
+2. Leg dann eine neue Next.js-App an: React, TypeScript, App Router,
+   Tailwind CSS.
+3. Sag mir in zwei Sätzen, was du gebaut hast und wie ich die Seite auf
+   meinem Rechner anschaue.
+
+Frag mich noch nichts zu Technik, Funktionen, Bildern, Logo, SEO oder
+rechtlichen Themen wie Impressum und Datenschutz — das machen wir alles
+später, eins nach dem anderen. Erfinde nichts über meine Firma dazu.
+Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
+            },
+          ],
+          links: [
+            {
+              label: "skills.sh — alle Skills durchsuchen",
+              href: "https://skills.sh",
+              note: "falls du noch einen für deine Branche suchst",
+            },
+          ],
+        },
+      },
+      {
+        // Video: „part 1.mp4" + „part 2.mp4"
+        slug: "referenz-websites-nutzen",
+        title: "Referenz-Websites nutzen",
+        description:
+          "Der zweite Weg: Du hast schon eine Website und willst sie mitnehmen — oder dir gefällt eine fremde Seite und du willst sie als Vorlage. Das Download-Werkzeug aus dem Setup holt die komplette Seite, Claude baut sie mit deinen Inhalten nach. So kommst du auch raus aus Wix, IONOS oder WordPress.",
+        duration: 15,
+        kind: "video",
+        steps: [
+          "Die Vorlage aussuchen: deine bisherige Website — oder irgendeine Seite, die dir gefällt. Adresse kopieren.",
+          "Neuen Projektordner anlegen, den Referenz-Prompt rechts mit der Adresse abschicken.",
+          "Claude lädt die Seite komplett herunter — Texte, Bilder, Skripte — und interviewt dich wie in der ersten Website-Lektion.",
+          "Antworten, Steckbrief bestätigen, bauen lassen. Dann vergleichen: Aufbau, Farben und Schriften sitzen, die Texte sind schon auf deine Firma angepasst.",
+          "Fehlt ein Detail — etwa eine durchlaufende Schrift? Einfach benennen und Claude fragen: Er findet heraus, wie es gemacht wurde, und baut es nach.",
+          "Setup übersprungen? Ohne das Werkzeugpaket geht der Download nicht — der Nachhol-Befehl steht rechts.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Der Referenz-Prompt — Adresse eintragen, dann interviewt dich Claude",
+              text: `Bau mir meine Website nach einer Vorlage. Aber bevor du
+irgendetwas anlegst: interviewe mich.
+
+Referenz-Website: {ADRESSE-DER-WEBSITE}
+
+Lade die Referenz zuerst herunter: Auf meinem Rechner liegt unser
+Download-Werkzeug — die Datei websiteloader.py im Ordner mm-werkzeuge
+in meinem Benutzerordner. Tiefe 2 reicht. Leg den Download in meinem
+Projektordner unter referenz/ ab, schreib eine kurze
+referenz/LIESMICH.md („Vorlage — wird nicht verändert, geht nicht mit
+online") und trag referenz/ in die .gitignore ein, falls mein Projekt
+ein Git-Repo ist.
+
+Dann stell mir die Fragen NACHEINANDER, eine nach der anderen, und
+warte jeweils auf meine Antwort. Frag nach, wenn eine Antwort zu vage
+ist.
+
+ZUR REFERENZ
+- Ist das meine eigene Website, die ich mitnehmen oder verbessern
+  will — oder eine fremde Seite, die mir einfach gefällt?
+- Was genau gefällt mir daran: Aufbau, Farben, Sprache, Bilder?
+- Wie viel soll übernommen werden — nur der Aufbau, auch Texte, auch
+  Bilder? (Bei einer fremden Seite gilt: Texte und Bilder sind nur
+  Platzhalter und werden später ersetzt.)
+
+MEIN BETRIEB
+- Wie heißt meine Firma, was mache ich genau, seit wann?
+- Wo sitze ich und in welchem Umkreis arbeite ich?
+- Was unterscheidet mich von den anderen in meiner Gegend?
+
+MEINE KUNDEN
+- Wer kommt zu mir: Privatleute, Firmen, beides?
+- Was ist die typische Anfrage, mit der jemand zu mir kommt?
+- Was soll jemand tun, der auf meiner Seite landet?
+
+MEINE LEISTUNGEN
+- Welche Leistungen biete ich an, und welche bringen das meiste Geld?
+- Gibt es Leistungen, die ich NICHT mehr machen will?
+
+AUFBAU
+- Soll meine Seite genauso aufgebaut sein wie die Referenz — oder
+  gibt es Abschnitte, die raus sollen oder dazukommen?
+
+Wenn ich alles beantwortet habe:
+1. Fass alles als kurzen Steckbrief zusammen — auch, wie viel von der
+   Referenz übernommen wird — und lass mich bestätigen, bevor du
+   weitermachst.
+2. Leg dann eine neue, eigenständige Next.js-App an: React,
+   TypeScript, App Router, Tailwind CSS. Der Ordner referenz/ bleibt
+   dabei unverändert liegen.
+3. Bau die erste Fassung nach der Referenz: gleicher Aufbau,
+   ähnlicher Stil, ähnliche Sprache — aber mit meiner Firma drin.
+   Bilder aus referenz/ darfst du als Platzhalter in die Assets
+   übernehmen, die tauschen wir später aus. Texte je nachdem, was ich
+   oben geantwortet habe.
+4. Sag mir in zwei Sätzen, was du gebaut hast und wie ich die Seite
+   auf meinem Rechner anschaue.
+
+Frag mich noch nichts zu Technik, Funktionen, Logo, SEO oder
+rechtlichen Themen wie Impressum und Datenschutz — das machen wir
+alles später, eins nach dem anderen. Erfinde nichts über meine Firma
+dazu. Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
+            },
+            {
+              label: "Nur mal schnell ansehen, ohne Claude — Adresse hinten ersetzen",
+              os: "mac",
+              text: `python3 ~/mm-werkzeuge/websiteloader.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de --ansehen`,
+            },
+            {
+              label: "Nur mal schnell ansehen, ohne Claude — Adresse hinten ersetzen",
+              os: "win",
+              text: `python $HOME\\mm-werkzeuge\\websiteloader.py https://DIE-SEITE-DIE-DIR-GEFAELLT.de --ansehen`,
+            },
+            {
+              label: "Setup übersprungen? Das komplette Paket nachholen — ins Terminal einfügen, Enter",
+              os: "mac",
+              text: `curl -fsSL https://setup.mariusmueller.media | bash`,
+            },
+            {
+              label: "Setup übersprungen? Das komplette Paket nachholen — in PowerShell einfügen, Enter",
+              os: "win",
+              text: `irm https://setup.mariusmueller.media/win | iex`,
+            },
+          ],
+        },
+      },
+    ],
+  },
   {
     slug: "basics",
-    title: "Basics",
-    subtitle: "Claude einrichten, Domain sichern, eigene E-Mail-Adressen — alles per Ansage",
+    title: "Basics (alte Planung)",
+    subtitle: "Bleibt zur Orientierung stehen, bis die neuen Video-Module komplett sind — Inhalte wandern nach und nach nach oben",
     tier: "free",
     icon: "compass",
     gradient: "from-sky-500/80 to-cyan-400/80",
