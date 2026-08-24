@@ -390,6 +390,154 @@ nicht — das kommt gleich danach, gebündelt.`,
           ],
         },
       },
+      {
+        // Video: „KI Design Schritt für Schritt optimieren.mp4"
+        slug: "design-grundlagen",
+        title: "Design-Grundlagen: Warum Seiten gut aussehen",
+        videoUrl: "/videos/modul-1/design-grundlagen.mp4",
+        description:
+          "Fundament und Texte stehen — jetzt kommt das Design. Claude zieht die Farben aus deinem Logo, baut dir ein Designprofil mit drei Kombinationen zur Auswahl, und mit dem Stift-Trick schleifst du danach jede Kleinigkeit weg, ohne vom Fach zu sein.",
+        duration: 25,
+        kind: "video",
+        fontSchau: true,
+        steps: [
+          "Erst mal genau hinschauen: Kleine Unstimmigkeiten wie ungleiche Abstände — oben in der Hero-Sektion mehr Luft als unten — fallen jetzt auf. Genau die räumen wir weg.",
+          "Die Design-Skills installieren — Befehle rechts. Einen davon hast du vielleicht schon aus der Website-Lektion, das Ausführen schadet nicht.",
+          "Den Design-Prompt schicken. Wenn Claude nach dem Logo fragt: Datei einfach in den Chat ziehen. Er zieht Farbkombinationen aus dem Logo und schlägt eine Schrift vor — eigene Wünsche wie „noch etwas Schwarz und Orange dazu“ sagst du einfach mit. Daraus entsteht dein Designprofil.",
+          "Auswählen: erst den Stil für Eingabefelder, Knöpfe und Karten, dann eine der drei Farbkombinationen. Auf den ersten Blick sehen sie sich ähnlich — die Unterschiede stecken im Detail, schau genau hin.",
+          "Die Schriftart in der Schriftarten-Übersicht unten vergleichen und entscheiden — die Wahl einfach herauskopieren und in den Chat geben.",
+          "Der Stift-Trick fürs Feintuning: im eingebauten Browser aufs Stift-Symbol klicken, das Störende einkreisen, zum Chat hinzufügen und beschreiben. Auch die mobile Ansicht prüfen — zu viel Text auf dem Handy? Einkreisen, sagen, fertig. So schleifst du die Seite Schritt für Schritt.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Design-Skills installieren — beide Zeilen nacheinander, ins Terminal",
+              os: "mac",
+              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes
+npx skills add anthropics/skills --skill frontend-design --global --yes`,
+            },
+            {
+              label: "Design-Skills installieren — beide Zeilen nacheinander, in PowerShell",
+              os: "win",
+              text: `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --global --yes
+npx skills add anthropics/skills --skill frontend-design --global --yes`,
+            },
+            {
+              label: "Der Design-Prompt — Claude fragt dich aus, baut um und räumt am Ende auf",
+              text: `Überarbeite jetzt das Design meiner Website. Nutze dafür die
+Skills „ui-ux-pro-max" und „frontend-design".
+
+SCHRITT 1 — Frag mich zuerst, nacheinander:
+- Hab ich ein Logo? Wenn ja, schicke ich es dir in den Chat. Zieh
+  die Farben daraus und schlag eine Schrift vor, die dazu passt.
+  Wenn ich zusätzliche Farbwünsche habe, arbeite sie ein.
+- Was ist meine Branche, und welchen Eindruck soll die Seite machen:
+  bodenständig und verlässlich, hochwertig und ruhig, oder modern
+  und frisch?
+- Habe ich Firmenfarben, zum Beispiel vom Firmenwagen oder von der
+  Arbeitskleidung? Wenn ja, welche?
+- Gibt es eine Farbe, die gar nicht passt?
+- Wie sollen die Ecken sein — bei Knöpfen, Karten, Bildern und
+  Eingabefeldern? Scharf und eckig (streng, technisch), leicht
+  abgerundet (der ruhige Mittelweg) oder stark abgerundet (weich und
+  freundlich)? Zeig mir die drei Varianten kurz, dann sag ich dir,
+  welche.
+
+SCHRITT 2 — Mach mir drei Vorschläge. Jeder besteht aus:
+- einer Farbkombination nach der 60-30-10-Regel: eine ruhige
+  Grundfarbe für den Hintergrund, eine dunkle für Text und Flächen,
+  eine kräftige Signalfarbe NUR für Knöpfe und wichtige Stellen
+- einer Schriftkombination: eine Schrift für Überschriften, eine gut
+  lesbare für Fließtext, beide von Google Fonts
+- einem Satz, warum das zu meiner Branche passt
+
+Zeig mir die drei als Vorschau nebeneinander. Ich suche einen aus —
+meine Schriftwahl treffe ich mit der Schriftarten-Übersicht aus dem
+Kurs und sage sie dir dazu. Erst danach baust du ein.
+
+SCHRITT 3 — Beim Einbauen gilt:
+
+FARBEN
+- Alle Farben als Variablen anlegen, nicht überall einzeln
+  reinschreiben. Ich will die Farbe später an EINER Stelle ändern
+  können.
+- Kontraste prüfen: Mindestverhältnis 4,5 zu 1. Grauer Text auf
+  grauem Grund ist raus.
+
+TYPOGRAFIE
+- Höchstens zwei Schriftarten auf der ganzen Seite.
+- Leg eine feste Größenstaffel an und benutz NUR diese Größen: eine
+  für die große Überschrift, eine für Abschnittsüberschriften, eine
+  für Zwischenüberschriften, eine für Fließtext, eine für Kleinkram.
+  Keine krummen Zwischengrößen, die nur an einer Stelle vorkommen.
+- Zeilenabstand: bei Fließtext locker (etwa 1,5), bei großen
+  Überschriften enger (etwa 1,1).
+- Fließtext nicht breiter als etwa 70 Zeichen pro Zeile.
+- Genau eine H1 pro Seite, danach H2, dann H3. Keine Stufe
+  überspringen, nur weil eine Größe gerade besser aussieht.
+
+ECKEN
+- Ein einziger Rundungswert für die ganze Seite, als Variable
+  angelegt. Große Flächen wie Karten dürfen etwas runder sein als
+  kleine Knöpfe, aber im selben Verhältnis. Keine Karte mit 8 Pixeln
+  neben einer mit 24.
+- Runde Ecken und scharfe Ecken nicht mischen.
+
+NAVIGATION
+- Die Menüleiste muss lieber FRÜHER einknicken als zu eng zu werden.
+  Sobald die Menüpunkte anfangen zu drängeln, umzubrechen oder
+  abgeschnitten zu werden, machst du daraus ein Burger-Menü — nicht
+  erst beim Handy. Lieber ein Burger-Menü zu früh als eine gequetschte
+  Leiste.
+- Kein Menüpunkt wird abgeschnitten, bricht um oder liegt über
+  anderem Text. Ein aufklappender Menü-Knopf muss eigenen Platz haben
+  und darf nichts überdecken.
+- Prüf das bei 1280, 1024, 768 und 375 Pixeln Breite. Sag mir für
+  jede Breite, ob die Leiste offen oder eingeklappt ist.
+
+ABSTÄNDE UND CONTAINER
+- Leg ein Abstandssystem fest, alles in Vielfachen von 4 Pixeln, und
+  halte dich überall daran. Keine einzelnen krummen Werte.
+- Alle Abschnitte bekommen denselben Abstand nach oben und unten.
+  Auch innerhalb eines Abschnitts: gleich viel Luft über und unter
+  dem Inhalt — nicht oben mehr als unten.
+- Alle Container haben dieselbe maximale Breite und denselben
+  seitlichen Innenabstand. Alles muss an derselben Kante ausgerichtet
+  sein, von der obersten Leiste bis zum Fußbereich.
+- Gleichartige Elemente bekommen gleiche Abstände zueinander: alle
+  Karten in einem Raster denselben Zwischenraum.
+- Zusammengehörendes steht enger beieinander als Getrenntes. Eine
+  Überschrift gehört näher an ihren eigenen Text als an den Abschnitt
+  darüber.
+
+SCHRITT 4 — Wenn alles eingebaut ist, geh die ganze Seite nochmal
+durch und räum auf. Nicht schätzen, sondern wirklich in jede Datei
+schauen:
+
+- Zähl auf, welche Schriftgrößen, Schriftstärken und Zeilenabstände
+  tatsächlich vorkommen und wie oft. Alles, was nur ein- oder zweimal
+  auftaucht, ersetzt du durch den passenden Wert aus der Staffel.
+- Zähl alle verwendeten Abstandswerte auf. Alles, was nicht ins
+  Vierer-System passt, kommt weg.
+- Zähl alle Eckenrundungen auf. Es darf nur der eine festgelegte
+  Wert und sein größeres Gegenstück vorkommen.
+- Geh jeden Abschnitt einzeln durch: gleiche maximale Breite?
+  Gleicher seitlicher Innenabstand? Fluchten die Kanten wirklich auf
+  einer Linie?
+- Prüf das Handy: quetscht sich irgendwo etwas, ist etwas breiter als
+  der Bildschirm?
+- Zieh das Fenster gedanklich langsam schmaler und sag mir, bei
+  welcher Breite es zum ersten Mal eng wird — dort muss das Layout
+  umbrechen, nicht erst später. Nichts darf sich dabei überlappen
+  oder abgeschnitten werden.
+
+Zeig mir die Fundliste mit Fundort und Vorschlag, bevor du diese
+letzten Änderungen machst. Danach zeigst du mir die fertige Seite am
+Rechner und auf dem Handy.`,
+            },
+          ],
+        },
+      },
     ],
   },
   {
