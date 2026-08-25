@@ -135,22 +135,39 @@ const ANBIETER: Anbieter[] = [
 
 const GRUPPEN = [...new Set(ANBIETER.map((a) => a.gruppe))];
 
+type Zeile = { adresse: string; passwort: string };
+
 export function UmzugPrompt({ prompt }: { prompt: string }) {
   const [id, setId] = useState("ionos");
   const [eigenerServer, setEigenerServer] = useState("");
+  const [zeilen, setZeilen] = useState<Zeile[]>([{ adresse: "", passwort: "" }]);
 
   const anbieter = ANBIETER.find((a) => a.id === id)!;
   const brauchtEingabe = !anbieter.server;
+
+  const zeileAendern = (i: number, feld: keyof Zeile, wert: string) =>
+    setZeilen((z) => z.map((r, j) => (j === i ? { ...r, [feld]: wert } : r)));
 
   const fertig = useMemo(() => {
     const server = anbieter.server ?? eigenerServer.trim();
     const serverText = server
       ? server + (anbieter.hinweis ? `\n  Hinweis: ${anbieter.hinweis}` : "")
       : "unbekannt — find ihn über die Hilfeseiten meines Anbieters heraus oder frag mich";
+    const gefuellt = zeilen.filter((z) => z.adresse.trim());
+    const adressBlock = gefuellt.length
+      ? "MEINE BESTEHENDEN ADRESSEN (mit den alten Passwörtern für den Sync):\n" +
+        gefuellt
+          .map(
+            (z) =>
+              `- ${z.adresse.trim()} — altes Passwort: ${z.passwort.trim() || "frag mich"}`
+          )
+          .join("\n")
+      : "MEINE BESTEHENDEN ADRESSEN: frag mich — ich sag sie dir im Chat.";
     return prompt
       .replaceAll("{ALTER-ANBIETER}", anbieter.name.replace(" …", ""))
-      .replaceAll("{ALTER-IMAP-SERVER}", serverText);
-  }, [prompt, anbieter, eigenerServer]);
+      .replaceAll("{ALTER-IMAP-SERVER}", serverText)
+      .replaceAll("{MEINE-ADRESSEN}", adressBlock);
+  }, [prompt, anbieter, eigenerServer, zeilen]);
 
   return (
     <div className="rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6">
@@ -212,6 +229,52 @@ export function UmzugPrompt({ prompt }: { prompt: string }) {
             )}
           </div>
         ) : null}
+      </div>
+
+      <div className="mb-5">
+        <label className="mb-2 block text-xs uppercase tracking-widest text-zinc-500">
+          Deine bestehenden Adressen — mit dem bisherigen Passwort
+        </label>
+        <div className="space-y-2">
+          {zeilen.map((z, i) => (
+            <div key={i} className="flex gap-2">
+              <input
+                value={z.adresse}
+                onChange={(e) => zeileAendern(i, "adresse", e.target.value)}
+                placeholder="info@meine-firma.de"
+                className="min-w-0 flex-1 rounded-xl border border-white/10 bg-surface-950/60 px-3 py-2.5 font-mono text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-brand-500/50 focus:outline-none"
+              />
+              <input
+                value={z.passwort}
+                onChange={(e) => zeileAendern(i, "passwort", e.target.value)}
+                placeholder="altes Passwort"
+                className="w-36 rounded-xl border border-white/10 bg-surface-950/60 px-3 py-2.5 font-mono text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-brand-500/50 focus:outline-none"
+              />
+              {zeilen.length > 1 ? (
+                <button
+                  type="button"
+                  onClick={() => setZeilen((r) => r.filter((_, j) => j !== i))}
+                  className="shrink-0 rounded-xl border border-white/10 px-3 text-sm text-zinc-500 transition hover:border-red-500/40 hover:text-red-300"
+                  aria-label="Adresse entfernen"
+                >
+                  ×
+                </button>
+              ) : null}
+            </div>
+          ))}
+        </div>
+        <button
+          type="button"
+          onClick={() => setZeilen((r) => [...r, { adresse: "", passwort: "" }])}
+          className="mt-2 rounded-xl border border-white/10 px-3 py-1.5 text-xs text-zinc-400 transition hover:border-brand-500/40 hover:text-brand-300"
+        >
+          + weitere Adresse
+        </button>
+        <p className="mt-2 text-xs leading-relaxed text-zinc-500">
+          Beides wandert in den Prompt, damit Claude direkt loslegen kann. Der
+          Chat bleibt in deinem eigenen Claude-Konto — Passwort leer lassen
+          geht auch, dann fragt Claude dich danach.
+        </p>
       </div>
 
       <div className="overflow-hidden rounded-2xl border border-white/10 bg-surface-950/60">

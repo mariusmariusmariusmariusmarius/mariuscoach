@@ -1391,7 +1391,8 @@ dass eine einzige Mail verloren geht. Nutz den Skill
 Meine Domain: {DEINE-DOMAIN}
 Mein alter Mail-Anbieter: {ALTER-ANBIETER}
 IMAP-Server des alten Anbieters: {ALTER-IMAP-SERVER}
-Meine bestehenden Adressen: {Z-B-INFO-UND-BUCHHALTUNG}
+
+{MEINE-ADRESSEN}
 
 MEIN ZUGANG (für die neuen Postfächer)
 Adresse: {PLATTFORM-URL}/api/mail
@@ -1413,9 +1414,10 @@ Diese Einträge bewegen keine einzige Mail.
 SCHRITT 3 — Bestand kopieren
 Kopier jedes alte Postfach ins neue. Auf dem Mac nimmst du imapsync
 (kommt mit dem Setup-Paket), auf Windows schreibst du den Sync als
-kleines Python-Skript. Du brauchst je Postfach mein ALTES Passwort —
-frag mich. Der IMAP-Server des alten Anbieters steht oben; steht
-dort "unbekannt", find ihn heraus oder frag mich. Passwörter nur
+kleines Python-Skript. Die alten Passwörter stehen oben
+bei den Adressen — fehlt eins, frag mich. Der IMAP-Server des alten
+Anbieters steht auch oben; steht dort "unbekannt", find ihn heraus
+oder frag mich. Passwörter nur
 in temporäre Dateien, danach löschen; nichts davon landet in meinem
 Projekt. Sag mir je Postfach, wie viele Mails kopiert wurden.
 
