@@ -12,6 +12,7 @@ import { CopyButton } from "@/components/ui/copy-button";
 
 type Anbieter = {
   id: string;
+  gruppe: string;
   name: string;
   /** IMAP-Server; leer = Nutzer trägt selbst ein */
   server?: string;
@@ -22,68 +23,117 @@ type Anbieter = {
 };
 
 const ANBIETER: Anbieter[] = [
-  { id: "ionos", name: "IONOS (1&1)", server: "imap.ionos.de" },
-  { id: "strato", name: "Strato", server: "imap.strato.de" },
+  // — Webhoster & Domain-Anbieter (Deutschland) —
+  { id: "ionos", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "IONOS (1&1)", server: "imap.ionos.de" },
+  { id: "strato", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "Strato", server: "imap.strato.de" },
   {
     id: "allinkl",
+    gruppe: "Webhoster & Domain-Anbieter (DE)",
     name: "All-Inkl",
     platzhalter: "w0123456.kasserver.com",
     hinweis:
       "Der Servername steht im KAS unter „Technische Verwaltung“ — Muster wXXXXXXX.kasserver.com.",
   },
-  { id: "gmx", name: "GMX", server: "imap.gmx.net", hinweis: "Bei GMX muss IMAP in den Postfach-Einstellungen einmal aktiviert sein." },
-  { id: "webde", name: "WEB.DE", server: "imap.web.de", hinweis: "Bei WEB.DE muss IMAP in den Postfach-Einstellungen einmal aktiviert sein." },
-  { id: "tonline", name: "T-Online", server: "secureimap.t-online.de", hinweis: "T-Online verlangt ein eigenes „Passwort für E-Mail-Programme“ — nicht das Kundencenter-Passwort." },
-  { id: "gmail", name: "Google / Gmail", server: "imap.gmail.com", hinweis: "Google verlangt ein App-Passwort (Google-Konto → Sicherheit), das normale Passwort funktioniert nicht." },
-  { id: "outlook", name: "Microsoft / Outlook / 365", server: "outlook.office365.com", hinweis: "Bei Microsoft 365 muss IMAP für das Postfach erlaubt sein — sag mir, wenn die Anmeldung scheitert." },
-  { id: "yahoo", name: "Yahoo", server: "imap.mail.yahoo.com", hinweis: "Yahoo verlangt ein App-Passwort, das normale Passwort funktioniert nicht." },
-  {
-    id: "godaddy",
-    name: "GoDaddy",
-    server: "imap.secureserver.net",
-    hinweis:
-      "Gilt für die klassischen GoDaddy-Postfächer (Workspace Email). Neuere laufen über Microsoft 365 — dann oben „Microsoft“ wählen.",
-  },
-  {
-    id: "squarespace",
-    name: "Squarespace (Google Workspace)",
-    server: "imap.gmail.com",
-    hinweis:
-      "Squarespace-Postfächer laufen über Google Workspace — es gilt der Google-Server, und du brauchst ein App-Passwort (Google-Konto → Sicherheit).",
-  },
   {
     id: "netcup",
+    gruppe: "Webhoster & Domain-Anbieter (DE)",
     name: "Netcup",
     platzhalter: "mx1234.netcup.net",
     hinweis:
       "Der Servername ist bei Netcup individuell — er steht im Kundenportal (CCP/WCP) bei den E-Mail-Einstellungen, Muster mxXXXX.netcup.net.",
   },
-  { id: "udag", name: "united-domains", server: "imap.udag.de" },
-  { id: "onecom", name: "one.com", server: "imap.one.com" },
-  { id: "hostinger", name: "Hostinger", server: "imap.hostinger.com" },
-  { id: "hetzner", name: "Hetzner Webhosting", server: "mail.your-server.de" },
-  { id: "df", name: "domainfactory", server: "sslin.df.eu" },
+  { id: "udag", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "united-domains", server: "imap.udag.de" },
+  { id: "df", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "domainfactory", server: "sslin.df.eu" },
   {
-    id: "icloud",
-    name: "Apple iCloud",
-    server: "imap.mail.me.com",
-    hinweis:
-      "Apple verlangt ein anwendungsspezifisches Passwort (appleid.apple.com → Anmeldung & Sicherheit), das normale funktioniert nicht.",
+    id: "hosteurope",
+    gruppe: "Webhoster & Domain-Anbieter (DE)",
+    name: "Host Europe",
+    server: "mail.hosteurope.de",
+    hinweis: "Klappt die Anmeldung nicht, steht dein Server im KIS unter E-Mail — sag es Claude einfach.",
+  },
+  { id: "hetzner", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "Hetzner Webhosting", server: "mail.your-server.de" },
+  { id: "einsblu", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "1blu", server: "imap.1blu.de" },
+  {
+    id: "webgo",
+    gruppe: "Webhoster & Domain-Anbieter (DE)",
+    name: "webgo",
+    server: "imap.webgo24.de",
+    hinweis: "Klappt die Anmeldung nicht, nimm den Servernamen aus deinem webgo-Kundenportal (Muster sXX.goserver.host).",
+  },
+  { id: "goneo", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "goneo", server: "imap.goneo.de" },
+  { id: "manitu", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "Manitu", server: "mail.manitu.de" },
+  { id: "variomedia", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "Variomedia", server: "imap.variomedia.de" },
+  { id: "dogado", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "dogado", server: "imap.dogado.de" },
+  { id: "limacity", gruppe: "Webhoster & Domain-Anbieter (DE)", name: "lima-city", server: "imap.lima-city.de" },
+  {
+    id: "alfahosting",
+    gruppe: "Webhoster & Domain-Anbieter (DE)",
+    name: "Alfahosting",
+    platzhalter: "alfa3123.alfahosting-server.de",
+    hinweis: "Der Servername ist individuell — er steht im Alfahosting-Kundencenter, Muster alfa3XXX.alfahosting-server.de.",
   },
   {
-    id: "zoho",
-    name: "Zoho Mail",
-    server: "imap.zoho.eu",
-    hinweis:
-      "IMAP muss in den Zoho-Einstellungen einmal aktiviert sein. Liegt dein Konto in den USA statt der EU, heißt der Server imap.zoho.com.",
+    id: "mittwald",
+    gruppe: "Webhoster & Domain-Anbieter (DE)",
+    name: "Mittwald",
+    platzhalter: "mail.deine-domain.de",
+    hinweis: "Der Servername ist individuell — er steht im Mittwald-Kundencenter bei den E-Mail-Einstellungen.",
   },
-  { id: "mailboxorg", name: "mailbox.org", server: "imap.mailbox.org" },
-  { id: "posteo", name: "Posteo", server: "posteo.de" },
-  { id: "world4you", name: "World4You (AT)", server: "imap.world4you.com" },
-  { id: "easyname", name: "easyname (AT)", server: "imap.easyname.com" },
-  { id: "hostpoint", name: "Hostpoint (CH)", server: "imap.mail.hostpoint.ch" },
-  { id: "andere", name: "Anderer Anbieter …", platzhalter: "imap.mein-anbieter.de" },
+  // — Internet- & Mail-Anbieter —
+  { id: "gmx", gruppe: "Internet- & Mail-Anbieter", name: "GMX", server: "imap.gmx.net", hinweis: "Bei GMX muss IMAP in den Postfach-Einstellungen einmal aktiviert sein." },
+  { id: "webde", gruppe: "Internet- & Mail-Anbieter", name: "WEB.DE", server: "imap.web.de", hinweis: "Bei WEB.DE muss IMAP in den Postfach-Einstellungen einmal aktiviert sein." },
+  { id: "tonline", gruppe: "Internet- & Mail-Anbieter", name: "T-Online", server: "secureimap.t-online.de", hinweis: "T-Online verlangt ein eigenes „Passwort für E-Mail-Programme“ — nicht das Kundencenter-Passwort." },
+  { id: "freenet", gruppe: "Internet- & Mail-Anbieter", name: "Freenet", server: "mx.freenet.de", hinweis: "Bei Freenet muss IMAP je nach Tarif in den Einstellungen freigeschaltet sein." },
+  { id: "vodafone", gruppe: "Internet- & Mail-Anbieter", name: "Vodafone Mail", server: "imap.vodafonemail.de" },
+  { id: "arcor", gruppe: "Internet- & Mail-Anbieter", name: "Arcor", server: "imap.arcor.de" },
+  { id: "gmail", gruppe: "Internet- & Mail-Anbieter", name: "Google / Gmail", server: "imap.gmail.com", hinweis: "Google verlangt ein App-Passwort (Google-Konto → Sicherheit), das normale Passwort funktioniert nicht." },
+  { id: "outlook", gruppe: "Internet- & Mail-Anbieter", name: "Microsoft / Outlook / 365", server: "outlook.office365.com", hinweis: "Bei Microsoft 365 muss IMAP für das Postfach erlaubt sein — sag mir, wenn die Anmeldung scheitert." },
+  { id: "yahoo", gruppe: "Internet- & Mail-Anbieter", name: "Yahoo", server: "imap.mail.yahoo.com", hinweis: "Yahoo verlangt ein App-Passwort, das normale Passwort funktioniert nicht." },
+  { id: "icloud", gruppe: "Internet- & Mail-Anbieter", name: "Apple iCloud", server: "imap.mail.me.com", hinweis: "Apple verlangt ein anwendungsspezifisches Passwort (appleid.apple.com → Anmeldung & Sicherheit)." },
+  { id: "zoho", gruppe: "Internet- & Mail-Anbieter", name: "Zoho Mail", server: "imap.zoho.eu", hinweis: "IMAP muss in den Zoho-Einstellungen aktiviert sein. US-Konten nutzen imap.zoho.com." },
+  { id: "mailboxorg", gruppe: "Internet- & Mail-Anbieter", name: "mailbox.org", server: "imap.mailbox.org" },
+  { id: "posteo", gruppe: "Internet- & Mail-Anbieter", name: "Posteo", server: "posteo.de" },
+  // — Baukästen —
+  {
+    id: "squarespace",
+    gruppe: "Baukästen",
+    name: "Squarespace (Google Workspace)",
+    server: "imap.gmail.com",
+    hinweis: "Squarespace-Postfächer laufen über Google Workspace — App-Passwort nötig (Google-Konto → Sicherheit).",
+  },
+  {
+    id: "wix",
+    gruppe: "Baukästen",
+    name: "Wix (Google Workspace)",
+    server: "imap.gmail.com",
+    hinweis: "Wix-Postfächer laufen über Google Workspace — App-Passwort nötig (Google-Konto → Sicherheit).",
+  },
+  { id: "jimdo", gruppe: "Baukästen", name: "Jimdo", server: "imap.jimdo.com", hinweis: "Klappt die Anmeldung nicht, sag es Claude — er findet den richtigen Server für dein Jimdo-Paket." },
+  // — Österreich —
+  { id: "world4you", gruppe: "Österreich", name: "World4You", server: "imap.world4you.com" },
+  { id: "easyname", gruppe: "Österreich", name: "easyname", server: "imap.easyname.com" },
+  { id: "a1", gruppe: "Österreich", name: "A1", server: "securemail.a1.net" },
+  // — Schweiz —
+  { id: "hostpoint", gruppe: "Schweiz", name: "Hostpoint", server: "imap.mail.hostpoint.ch" },
+  { id: "infomaniak", gruppe: "Schweiz", name: "Infomaniak", server: "mail.infomaniak.com" },
+  { id: "metanet", gruppe: "Schweiz", name: "METANET", server: "mail.metanet.ch" },
+  { id: "swisscom", gruppe: "Schweiz", name: "Swisscom / Bluewin", server: "imaps.bluewin.ch" },
+  // — International —
+  { id: "onecom", gruppe: "International", name: "one.com", server: "imap.one.com" },
+  { id: "hostinger", gruppe: "International", name: "Hostinger", server: "imap.hostinger.com" },
+  {
+    id: "godaddy",
+    gruppe: "International",
+    name: "GoDaddy",
+    server: "imap.secureserver.net",
+    hinweis: "Gilt für die klassischen GoDaddy-Postfächer (Workspace Email). Neuere laufen über Microsoft 365 — dann „Microsoft“ wählen.",
+  },
+  { id: "ovh", gruppe: "International", name: "OVH", server: "ssl0.ovh.net" },
+  { id: "namecheap", gruppe: "International", name: "Namecheap (Private Email)", server: "mail.privateemail.com" },
+  { id: "andere", gruppe: "International", name: "Anderer Anbieter …", platzhalter: "imap.mein-anbieter.de" },
 ];
+
+const GRUPPEN = [...new Set(ANBIETER.map((a) => a.gruppe))];
 
 export function UmzugPrompt({ prompt }: { prompt: string }) {
   const [id, setId] = useState("ionos");
@@ -123,10 +173,14 @@ export function UmzugPrompt({ prompt }: { prompt: string }) {
             onChange={(e) => setId(e.target.value)}
             className="w-full rounded-xl border border-white/10 bg-surface-950/60 px-3 py-2.5 text-sm text-zinc-200 focus:border-brand-500/50 focus:outline-none"
           >
-            {ANBIETER.map((a) => (
-              <option key={a.id} value={a.id}>
-                {a.name}
-              </option>
+            {GRUPPEN.map((g) => (
+              <optgroup key={g} label={g}>
+                {ANBIETER.filter((a) => a.gruppe === g).map((a) => (
+                  <option key={a.id} value={a.id}>
+                    {a.name}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
           {anbieter.hinweis && !brauchtEingabe ? (
