@@ -1310,6 +1310,54 @@ Mail zu tun haben.`,
           ],
         },
       },
+      {
+        // Video: „E-Mail Benachrichtigungen fürs Anfrageformular einrichten"
+        //        + „E-Mail-Zugriff prüfen, Konto einrichten"
+        //        + „E-Mail Passwort ändern per Cloud Prompt-2"
+        slug: "anfragen-per-mail",
+        title: "Anfragen landen im Postfach",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/anfragen-per-mail.mp4",
+        description:
+          "Die Kette wird geschlossen: Jede Anfrage löst zwei Mails aus — die Benachrichtigung an dich, die Bestätigung an den Kunden. Verschickt über dein eigenes Postfach, zusammengeklickt im Baukasten unten. Danach holst du das Postfach ins Mail-Programm und lernst den Passwort-Trick.",
+        duration: 25,
+        kind: "video",
+        mailPrompt: true,
+        resendPrompt: true,
+        steps: [
+          "Der Baukasten unten kennt deine Postfächer schon — die Akademie erkennt automatisch, was du in der letzten Lektion angelegt hast. Absender auswählen, dann wohin die Benachrichtigung soll: deine Geschäftsadresse oder auch privat (Gmail und GMX gehen genauso).",
+          "In einem Satz grob sagen, was in der Bestätigung stehen soll — „danke, wir melden uns innerhalb von 48 Stunden, im Notfall rufen Sie an unter …“. Du siehst unten, wie sich der Prompt beim Tippen live mitbaut. Es muss nicht perfekt formuliert sein, Claude baut die Nachricht daraus.",
+          "Prompt kopieren, abschicken. Claude verknüpft deinen Mailserver mit Vercel und baut zwei Mails mit Variablen: An dich geht die Benachrichtigung mit allen Kontaktdaten — auf Antworten landest du direkt beim Kunden — und der Kunde bekommt seine Bestätigung mit Namen.",
+          "Das Postfach ins Mail-Programm holen: Frag Claude nach Login- und Serverdaten (Prompt rechts). Dann Einstellungen → Accounts → Account hinzufügen → „Anderer Mail-Account“ — nicht Google und Co., du hast einen eigenen Server. Immer IMAP wählen: geräteübergreifend, Ordner und Gelesen-Status sind auf jedem Gerät gleich. Die Ports setzen moderne Programme von selbst.",
+          "Der Live-Test: Anfrage über die echte Website abschicken. Die Benachrichtigung landet im Firmen-Postfach, die Bestätigung beim Kunden — Tipp: Apple und Gmail sortieren sie gern unter „Transaktionen“. Danach die Anfrage in der Admin-App einordnen.",
+          "Passwort ändern oder vergessen? Ein Satz an Claude genügt — danach einmal das neue Passwort im Mail-Programm eintragen, wenn es meckert; Claude schickt zur Kontrolle eine Testmail. Und zum Vertrauen: Dein Chat liegt in deinem eigenen Claude-Konto — nicht anders als bei jeder Software, der du Passwörter anvertraust.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Postfach ins Mail-Programm holen — Claude gibt dir alles als Tabelle",
+              text: `Gib mir die Zugangsdaten meiner Postfächer als Tabelle: Adresse,
+Passwort und die Serverdaten für Posteingang und Postausgang.
+Sag mir dazu in drei Schritten, wie ich das Postfach in mein
+Mail-Programm und aufs Handy hole — und dass ich IMAP nehme,
+niemals POP3.`,
+            },
+            {
+              label: "Passwort ändern — ein Satz reicht",
+              text: `Ändere das Passwort meines Postfachs {ADRESSE} auf ein neues,
+sicheres Passwort. Sag mir das neue Passwort und erinner mich:
+in den Passwort-Manager damit — und in meinem Mail-Programm muss
+ich es danach einmal neu eintragen.`,
+            },
+          ],
+          links: [
+            {
+              label: "Resend — falls du lieber einen Versanddienst nutzt",
+              href: "https://resend.com",
+              note: "Alternative zum eigenen Postfach, Baukasten unten rechts",
+            },
+          ],
+        },
+      },
     ],
   },
   {
