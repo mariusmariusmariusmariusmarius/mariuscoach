@@ -1358,6 +1358,87 @@ ich es danach einmal neu eintragen.`,
           ],
         },
       },
+      {
+        // Video folgt — Marius dreht die Lektion entlang dieser Schritte
+        slug: "postfach-umzug",
+        title: "Postfach-Umzug: Alte Mails mitnehmen",
+        description:
+          "Du hast schon Postfächer bei IONOS, Strato oder GMX? Dann ziehen wir sie auf den Kurs-Server um — mit allen alten Mails, Ordnern und ohne eine Minute Ausfall. Der Trick heißt IMAP-Sync, und die Reihenfolge entscheidet. Wer keine alten Postfächer hat, überspringt diese Lektion einfach.",
+        duration: 20,
+        kind: "video",
+        steps: [
+          "Das Prinzip zuerst: Nur die MX-Einträge bestimmen, wohin Post fließt. Alles andere — neue Postfächer anlegen, verifizieren, sogar den Bestand kopieren — passiert davor, während deine alte Post ungestört weiterläuft. Deshalb gilt: MX zuletzt.",
+          "Den Skill installieren — Befehl rechts. Er enthält den kompletten Umzugsablauf mit allen Stolperfallen, Claude führt dich damit sicher durch.",
+          "Prompt schicken: Claude legt Domain und dieselben Adressen auf dem Kurs-Server an (neue Passwörter) und verifiziert die Domain — ohne die MX-Einträge anzufassen. Ab jetzt sind die neuen Postfächer bereit, aber noch leer geschaltet.",
+          "Der Sync: Claude kopiert jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. Dafür braucht er einmalig deine alten Passwörter; auf dem Mac läuft das mit imapsync aus dem Setup-Paket.",
+          "Der Umzugsmoment: MX-Einträge umstellen — ab jetzt landet Neues auf dem Kurs-Server. Danach der Nachsync: einmal wiederholen, um die Mails mitzunehmen, die während der Umstellung noch beim alten Anbieter eintrudelten.",
+          "Zum Schluss: neue Passwörter in den Passwort-Manager und in deine Mail-Programme, Testmail von außen — und das alte Postfach erst kündigen, wenn ein paar Tage alles rund läuft.",
+        ],
+        cheatSheet: {
+          apiKeyHint: true,
+          prompts: [
+            {
+              label: "Den Umzugs-Skill installieren — ins Terminal, Mac wie Windows gleich",
+              text: `npx skills add mariusmariusmariusmariusmarius/domain-mail-automation --global --yes`,
+            },
+            {
+              label: "Der Umzugs-Prompt — Domain, alter Anbieter und Adressen eintragen",
+              text: `Zieh meine bestehenden Postfächer zum Kurs-Mailserver um — ohne
+dass eine einzige Mail verloren geht. Nutz den Skill
+„domain-mail-automation", dort steht der Umzugsablauf im Detail.
+
+Meine Domain: {DEINE-DOMAIN}
+Mein alter Mail-Anbieter: {Z-B-IONOS-STRATO-GMX}
+Meine bestehenden Adressen: {Z-B-INFO-UND-BUCHHALTUNG}
+
+MEIN ZUGANG (für die neuen Postfächer)
+Adresse: {PLATTFORM-URL}/api/mail
+Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
+
+DIE REIHENFOLGE IST HEILIG — MX ZULETZT:
+
+SCHRITT 1 — Neu anlegen, ohne umzuziehen
+Leg die Domain und DIESELBEN Adressen bei uns an, mit neuen,
+sicheren Passwörtern. Meine alte Post läuft ungestört weiter, weil
+die MX-Einträge noch auf den alten Anbieter zeigen.
+
+SCHRITT 2 — Verifizieren, ohne umzuziehen
+Hol die geforderten Einträge (aktion "records"), setz
+Eigentumsnachweis und DKIM über meine DNS — die MX-Einträge fasst
+du NICHT an — und schalte die Domain frei (aktion "aktivieren").
+Diese Einträge bewegen keine einzige Mail.
+
+SCHRITT 3 — Bestand kopieren
+Kopier jedes alte Postfach ins neue. Auf dem Mac nimmst du imapsync
+(kommt mit dem Setup-Paket), auf Windows schreibst du den Sync als
+kleines Python-Skript. Du brauchst je Postfach mein ALTES Passwort —
+frag mich — und den IMAP-Server des alten Anbieters. Passwörter nur
+in temporäre Dateien, danach löschen; nichts davon landet in meinem
+Projekt. Sag mir je Postfach, wie viele Mails kopiert wurden.
+
+SCHRITT 4 — Der Umzugsmoment
+Erst wenn Schritt 3 durch ist: Stell die MX-Einträge und SPF auf
+den neuen Server um. Zeig mir vorher, was du änderst, und warte auf
+mein OK.
+
+SCHRITT 5 — Nachsync und Kontrolle
+Warte eine Viertelstunde, dann kopier noch einmal — das holt die
+Mails nach, die während der Umstellung noch beim alten Anbieter
+eingingen (der Sync nimmt nur, was fehlt; doppelt gibt es nicht).
+Prüf mit einer Testmail von außen, dass das neue Postfach empfängt,
+und mit einer von innen, dass der Versand geht.
+
+ZUM SCHLUSS
+- Tabelle: Adresse, neues Passwort, Serverdaten (imap.migadu.com,
+  Port 993 / smtp.migadu.com, Port 465, Benutzername = volle
+  Adresse). Erinner mich: Passwörter in den Passwort-Manager und in
+  allen Mail-Programmen aktualisieren.
+- Und sag mir ausdrücklich: Das alte Postfach erst kündigen, wenn
+  ein paar Tage lang alles rund läuft.`,
+            },
+          ],
+        },
+      },
     ],
   },
   {
