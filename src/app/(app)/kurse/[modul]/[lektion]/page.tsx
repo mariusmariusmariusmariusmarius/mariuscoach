@@ -21,6 +21,7 @@ import { DomainCheck } from "@/components/app/domain-check";
 import { MailPrompt } from "@/components/app/mail-prompt";
 import { ResendPrompt } from "@/components/app/resend-prompt";
 import { SeoPrompt } from "@/components/app/seo-prompt";
+import { UmzugPrompt } from "@/components/app/umzug-prompt";
 
 export default async function LessonPage({
   params,
@@ -79,15 +80,20 @@ export default async function LessonPage({
   const seoPromptText = lesson.seoPrompt
     ? sheet?.prompts?.find((p) => p.text.includes("{EINZUGSGEBIET}"))?.text
     : undefined;
-  const sheetOhneSeo =
-    lesson.seoPrompt && sheet
-      ? {
-          ...sheet,
-          prompts: sheet.prompts?.filter(
-            (p) => !p.text.includes("{EINZUGSGEBIET}")
-          ),
-        }
-      : sheet;
+  // Der Umzugs-Prompt wandert in den Anbieter-Baukasten
+  const umzugPromptText = sheet?.prompts?.find((p) =>
+    p.text.includes("{ALTER-IMAP-SERVER}")
+  )?.text;
+  const sheetOhneSeo = sheet
+    ? {
+        ...sheet,
+        prompts: sheet.prompts?.filter(
+          (p) =>
+            !(lesson.seoPrompt && p.text.includes("{EINZUGSGEBIET}")) &&
+            !p.text.includes("{ALTER-IMAP-SERVER}")
+        ),
+      }
+    : sheet;
 
   return (
     <div className="space-y-8">
@@ -196,6 +202,7 @@ export default async function LessonPage({
         <div className="space-y-6 xl:sticky xl:top-6 xl:max-h-[calc(100vh-3rem)] xl:overflow-y-auto">
           {lesson.mailPrompt ? <MailPrompt apiKey={user?.apiKey} /> : null}
           {seoPromptText ? <SeoPrompt prompt={seoPromptText} /> : null}
+          {umzugPromptText ? <UmzugPrompt prompt={umzugPromptText} /> : null}
           {lesson.resendPrompt ? <ResendPrompt domain={eigeneDomain} /> : null}
           <CheatSheet
             sheet={sheetOhneSeo}

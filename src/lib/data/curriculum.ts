@@ -1368,7 +1368,8 @@ ich es danach einmal neu eintragen.`,
         kind: "video",
         steps: [
           "Das Prinzip zuerst: Nur die MX-Einträge bestimmen, wohin Post fließt. Alles andere — neue Postfächer anlegen, verifizieren, sogar den Bestand kopieren — passiert davor, während deine alte Post ungestört weiterläuft. Deshalb gilt: MX zuletzt.",
-          "Den Skill installieren — Befehl rechts. Er enthält den kompletten Umzugsablauf mit allen Stolperfallen, Claude führt dich damit sicher durch.",
+          "Den Skill installieren — Befehl rechts. Er enthält den kompletten Umzugsablauf mit allen Stolperfallen, Claude führt dich damit sicher durch. Und falls du das Setup-Paket noch nicht hast: Der Nachhol-Befehl steht auch rechts — das Sync-Werkzeug imapsync kommt damit gleich mit.",
+          "Im Baukasten unten deinen alten Anbieter auswählen — der richtige Mail-Server steht dann automatisch im Prompt, samt Besonderheiten (bei Google und Yahoo brauchst du zum Beispiel ein App-Passwort).",
           "Prompt schicken: Claude legt Domain und dieselben Adressen auf dem Kurs-Server an (neue Passwörter) und verifiziert die Domain — ohne die MX-Einträge anzufassen. Ab jetzt sind die neuen Postfächer bereit, aber noch leer geschaltet.",
           "Der Sync: Claude kopiert jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. Dafür braucht er einmalig deine alten Passwörter; auf dem Mac läuft das mit imapsync aus dem Setup-Paket.",
           "Der Umzugsmoment: MX-Einträge umstellen — ab jetzt landet Neues auf dem Kurs-Server. Danach der Nachsync: einmal wiederholen, um die Mails mitzunehmen, die während der Umstellung noch beim alten Anbieter eintrudelten.",
@@ -1388,7 +1389,8 @@ dass eine einzige Mail verloren geht. Nutz den Skill
 „domain-mail-automation", dort steht der Umzugsablauf im Detail.
 
 Meine Domain: {DEINE-DOMAIN}
-Mein alter Mail-Anbieter: {Z-B-IONOS-STRATO-GMX}
+Mein alter Mail-Anbieter: {ALTER-ANBIETER}
+IMAP-Server des alten Anbieters: {ALTER-IMAP-SERVER}
 Meine bestehenden Adressen: {Z-B-INFO-UND-BUCHHALTUNG}
 
 MEIN ZUGANG (für die neuen Postfächer)
@@ -1412,7 +1414,8 @@ SCHRITT 3 — Bestand kopieren
 Kopier jedes alte Postfach ins neue. Auf dem Mac nimmst du imapsync
 (kommt mit dem Setup-Paket), auf Windows schreibst du den Sync als
 kleines Python-Skript. Du brauchst je Postfach mein ALTES Passwort —
-frag mich — und den IMAP-Server des alten Anbieters. Passwörter nur
+frag mich. Der IMAP-Server des alten Anbieters steht oben; steht
+dort "unbekannt", find ihn heraus oder frag mich. Passwörter nur
 in temporäre Dateien, danach löschen; nichts davon landet in meinem
 Projekt. Sag mir je Postfach, wie viele Mails kopiert wurden.
 
@@ -1435,6 +1438,16 @@ ZUM SCHLUSS
   allen Mail-Programmen aktualisieren.
 - Und sag mir ausdrücklich: Das alte Postfach erst kündigen, wenn
   ein paar Tage lang alles rund läuft.`,
+            },
+            {
+              label: "Setup übersprungen? Das komplette Paket nachholen (imapsync ist dabei) — ins Terminal, Enter",
+              os: "mac",
+              text: `curl -fsSL https://setup.mariusmueller.media | bash`,
+            },
+            {
+              label: "Setup übersprungen? Das komplette Paket nachholen — in PowerShell, Enter",
+              os: "win",
+              text: `irm https://setup.mariusmueller.media/win | iex`,
             },
           ],
         },
