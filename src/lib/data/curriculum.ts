@@ -1372,6 +1372,7 @@ ich es danach einmal neu eintragen.`,
           "Im Baukasten unten deinen alten Anbieter auswählen — der richtige Mail-Server steht dann automatisch im Prompt, samt Besonderheiten (bei Google und Yahoo brauchst du zum Beispiel ein App-Passwort).",
           "Prompt schicken: Claude legt Domain und dieselben Adressen auf dem Kurs-Server an (neue Passwörter) und verifiziert die Domain — ohne die MX-Einträge anzufassen. Ab jetzt sind die neuen Postfächer bereit, aber noch leer geschaltet.",
           "Der Sync: Claude kopiert jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. Dafür braucht er einmalig deine alten Passwörter; auf dem Mac läuft das mit imapsync aus dem Setup-Paket.",
+          "Der Beweis, dass alles rüber ist — doppelt: Claude zeigt dir je Ordner die Mail-Anzahl alt neben neu, die Zahlen müssen übereinstimmen. Und mit eigenen Augen: webmail.migadu.com im Browser öffnen, mit Adresse und neuem Passwort anmelden — geht sofort, noch vor der Umstellung, ganz ohne Mail-Programm. Da liegen alle kopierten Mails.",
           "Der Umzugsmoment: MX-Einträge umstellen — ab jetzt landet Neues auf dem Kurs-Server. Danach der Nachsync: einmal wiederholen, um die Mails mitzunehmen, die während der Umstellung noch beim alten Anbieter eintrudelten.",
           "Zum Schluss: neue Passwörter in den Passwort-Manager und in deine Mail-Programme, Testmail von außen — und das alte Postfach erst kündigen, wenn ein paar Tage alles rund läuft.",
         ],
@@ -1419,7 +1420,16 @@ den Adressen — fehlt eins, frag mich. Der IMAP-Server des alten
 Anbieters steht auch oben; steht dort "unbekannt", find ihn heraus
 oder frag mich. Passwörter nur
 in temporäre Dateien, danach löschen; nichts davon landet in meinem
-Projekt. Sag mir je Postfach, wie viele Mails kopiert wurden.
+Projekt.
+
+DER BEWEIS — nicht überspringen: Zeig mir nach dem Kopieren eine
+Tabelle, je Postfach und Ordner: Anzahl Mails im alten Postfach
+neben der Anzahl im neuen. Die Zahlen müssen übereinstimmen —
+weichen sie ab, sag es mir und lauf den Sync noch einmal. Und sag
+mir dazu, wie ich es mit eigenen Augen sehe: webmail.migadu.com im
+Browser öffnen, anmelden mit der vollen Adresse und dem NEUEN
+Passwort — das geht sofort, noch bevor irgendetwas umgestellt ist.
+Dort liegen alle kopierten Mails samt Ordnern.
 
 SCHRITT 4 — Der Umzugsmoment
 Erst wenn Schritt 3 durch ist: Stell die MX-Einträge und SPF auf
@@ -1430,6 +1440,7 @@ SCHRITT 5 — Nachsync und Kontrolle
 Warte eine Viertelstunde, dann kopier noch einmal — das holt die
 Mails nach, die während der Umstellung noch beim alten Anbieter
 eingingen (der Sync nimmt nur, was fehlt; doppelt gibt es nicht).
+Zeig mir die Zähl-Tabelle danach noch einmal.
 Prüf mit einer Testmail von außen, dass das neue Postfach empfängt,
 und mit einer von innen, dass der Versand geht.
 
@@ -1450,6 +1461,13 @@ ZUM SCHLUSS
               label: "Setup übersprungen? Das komplette Paket nachholen — in PowerShell, Enter",
               os: "win",
               text: `irm https://setup.mariusmueller.media/win | iex`,
+            },
+          ],
+          links: [
+            {
+              label: "webmail.migadu.com — dein neues Postfach im Browser",
+              href: "https://webmail.migadu.com",
+              note: "Anmeldung: volle Adresse + neues Passwort. Geht sofort — so siehst du die kopierten Mails ohne Mail-Programm.",
             },
           ],
         },
