@@ -155,11 +155,11 @@ export function UmzugPrompt({ prompt }: { prompt: string }) {
       : "unbekannt — find ihn über die Hilfeseiten meines Anbieters heraus oder frag mich";
     const gefuellt = zeilen.filter((z) => z.adresse.trim());
     const adressBlock = gefuellt.length
-      ? "MEINE BESTEHENDEN ADRESSEN (mit den alten Passwörtern für den Sync):\n" +
+      ? "MEINE BESTEHENDEN ADRESSEN (mit Passwort für den Sync):\n" +
         gefuellt
           .map(
             (z) =>
-              `- ${z.adresse.trim()} — altes Passwort: ${z.passwort.trim() || "frag mich"}`
+              `- ${z.adresse.trim()} — Passwort: ${z.passwort.trim() || "frag mich"}`
           )
           .join("\n")
       : "MEINE BESTEHENDEN ADRESSEN: frag mich — ich sag sie dir im Chat.";
@@ -233,7 +233,7 @@ export function UmzugPrompt({ prompt }: { prompt: string }) {
 
       <div className="mb-5">
         <label className="mb-2 block text-xs uppercase tracking-widest text-zinc-500">
-          Deine bestehenden Adressen — mit dem bisherigen Passwort
+          Deine bestehenden Adressen — mit Passwort
         </label>
         <div className="space-y-2">
           {zeilen.map((z, i) => (
@@ -247,7 +247,7 @@ export function UmzugPrompt({ prompt }: { prompt: string }) {
               <input
                 value={z.passwort}
                 onChange={(e) => zeileAendern(i, "passwort", e.target.value)}
-                placeholder="altes Passwort"
+                placeholder="Passwort"
                 className="w-36 rounded-xl border border-white/10 bg-surface-950/60 px-3 py-2.5 font-mono text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-brand-500/50 focus:outline-none"
               />
               {zeilen.length > 1 ? (

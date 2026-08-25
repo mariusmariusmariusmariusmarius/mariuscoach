@@ -1414,8 +1414,8 @@ Diese Einträge bewegen keine einzige Mail.
 SCHRITT 3 — Bestand kopieren
 Kopier jedes alte Postfach ins neue. Auf dem Mac nimmst du imapsync
 (kommt mit dem Setup-Paket), auf Windows schreibst du den Sync als
-kleines Python-Skript. Die alten Passwörter stehen oben
-bei den Adressen — fehlt eins, frag mich. Der IMAP-Server des alten
+kleines Python-Skript. Die Passwörter stehen oben bei
+den Adressen — fehlt eins, frag mich. Der IMAP-Server des alten
 Anbieters steht auch oben; steht dort "unbekannt", find ihn heraus
 oder frag mich. Passwörter nur
 in temporäre Dateien, danach löschen; nichts davon landet in meinem
