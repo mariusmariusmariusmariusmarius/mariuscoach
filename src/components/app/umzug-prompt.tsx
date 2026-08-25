@@ -37,9 +37,51 @@ const ANBIETER: Anbieter[] = [
   { id: "gmail", name: "Google / Gmail", server: "imap.gmail.com", hinweis: "Google verlangt ein App-Passwort (Google-Konto → Sicherheit), das normale Passwort funktioniert nicht." },
   { id: "outlook", name: "Microsoft / Outlook / 365", server: "outlook.office365.com", hinweis: "Bei Microsoft 365 muss IMAP für das Postfach erlaubt sein — sag mir, wenn die Anmeldung scheitert." },
   { id: "yahoo", name: "Yahoo", server: "imap.mail.yahoo.com", hinweis: "Yahoo verlangt ein App-Passwort, das normale Passwort funktioniert nicht." },
+  {
+    id: "godaddy",
+    name: "GoDaddy",
+    server: "imap.secureserver.net",
+    hinweis:
+      "Gilt für die klassischen GoDaddy-Postfächer (Workspace Email). Neuere laufen über Microsoft 365 — dann oben „Microsoft“ wählen.",
+  },
+  {
+    id: "squarespace",
+    name: "Squarespace (Google Workspace)",
+    server: "imap.gmail.com",
+    hinweis:
+      "Squarespace-Postfächer laufen über Google Workspace — es gilt der Google-Server, und du brauchst ein App-Passwort (Google-Konto → Sicherheit).",
+  },
+  {
+    id: "netcup",
+    name: "Netcup",
+    platzhalter: "mx1234.netcup.net",
+    hinweis:
+      "Der Servername ist bei Netcup individuell — er steht im Kundenportal (CCP/WCP) bei den E-Mail-Einstellungen, Muster mxXXXX.netcup.net.",
+  },
   { id: "udag", name: "united-domains", server: "imap.udag.de" },
   { id: "onecom", name: "one.com", server: "imap.one.com" },
   { id: "hostinger", name: "Hostinger", server: "imap.hostinger.com" },
+  { id: "hetzner", name: "Hetzner Webhosting", server: "mail.your-server.de" },
+  { id: "df", name: "domainfactory", server: "sslin.df.eu" },
+  {
+    id: "icloud",
+    name: "Apple iCloud",
+    server: "imap.mail.me.com",
+    hinweis:
+      "Apple verlangt ein anwendungsspezifisches Passwort (appleid.apple.com → Anmeldung & Sicherheit), das normale funktioniert nicht.",
+  },
+  {
+    id: "zoho",
+    name: "Zoho Mail",
+    server: "imap.zoho.eu",
+    hinweis:
+      "IMAP muss in den Zoho-Einstellungen einmal aktiviert sein. Liegt dein Konto in den USA statt der EU, heißt der Server imap.zoho.com.",
+  },
+  { id: "mailboxorg", name: "mailbox.org", server: "imap.mailbox.org" },
+  { id: "posteo", name: "Posteo", server: "posteo.de" },
+  { id: "world4you", name: "World4You (AT)", server: "imap.world4you.com" },
+  { id: "easyname", name: "easyname (AT)", server: "imap.easyname.com" },
+  { id: "hostpoint", name: "Hostpoint (CH)", server: "imap.mail.hostpoint.ch" },
   { id: "andere", name: "Anderer Anbieter …", platzhalter: "imap.mein-anbieter.de" },
 ];
 
