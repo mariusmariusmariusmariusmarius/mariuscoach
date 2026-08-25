@@ -724,6 +724,69 @@ Regeln:
           ],
         },
       },
+      {
+        // Video: „Website live stellen mit Vercel.mp4"
+        slug: "live-gehen-mit-vercel",
+        title: "Live gehen mit Vercel",
+        videoUrl: "/videos/modul-1/live-gehen-mit-vercel.mp4",
+        description:
+          "Die Seite geht online — gehostet bei Vercel, gesteuert von Claude, für die allermeisten komplett kostenlos. Du bekommst erst mal eine Vercel-Adresse; deine eigene Domain verbinden wir im nächsten Schritt.",
+        duration: 20,
+        kind: "video",
+        steps: [
+          "Worum es geht: hosten. Deine Seite wird von überall erreichbar — unter einer zugewiesenen Vercel-Adresse. Keine Sorge: Bei Google steht sie damit noch nicht, sichtbar ist sie nur für den, der die Adresse kennt.",
+          "Konto bei Vercel anlegen — Link rechts. Das Dashboard brauchst du danach kaum: Hosting, Domains, später sogar Besucherzahlen — das steuert und prüft alles Claude für dich.",
+          "Zu den Kosten: Für 99 % von euch ist das dauerhaft 0 €. Das Freivolumen reicht locker für 5.000 bis 10.000 Besucher im Monat; erst darüber kostet es ab etwa 20 € — fair nach Verbrauch. Zum Vergleich: Baukästen nehmen 15 bis 20 € — jeden Monat, ab Tag eins.",
+          "Anmelden: den Befehl rechts ins Terminal, Enter. Der Browser geht auf, du autorisierst dein Gerät — das war's, kein Schlüssel zum Abtippen.",
+          "Den Veröffentlichen-Prompt schicken: Claude legt das Projekt an, lädt die Seite hoch, baut sie und prüft selbst, ob sie unter der neuen Adresse wirklich lädt. Das Bauen dauert ein paar Minuten — lass ihn machen.",
+          "Am Ende hast du deine Adresse zum Rumzeigen. Im nächsten Schritt besorgen wir deine eigene Domain und hängen sie davor.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Anmelden — ins Terminal einfügen, Enter; der Browser geht auf, Gerät bestätigen",
+              text: `npx vercel login`,
+            },
+            {
+              label: "Veröffentlichen — damit geht deine Seite live",
+              text: `Bring meine Website live. Wir nutzen dafür Vercel. Ich bin im
+Terminal schon angemeldet, du kannst das Vercel-Werkzeug direkt
+benutzen.
+
+So gehst du vor:
+
+1. Zeig mir zuerst, welche Projekte in meinem Vercel-Konto schon
+   liegen. Wenn dort noch nichts ist, ist das richtig so.
+
+2. Veröffentliche mein aktuelles Projekt als neues Projekt. Nimm
+   den Namen meiner Firma als Projektnamen, klein geschrieben und
+   mit Bindestrichen.
+
+3. Wenn beim Veröffentlichen etwas schiefgeht, lies die
+   Fehlermeldung, sag mir in einem Satz was los ist, und behebe es.
+   Häufig sind es Kleinigkeiten im Code, die auf meinem Rechner
+   nicht auffallen.
+
+4. Wenn es steht, prüf selbst, ob die Seite unter der Adresse
+   wirklich lädt — nicht nur, ob die Veröffentlichung durchgelaufen
+   ist.
+
+5. Gib mir die Adresse und sag mir in zwei Sätzen, wie ich künftig
+   eine Änderung veröffentliche.
+
+Nur anlegen und veröffentlichen. Lösch keine Projekte und ändere
+keine Einstellungen an anderen Projekten in meinem Konto.`,
+            },
+          ],
+          links: [
+            {
+              label: "Vercel — Konto erstellen",
+              href: "https://vercel.com/signup",
+              note: "kostenlos; am besten mit deinem GitHub-Konto anmelden",
+            },
+          ],
+        },
+      },
     ],
   },
   {
