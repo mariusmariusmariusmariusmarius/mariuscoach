@@ -1138,6 +1138,81 @@ Erfinde nichts — was ich nicht beantwortet habe, bleibt draußen.`,
           ],
         },
       },
+      {
+        // Video: 7 Teile — „Domain und DNS für Cloud-Verwaltung verbinden" bis
+        // „DNS Einträge bearbeiten, A und CNAME - 25 August 2026"
+        slug: "domain-verbinden",
+        title: "Domain verbinden",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/domain-verbinden.mp4",
+        description:
+          "Deine Website bekommt ihren echten Namen. Unten prüfst du, ob die Wunschdomain frei ist, kaufst sie nackt für unter 5 € im Jahr — und schließt sie an: Claude bekommt per Token Zugriff auf die DNS-Einträge und verdrahtet alles selbst.",
+        duration: 25,
+        kind: "video",
+        dnsTool: true,
+        domainCheck: true,
+        steps: [
+          "Zwei Ausgangslagen: Du hast schon eine Domain — dann direkt zu Schritt 3. Noch keine? Erst unten in der Box prüfen, ob dein Wunschname frei ist — mit Alternativen, und der Bindestrich-Trick hilft oft.",
+          "Kaufen, aber richtig: IONOS, Netcup, GoDaddy oder Squarespace — die nackte Domain kostet unter 5 € im Jahr, teils unter einem Euro. Alles andere abwählen! SSL gibt es vom Hosting geschenkt, DomainGuard ist sinnlos (DNS steuert bei uns Claude), und E-Mail-Postfächer kaufst du hier ausdrücklich NICHT — die bauen wir später selbst, samt E-Mail-Marketing. Die Hoster verdienen an den Extras, nicht an der Domain.",
+          "Domain unten in die Box eintragen und anschließen — du bekommst dein DNS-Token (gleich für den Prompt) und zwei Nameserver.",
+          "Beim Domain-Anbieter die zwei Nameserver eintragen. Keine Sorge: Alle bestehenden Einträge — auch deine Mail-Einträge — werden übernommen, gelöscht wird nichts. Danach 10 bis 15 Minuten warten, bis der Status in der Box auf aktiv springt; manchmal dauert es länger.",
+          "Den Domain-Prompt mit Domain und Token schicken: Claude hängt die Domain an dein Vercel-Projekt, setzt die Einträge selbst und prüft, bis die Seite unter deiner Domain lädt — zwei, drei Minuten, dann bist du unter deinem Namen online.",
+          "Du willst die Einträge lieber selbst pflegen? Der Kurz-Prompt gibt dir nur die Tabelle (A und www). Bei IONOS oder Squarespace unter DNS eintragen, TTL einfach lassen, wie es ist — und wenn du irgendwo unsicher bist: Frag Claude. Er ist mit allen Diensten verbunden und der beste Ansprechpartner.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Der Domain-Prompt — Domain und Token aus der Box einsetzen",
+              text: `Verbinde meine Domain mit meiner Website.
+
+Meine Domain: {DEINE-DOMAIN}
+Mein DNS-Token: {TOKEN-AUS-DER-BOX}
+
+Das Token ist ein Cloudflare-Token und darf ausschließlich die
+DNS-Einträge meiner Domain ändern. Benutz die Cloudflare-API
+(api.cloudflare.com/client/v4, Kopfzeile "Authorization: Bearer …",
+Zone über /zones?name=… finden).
+
+So gehst du vor:
+
+1. Prüf zuerst, ob die Zone schon auf "active" steht. Wenn nicht,
+   sind die Nameserver beim Registrar noch nicht durch — sag mir
+   das, erklär mir kurz, wie ich es prüfen kann, und hör hier auf.
+
+2. Zeig mir die bestehenden DNS-Einträge, BEVOR du irgendetwas
+   änderst.
+
+3. Verbinde die Domain mit meinem Vercel-Projekt: Ich bin im
+   Terminal bei Vercel angemeldet, füg die Domain dort dem Projekt
+   hinzu. Dann setz die Einträge:
+   - A-Eintrag für die nackte Domain auf 76.76.21.21
+   - CNAME für www auf cname.vercel-dns.com
+   Beide als "DNS only" — den orangenen Cloudflare-Proxy lässt du
+   AUS, sonst klemmt das Zertifikat.
+
+4. Warte, bis das Zertifikat da ist, und prüf selbst, ob die Seite
+   unter https://… wirklich lädt — mit und ohne www.
+
+5. E-Mail: Bestehende MX-, SPF- und Mail-Einträge lässt du exakt so,
+   wie sie sind. Fehlen MX-Einträge komplett, frag mich, bevor du
+   welche setzt — die Postfächer bauen wir in einem eigenen Schritt.
+
+Nur diese Einträge anlegen. Nichts löschen, nichts überschreiben
+ohne mein ausdrückliches Ja.`,
+            },
+            {
+              label: "Kurz: nur die DNS-Einträge zeigen — falls du selbst eintragen willst",
+              text: `Sag mir, welche DNS-Einträge ich brauche, damit meine Domain
+auf meine Website zeigt.
+
+Meine Domain: {DEINE-DOMAIN}
+
+Gib mir nur eine Tabelle mit Typ, Name, Ziel und Proxy-Einstellung —
+einmal für die Domain ohne www und einmal mit www. Keine langen
+Erklärungen, ich trage sie selbst ein.`,
+            },
+          ],
+        },
+      },
     ],
   },
   {
