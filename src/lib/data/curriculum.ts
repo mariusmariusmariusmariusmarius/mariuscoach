@@ -538,6 +538,107 @@ Rechner und auf dem Handy.`,
           ],
         },
       },
+      {
+        // Video: „gefundenwerden.online Academy … - 18 August 2026.mp4"
+        slug: "eigene-bilder",
+        title: "Eigene Bilder auf die Website",
+        videoUrl: "/videos/modul-1/eigene-bilder.mp4",
+        description:
+          "Klingt aufwendig, geht aber schnell: Bilder grob nach Leistungen sortieren, Dateipfad an Claude — er baut ein, benennt, komprimiert und hängt dein Logo in Navigation und Fußzeile. Sogar ein Hintergrundvideo ist drin.",
+        duration: 20,
+        kind: "video",
+        steps: [
+          "Die Vorarbeit: Bilder auf den Rechner holen und grob sortieren — Ordner nach dem Sinn. Ein Ordner für den Betrieb (wie bei dir gearbeitet wird), dazu je einer pro Leistung oder Produktgruppe. Beim Elektriker etwa: Elektroinstallation, Smart Home, PV-Anschluss. Grob reicht völlig.",
+          "Warum sortieren? Claude käme auch mit 500 unsortierten Bildern klar — er beschreibt dann jedes einzeln, und genau das frisst Tokens. Eine Struktur in zwei Minuten spart bares Geld.",
+          "Den Dateipfad kopieren, nicht den Ordner: Claude greift direkt auf deinen Rechner zu und entscheidet selbst nach Motiv, Format und Auflösung, was wohin kommt. Auch ein kurzes Video darf in den Ordner — zum Beispiel als Hintergrundvideo für die erste Sektion.",
+          "Den Bilder-Prompt rechts kopieren, Pfad einsetzen, abschicken. Falls dein Logo in der Design-Lektion noch nicht dabei war: jetzt mitschicken — es landet in der Navigationsleiste und in der Fußzeile.",
+          "Nacharbeiten in eigenen Worten: Hintergrundbild auf den Produkt-Unterseiten? Das Hero-Video wurde vergessen? Einfach wörtlich sagen, Claude setzt es um. Und: Claude kann dein Logo umfärben — etwa weiß für dunkle Hintergründe. Das geht nur, wenn es als PNG ohne Hintergrund vorliegt.",
+          "Kategorien ohne Fotos bleiben bewusst leer — die füllen wir in der nächsten Lektion mit KI-Bildern.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Der Bilder-Prompt — Ordnerpfad einsetzen, Rest macht Claude",
+              text: `Bau meine eigenen Fotos in die Website ein.
+
+Mein Bilder-Ordner: {PFAD-ZUM-ORDNER}
+
+Den Pfad bekommst du so: Ordner im Finder beziehungsweise Explorer
+suchen und einfach ins Chatfenster ziehen.
+
+SCHRITT 1 — Schau dir den Ordner an
+Geh alle Bilder durch und sag mir, was du gefunden hast: wie viele
+Bilder, wie sie sortiert sind und was jeweils drauf zu sehen ist.
+Wenn ein Bild unklar ist, frag mich, statt zu raten.
+
+SCHRITT 2 — Einsortieren
+Kopiere die Bilder in mein Projekt und benenn sie sinnvoll: kleine
+Buchstaben, Bindestriche statt Leerzeichen, sprechender Name statt
+IMG_4711. Die Originale im Ordner lässt du unangetastet.
+
+SCHRITT 3 — Einbauen
+Entscheide selbst, welches Bild wohin passt, und sag mir zu jedem
+kurz, warum. Dabei gilt:
+- Jedes Bild bekommt einen Alt-Text, der beschreibt, was wirklich
+  drauf ist — kein Stichwort-Salat.
+- Kein Bild wird verzerrt. Wenn ein Format nicht passt, schneidest du
+  mittig zu, statt zu quetschen.
+- Gleichartige Bilder in einer Reihe bekommen dasselbe Seitenverhältnis,
+  damit die Kanten fluchten.
+- Vorher-Nachher gehört nebeneinander und gleich groß, sonst kann man
+  es nicht vergleichen.
+- Liegt ein Video im Ordner, frag mich, wo es hin soll. Als
+  Hintergrundvideo läuft es stumm, startet von selbst und wiederholt
+  sich — und es bekommt ein Standbild als Ersatz, falls es auf dem
+  Handy zu schwer ist.
+- Nutz die eingebaute Bildkomponente von Next.js, damit die Bilder
+  automatisch verkleinert und in modernen Formaten ausgeliefert
+  werden. Das Bild ganz oben lädt sofort, alle anderen erst beim
+  Runterscrollen.
+- Für jedes Bild wird die Größe von vornherein reserviert, damit beim
+  Laden nichts springt.
+
+SCHRITT 4 — Logo
+Ist mein Logo noch gar nicht auf der Seite, sag es mir — dann schick
+ich es dir in den Chat, und du setzt es in die Navigationsleiste und
+in die Fußzeile.
+
+Steht es schon drin, prüf beide Stellen: Hebt es sich vom Hintergrund
+ab? Wenn es irgendwo farblich untergeht, schlag mir vor, es an dieser
+Stelle einfarbig zu setzen: nur die Silhouette in Weiß oder in
+Schwarz, je nachdem was besser steht. Das kann auch nur eine Stelle
+betreffen — zum Beispiel farbig oben und weiß unten im dunklen
+Fußbereich.
+
+Wichtig: Umfärben geht nur, wenn das Logo als PNG ohne Hintergrund
+vorliegt. Hat meins einen festen Hintergrund, sag mir das — dann
+besorge ich eine freigestellte Version.
+
+Sag mir, welche Stelle du meinst, wie es aktuell wirkt und welche
+Variante du empfiehlst. Warte auf mein Ja, bevor du das Logo
+anfasst. Das farbige Original bleibt auf jeden Fall erhalten.
+
+SCHRITT 5 — Danach prüfen
+Sieh dir die fertige Seite auf Handy, Tablet und Rechner an. Achte
+darauf, dass kein Bild abgeschnitten wird, an der falschen Stelle
+zugeschnitten ist (Köpfe!), unscharf wirkt oder das Layout sprengt.
+Sag mir, was du geprüft hast.
+
+SCHRITT 6 — Ehrlich sein
+Sag mir am Ende:
+- Für welche Stellen auf der Website habe ich noch KEIN passendes
+  Bild? Beschreib mir, was ich fotografieren soll.
+- Welche Bilder sind zu klein oder zu schlecht aufgelöst für die
+  Stelle, an der sie stehen?
+- Welche Bilder hast du übrig gelassen und warum?
+
+Setz kein Platzhalterbild und kein Bild aus dem Internet ein. Wenn
+für eine Stelle nichts Passendes da ist, lass sie leer und sag es
+mir — leere Stellen füllen wir gleich danach mit KI-Bildern.`,
+            },
+          ],
+        },
+      },
     ],
   },
   {
