@@ -2473,6 +2473,14 @@ Anhängsel wie ?v=2.`,
         kind: "video",
       },
       {
+        slug: "higgsfield-masterclass",
+        title: "Higgsfield Masterclass: Animationen, die keiner sonst hat",
+        description:
+          "Der Schritt vom Bild zum Kino: Produkt-Animationen, Kamerafahrten durch den Betrieb, sprechende Presenter mit Lippensynchronisation, animierte Hero-Videos und Werbeclips für Social — alles aus Higgsfield, gesteuert über Claude. Damit sieht deine Seite aus wie von einer Agentur mit Filmteam.",
+        duration: 35,
+        kind: "video",
+      },
+      {
         slug: "whatsapp-auf-der-website",
         title: "WhatsApp auf der Website",
         description:
