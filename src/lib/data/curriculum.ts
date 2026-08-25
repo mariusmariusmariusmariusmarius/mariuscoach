@@ -1213,6 +1213,103 @@ Erklärungen, ich trage sie selbst ein.`,
           ],
         },
       },
+      {
+        // Video: „Safari - 25 August 2026.mp4"
+        //        + „E-Mail Benachrichtigungen für neue Leads-2.mp4"
+        slug: "firmen-email-anlegen",
+        title: "Deine Firmen-E-Mail",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/firmen-email-anlegen.mp4",
+        description:
+          "info@deine-firma.de statt gmx: Der Kurs hat einen eigenen Mail-Server, den Claude über deine API steuert. Postfächer anlegen, Mail-Einträge setzen, Handy einrichten — die Grundlage dafür, dass Anfragen gleich per Mail bei dir und beim Kunden landen.",
+        duration: 15,
+        kind: "video",
+        steps: [
+          "Das Ziel vor Augen: Wir vollenden das Anfrage-Formular — du bekommst bei jeder Anfrage eine Mail, der Kunde eine Bestätigung („wir melden uns innerhalb von 24 bis 48 Stunden“, bei einer Praxis: „im Notfall rufen Sie an unter …“). Dafür braucht es zuerst eins: eine eigene E-Mail.",
+          "Der Kursweg: unser eigener Mail-Server, gesteuert über deine API — der Schlüssel rechts oben steckt schon im Prompt. Deshalb auch kein Postfach beim Domain-Hoster kaufen: Hier verwaltet Claude alles, und später laufen darüber E-Mail-Marketing und Automationen.",
+          "Prompt kopieren, Wunschadressen eintragen — zum Beispiel info@ und rechnung@. Claude fragt nach dem Absender-Namen: dein Firmenname oder dein eigener Name als Chef — das ist, was Empfänger sehen.",
+          "DNS bestätigen: Claude hat seit der Domain-Lektion Zugriff auf deine Einträge und stellt die Mail-Server-Einträge selbst um — vorher zeigt er sie dir.",
+          "Zugangsdaten sichern: Du bekommst eine Tabelle mit Adresse und Passwort — ab damit in den Passwort-Manager. Dann das Postfach aufs Handy holen, die Serverdaten sagt dir Claude. Passwörter kannst du jederzeit später ändern.",
+          "Du hast schon Postfächer auf der Domain? Dann warte auf die nächste Lektion — dort ziehst du bestehende Adressen mit auf den Kurs-Server um, damit auch sie über Claude laufen.",
+        ],
+        cheatSheet: {
+          apiKeyHint: true,
+          prompts: [
+            {
+              label: "Der Postfach-Prompt — Domain und Wunschadressen eintragen, dein Schlüssel steckt drin",
+              text: `Leg mir Postfächer für meine Firmen-Domain an.
+
+Meine Domain: {DEINE-DOMAIN}
+Meine Wunschadressen: {Z-B-INFO-UND-RECHNUNG}
+
+WICHTIG ZUERST
+Für diese Domain läuft noch keine Mail — wir richten sie neu ein.
+Prüf das bitte trotzdem: Gibt es schon MX-Einträge, sag mir das und
+hör auf, bevor du irgendetwas änderst. Eine Umstellung würde sonst
+meine bisherige Post umleiten — der Umzug bestehender Postfächer
+ist ein eigener Schritt.
+
+SO FUNKTIONIERT DAS (damit du nichts nachschlagen musst)
+Die Postfächer liegen bei Migadu. Der Zugang läuft über den Schlüssel
+der Kursplattform — den Migadu-Schlüssel selbst bekomme ich nie zu
+sehen, meine Plattform spricht für mich mit Migadu. Sie lässt dabei
+nur Domains durch, die zu meinem Konto gehören.
+
+MEIN ZUGANG
+Adresse: {PLATTFORM-URL}/api/mail
+Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
+
+- POST { "aktion": "domain",   "domain": "..." }
+- POST { "aktion": "postfach", "domain": "...", "adresse": "info",
+         "name": "Firmenname", "passwort": "..." }
+- POST { "aktion": "alias",    "domain": "...", "alias": "kontakt",
+         "ziele": ["info@..."] }
+- GET  auf dieselbe Adresse zeigt meine Domains und Postfächer.
+
+SCHRITT 1 — Anlegen
+Leg meine Domain an, dann die Wunschadressen von oben. Frag mich
+vorher, wie der Absender-Name erscheinen soll — mein Firmenname
+oder mein eigener Name. Das ist der Name, den Empfänger sehen,
+wenn ich ihnen schreibe.
+Denk dir sichere Passwörter aus, mindestens 16 Zeichen, ohne
+Sonderzeichen, die man auf dem Handy schwer tippt.
+
+SCHRITT 2 — Einträge setzen
+Damit die Postfächer Mail empfangen und senden dürfen, brauchen sie
+diese Einträge. Meine DNS läuft über die Kursplattform — du hast
+den Zugriff aus der Domain-Lektion.
+
+  MX    @   aspmx1.migadu.com   Priorität 10
+  MX    @   aspmx2.migadu.com   Priorität 20
+  TXT   @   v=spf1 include:spf.migadu.com -all
+  CNAME key1._domainkey   key1.MEINE-DOMAIN._domainkey.migadu.com
+  CNAME key2._domainkey   key2.MEINE-DOMAIN._domainkey.migadu.com
+  CNAME key3._domainkey   key3.MEINE-DOMAIN._domainkey.migadu.com
+
+Alle ohne Cloudflare-Proxy (DNS only). MEINE-DOMAIN ersetzt du durch
+meine echte Domain.
+
+Zeig mir die Einträge kurz, bevor du sie setzt. Prüf danach per
+DNS-Abfrage, ob sie greifen, und sag mir, wenn Migadu die Domain
+weiterhin als inaktiv führt.
+
+SCHRITT 3 — Übergeben
+Gib mir eine Tabelle mit Adresse, Passwort und den Daten fürs Handy.
+Die Serverdaten sind bei Migadu für alle gleich:
+
+  Posteingang (IMAP): imap.migadu.com, Port 993, SSL
+  Postausgang (SMTP): smtp.migadu.com, Port 465, SSL
+  Benutzername: die volle E-Mail-Adresse
+
+Erinner mich daran, die Passwörter im Passwort-Manager zu speichern.
+Sag mir zum Schluss in drei Schritten, wie ich das Postfach aufs
+Handy hole — und dass ich dabei IMAP nehme, niemals POP3.
+
+Nur anlegen. Lösch nichts und ändere keine Einträge, die nichts mit
+Mail zu tun haben.`,
+            },
+          ],
+        },
+      },
     ],
   },
   {
