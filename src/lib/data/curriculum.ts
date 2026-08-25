@@ -1043,6 +1043,101 @@ Der Status muss erhalten bleiben.`,
           ],
         },
       },
+      {
+        // Video: „Rechtstexte für Websites, Skill rechtssexte.de.mp4"
+        slug: "rechtstexte-barrierefreiheit",
+        title: "Rechtstexte & Barrierefreiheit",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/rechtstexte-barrierefreiheit.mp4",
+        description:
+          "Sobald dein Formular Anfragen sammelt, erhebst du Daten dritter Personen — ab da sind Impressum und Datenschutz Pflicht. Der Skill kennt die aktuellen Gesetzestexte inklusive Barrierefreiheit, Claude liest dein Projekt und schreibt die Seiten. Ohne Anwaltstermin.",
+        duration: 20,
+        kind: "video",
+        steps: [
+          "Warum jetzt: Dein Anfragebogen speichert Namen, Nummern und Nachrichten fremder Menschen — genau ab diesem Moment braucht die Seite Impressum und Datenschutzerklärung.",
+          "Den Skill „rechtstexte-de“ installieren — Befehl rechts, ins Terminal, mit Y bestätigen. Er enthält die aktuellen Gesetzestexte und Pflichten, auch zur Barrierefreiheit — und wird laufend aktualisiert, statt statisch auf deinem Rechner zu liegen.",
+          "Den Rechtstexte-Prompt schicken. Claude durchsucht dein Projekt und listet jede Stelle, an der Daten anfallen — bei uns zum Beispiel das Vercel-Hosting, der Speicher hinter der Admin-App und der Bewertungs-Zeitplan. Genau dafür läuft alles zentral über Claude: Er sieht alles, menschliche Vergesslichkeit fällt weg.",
+          "Die Fragen beantworten, die im Code nicht stehen — Rechtsform, Anschrift, Steuernummer. Dann entstehen /impressum und /datenschutz im Stil deiner Seite, mit Stand-Datum; der Datenschutz-Link im Formular-Häkchen zeigt jetzt auf die echte Seite.",
+          "Zur Einordnung: Ein Anwalt schöpft aus denselben aktuellen Quellen wie der Skill — und nimmt dafür ein Honorar. Ob du zusätzlich prüfen lässt, entscheidest du. AGB sind optional: oft schickt man sie mit dem Angebot mit, statt sie auf die Website zu stellen — wenn du welche willst, nimm den AGB-Prompt rechts. Onlineshop-Rechtstexte sind ein eigenes Thema und kommen im Shop-Modul.",
+          "Die Halbjahres-Routine: Trag dir einen Kalender-Termin ein — alle sechs Monate den Kontroll-Prompt rechts schicken. Gesetzesänderungen sind selten und haben Übergangsfristen von ein bis zwei Jahren; damit bist du dauerhaft abgesichert.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Den Rechtstexte-Skill installieren — ins Terminal, Mac wie Windows gleich",
+              text: `npx skills add mariusmariusmariusmariusmarius/rechtstexte-de --global --yes`,
+            },
+            {
+              label: "Der Rechtstexte-Prompt — Claude liest dein Projekt und fragt den Rest",
+              text: `Erstelle die Rechtstexte für diese Website. Nutz dafür den Skill
+„rechtstexte-de".
+
+Wichtig dabei:
+
+- Durchsuch zuerst mein Projekt und zeig mir als Tabelle, welche
+  Dienste du gefunden hast — Hosting, Formular, Datenspeicher,
+  Zeitpläne und Automationen, Schriften, Karten, WhatsApp,
+  Tracking. Ich bestätige oder streiche, bevor du schreibst.
+- Nimm NUR auf, was ich wirklich einsetze. Keine Bausteine für
+  Dienste, die ich nicht nutze, und nichts weglassen, was ich nutze.
+- Stell mir dann die Fragen, die im Code nicht stehen können —
+  gesammelt in einer Nachricht, nicht einzeln.
+- Erfinde nichts. Keine ausgedachte Steuernummer, keine geratene
+  Handelsregisternummer, keine erfundene Aufsichtsbehörde. Was du
+  nicht von mir hast, bleibt als deutlich markierte Lücke stehen,
+  und du fragst mich am Ende gesammelt danach.
+- Bau /impressum und /datenschutz im Stil meiner Seite und verlink
+  beide im Fußbereich, sodass sie von jeder Seite aus in maximal
+  zwei Klicks erreichbar sind. Der Link im Datenschutz-Häkchen
+  meines Anfrage-Formulars zeigt bisher ins Leere — der muss jetzt
+  auf die neue Seite zeigen.
+- Setz ein Stand-Datum unter jede Seite.
+- Gib mir am Ende eine Checkliste: was erledigt ist, und was ich
+  selbst noch tun muss.
+
+Und sag mir zum Schluss in einem Satz, was diese Texte sind und was
+sie nicht sind.`,
+            },
+            {
+              label: "Optional: der AGB-Prompt — falls du Geschäftsbedingungen willst",
+              text: `Ich möchte zusätzlich Allgemeine Geschäftsbedingungen für meinen
+Betrieb. Nutz den Skill „rechtstexte-de".
+
+Schau dir zuerst meine Website an, damit du weißt, was ich anbiete.
+Dann frag mich NACHEINANDER durch meinen Ablauf:
+- Wie läuft ein Auftrag bei mir — vom ersten Kontakt bis zur
+  fertigen Leistung?
+- Angebot, Preise, Zahlung: wann wird wie bezahlt? Gibt es
+  Anzahlungen, Materialkosten, Anfahrt?
+- Termine und Absagen: was gilt, wenn der Kunde kurzfristig absagt?
+- Gewährleistung und Garantien: was verspreche ich — und was
+  ausdrücklich nicht?
+
+Danach schreibst du die AGB und sagst mir ehrlich dazu:
+- ob sie auf die Website sollen oder besser jedem Angebot beiliegen —
+  beides ist üblich, ich entscheide.
+- was du nicht sicher abdecken kannst und wo im Zweifel doch ein
+  Anwalt draufschauen sollte.
+
+Erfinde nichts — was ich nicht beantwortet habe, bleibt draußen.`,
+            },
+            {
+              label: "Alle sechs Monate: der Kontroll-Prompt — leg dir einen Kalender-Termin an",
+              text: `Prüf meine Rechtstexte auf den aktuellen Stand. Nutz den Skill
+„rechtstexte-de" — der wird laufend aktualisiert.
+
+- Vergleich mein Impressum und meine Datenschutzerklärung mit dem
+  heutigen Stand des Skills: Hat sich etwas geändert, das mich
+  betrifft?
+- Durchsuch auch mein Projekt: Sind seit dem letzten Mal Dienste
+  dazugekommen — neue Verbindungen, neue Speicher, neue
+  Automationen —, die in der Datenschutzerklärung fehlen?
+- Wenn nichts zu tun ist, sag mir das in einem Satz. Wenn doch:
+  zeig mir, was du ändern willst, und warte auf mein OK.
+- Aktualisiere danach das Stand-Datum auf beiden Seiten.`,
+            },
+          ],
+        },
+      },
     ],
   },
   {
