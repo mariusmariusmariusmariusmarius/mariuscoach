@@ -639,6 +639,91 @@ mir — leere Stellen füllen wir gleich danach mit KI-Bildern.`,
           ],
         },
       },
+      {
+        // Video: „Higgsfield AI — AI-native creative suite - 18 August 2026.mp4"
+        slug: "ki-bilder-vs-eigene",
+        title: "KI-Bilder vs. eigene Fotos",
+        videoUrl: "/videos/modul-1/ki-bilder-vs-eigene.mp4",
+        description:
+          "Die leeren Stellen füllen wir jetzt mit KI: Higgsfield verbindet fast alle Bild- und Video-KIs — und hängt direkt an Claude. Der Gratis-Zugang reicht. Wo echte Fotos unschlagbar bleiben und wie KI-Bilder nicht nach KI aussehen, regelt der Prompt.",
+        duration: 20,
+        kind: "video",
+        steps: [
+          "Bei higgsfield.ai einen Account anlegen — der Gratis-Zugang reicht völlig. Higgsfield bündelt fast alle Bild- und Video-KIs unter einem Dach.",
+          "Verbinden, direkt in der Claude-App: aufs Plus-Zeichen → Connectoren → durchsuchen → „Higgs“ eintippen → Plus. Bei Higgsfield anmelden und bestätigen — das Kaufangebot dazwischen lehnst du ab, weiter mit dem Gratis-Zugang. Danach steht Higgsfield unter Connectoren als verbunden.",
+          "Die drei Skills installieren — zwei von Higgsfield selbst (damit Claude weiß, wie er promptet, herunterlädt und einbaut) plus nanorealism: Der lässt Bilder mit Nano Banana erzeugen, mit einem Prompt, der auf Realismus getrimmt ist. Danach Claude Code einmal neu starten.",
+          "Den Bilder-Prompt schicken — oder es offen formulieren: „Füll die restlichen Seiten mit Bildern, nutz Higgsfield.“ Ab hier wird es individuell: Die Schritte sind eine Richtlinie, kein Rezept.",
+          "Geduld mit der Gratis-Version: Sie braucht länger und hängt sich mal auf. Parallel in der Higgsfield-App unter „Image“ nachsehen, was gerade wirklich erstellt wird — dann weißt du, ob Claude noch wartet oder festhängt.",
+          "Nachbessern in Alltagssprache: zu unrealistisch? KI-Schriftzug im Bild? Hochkant-Handyfoto passt nicht als Desktop-Hintergrund? Einfach sagen — neue Hero-Hintergründe je Unterseite erzeugt die KI passend im Querformat. Und bei Fragen: ab in die Community, dort wird geantwortet, oft mit Video.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "Die drei Skills installieren — drei Zeilen nacheinander ins Terminal, Mac wie Windows gleich",
+              text: `npx skills add higgsfield-ai/skills --skill higgsfield-generate --global --yes
+npx skills add higgsfield-ai/skills --skill higgsfield-product-photoshoot --global --yes
+npx skills add mariusmariusmariusmariusmarius/nanorealism --global --yes`,
+            },
+            {
+              label: "Der Bilder-Prompt — was fehlt, wird erzeugt; der Rest bleibt echt",
+              text: `Geh meine Website durch und schau, wo Bilder fehlen oder wo ein
+Platzhalter steht.
+
+Sortier das Ergebnis in zwei Listen:
+
+ECHTES FOTO NÖTIG
+Alles, wo man meinen Betrieb, meine Arbeit, meine Leute oder meine
+Ergebnisse sieht. Dafür wird NICHTS erzeugt. Sag mir stattdessen
+genau, was ich fotografieren soll: welches Motiv, welche
+Tageszeit, hoch oder quer.
+
+KI-BILD SINNVOLL
+Alles, was nur Stimmung, Hintergrund oder Deko ist und niemanden
+täuscht — Hintergrundflächen, abstrakte Muster, freigestellte
+Symbolbilder, Produkt-Kategorien ohne eigenes Foto.
+
+Für die zweite Liste: Nutz Higgsfield über die eingebaute
+Verbindung und die Skills „higgsfield-generate" und
+„higgsfield-product-photoshoot". Wenn ein Bild realistisch wirken
+muss — Räume, Produkte, Stimmungen — nimm zusätzlich den Skill
+„nanorealism", damit es nicht nach KI aussieht. Kein Schriftzug,
+kein Wasserzeichen, kein KI-Label im Bild. Frag mich vorher, welche
+Bildsprache passen soll, und richte dich nach den Farben und der
+Stimmung, die meine Seite schon hat.
+
+Erzeug pro Stelle zwei Varianten zur Auswahl. Zeig sie mir, ich
+entscheide. Erst danach baust du sie ein — mit Alt-Text und im
+richtigen Seitenverhältnis für die Stelle: Hintergründe im
+Querformat, keine Hochkant-Fotos als Desktop-Hintergrund.
+
+Die Gratis-Version von Higgsfield braucht manchmal länger. Wenn du
+auf ein Bild wartest, sag mir das, statt still zu hängen — ich kann
+in der Higgsfield-App nachsehen, ob es noch erstellt wird.
+
+Regeln:
+- Keine erfundenen Menschen, die wie meine Mitarbeiter oder Kunden
+  aussehen sollen. Kein Bild, das eine Arbeit zeigt, die ich so nie
+  gemacht habe.
+- Keine erfundenen Räume, Baustellen oder Ergebnisse, die als meine
+  durchgehen könnten.
+- Wenn du unsicher bist, ob etwas in Liste eins oder zwei gehört,
+  frag mich.`,
+            },
+          ],
+          links: [
+            {
+              label: "Higgsfield",
+              href: "https://higgsfield.ai",
+              note: "hier anmelden — der Gratis-Zugang reicht",
+            },
+            {
+              label: "Higgsfield-Verbindung (MCP)",
+              href: "https://higgsfield.ai/mcp",
+              note: "die offizielle Seite zur Verbindung — falls beim Anmelden etwas klemmt",
+            },
+          ],
+        },
+      },
     ],
   },
   {
