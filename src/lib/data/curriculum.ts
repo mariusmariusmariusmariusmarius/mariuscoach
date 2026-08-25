@@ -787,6 +787,262 @@ keine Einstellungen an anderen Projekten in meinem Konto.`,
           ],
         },
       },
+      {
+        // Video: „…18 August 2026-2.mp4" + „Google Bewertungen per eindeutiger Business ID.mp4"
+        slug: "bewertungen-einbinden",
+        title: "Deine Bewertungen auf die Website",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/bewertungen-einbinden.mp4",
+        description:
+          "140 Bewertungen von Hand kopieren? Die Google-API kann nur fünf und kostet extra. Wir gehen den dritten Weg: Über deinen Akademie-Zugang holt Claude die Bewertungen von Google, Trustpilot & Co. — und hält sie auf Wunsch automatisch aktuell.",
+        duration: 20,
+        kind: "video",
+        steps: [
+          "Die drei Wege kurz verstanden: Selbst kopieren scheitert am „Mehr“-Klick bei jeder Bewertung. Die Google-API zeigt nur fünf Stück live und kostet in der Vollversion — und wenn im Kurs jede Verbindung Geld kostet, summiert sich das. Also der Datenbroker-Weg über deinen Akademie-Zugang: unabhängig von der Plattform, ob Google, Trustpilot, ProvenExpert oder GetYourGuide.",
+          "Rechts oben steht dein persönlicher API-Schlüssel — er ist im Prompt schon eingesetzt. Behandle ihn wie ein Passwort.",
+          "Der Trick, der die Suche abkürzt: Geh auf dein Google-Unternehmensprofil und klick auf „Teilen“ — in dem Link steckt deine eindeutige Business-ID. Den Link in den Prompt statt nur einen Screenshot: Claude findet dein Profil sofort, statt lange zu suchen. Gleiches gilt für Trustpilot und Co.",
+          "Filter überlegen: Bei Google kann man fünf Sterne ohne ein Wort dalassen — auf der Website wirkt das leer. Also zum Beispiel: nur Bewertungen mit mindestens fünf Wörtern Text, mindestens vier Sterne. Bei 140 Bewertungen kannst du wählerisch sein.",
+          "Den Bewertungs-Prompt schicken. Claude holt alles, zeigt dir die stärksten Zitate, du entscheidest — eingebaut wird mit Quellen-Link und Echtheits-Hinweis, der rechtssicheren Variante.",
+          "Den zweiten Prompt schicken: Danach prüft deine Website im gewählten Rhythmus — jede Woche oder jeden Monat — von selbst, ob neue Bewertungen da sind, und ergänzt sie mit denselben Filtern. Du fasst nichts mehr an.",
+        ],
+        cheatSheet: {
+          apiKeyHint: true,
+          prompts: [
+            {
+              label: "Der Bewertungs-Prompt — Profile eintragen, dein Schlüssel steckt schon drin",
+              text: `Hol meine echten Kundenbewertungen und bau sie in meine Website
+ein.
+
+MEINE PROFILE (was es nicht gibt, einfach rauslöschen):
+- Google: {TEILEN-LINK-DEINES-EINTRAGS — Profil öffnen, „Teilen" klicken, Link kopieren}
+- Trustpilot: {DEINE-DOMAIN-AUF-TRUSTPILOT}
+- Tripadvisor: {LINK-ZU-DEINEM-EINTRAG}
+
+Die Links enthalten die eindeutige Kennung meines Profils — nutz
+sie, statt nach dem Namen zu suchen.
+
+MEIN ZUGANG
+Wir nutzen die Bewertungs-API meiner Kursplattform.
+Adresse: {PLATTFORM-URL}/api/bewertungen
+Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
+
+So funktioniert sie:
+- POST mit JSON { "pfad": "...", "daten": [...] } — pfad ist ein
+  business_data-Endpunkt von DataForSEO, deren Doku liest du hier:
+  https://docs.dataforseo.com/v3/business_data/
+- Ablauf je Plattform: Aufgabe mit task_post anlegen, kurz warten,
+  mit tasks_ready nachsehen und mit task_get abholen.
+- GET auf dieselbe Adresse zeigt dir meinen Verbrauch und mein
+  Monatslimit. Geh sparsam mit Abfragen um: erst denken, dann
+  abfragen — und bleib deutlich unter dem Limit.
+
+SO GEHST DU VOR
+1. Frag mich zuerst nach meinen Filtern. Mein Vorschlag: nur
+   Bewertungen mit Text (mindestens fünf Wörter) und mindestens
+   vier Sternen — leere Sterne-Bewertungen ohne Kommentar wirken
+   auf der Website nicht.
+2. Hol zu jedem Profil oben alle Bewertungen: Text, Sterne, Name,
+   Datum und den Link zur Originalbewertung.
+3. Zeig mir eine Übersicht: Anzahl und Durchschnitt pro Plattform,
+   dazu die fünf stärksten Zitate. Zeig mir auch die schlechten —
+   ich entscheide, wie wir damit umgehen.
+4. Frag mich, welche Bewertungen auf die Website sollen und wohin:
+   Startseite, eigene Bewertungsseite oder beides.
+5. Bau den Bewertungsbereich: Zitat, Sterne, Vorname, Datum und die
+   Quelle als Link zur Originalbewertung auf der Plattform.
+6. Direkt darunter setzt du diesen Hinweis, angepasst an die
+   Plattformen, die wir wirklich zeigen:
+   "Diese Bewertungen stammen unverändert von Google und
+   Trustpilot. Wir prüfen sie nicht selbst — jeder Link führt zur
+   Originalbewertung."
+
+REGELN
+- Nur echte Bewertungen, wortgleich übernommen. Nichts umschreiben,
+  nichts erfinden, keine Namen dazudichten. Auch Tippfehler der
+  Kunden bleiben drin — die machen es glaubwürdig.
+- Volle Nachnamen kürzt du auf den ersten Buchstaben ab.
+- Wenn du ein Profil nicht findest, sag es mir, statt zu raten.
+- Der API-Schlüssel bleibt in diesem Chat. Schreib ihn in keine
+  Datei meines Projekts.`,
+            },
+            {
+              label: "Die Auto-Aktualisierung — neue Bewertungen kommen ab jetzt von selbst",
+              text: `Meine Website zeigt jetzt Bewertungen — ab sofort sollen neue von
+selbst dazukommen, ohne dass ich etwas anfasse.
+
+So soll es laufen:
+- In einem festen Rhythmus — frag mich, ob wöchentlich oder
+  monatlich zu mir passt — prüft meine Website über meinen
+  Kursplattform-Zugang (kennst du aus dem Bewertungs-Einbau), ob
+  es neue Bewertungen gibt.
+- Neue Bewertungen, die unsere Filter bestehen (dieselben wie beim
+  Einbau: Mindestlänge, Mindeststerne), werden ergänzt. Bestehende
+  bleiben unangetastet, gelöscht wird nichts ohne mich.
+- Wortgleich, mit Quellen-Link, Nachname abgekürzt — dieselben
+  Regeln wie beim Einbau.
+
+WICHTIG
+- Das läuft über Vercel, wo meine Seite gehostet ist — die können
+  Aufgaben nach Zeitplan ausführen. Bau es so, dass die Abfrage
+  NUR im Zeitplan läuft, nicht bei jedem Seitenaufruf — jede
+  Abfrage kostet ein paar Cent.
+- Der API-Schlüssel kommt als Umgebungsvariable ins Projekt und zu
+  Vercel. Ich bin im Terminal bei Vercel angemeldet — mach das
+  selbst, ich will nichts im Dashboard klicken. Der Schlüssel
+  steht in keiner Datei meines Codes.
+- Schlägt eine Abfrage fehl, bleibt die Seite einfach beim alten
+  Stand — kein leerer Bewertungsbereich, kein Fehler für Besucher.
+
+Zum Schluss: Erklär mir in zwei Sätzen, wie ich sehe, wann zuletzt
+geprüft wurde — und stoß eine Prüfung einmal von Hand an, damit wir
+sehen, dass alles läuft.`,
+            },
+          ],
+        },
+      },
+      {
+        // Video: „Anfrageformular und Lead-Weiterleitung umsetzen.mp4"
+        //        + „Admin Übersicht für Anfragen und Workflow.mp4"
+        slug: "anfragen-empfangen",
+        title: "Das Anfrage-Formular",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/anfragen-empfangen.mp4",
+        description:
+          "Die Website bekommt ihre wichtigste Funktion: den Anfragebogen, über den aus Besuchern Leads werden — plus deine eigene Admin-Übersicht unter /admin, in der jede Anfrage ihre Stufe hat, von neu bis gewonnen.",
+        duration: 25,
+        kind: "video",
+        steps: [
+          "Ersten Prompt schicken. Claude fragt dich, welche Felder rein sollen. Die Faustregel: nur, was du zum Zurückrufen brauchst — Name, E-Mail, Telefon, Nachricht ist meist der beste Fall. Dienstleistungs-Auswahl, Kalender-Anbindung und Co. kommen später im Automations-Modul.",
+          "Ergebnis am Rechner und auf dem Handy anschauen. Der Absende-Knopf läuft noch ins Leere — das ist so gewollt, angeschlossen wird gleich.",
+          "Nacharbeit in eigenen Worten: die Anfrage-Sektion weiter nach oben — und alle Knöpfe der Website („Termin vereinbaren“ und Co.) zeigen ab jetzt direkt auf den Bogen. Je kürzer der Weg zur Anfrage, desto mehr kommen an.",
+          "Zweiten Prompt schicken: deine Admin-Übersicht unter /admin — nirgends verlinkt, passwortgeschützt, nur du kennst die Adresse. Claude schlägt dir Pipeline-Stufen vor: neu → Kontakt aufgenommen → Termin vereinbart → gewonnen / verloren. Nimm die Empfehlung oder beschreib deinen eigenen Ablauf, etwa mit Angebot gesendet und Rechnung bezahlt.",
+          "Testen wie im Video: Anfrage abschicken — einmal absichtlich ohne Datenschutz-Häkchen, die Fehlermeldung muss kommen. Dann /admin öffnen: Die Anfrage steht in „neu“, du schreibst eine Notiz und schiebst sie eine Stufe weiter.",
+          "Warum gewonnen/verloren dokumentieren? Erst mal nur für deinen Überblick. Später füttern genau diese Daten den Werbe-Algorithmus bei Meta und Google. Als Nächstes: Datenschutz, dann geht die Seite online — und danach der E-Mail-Weg: du wirst benachrichtigt, der Kunde bekommt seine Bestätigung.",
+        ],
+        cheatSheet: {
+          prompts: [
+            {
+              label: "1. Der Anfragebogen — Claude fragt, was rein soll, und baut",
+              text: `Bau mir das Anfrage-Formular für meine Website.
+
+Erstmal nur den Bogen selbst: wie er aussieht, was drinsteht, wie er
+sich anfühlt. Angeschlossen wird er im nächsten Schritt — bau also
+noch keine Speicherung und verschick noch keine Mails.
+
+SCHRITT 1 — Frag mich, welche Felder rein sollen
+Mach mir einen Vorschlag und begründe ihn kurz. Meine Faustregel:
+nur, was du brauchst, um mich zurückrufen zu können. Jedes Feld
+mehr kostet Anfragen.
+
+SCHRITT 2 — Bau den Bogen
+- Er soll aussehen wie der Rest meiner Seite: gleiche Farben,
+  gleiche Schrift, gleiche Ecken, gleiche Abstände.
+- Überschrift und ein, zwei Sätze darüber, die zum Anfragen
+  einladen — in meinem Ton, keine Floskeln.
+- Wenn es zur Seite passt, ein Bild daneben: ich bei der Arbeit,
+  mein Team oder mein Firmenwagen. Sag mir, welches Bild aus meinem
+  Bilder-Ordner du nehmen würdest, oder ob es ohne besser wirkt.
+- Pflichtfelder werden geprüft, bevor abgeschickt wird — mit
+  freundlichen deutschen Hinweisen direkt am Feld, nicht als
+  Fehlerblock oben.
+- Telefonnummer und E-Mail nur grob prüfen. Lieber eine Anfrage mit
+  krummer Nummer als eine abgewiesene echte Anfrage.
+- Während des Absendens ist der Knopf gesperrt und zeigt, dass etwas
+  passiert. Doppelklick darf keine zwei Anfragen auslösen.
+- Danach sieht der Kunde eine klare Bestätigung auf der Seite: dass
+  die Anfrage da ist und wann ich mich melde. Keine leere Seite,
+  kein Sprung nach oben.
+- Ein verstecktes Feld gegen Werbemüll: Füllt ein Roboter es aus,
+  wird die Anfrage still verworfen.
+- Pflicht-Häkchen für den Datenschutzhinweis, verlinkt auf meine
+  Datenschutzseite. Die gibt es noch nicht und du baust sie AUCH
+  NICHT — Impressum und Datenschutz machen wir später gemeinsam in
+  einem eigenen Schritt. Setz den Link trotzdem schon, auch wenn er
+  vorerst ins Leere zeigt, und erinner mich am Ende in einem Satz
+  daran, dass das noch offen ist.
+- Auf dem Handy: große Felder, richtige Tastatur je Feld (Zahlen bei
+  Telefon, @ bei E-Mail), nichts, wofür man zoomen muss.
+
+SCHRITT 3 — Zeig ihn mir und verdrahte die Knöpfe
+Zeig mir den fertigen Bogen am Rechner und auf dem Handy. Der
+Absende-Knopf darf noch ins Leere laufen — sag mir nur klar, dass er
+noch nicht angeschlossen ist, damit ich mich nicht wundere.
+
+Danach: Alle Handlungs-Knöpfe auf meiner Website — „Termin
+vereinbaren", „Anfrage senden", „Kontakt" und wie sie heißen —
+führen ab jetzt direkt zu diesem Bogen. Geh sie durch und sag mir,
+welche du umgestellt hast.`,
+            },
+            {
+              label: "2. Deine Admin-App — Anfragen sehen und nachhalten",
+              text: `Jetzt schließen wir das Formular an und bauen mir eine kleine
+Admin-App dazu.
+
+TEIL 1 — Die Anfragen müssen irgendwo landen
+Leg eine Empfangsstelle im Projekt an, die jede Anfrage mit Datum
+und Uhrzeit speichert.
+
+TEIL 2 — Die Admin-App
+Erreichbar unter /admin. Nirgends auf der Website verlinkt — weder
+im Menü noch im Fußbereich noch in der Sitemap. Setz sie außerdem
+auf "noindex", damit Google sie nicht in den Suchergebnissen zeigt.
+
+PASSWORT — nicht optional
+Nicht verlinkt heißt nicht geschützt: Wer die Adresse errät, sieht
+sonst die Namen, Telefonnummern und Adressen meiner Kunden. Das sind
+personenbezogene Daten, dafür hafte ich.
+
+Bau deshalb einen einfachen Passwortschutz davor. Das Passwort kommt
+in die Umgebungsvariablen, nicht in den Code. Denk dir eins aus, sag
+es mir, und erinner mich daran, es in meinem Passwort-Manager zu
+speichern. Ohne richtiges Passwort ist unter /admin nichts zu sehen —
+auch keine Zahlen.
+
+ZAHLEN OBEN
+- Anfragen heute
+- Anfragen diese Woche
+- Anfragen gesamt
+- wie viele davon noch unbearbeitet sind
+
+DIE PIPELINE — das Herzstück
+Jede Anfrage hat einen Status. Frag mich ZUERST, welche Stufen zu
+meinem Betrieb passen, und schlag mir diese vor:
+
+  neu → Kontakt aufgenommen → Termin vereinbart → gewonnen / verloren
+
+Ich kann Stufen streichen, umbenennen oder eigene ergänzen — zum
+Beispiel „Angebot geschickt", „Rechnung gestellt", „bezahlt". Erst
+wenn ich bestätigt habe, baust du.
+
+Bau die Anfragen dann als Pipeline: die Stufen nebeneinander als
+Spalten, jede Anfrage als Karte in ihrer Spalte. Ich will eine Karte
+von einer Stufe in die nächste schieben oder per Auswahlfeld
+umstellen können — nimm das, was auf dem Handy zuverlässiger
+funktioniert, und sag mir, warum du dich so entschieden hast.
+
+Auf jeder Karte: Datum, Name, Telefonnummer, E-Mail, worum es geht.
+Telefonnummer und E-Mail als anklickbare Verweise, damit ich vom
+Handy aus direkt anrufen kann. Karte antippen zeigt die ganze
+Nachricht. Dazu ein Notizfeld pro Anfrage, in das ich reinschreiben
+kann, was besprochen wurde — „wurde angerufen", „Einfamilienhaus,
+will Angebot bis Freitag".
+
+Gewonnen und verloren blende ich normalerweise aus — die hole ich
+mir über einen Schalter dazu. Gelöscht wird trotzdem nichts: Diese
+Daten brauchen wir später noch für die Werbung.
+
+Halt es schlicht: Das ist mein Arbeitswerkzeug, kein Schaufenster.
+Gut lesbar auf dem Handy ist wichtiger als schön.
+
+TEIL 3 — Selbst testen
+Schick eine echte Testanfrage über das Formular ab — und einmal
+absichtlich ohne das Datenschutz-Häkchen: Da muss eine freundliche
+Fehlermeldung kommen. Dann ruf /admin auf — einmal ohne Passwort,
+einmal mit — und zeig mir, dass die Anfrage dort in der Spalte "neu"
+steht. Schieb sie einmal eine Stufe weiter und lad die Seite neu:
+Der Status muss erhalten bleiben.`,
+            },
+          ],
+        },
+      },
     ],
   },
   {
