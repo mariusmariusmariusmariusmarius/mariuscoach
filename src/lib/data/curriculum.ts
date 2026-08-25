@@ -77,7 +77,7 @@ export const CURRICULUM: CourseModule[] = [
         // Video: „erstes.mp4" + „skill 2.mp4"
         slug: "claude-code-dein-mitarbeiter",
         title: "Claude Code, dein Mitarbeiter?",
-        videoUrl: "/videos/modul-1/claude-code-dein-mitarbeiter.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/claude-code-dein-mitarbeiter.mp4",
         description:
           "Claude Code ist das Herzstück dieses Kurses — die zentrale Steuerung für alles: Website, Hosting, Automationen, E-Mail-Marketing, Werbekampagnen. Hier richten wir es ein und laden die Werkzeuge, die Claude braucht.",
         duration: 12,
@@ -120,7 +120,7 @@ export const CURRICULUM: CourseModule[] = [
         // Video: „Claude - 16 August 2026.mp4"
         slug: "erste-website",
         title: "Die erste Website in 35 Minuten",
-        videoUrl: "/videos/modul-1/erste-website.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/erste-website.mp4",
         description:
           "Wir starten direkt in Claude Code — mit einem echten Kundenauftrag: ein mittelständischer Möbel-Händler. Zwei Design-Skills, ein Start-Prompt, deine Antworten — und Claude baut das Fundament deiner Website.",
         duration: 40,
@@ -203,7 +203,7 @@ Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
         // Video: „part 1.mp4" + „part 2.mp4"
         slug: "referenz-websites-nutzen",
         title: "Referenz-Websites nutzen",
-        videoUrl: "/videos/modul-1/referenz-websites-nutzen.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/referenz-websites-nutzen.mp4",
         description:
           "Der zweite Weg: Du hast schon eine Website und willst sie mitnehmen — oder dir gefällt eine fremde Seite und du willst sie als Vorlage. Das Download-Werkzeug aus dem Setup holt die komplette Seite, Claude baut sie mit deinen Inhalten nach. So kommst du auch raus aus Wix, IONOS oder WordPress.",
         duration: 15,
@@ -310,7 +310,7 @@ dazu. Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
         // Video: „Claude - 17 August 2026.mp4"
         slug: "copywriting-mit-claude",
         title: "Copywriting mit Claude",
-        videoUrl: "/videos/modul-1/copywriting-mit-claude.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/copywriting-mit-claude.mp4",
         description:
           "Das Fundament steht — jetzt die Feinheiten. Erst siehst du, wie leicht sich die Seite in einfacher Sprache umbauen lässt, dann gehen wir an die Texte: Was die KI erfunden hat, fliegt raus — dein Ton, deine Zielgruppe, deine echten Daten rein.",
         duration: 25,
@@ -394,7 +394,7 @@ nicht — das kommt gleich danach, gebündelt.`,
         // Video: „KI Design Schritt für Schritt optimieren.mp4"
         slug: "design-grundlagen",
         title: "Design-Grundlagen: Warum Seiten gut aussehen",
-        videoUrl: "/videos/modul-1/design-grundlagen.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/design-grundlagen.mp4",
         description:
           "Fundament und Texte stehen — jetzt kommt das Design. Claude zieht die Farben aus deinem Logo, baut dir ein Designprofil mit drei Kombinationen zur Auswahl, und mit dem Stift-Trick schleifst du danach jede Kleinigkeit weg, ohne vom Fach zu sein.",
         duration: 25,
@@ -542,7 +542,7 @@ Rechner und auf dem Handy.`,
         // Video: „gefundenwerden.online Academy … - 18 August 2026.mp4"
         slug: "eigene-bilder",
         title: "Eigene Bilder auf die Website",
-        videoUrl: "/videos/modul-1/eigene-bilder.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/eigene-bilder.mp4",
         description:
           "Klingt aufwendig, geht aber schnell: Bilder grob nach Leistungen sortieren, Dateipfad an Claude — er baut ein, benennt, komprimiert und hängt dein Logo in Navigation und Fußzeile. Sogar ein Hintergrundvideo ist drin.",
         duration: 20,
@@ -643,7 +643,7 @@ mir — leere Stellen füllen wir gleich danach mit KI-Bildern.`,
         // Video: „Higgsfield AI — AI-native creative suite - 18 August 2026.mp4"
         slug: "ki-bilder-vs-eigene",
         title: "KI-Bilder vs. eigene Fotos",
-        videoUrl: "/videos/modul-1/ki-bilder-vs-eigene.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/ki-bilder-vs-eigene.mp4",
         description:
           "Die leeren Stellen füllen wir jetzt mit KI: Higgsfield verbindet fast alle Bild- und Video-KIs — und hängt direkt an Claude. Der Gratis-Zugang reicht. Wo echte Fotos unschlagbar bleiben und wie KI-Bilder nicht nach KI aussehen, regelt der Prompt.",
         duration: 20,
@@ -728,7 +728,7 @@ Regeln:
         // Video: „Website live stellen mit Vercel.mp4"
         slug: "live-gehen-mit-vercel",
         title: "Live gehen mit Vercel",
-        videoUrl: "/videos/modul-1/live-gehen-mit-vercel.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/live-gehen-mit-vercel.mp4",
         description:
           "Die Seite geht online — gehostet bei Vercel, gesteuert von Claude, für die allermeisten komplett kostenlos. Du bekommst erst mal eine Vercel-Adresse; deine eigene Domain verbinden wir im nächsten Schritt.",
         duration: 20,
