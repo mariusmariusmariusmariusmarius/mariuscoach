@@ -67,14 +67,24 @@ const EIGENTUM = "_mm-eigentum";
  * lassen sich dabei nicht zurückholen (bleiben leer).
  */
 export async function domainsVonSicher(userId: string): Promise<DomainEintrag[]> {
-  const imSpeicher = domains.get(userId);
-  if (imSpeicher && imSpeicher.length > 0) return imSpeicher;
-
-  // 1) Dauerspeicher — enthält auch die Token-Werte
-  const abgelegt = await ladeJson<DomainEintrag[]>(SPEICHER(userId));
-  if (abgelegt && abgelegt.length > 0) {
-    domains.set(userId, abgelegt);
-    return abgelegt;
+  // Dauerspeicher und Instanz-Speicher VEREINEN — mehrere Serverless-
+  // Instanzen sehen sonst unterschiedliche Stände und überschreiben sich.
+  const imSpeicher = domains.get(userId) ?? [];
+  const abgelegt = (await ladeJson<DomainEintrag[]>(SPEICHER(userId))) ?? [];
+  if (imSpeicher.length > 0 || abgelegt.length > 0) {
+    const vereint = new Map<string, DomainEintrag>();
+    for (const e of abgelegt) vereint.set(e.domain, e);
+    for (const e of imSpeicher) {
+      const alt = vereint.get(e.domain);
+      // Eintrag mit Token-Wert gewinnt
+      if (!alt || (e.token && !alt.token)) vereint.set(e.domain, e);
+    }
+    const liste = [...vereint.values()];
+    domains.set(userId, liste);
+    if (liste.length !== abgelegt.length || imSpeicher.length > 0) {
+      await speichereJson(SPEICHER(userId), liste);
+    }
+    return liste;
   }
   if (!dnsKonfiguriert()) return [];
 
@@ -165,7 +175,7 @@ export async function zoneAnlegen(
   if (!/^[a-z0-9äöüß-]+(\.[a-z0-9-]+)+$/.test(domain)) {
     return { fehler: "Das sieht nicht wie eine Domain aus. Beispiel: meine-firma.de" };
   }
-  const eigene = domainsVon(userId);
+  const eigene = await domainsVonSicher(userId);
   if (eigene.some((d) => d.domain === domain)) {
     return { eintrag: eigene.find((d) => d.domain === domain) };
   }

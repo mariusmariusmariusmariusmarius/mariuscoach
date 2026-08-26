@@ -1413,9 +1413,11 @@ Mail-Domain, falls die noch fehlt (aktion "domain", dann
 "postfach"), mit neuen, sicheren Passwörtern.
 
 Ist eine Ziel-Domain noch GAR NICHT mit meinem Konto verbunden
-(GET auf die DNS-Zentrale zeigt sie nicht): Schließ sie auch dort
-an (POST /api/dns) und heb dir Nameserver und DNS-Token auf — die
-sagst du mir am Ende. Der Domain-Status bleibt dabei auf „wartet" —
+(GET auf die DNS-Zentrale zeigt sie nicht): Leg dort auch die Zone
+für sie an (POST /api/dns { "domain": "..." }) und heb dir die zwei
+Nameserver und mein DNS-Token auf — die sagst du mir am Ende. Die
+Nameserver trage ich SPÄTER selbst beim Registrar ein, erst nach
+dem Sync. Der Domain-Status bleibt dabei auf „wartet" —
 das ist richtig so, die Nameserver stelle ich erst NACH dem Sync um.
 
 DNS- und MX-Einträge fasst du NICHT an — meine alte Post läuft
