@@ -1367,13 +1367,12 @@ ich es danach einmal neu eintragen.`,
         duration: 20,
         kind: "video",
         steps: [
-          "Das Prinzip zuerst: Nur die MX-Einträge bestimmen, wohin Post fließt. Alles andere — neue Postfächer anlegen, verifizieren, sogar den Bestand kopieren — passiert davor, während deine alte Post ungestört weiterläuft. Deshalb gilt: MX zuletzt.",
+          "Das Prinzip zuerst: Nur die MX-Einträge bestimmen, wohin Post fließt. Neue Postfächer anlegen und den kompletten Bestand kopieren geht davor — deine alte Post läuft währenddessen ungestört weiter. Deshalb: erst kopieren, selbst nachschauen, dann umziehen.",
           "Den Skill installieren — Befehl rechts. Er enthält den kompletten Umzugsablauf mit allen Stolperfallen, Claude führt dich damit sicher durch. Und falls du das Setup-Paket noch nicht hast: Der Nachhol-Befehl steht auch rechts — das Sync-Werkzeug imapsync kommt damit gleich mit.",
           "Im Baukasten unten deinen alten Anbieter auswählen — der richtige Mail-Server steht dann automatisch im Prompt, samt Besonderheiten (bei Google und Yahoo brauchst du zum Beispiel ein App-Passwort).",
-          "Prompt schicken: Claude legt Domain und dieselben Adressen auf dem Kurs-Server an (neue Passwörter) und verifiziert die Domain — ohne die MX-Einträge anzufassen. Liegt deine DNS auf der Kursplattform, setzt er die Nachweise selbst; verwaltest du sie noch beim Anbieter, bekommst du eine Tabelle zum Eintragen.",
-          "Der Sync: Claude kopiert jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. Dafür braucht er einmalig deine alten Passwörter; auf dem Mac läuft das mit imapsync aus dem Setup-Paket.",
-          "Der Beweis, dass alles rüber ist — doppelt: Claude zeigt dir je Ordner die Mail-Anzahl alt neben neu, die Zahlen müssen übereinstimmen. Und mit eigenen Augen: webmail.gefundenwerden.online im Browser öffnen, mit Adresse und neuem Passwort anmelden — geht sofort, noch vor der Umstellung, ganz ohne Mail-Programm. Da liegen alle kopierten Mails.",
-          "Der Umzugsmoment: MX-Einträge umstellen — ab jetzt landet Neues auf dem Kurs-Server. Danach der Nachsync: einmal wiederholen, um die Mails mitzunehmen, die während der Umstellung noch beim alten Anbieter eintrudelten.",
+          "Prompt schicken: Claude legt Domain und dieselben Adressen auf dem Kurs-Server an (neue Passwörter) und kopiert direkt jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. An deiner DNS ändert er dabei noch gar nichts. Als Beweis bekommst du eine Zähl-Tabelle: je Ordner die Mail-Anzahl alt neben neu.",
+          "Jetzt vergewisserst DU dich: webmail.gefundenwerden.online im Browser öffnen, mit deiner Adresse und dem neuen Passwort anmelden — da liegen alle kopierten Mails samt Ordnern, ganz ohne Mail-Programm. Erst dein OK startet den Umzug.",
+          "Der Umzug: Claude stellt die DNS-Einträge um — Eigentumsnachweis, DKIM, SPF und MX in einem Rutsch (über die Plattform direkt, sonst als Tabelle zum Selbst-Eintragen) — und schaltet die Domain frei. Ab jetzt landet Neues auf dem Kurs-Server. Danach der Nachsync für die Mails, die währenddessen noch beim alten Anbieter eintrudelten.",
           "Zum Schluss: neue Passwörter in den Passwort-Manager und in deine Mail-Programme, Testmail von außen — und das alte Postfach erst kündigen, wenn ein paar Tage alles rund läuft.",
         ],
         cheatSheet: {
@@ -1399,62 +1398,54 @@ MEIN ZUGANG (für die neuen Postfächer)
 Adresse: {PLATTFORM-URL}/api/mail
 Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
 
-DIE REIHENFOLGE IST HEILIG — MX ZULETZT:
+DIE REIHENFOLGE IST HEILIG — ERST KOPIEREN, DANN UMZIEHEN:
 
-SCHRITT 1 — Neu anlegen, ohne umzuziehen
-Leg die Domain und DIESELBEN Adressen bei uns an, mit neuen,
-sicheren Passwörtern. Meine alte Post läuft ungestört weiter, weil
-die MX-Einträge noch auf den alten Anbieter zeigen.
+SCHRITT 1 — Neu anlegen, ohne irgendetwas umzustellen
+Leg die Domain und DIESELBEN Adressen bei uns an (aktion "domain",
+dann je Adresse "postfach"), mit neuen, sicheren Passwörtern. DNS-
+und MX-Einträge fasst du dabei NICHT an — meine alte Post läuft
+ungestört weiter. Das funktioniert auch, solange die Domain bei uns
+noch unverifiziert ist: Postfächer und IMAP-Zugang sind sofort
+nutzbar, nur Empfang von außen gibt es erst nach dem Umzug.
 
-SCHRITT 2 — Verifizieren, ohne umzuziehen
-Prüf zuerst, wo meine DNS-Einträge verwaltet werden:
-- Läuft meine Domain über die Kursplattform (ich habe ein
-  DNS-Token aus der Domain-Lektion), setzt du die Einträge direkt.
-- Verwalte ich meine DNS selbst beim Anbieter, gibst du mir die
-  Einträge als Tabelle und wartest, bis ich sie eingetragen habe.
-Gesetzt werden: der Eigentumsnachweis plus DKIM und SPF (aktion
-"records" liefert alles fertig). Die MX-Einträge fasst du NICHT
-an — nur sie bestimmen, wohin Post fließt, alles andere bewegt
-keine einzige Mail. Danach schalte die Domain frei (aktion
-"aktivieren").
-
-Falls Migadu ohne MX-Einträge nicht freischaltet oder die Anmeldung
-am neuen Postfach scheitert: kein Drama, dann drehen wir um — erst
-Schritt 4, direkt danach Schritt 3. Verloren geht dabei nichts, denn
-das alte Postfach bleibt per IMAP erreichbar, egal wohin die MX
-zeigen. Sag mir nur klar, welchen Weg du gehst.
-
-SCHRITT 3 — Bestand kopieren
+SCHRITT 2 — Bestand kopieren
 Kopier jedes alte Postfach ins neue. Auf dem Mac nimmst du imapsync
 (kommt mit dem Setup-Paket), auf Windows schreibst du den Sync als
-kleines Python-Skript. Die Passwörter stehen oben bei
-den Adressen — fehlt eins, frag mich. Der IMAP-Server des alten
-Anbieters steht auch oben; steht dort "unbekannt", find ihn heraus
-oder frag mich. Passwörter nur
-in temporäre Dateien, danach löschen; nichts davon landet in meinem
-Projekt.
+kleines Python-Skript. Die Passwörter stehen oben bei den Adressen —
+fehlt eins, frag mich. Der IMAP-Server des alten Anbieters steht
+auch oben; steht dort "unbekannt", find ihn heraus oder frag mich.
+Passwörter nur in temporäre Dateien, danach löschen; nichts davon
+landet in meinem Projekt.
 
-DER BEWEIS — nicht überspringen: Zeig mir nach dem Kopieren eine
-Tabelle, je Postfach und Ordner: Anzahl Mails im alten Postfach
-neben der Anzahl im neuen. Die Zahlen müssen übereinstimmen —
-weichen sie ab, sag es mir und lauf den Sync noch einmal. Und sag
-mir dazu, wie ich es mit eigenen Augen sehe: webmail.gefundenwerden.online
-im Browser öffnen, anmelden mit der vollen Adresse und dem NEUEN
-Passwort — das geht sofort, noch bevor irgendetwas umgestellt ist.
-Dort liegen alle kopierten Mails samt Ordnern.
+Zeig mir danach als Beweis eine Tabelle, je Postfach und Ordner:
+Anzahl Mails im alten Postfach neben der Anzahl im neuen. Weichen
+die Zahlen ab, sag es mir und lauf den Sync noch einmal.
 
-SCHRITT 4 — Der Umzugsmoment
-Erst wenn Schritt 3 durch ist: Stell die MX-Einträge und SPF auf
-den neuen Server um. Zeig mir vorher, was du änderst, und warte auf
-mein OK.
+SCHRITT 3 — Ich schaue selbst nach, bevor umgezogen wird
+Sag mir jetzt: webmail.gefundenwerden.online im Browser öffnen und
+mit der vollen Adresse und dem NEUEN Passwort anmelden — dort liegen
+alle kopierten Mails samt Ordnern, ganz ohne Mail-Programm. Warte
+auf mein OK. Erst wenn ich bestätige, dass alles da ist, ziehst du
+um.
+
+SCHRITT 4 — Der Umzug
+Jetzt die DNS-Einträge: Hol mit aktion "records" alles Geforderte —
+Eigentumsnachweis, DKIM, SPF und die MX-Einträge — und stell um:
+- Läuft meine Domain über die Kursplattform (ich habe ein DNS-Token
+  aus der Domain-Lektion), setzt du alles direkt.
+- Verwalte ich meine DNS selbst beim Anbieter, gibst du mir die
+  Einträge als Tabelle und wartest, bis ich sie eingetragen habe.
+Zeig mir vorher, was sich ändert, und warte auf mein OK — ab den
+MX-Einträgen läuft neue Post auf den neuen Server. Danach schalte
+die Domain frei (aktion "aktivieren").
 
 SCHRITT 5 — Nachsync und Kontrolle
 Warte eine Viertelstunde, dann kopier noch einmal — das holt die
 Mails nach, die während der Umstellung noch beim alten Anbieter
 eingingen (der Sync nimmt nur, was fehlt; doppelt gibt es nicht).
-Zeig mir die Zähl-Tabelle danach noch einmal.
-Prüf mit einer Testmail von außen, dass das neue Postfach empfängt,
-und mit einer von innen, dass der Versand geht.
+Zeig mir die Zähl-Tabelle danach noch einmal. Prüf mit einer
+Testmail von außen, dass das neue Postfach empfängt, und mit einer
+von innen, dass der Versand geht.
 
 ZUM SCHLUSS
 - Tabelle: Adresse, neues Passwort, Serverdaten (imap.migadu.com,
