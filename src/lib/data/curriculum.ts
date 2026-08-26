@@ -1369,7 +1369,7 @@ ich es danach einmal neu eintragen.`,
         steps: [
           "Das Prinzip zuerst: Nur die MX-Einträge bestimmen, wohin Post fließt. Neue Postfächer anlegen und den kompletten Bestand kopieren geht davor — deine alte Post läuft währenddessen ungestört weiter. Deshalb: erst kopieren, selbst nachschauen, dann umziehen.",
           "Den Skill installieren — Befehl rechts. Er enthält den kompletten Umzugsablauf mit allen Stolperfallen, Claude führt dich damit sicher durch. Und falls du das Setup-Paket noch nicht hast: Der Nachhol-Befehl steht auch rechts — das Sync-Werkzeug imapsync kommt damit gleich mit.",
-          "Im Baukasten unten deinen alten Anbieter auswählen — der richtige Mail-Server steht dann automatisch im Prompt, samt Besonderheiten (bei Google und Yahoo brauchst du zum Beispiel ein App-Passwort).",
+          "Im Baukasten unten deinen alten Anbieter auswählen — der richtige Mail-Server steht dann automatisch im Prompt, samt Besonderheiten (bei Google und Yahoo brauchst du zum Beispiel ein App-Passwort). Dann je Postfach ein Paar anlegen: von der alten Adresse (mit Passwort) in die neue — das geht auch über mehrere Domains, und sogar Umbenennungen sind drin, etwa buero@alt.de in info@neu.de.",
           "Prompt schicken: Claude legt Domain und dieselben Adressen auf dem Kurs-Server an (neue Passwörter) und kopiert direkt jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. An deiner DNS ändert er dabei noch gar nichts. Als Beweis bekommst du eine Zähl-Tabelle: je Ordner die Mail-Anzahl alt neben neu.",
           "Jetzt vergewisserst DU dich: webmail.gefundenwerden.online im Browser öffnen, mit deiner Adresse und dem neuen Passwort anmelden — da liegen alle kopierten Mails samt Ordnern, ganz ohne Mail-Programm. Erst dein OK startet den Umzug.",
           "Nach deinem OK erledigt Claude den Rest von selbst — die Reihenfolge kennt er aus dem Skill. Ab dann landet neue Post auf dem Kurs-Server, und ein automatischer Nachsync holt, was während der Umstellung noch beim alten Anbieter eintrudelte.",
@@ -1388,11 +1388,13 @@ ich es danach einmal neu eintragen.`,
 dass eine einzige Mail verloren geht. Nutz den Skill
 „domain-mail-automation", dort steht der Umzugsablauf im Detail.
 
-Meine Domain: {DEINE-DOMAIN}
 Mein alter Mail-Anbieter: {ALTER-ANBIETER}
 IMAP-Server des alten Anbieters: {ALTER-IMAP-SERVER}
 
 {MEINE-ADRESSEN}
+
+Die Ziel-Adressen sagen dir auch, welche Domains betroffen sind —
+es können mehrere sein.
 
 MEIN ZUGANG (für die neuen Postfächer)
 Adresse: {PLATTFORM-URL}/api/mail
@@ -1401,15 +1403,18 @@ Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
 DIE REIHENFOLGE IST HEILIG — ERST KOPIEREN, DANN UMZIEHEN:
 
 SCHRITT 1 — Neu anlegen, ohne irgendetwas umzustellen
-Leg die Domain und DIESELBEN Adressen bei uns an (aktion "domain",
-dann je Adresse "postfach"), mit neuen, sicheren Passwörtern. DNS-
-und MX-Einträge fasst du dabei NICHT an — meine alte Post läuft
-ungestört weiter. Das funktioniert auch, solange die Domain bei uns
-noch unverifiziert ist: Postfächer und IMAP-Zugang sind sofort
-nutzbar, nur Empfang von außen gibt es erst nach dem Umzug.
+Leg jedes Ziel-Postfach aus der Liste oben bei uns an — samt seiner
+Domain, falls die noch fehlt (aktion "domain", dann "postfach"),
+mit neuen, sicheren Passwörtern. DNS- und MX-Einträge fasst du
+dabei NICHT an — meine alte Post läuft ungestört weiter. Das
+funktioniert auch, solange eine Domain bei uns noch unverifiziert
+ist: Postfächer und IMAP-Zugang sind sofort nutzbar, nur Empfang
+von außen gibt es erst nach dem Umzug.
 
 SCHRITT 2 — Bestand kopieren
-Kopier jedes alte Postfach ins neue. Auf dem Mac nimmst du imapsync
+Kopier jedes Paar von alt nach neu: Quelle ist die von-Adresse beim
+alten Anbieter, Ziel die in-Adresse bei uns. Auf dem Mac nimmst du
+imapsync
 (kommt mit dem Setup-Paket), auf Windows schreibst du den Sync als
 kleines Python-Skript. Die Passwörter stehen oben bei den Adressen —
 fehlt eins, frag mich. Der IMAP-Server des alten Anbieters steht

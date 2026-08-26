@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Truck } from "lucide-react";
 import { CopyButton } from "@/components/ui/copy-button";
 
@@ -135,12 +135,25 @@ const ANBIETER: Anbieter[] = [
 
 const GRUPPEN = [...new Set(ANBIETER.map((a) => a.gruppe))];
 
-type Zeile = { adresse: string; passwort: string };
+type Zeile = { von: string; passwort: string; nach: string };
+
+const LEER: Zeile = { von: "", passwort: "", nach: "" };
 
 export function UmzugPrompt({ prompt }: { prompt: string }) {
   const [id, setId] = useState("ionos");
   const [eigenerServer, setEigenerServer] = useState("");
-  const [zeilen, setZeilen] = useState<Zeile[]>([{ adresse: "", passwort: "" }]);
+  const [zeilen, setZeilen] = useState<Zeile[]>([{ ...LEER }]);
+  const [zielDomains, setZielDomains] = useState<string[]>([]);
+
+  // Eigene Mail-Domains holen — nur als Vorschlag fürs Ziel-Feld
+  useEffect(() => {
+    fetch("/api/mail")
+      .then((r) => (r.ok ? r.json() : { domains: [] }))
+      .then((d: { domains: { domain: string }[] }) =>
+        setZielDomains((d.domains ?? []).map((x) => x.domain))
+      )
+      .catch(() => undefined);
+  }, []);
 
   const anbieter = ANBIETER.find((a) => a.id === id)!;
   const brauchtEingabe = !anbieter.server;
@@ -153,21 +166,26 @@ export function UmzugPrompt({ prompt }: { prompt: string }) {
     const serverText = server
       ? server + (anbieter.hinweis ? `\n  Hinweis: ${anbieter.hinweis}` : "")
       : "unbekannt — find ihn über die Hilfeseiten meines Anbieters heraus oder frag mich";
-    const gefuellt = zeilen.filter((z) => z.adresse.trim());
+    const gefuellt = zeilen.filter((z) => z.von.trim());
     const adressBlock = gefuellt.length
-      ? "MEINE BESTEHENDEN ADRESSEN (mit Passwort für den Sync):\n" +
+      ? "MEINE POSTFÄCHER — von alt nach neu (Passwort = beim alten Anbieter):\n" +
         gefuellt
-          .map(
-            (z) =>
-              `- ${z.adresse.trim()} — Passwort: ${z.passwort.trim() || "frag mich"}`
-          )
+          .map((z) => {
+            const von = z.von.trim();
+            const ziel =
+              z.nach.trim() ||
+              (von.includes("@") && zielDomains[0]
+                ? `${von.split("@")[0]}@${zielDomains[0]}`
+                : "gleiche Adresse auf meiner neuen Domain — frag mich, welche");
+            return `- von ${von} (Passwort: ${z.passwort.trim() || "frag mich"})\n  → in ${ziel}`;
+          })
           .join("\n")
-      : "MEINE BESTEHENDEN ADRESSEN: frag mich — ich sag sie dir im Chat.";
+      : "MEINE POSTFÄCHER: frag mich — ich sag dir im Chat, welche Postfächer von wo nach wo umziehen.";
     return prompt
       .replaceAll("{ALTER-ANBIETER}", anbieter.name.replace(" …", ""))
       .replaceAll("{ALTER-IMAP-SERVER}", serverText)
       .replaceAll("{MEINE-ADRESSEN}", adressBlock);
-  }, [prompt, anbieter, eigenerServer, zeilen]);
+  }, [prompt, anbieter, eigenerServer, zeilen, zielDomains]);
 
   return (
     <div className="rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6">
@@ -176,8 +194,8 @@ export function UmzugPrompt({ prompt }: { prompt: string }) {
         Der Umzugs-Prompt
       </h2>
       <p className="mb-5 text-xs leading-relaxed text-zinc-400">
-        Alten Anbieter auswählen — der richtige Mail-Server steht automatisch
-        im Prompt. Domain und Adressen trägst du im Text noch ein.
+        Alten Anbieter auswählen, dann je Postfach ein Von-nach-In-Paar —
+        der fertige Prompt baut sich unten von selbst.
       </p>
 
       <div className="mb-5 space-y-4">
@@ -233,47 +251,70 @@ export function UmzugPrompt({ prompt }: { prompt: string }) {
 
       <div className="mb-5">
         <label className="mb-2 block text-xs uppercase tracking-widest text-zinc-500">
-          Deine bestehenden Adressen — mit Passwort
+          Deine Postfächer — von alt nach neu
         </label>
-        <div className="space-y-2">
-          {zeilen.map((z, i) => (
-            <div key={i} className="flex gap-2">
-              <input
-                value={z.adresse}
-                onChange={(e) => zeileAendern(i, "adresse", e.target.value)}
-                placeholder="info@meine-firma.de"
-                className="min-w-0 flex-1 rounded-xl border border-white/10 bg-surface-950/60 px-3 py-2.5 font-mono text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-brand-500/50 focus:outline-none"
-              />
-              <input
-                value={z.passwort}
-                onChange={(e) => zeileAendern(i, "passwort", e.target.value)}
-                placeholder="Passwort"
-                className="w-36 rounded-xl border border-white/10 bg-surface-950/60 px-3 py-2.5 font-mono text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-brand-500/50 focus:outline-none"
-              />
-              {zeilen.length > 1 ? (
-                <button
-                  type="button"
-                  onClick={() => setZeilen((r) => r.filter((_, j) => j !== i))}
-                  className="shrink-0 rounded-xl border border-white/10 px-3 text-sm text-zinc-500 transition hover:border-red-500/40 hover:text-red-300"
-                  aria-label="Adresse entfernen"
-                >
-                  ×
-                </button>
-              ) : null}
-            </div>
-          ))}
+        <div className="space-y-3">
+          {zeilen.map((z, i) => {
+            const lokal = z.von.includes("@") ? z.von.split("@")[0] : "";
+            const zielVorschlag =
+              lokal && zielDomains[0]
+                ? `${lokal}@${zielDomains[0]}`
+                : "info@neue-domain.de";
+            return (
+              <div
+                key={i}
+                className="rounded-xl border border-white/10 bg-surface-950/40 p-3"
+              >
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="w-8 text-xs text-zinc-500">von</span>
+                  <input
+                    value={z.von}
+                    onChange={(e) => zeileAendern(i, "von", e.target.value)}
+                    placeholder="info@alte-firma.de"
+                    className="min-w-0 flex-1 rounded-xl border border-white/10 bg-surface-950/60 px-3 py-2.5 font-mono text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-brand-500/50 focus:outline-none"
+                  />
+                  <input
+                    value={z.passwort}
+                    onChange={(e) => zeileAendern(i, "passwort", e.target.value)}
+                    placeholder="Passwort"
+                    className="w-32 rounded-xl border border-white/10 bg-surface-950/60 px-3 py-2.5 font-mono text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-brand-500/50 focus:outline-none"
+                  />
+                  {zeilen.length > 1 ? (
+                    <button
+                      type="button"
+                      onClick={() => setZeilen((r) => r.filter((_, j) => j !== i))}
+                      className="shrink-0 rounded-xl border border-white/10 px-3 py-2 text-sm text-zinc-500 transition hover:border-red-500/40 hover:text-red-300"
+                      aria-label="Paar entfernen"
+                    >
+                      ×
+                    </button>
+                  ) : null}
+                </div>
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <span className="w-8 text-xs text-brand-300">in</span>
+                  <input
+                    value={z.nach}
+                    onChange={(e) => zeileAendern(i, "nach", e.target.value)}
+                    placeholder={zielVorschlag}
+                    className="min-w-0 flex-1 rounded-xl border border-brand-500/25 bg-surface-950/60 px-3 py-2.5 font-mono text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-brand-500/50 focus:outline-none"
+                  />
+                </div>
+              </div>
+            );
+          })}
         </div>
         <button
           type="button"
-          onClick={() => setZeilen((r) => [...r, { adresse: "", passwort: "" }])}
+          onClick={() => setZeilen((r) => [...r, { ...LEER }])}
           className="mt-2 rounded-xl border border-white/10 px-3 py-1.5 text-xs text-zinc-400 transition hover:border-brand-500/40 hover:text-brand-300"
         >
-          + weitere Adresse
+          + weiteres Postfach
         </button>
         <p className="mt-2 text-xs leading-relaxed text-zinc-500">
-          Beides wandert in den Prompt, damit Claude direkt loslegen kann. Der
-          Chat bleibt in deinem eigenen Claude-Konto — Passwort leer lassen
-          geht auch, dann fragt Claude dich danach.
+          Ein Paar je Postfach: oben die alte Adresse samt Passwort, unten wo
+          sie hinzieht — auch über mehrere Domains hinweg. Ziel leer lassen =
+          gleiche Adresse auf deiner Kurs-Domain. Passwort leer = Claude fragt
+          dich im Chat.
         </p>
       </div>
 
