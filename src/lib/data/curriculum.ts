@@ -1370,7 +1370,7 @@ ich es danach einmal neu eintragen.`,
           "Das Prinzip zuerst: Nur die MX-Einträge bestimmen, wohin Post fließt. Alles andere — neue Postfächer anlegen, verifizieren, sogar den Bestand kopieren — passiert davor, während deine alte Post ungestört weiterläuft. Deshalb gilt: MX zuletzt.",
           "Den Skill installieren — Befehl rechts. Er enthält den kompletten Umzugsablauf mit allen Stolperfallen, Claude führt dich damit sicher durch. Und falls du das Setup-Paket noch nicht hast: Der Nachhol-Befehl steht auch rechts — das Sync-Werkzeug imapsync kommt damit gleich mit.",
           "Im Baukasten unten deinen alten Anbieter auswählen — der richtige Mail-Server steht dann automatisch im Prompt, samt Besonderheiten (bei Google und Yahoo brauchst du zum Beispiel ein App-Passwort).",
-          "Prompt schicken: Claude legt Domain und dieselben Adressen auf dem Kurs-Server an (neue Passwörter) und verifiziert die Domain — ohne die MX-Einträge anzufassen. Ab jetzt sind die neuen Postfächer bereit, aber noch leer geschaltet.",
+          "Prompt schicken: Claude legt Domain und dieselben Adressen auf dem Kurs-Server an (neue Passwörter) und verifiziert die Domain — ohne die MX-Einträge anzufassen. Liegt deine DNS auf der Kursplattform, setzt er die Nachweise selbst; verwaltest du sie noch beim Anbieter, bekommst du eine Tabelle zum Eintragen.",
           "Der Sync: Claude kopiert jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. Dafür braucht er einmalig deine alten Passwörter; auf dem Mac läuft das mit imapsync aus dem Setup-Paket.",
           "Der Beweis, dass alles rüber ist — doppelt: Claude zeigt dir je Ordner die Mail-Anzahl alt neben neu, die Zahlen müssen übereinstimmen. Und mit eigenen Augen: webmail.gefundenwerden.online im Browser öffnen, mit Adresse und neuem Passwort anmelden — geht sofort, noch vor der Umstellung, ganz ohne Mail-Programm. Da liegen alle kopierten Mails.",
           "Der Umzugsmoment: MX-Einträge umstellen — ab jetzt landet Neues auf dem Kurs-Server. Danach der Nachsync: einmal wiederholen, um die Mails mitzunehmen, die während der Umstellung noch beim alten Anbieter eintrudelten.",
@@ -1407,10 +1407,22 @@ sicheren Passwörtern. Meine alte Post läuft ungestört weiter, weil
 die MX-Einträge noch auf den alten Anbieter zeigen.
 
 SCHRITT 2 — Verifizieren, ohne umzuziehen
-Hol die geforderten Einträge (aktion "records"), setz
-Eigentumsnachweis und DKIM über meine DNS — die MX-Einträge fasst
-du NICHT an — und schalte die Domain frei (aktion "aktivieren").
-Diese Einträge bewegen keine einzige Mail.
+Prüf zuerst, wo meine DNS-Einträge verwaltet werden:
+- Läuft meine Domain über die Kursplattform (ich habe ein
+  DNS-Token aus der Domain-Lektion), setzt du die Einträge direkt.
+- Verwalte ich meine DNS selbst beim Anbieter, gibst du mir die
+  Einträge als Tabelle und wartest, bis ich sie eingetragen habe.
+Gesetzt werden: der Eigentumsnachweis plus DKIM und SPF (aktion
+"records" liefert alles fertig). Die MX-Einträge fasst du NICHT
+an — nur sie bestimmen, wohin Post fließt, alles andere bewegt
+keine einzige Mail. Danach schalte die Domain frei (aktion
+"aktivieren").
+
+Falls Migadu ohne MX-Einträge nicht freischaltet oder die Anmeldung
+am neuen Postfach scheitert: kein Drama, dann drehen wir um — erst
+Schritt 4, direkt danach Schritt 3. Verloren geht dabei nichts, denn
+das alte Postfach bleibt per IMAP erreichbar, egal wohin die MX
+zeigen. Sag mir nur klar, welchen Weg du gehst.
 
 SCHRITT 3 — Bestand kopieren
 Kopier jedes alte Postfach ins neue. Auf dem Mac nimmst du imapsync
