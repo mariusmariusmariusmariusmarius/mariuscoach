@@ -1516,10 +1516,10 @@ ZUM SCHLUSS
         // Video: „Claude - 21 August 2026-2.mp4"
         slug: "seo-audit",
         title: "Der große SEO-Audit",
-        videoUrl: "https://videos.gefundenwerden.online/modul-1/seo-audit.mp4?v=2",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/seo-audit.mp4?v=3",
         description:
           "Einmal alles auf den Tisch: Claude durchleuchtet deine Seite von A bis Z — Technik, Inhalte, lokale Sichtbarkeit, Keywords, Konkurrenz, KI-Suche — mit Live-Daten über deinen Zugang. Im Video: eine zwei Tage alte Website, Note 3 von 10, 14 Abfragen — und eine Fundliste, für die SEO-Agenturen 5.000 Euro nehmen.",
-        duration: 13,
+        duration: 16,
         kind: "video",
         seoPrompt: true,
         steps: [
@@ -1530,6 +1530,7 @@ ZUM SCHLUSS
           "Die Keyword-Tabelle verstehen: Suchvolumen sagt, wie oft gesucht wird — Schwierigkeit, wie viel Konkurrenz dort steht (eine 0 heißt: Seite 1 ist gut machbar). Und was nicht zu deinem Ton passt, fliegt raus — im Video ein Sale-Keyword, weil keine Rabattsprache gewünscht war.",
           "Zur Einordnung: SEO-Agenturen nehmen für so einen Rundumschlag 5.000 bis 6.000 Euro — einmalig. Du kannst ihn jeden Monat laufen lassen und zusehen, wie die Rankings klettern.",
           "Dann die Umsetzung anstoßen — ein Satz reicht (Prompt rechts): Claude arbeitet den Bericht (das Artifakt) Punkt für Punkt ab; Google My Business lässt du bewusst aus, das bekommt eine eigene Lektion. Bei so einer umfangreichen Liste ruhig den Denkaufwand hochstellen — Opus reicht dafür völlig, Fable wäre Overkill. Es darf dauern, es können auch neue Seiten entstehen.",
+          "Rund 90 Prozent erledigt Claude allein — der Rest sind Fragen, die nur du beantworten kannst. Die Analyse zeigt nämlich, was Leute bei ChatGPT und Google wirklich eintippen: Lieferzeiten, maximale Maße, Zahlungsarten, Parkplätze am Showroom. Genau diese Antworten gehören auf deine Website, damit du dafür gefunden wirst. Lass dir die offenen Fragen stellen (Prompt rechts) — und wenn du für einen Kunden baust: Fragebogen rüberschicken oder kurz durchtelefonieren.",
         ],
         cheatSheet: {
           apiKeyHint: true,
@@ -1683,6 +1684,18 @@ Nimm dir Zeit und arbeite gründlich; es dürfen auch neue Seiten
 entstehen, wenn der Bericht sie empfiehlt. Zeig mir am Ende eine
 Liste: was du umgesetzt hast, was du bewusst ausgelassen hast und
 was noch von mir gebraucht wird.`,
+            },
+            {
+              label: "Die offenen Fragen — was nur du beantworten kannst",
+              text: `Stell mir jetzt alle Fragen aus dem Audit, die nur ich beantworten
+kann — nacheinander, eine nach der anderen. Das sind die Dinge, die
+Leute laut Analyse wirklich suchen: Lieferzeiten, Maße, Materialien,
+Zahlungsarten, Parkplätze und so weiter.
+
+Bau meine Antworten dann an den passenden Stellen in die Website
+ein. Widersprechen sich zwei Antworten, sag es mir, statt eine
+davon stillschweigend zu nehmen. Was ich nicht beantworten kann,
+bleibt offen — erfinde nichts.`,
             },
           ],
         },
