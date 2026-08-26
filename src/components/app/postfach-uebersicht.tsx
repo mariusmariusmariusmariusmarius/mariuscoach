@@ -49,14 +49,14 @@ export function PostfachUebersicht({ apiAdresse }: { apiAdresse: string }) {
         </a>
       </p>
 
-      <ul className="space-y-4">
+      <ul className="space-y-5">
         {eintraege.map((e) => (
           <li
             key={e.domain}
-            className="rounded-2xl border border-white/8 bg-surface-950/40 p-5"
+            className="rounded-2xl border border-white/8 bg-surface-950/40 p-6"
           >
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-              <span className="font-mono text-sm font-semibold text-white">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+              <span className="font-mono text-base font-semibold text-white">
                 {e.domain}
               </span>
               <span
@@ -76,15 +76,15 @@ export function PostfachUebersicht({ apiAdresse }: { apiAdresse: string }) {
               </span>
             </div>
 
-            <p className="mb-1 text-xs uppercase tracking-widest text-zinc-500">
+            <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500">
               Adressen
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2.5">
               {e.postfaecher.length ? (
                 e.postfaecher.map((p) => (
                   <span
                     key={p.adresse}
-                    className="rounded-xl border border-white/8 bg-surface-950/60 px-3 py-1.5 font-mono text-xs text-zinc-200"
+                    className="rounded-xl border border-white/8 bg-surface-950/60 px-4 py-2.5 font-mono text-sm text-zinc-200"
                   >
                     {p.adresse}
                   </span>
@@ -99,21 +99,21 @@ export function PostfachUebersicht({ apiAdresse }: { apiAdresse: string }) {
         ))}
       </ul>
 
-      <p className="mb-1 mt-5 text-xs uppercase tracking-widest text-zinc-500">
+      <p className="mb-2 mt-7 text-xs uppercase tracking-widest text-zinc-500">
         Serverdaten — Benutzername ist immer die volle Adresse
       </p>
-      <div className="space-y-1.5">
+      <div className="space-y-2.5">
         {server.map((z) => (
           <div
             key={z.name}
-            className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-3 py-2"
+            className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-4 py-3"
           >
-            <span className="text-xs text-zinc-500">{z.name}</span>
+            <span className="text-sm text-zinc-400">{z.name}</span>
             <span className="flex min-w-0 items-center gap-2">
-              <code className="min-w-0 truncate font-mono text-xs text-zinc-200">
+              <code className="min-w-0 truncate font-mono text-sm text-zinc-200">
                 {z.wert}
               </code>
-              <span className="hidden text-[0.65rem] text-zinc-600 sm:inline">
+              <span className="hidden text-xs text-zinc-500 sm:inline">
                 {z.zusatz}
               </span>
               <CopyButton text={z.wert} />

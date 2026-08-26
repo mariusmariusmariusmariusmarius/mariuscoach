@@ -71,14 +71,14 @@ export function DomainUebersicht({ kompakt = false }: { kompakt?: boolean }) {
         das Token wie ein Passwort.
       </p>
 
-      <ul className="space-y-4">
+      <ul className="space-y-5">
         {eintraege.map((e) => (
           <li
             key={e.domain}
-            className="rounded-2xl border border-white/8 bg-surface-950/40 p-5"
+            className="rounded-2xl border border-white/8 bg-surface-950/40 p-6"
           >
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-              <span className="font-mono text-sm font-semibold text-white">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+              <span className="font-mono text-base font-semibold text-white">
                 {e.domain}
               </span>
               <span
@@ -93,16 +93,16 @@ export function DomainUebersicht({ kompakt = false }: { kompakt?: boolean }) {
               </span>
             </div>
 
-            <p className="mb-1 text-xs uppercase tracking-widest text-zinc-500">
+            <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500">
               Nameserver
             </p>
-            <div className="mb-3 space-y-1.5">
+            <div className="mb-5 space-y-2.5">
               {e.nameServers.map((ns) => (
                 <div
                   key={ns}
-                  className="flex items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-3 py-2"
+                  className="flex items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-4 py-3"
                 >
-                  <code className="min-w-0 truncate font-mono text-xs text-zinc-200">
+                  <code className="min-w-0 truncate font-mono text-sm text-zinc-200">
                     {ns}
                   </code>
                   <CopyButton text={ns} />
@@ -110,18 +110,18 @@ export function DomainUebersicht({ kompakt = false }: { kompakt?: boolean }) {
               ))}
             </div>
 
-            <p className="mb-1 text-xs uppercase tracking-widest text-zinc-500">
+            <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500">
               DNS-Token
             </p>
             {e.token ? (
-              <div className="flex items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-3 py-2">
-                <code className="min-w-0 truncate font-mono text-xs text-zinc-200">
+              <div className="flex items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-4 py-3">
+                <code className="min-w-0 truncate font-mono text-sm text-zinc-200">
                   {e.token}
                 </code>
                 <CopyButton text={e.token} />
               </div>
             ) : (
-              <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-3 py-2">
+              <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-4 py-3">
                 <span className="text-xs text-zinc-500">
                   Dein Token hast du beim Anschließen bekommen — es gilt
                   weiter. Verlegt? Erzeug dir ein neues.
