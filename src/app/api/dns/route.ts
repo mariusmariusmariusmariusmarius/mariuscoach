@@ -3,7 +3,6 @@ import { getSession } from "@/lib/auth/session";
 import { findUserByApiKey, findUserByEmail, type User } from "@/lib/auth/users";
 import {
   dnsKonfiguriert,
-  domainsVon,
   zoneAnlegen,
   zoneEntfernen,
   zonenStatus,
@@ -34,7 +33,7 @@ export async function GET(req: NextRequest) {
   if (!user) return NextResponse.json({ fehler: "Nicht angemeldet." }, { status: 401 });
 
   const liste = await Promise.all(
-    domainsVon(user.id).map(async (d) => ({
+    (await domainsVonSicher(user.id)).map(async (d) => ({
       domain: d.domain,
       nameServers: d.nameServers,
       token: d.token,
@@ -55,7 +54,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  let rumpf: { domain?: string };
+  let rumpf: { domain?: string; tokenNeu?: boolean };
   try {
     rumpf = await req.json();
   } catch {
@@ -63,6 +62,16 @@ export async function POST(req: NextRequest) {
   }
   if (!rumpf.domain) {
     return NextResponse.json({ fehler: "Feld domain fehlt." }, { status: 400 });
+  }
+
+  if (rumpf.tokenNeu) {
+    const { eintrag, fehler } = await tokenNeuErzeugen(user.id, rumpf.domain);
+    if (fehler || !eintrag) return NextResponse.json({ fehler }, { status: 400 });
+    return NextResponse.json({
+      domain: eintrag.domain,
+      token: eintrag.token,
+      hinweis: "Neues Token erzeugt. Ein früher erzeugtes Token bleibt gültig.",
+    });
   }
 
   const { eintrag, fehler } = await zoneAnlegen(user.id, rumpf.domain);

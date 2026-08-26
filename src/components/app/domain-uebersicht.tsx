@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Globe } from "lucide-react";
+import { CheckCircle2, Globe } from "lucide-react";
 import { CopyButton } from "@/components/ui/copy-button";
 
 type Eintrag = {
@@ -23,6 +23,26 @@ const STATUS_TEXT: Record<string, string> = {
  */
 export function DomainUebersicht({ kompakt = false }: { kompakt?: boolean }) {
   const [eintraege, setEintraege] = useState<Eintrag[] | null>(null);
+  const [laedt, setLaedt] = useState<string | null>(null);
+
+  const tokenHolen = async (domain: string) => {
+    setLaedt(domain);
+    try {
+      const r = await fetch("/api/dns", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ domain, tokenNeu: true }),
+      });
+      const d = await r.json();
+      if (r.ok && d.token) {
+        setEintraege((alt) =>
+          (alt ?? []).map((e) => (e.domain === domain ? { ...e, token: d.token } : e))
+        );
+      }
+    } finally {
+      setLaedt(null);
+    }
+  };
 
   useEffect(() => {
     fetch("/api/dns")
@@ -62,12 +82,13 @@ export function DomainUebersicht({ kompakt = false }: { kompakt?: boolean }) {
                 {e.domain}
               </span>
               <span
-                className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
+                className={`flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium ${
                   e.status === "active"
                     ? "bg-emerald-500/15 text-emerald-300"
                     : "bg-amber-500/15 text-amber-300"
                 }`}
               >
+                {e.status === "active" ? <CheckCircle2 className="size-3.5" /> : null}
                 {STATUS_TEXT[e.status] ?? e.status}
               </span>
             </div>
@@ -92,12 +113,29 @@ export function DomainUebersicht({ kompakt = false }: { kompakt?: boolean }) {
             <p className="mb-1 text-xs uppercase tracking-widest text-zinc-500">
               DNS-Token
             </p>
-            <div className="flex items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-3 py-2">
-              <code className="min-w-0 truncate font-mono text-xs text-zinc-200">
-                {e.token}
-              </code>
-              <CopyButton text={e.token} />
-            </div>
+            {e.token ? (
+              <div className="flex items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-3 py-2">
+                <code className="min-w-0 truncate font-mono text-xs text-zinc-200">
+                  {e.token}
+                </code>
+                <CopyButton text={e.token} />
+              </div>
+            ) : (
+              <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/8 bg-surface-950/60 px-3 py-2">
+                <span className="text-xs text-zinc-500">
+                  Dein Token hast du beim Anschließen bekommen — es gilt
+                  weiter. Verlegt? Erzeug dir ein neues.
+                </span>
+                <button
+                  type="button"
+                  onClick={() => tokenHolen(e.domain)}
+                  disabled={laedt === e.domain}
+                  className="rounded-lg border border-brand-500/40 px-3 py-1.5 text-xs font-medium text-brand-300 transition hover:bg-brand-500/10 disabled:opacity-50"
+                >
+                  {laedt === e.domain ? "Wird erzeugt …" : "Neues Token erzeugen"}
+                </button>
+              </div>
+            )}
           </li>
         ))}
       </ul>
