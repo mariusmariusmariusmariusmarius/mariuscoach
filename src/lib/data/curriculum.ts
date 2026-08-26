@@ -1362,18 +1362,19 @@ ich es danach einmal neu eintragen.`,
         // Video folgt — Marius dreht die Lektion entlang dieser Schritte
         slug: "postfach-umzug",
         title: "Postfach-Umzug: Alte Mails mitnehmen",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/postfach-umzug.mp4",
         description:
-          "Du hast schon Postfächer bei IONOS, Strato oder GMX? Dann ziehen wir sie auf den Kurs-Server um — mit allen alten Mails, Ordnern und ohne eine Minute Ausfall. Der Trick heißt IMAP-Sync, und die Reihenfolge entscheidet. Wer keine alten Postfächer hat, überspringt diese Lektion einfach.",
+          "Deine alten Mail-Adressen ziehen mit auf den Kurs-Server — samt allen Ordnern, Rechnungen und 6.000 Mails, wenn es sein muss. Der IMAP-Sync kopiert erst alles in ein frisches Postfach, deine alte Adresse läuft währenddessen ungestört weiter, du prüfst in Ruhe — und erst dann wird umgezogen. Es geht nichts verloren. Wer keine alten Postfächer hat, überspringt diese Lektion einfach.",
         duration: 20,
         kind: "video",
         steps: [
-          "Das Prinzip zuerst: Nur die MX-Einträge bestimmen, wohin Post fließt. Neue Postfächer anlegen und den kompletten Bestand kopieren geht davor — deine alte Post läuft währenddessen ungestört weiter. Deshalb: erst kopieren, selbst nachschauen, dann umziehen.",
-          "Den Skill installieren — Befehl rechts. Er enthält den kompletten Umzugsablauf mit allen Stolperfallen, Claude führt dich damit sicher durch. Und falls du das Setup-Paket noch nicht hast: Der Nachhol-Befehl steht auch rechts — das Sync-Werkzeug imapsync kommt damit gleich mit.",
-          "Im Baukasten unten deinen alten Anbieter auswählen — der richtige Mail-Server steht dann automatisch im Prompt, samt Besonderheiten (bei Google und Yahoo brauchst du zum Beispiel ein App-Passwort). Dann je Postfach ein Paar anlegen: von der alten Adresse (mit Passwort) in die neue — das geht auch über mehrere Domains, und sogar Umbenennungen sind drin, etwa buero@alt.de in info@neu.de.",
-          "Prompt schicken: Claude legt die Ziel-Postfächer auf dem Kurs-Server an — und ist eine Domain noch gar nicht mit deinem Konto verbunden, schließt er sie gleich mit an (sie erscheint dann in den Einstellungen, erst mal als „wartet“ — die Nameserver kommen später). Danach kopiert er jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. An deiner DNS ändert er dabei noch gar nichts. Als Beweis bekommst du eine Zähl-Tabelle: je Ordner die Mail-Anzahl alt neben neu.",
-          "Jetzt vergewisserst DU dich: webmail.gefundenwerden.online im Browser öffnen, mit deiner Adresse und dem neuen Passwort anmelden — da liegen alle kopierten Mails samt Ordnern, ganz ohne Mail-Programm. Erst dein OK startet den Umzug.",
-          "Nach deinem OK erledigt Claude den Rest von selbst — die Reihenfolge kennt er aus dem Skill. Ab dann landet neue Post auf dem Kurs-Server, und ein automatischer Nachsync holt, was während der Umstellung noch beim alten Anbieter eintrudelte.",
-          "Zum Schluss: neue Passwörter in den Passwort-Manager und in deine Mail-Programme, Testmail von außen — und das alte Postfach erst kündigen, wenn ein paar Tage alles rund läuft.",
+          "Das Prinzip: Das neue Postfach auf dem Kurs-Server ist erst mal nur ein Zwischenspeicher — du kommst per Anmeldung rein, aber von außen kann niemand hinschicken, solange deine Domain noch auf den alten Anbieter zeigt. Deine alte Adresse läuft ungestört weiter. Deshalb: erst kopieren, selbst prüfen, dann umziehen.",
+          "Vorher kurz merken: Wirf einen Blick ins alte Postfach — welche Ordner gibt es, wie viele Mails liegen wo, was ist ungelesen. Genau daran misst du nachher, dass wirklich alles eins zu eins rüber ist.",
+          "Skill und Setup bereitmachen — beides rechts: Der Skill sagt Claude, wie er beim Umzug zu agieren hat, und das Setup-Paket bringt das Sync-Werkzeug mit. Falls du es am Anfang übersprungen hast, jetzt nachholen.",
+          "Im Baukasten unten den alten Anbieter wählen (der Mail-Server steht dann automatisch im Prompt, samt Eigenheiten wie App-Passwörtern) und je Postfach ein Von-nach-In-Paar anlegen. Die Ziel-Adresse darf zu einer ganz neuen Domain gehören — Claude erkennt das und legt Domain und Zone automatisch mit an; sie erscheint dann in deiner Zentrale, erst mal gelb auf „wartet“. Ein admin@-Postfach kommt immer automatisch dazu.",
+          "Prompt schicken und laufen lassen: Claude legt an und kopiert alles — im Video sind es 6.000 Mails in 9 Ordnern, inklusive Gesendet, Entwürfe, Spam, Papierkorb und den selbst angelegten Ordnern. Große Postfächer brauchen Zeit, das ist okay — und wer nicht alles will, sagt einfach „nur die letzten 2.000“. Danach kommt die Zähl-Tabelle: je Ordner die Anzahl alt neben neu.",
+          "Jetzt prüfst DU: webmail.gefundenwerden.online öffnen, mit der Adresse und dem neuen Passwort anmelden, Ordner durchklicken und Stichproben gegen deine Zahlen von vorhin machen — im Video: Rechnungen 30 Mails, passt. Erst dein OK startet den Umzug.",
+          "Der Umzug selbst (im Video bewusst ausgelassen): Nameserver beim alten Anbieter eintragen wie in der Domain-Lektion — ab dann kann Claude die Mail-Einträge setzen, und deine Adresse läuft über den Kurs-Server. Bis dahin bleibt das neue Postfach absichtlich stumm. Und kündigen beim alten Anbieter erst, wenn ein paar Tage alles rund läuft.",
         ],
         cheatSheet: {
           apiKeyHint: true,
@@ -1434,7 +1435,9 @@ kleines Python-Skript. Die Passwörter stehen oben bei den Adressen —
 fehlt eins, frag mich. Der IMAP-Server des alten Anbieters steht
 auch oben; steht dort "unbekannt", find ihn heraus oder frag mich.
 Passwörter nur in temporäre Dateien, danach löschen; nichts davon
-landet in meinem Projekt.
+landet in meinem Projekt. Standard ist: ALLES kopieren, jeder
+Ordner, jede Mail. Nur wenn ich es ausdrücklich sage, holst du
+weniger — zum Beispiel "nur die letzten 2.000".
 
 Zeig mir danach als Beweis eine Tabelle, je Postfach und Ordner:
 Anzahl Mails im alten Postfach neben der Anzahl im neuen. Weichen
