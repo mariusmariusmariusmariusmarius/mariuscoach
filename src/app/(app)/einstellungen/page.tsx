@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Check, CreditCard, KeyRound, Mail } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import { findUserByEmail } from "@/lib/auth/users";
@@ -13,19 +14,51 @@ import { TierBadge } from "@/components/ui/tier-badge";
 
 export const metadata = { title: "Einstellungen" };
 
-export default async function SettingsPage() {
+const TABS = [
+  { id: "allgemein", name: "Allgemein" },
+  { id: "zentrale", name: "Zentrale" },
+  { id: "rechnung", name: "Rechnungsstellung" },
+] as const;
+
+export default async function SettingsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ tab?: string }>;
+}) {
   const session = (await getSession())!;
   const user = findUserByEmail(session.email);
   const verbrauch = user ? verbrauchVon(user.id) : null;
+  const { tab: tabRoh } = await searchParams;
+  const tab = TABS.some((t) => t.id === tabRoh) ? tabRoh : "allgemein";
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-10">
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
           Einstellungen
         </h1>
         <p className="mt-2 text-zinc-400">Dein Account, deine Stufe, deine Daten.</p>
       </div>
+
+      {/* Untertabs */}
+      <div className="flex flex-wrap gap-2 rounded-2xl border border-white/8 bg-surface-900/70 p-1.5">
+        {TABS.map((t) => (
+          <Link
+            key={t.id}
+            href={t.id === "allgemein" ? "/einstellungen" : `/einstellungen?tab=${t.id}`}
+            className={`rounded-xl px-5 py-2.5 text-sm font-medium transition ${
+              tab === t.id
+                ? "bg-brand-500/20 text-brand-200"
+                : "text-zinc-400 hover:bg-white/5 hover:text-white"
+            }`}
+          >
+            {t.name}
+          </Link>
+        ))}
+      </div>
+
+      {tab === "allgemein" ? (
+      <>
 
       {/* Profil */}
       <section className="rounded-3xl border border-white/8 bg-surface-900/70 p-7">
@@ -49,6 +82,23 @@ export default async function SettingsPage() {
         </p>
       </section>
 
+      <div className="rounded-3xl border border-dashed border-white/10 bg-surface-900/40 p-7">
+        <div className="mb-3 flex items-center gap-3">
+          <span className="grid size-10 place-items-center rounded-xl bg-white/5 text-zinc-400">
+            <Mail className="size-5" />
+          </span>
+          <h3 className="font-semibold text-zinc-300">E-Mail-Benachrichtigungen</h3>
+        </div>
+        <p className="text-sm text-zinc-500">
+          Hier kommt die Resend-Anbindung hin: Willkommens-Mails, neue
+          Lektionen, Community-Antworten.
+        </p>
+      </div>
+      </>
+      ) : null}
+
+      {tab === "zentrale" ? (
+      <>
       {/* Persönlicher API-Schlüssel — zugleich der DataForSEO-Zugang */}
       <section className="rounded-3xl border border-white/8 bg-surface-900/70 p-7">
         <h2 className="mb-1 flex flex-wrap items-center gap-2 text-lg font-semibold text-white">
@@ -104,7 +154,11 @@ export default async function SettingsPage() {
       <DomainUebersicht />
 
       <PostfachUebersicht apiAdresse={`${PLATTFORM_URL}/api/mail`} />
+      </>
+      ) : null}
 
+      {tab === "rechnung" ? (
+      <>
       {/* Account-Stufe */}
       <section className="rounded-3xl border border-white/8 bg-surface-900/70 p-7">
         <div className="mb-1 flex items-center justify-between">
@@ -163,33 +217,21 @@ export default async function SettingsPage() {
         </div>
       </section>
 
-      {/* Geplante Integrationen */}
-      <section className="grid gap-4 md:grid-cols-2">
-        <div className="rounded-3xl border border-dashed border-white/10 bg-surface-900/40 p-7">
-          <div className="mb-3 flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-xl bg-white/5 text-zinc-400">
-              <CreditCard className="size-5" />
-            </span>
-            <h3 className="font-semibold text-zinc-300">Zahlungen & Abo</h3>
-          </div>
-          <p className="text-sm text-zinc-500">
-            Hier kommt die Stripe-Anbindung hin: Zahlungsmethode, Rechnungen,
-            Abo verwalten und kündigen.
-          </p>
+      {/* Geplante Stripe-Anbindung */}
+      <div className="rounded-3xl border border-dashed border-white/10 bg-surface-900/40 p-7">
+        <div className="mb-3 flex items-center gap-3">
+          <span className="grid size-10 place-items-center rounded-xl bg-white/5 text-zinc-400">
+            <CreditCard className="size-5" />
+          </span>
+          <h3 className="font-semibold text-zinc-300">Zahlungen & Abo</h3>
         </div>
-        <div className="rounded-3xl border border-dashed border-white/10 bg-surface-900/40 p-7">
-          <div className="mb-3 flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-xl bg-white/5 text-zinc-400">
-              <Mail className="size-5" />
-            </span>
-            <h3 className="font-semibold text-zinc-300">E-Mail-Benachrichtigungen</h3>
-          </div>
-          <p className="text-sm text-zinc-500">
-            Hier kommt die Resend-Anbindung hin: Willkommens-Mails, neue
-            Lektionen, Community-Antworten.
-          </p>
-        </div>
-      </section>
+        <p className="text-sm text-zinc-500">
+          Hier kommt die Stripe-Anbindung hin: Zahlungsmethode, Rechnungen,
+          Abo verwalten und kündigen.
+        </p>
+      </div>
+      </>
+      ) : null}
     </div>
   );
 }
