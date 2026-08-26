@@ -1512,6 +1512,169 @@ ZUM SCHLUSS
           ],
         },
       },
+      {
+        // Video: „Claude - 21 August 2026-2.mp4"
+        slug: "seo-audit",
+        title: "Der große SEO-Audit",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/seo-audit.mp4",
+        description:
+          "Einmal alles auf den Tisch: Claude durchleuchtet deine Seite von A bis Z — Technik, Inhalte, lokale Sichtbarkeit, Keywords, Konkurrenz, KI-Suche — mit Live-Daten über deinen Zugang. Im Video: eine zwei Tage alte Website, Note 3 von 10, 14 Abfragen — und eine Fundliste, für die SEO-Agenturen 5.000 Euro nehmen.",
+        duration: 11,
+        kind: "video",
+        seoPrompt: true,
+        steps: [
+          "Prüfen, ob die SEO-Skills da sind — sie kommen mit dem Setup-Paket. Falls nicht: die zwei Befehle rechts, danach Claude Code einmal neu starten.",
+          "Am Regler rechts dein Einzugsgebiet einstellen — alles andere liest Claude aus deinem Projekt. Im Video erkennt er sogar den Standort von selbst von der Website.",
+          "Prompt schicken und arbeiten lassen. Der Audit zieht Live-Daten über deinen Zugang — im Video waren es 14 Abfragen zu Suchvolumen, Rankings, Karten und KI-Sichtbarkeit — und endet mit Bericht samt Gesamtnote. Eine 3 von 10 bei einer frischen Domain ist völlig normal: Genau dafür gibt es die Liste.",
+          "Die Fundliste lesen, wie im Video: Ladezeit (das schwere Hero-Video), maschinenlesbare Firmendaten, Sitemap und robots.txt für die Crawler, llms.txt für die KIs, fehlendes Vorschaubild und Favicon, Sprachkennzeichnung, dünne Kategorien. Der Audit findet sogar Tippfehler-Niveau — im Video eine falsche Handelsregisternummer im Impressum.",
+          "Die Keyword-Tabelle verstehen: Suchvolumen sagt, wie oft gesucht wird — Schwierigkeit, wie viel Konkurrenz dort steht (eine 0 heißt: Seite 1 ist gut machbar). Und was nicht zu deinem Ton passt, fliegt raus — im Video ein Sale-Keyword, weil keine Rabattsprache gewünscht war.",
+          "Zur Einordnung: SEO-Agenturen nehmen für so einen Rundumschlag 5.000 bis 6.000 Euro — einmalig. Du kannst ihn jeden Monat laufen lassen und zusehen, wie die Rankings klettern. Wichtig: Noch nichts umsetzen — erst lesen und entscheiden, abgearbeitet wird in den nächsten Lektionen.",
+        ],
+        cheatSheet: {
+          apiKeyHint: true,
+          prompts: [
+            {
+              label: "Die SEO-Skills installieren — beide Zeilen, Mac wie Windows gleich (im Setup-Paket schon dabei)",
+              text: `npx skills add agricidaniel/claude-seo --global --yes
+npx skills add mariusmariusmariusmariusmarius/akademie-seo-daten --global --yes`,
+            },
+            {
+              label: "Der Audit-Prompt — Domain eintragen, dann arbeitet Claude",
+              text: `Mach einen vollständigen SEO-Audit für meine Website.
+
+Meine Domain: {DEINE-DOMAIN}
+Mein Einzugsgebiet: {EINZUGSGEBIET}
+
+Branche, Leistungen und Standort stehen auf meiner Website — zieh dir
+das selbst aus dem Projekt, das musst du mich nicht fragen. Das
+Einzugsgebiet oben ist das Einzige, was nirgends steht.
+
+MEIN ZUGANG ZU LIVE-SEO-DATEN
+Suchvolumen, Rankings und Konkurrenzdaten stehen nicht auf meiner
+Website — die holst du über die Kursplattform. Nutz dafür den Skill
+„akademie-seo-daten": Der kennt alle Bereiche, die geprüften Abfragen
+und die Kosten. Zur Sicherheit hier das Wichtigste:
+
+Adresse: {PLATTFORM-URL}/api/bewertungen
+Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
+POST mit { "pfad": "...", "daten": [...] } — dahinter steckt
+DataForSEO, Doku: https://docs.dataforseo.com
+
+DIESE ABFRAGEN SIND GEPRÜFT — nimm sie so, such nichts anderes:
+
+  Seite prüfen (Technik, Meta, Score)        ~0,0002 USD
+    pfad: "on_page/instant_pages"
+    daten: [{"url":"https://meine-seite.de/unterseite"}]
+
+  Meine Rankings                             ~0,013 USD
+    pfad: "dataforseo_labs/google/ranked_keywords/live"
+    daten: [{"target":"meine-domain.de","location_code":2276,
+             "language_code":"de","limit":50}]
+
+  Keyword-Ideen mit Suchvolumen              ~0,013 USD
+    pfad: "dataforseo_labs/google/keyword_suggestions/live"
+    daten: [{"keyword":"heizung reparatur","location_code":2276,
+             "language_code":"de","limit":50}]
+
+  Wer ist meine Konkurrenz                   ~0,012 USD
+    pfad: "dataforseo_labs/google/competitors_domain/live"
+    daten: [{"target":"meine-domain.de","location_code":2276,
+             "language_code":"de","limit":10}]
+
+location_code 2276 ist Deutschland, language_code "de".
+Die Antwort steckt in tasks[0].result[0].items — status_code 20000
+heißt in Ordnung.
+
+GEH SPARSAM DAMIT UM
+Seiten prüfen kostet fast nichts, da darfst du großzügig sein. Eine
+Ranking- oder Keyword-Abfrage kostet rund achtzigmal so viel wie eine
+Seite. Also: nur nötige Abfragen, mehrere parallel starten statt
+nacheinander zu warten, nie dieselbe zweimal.
+
+Finger weg von "keywords_data/google_ads/search_volume" — das kostet
+0,09 USD pro Abfrage, also das Siebenfache. Suchvolumen bekommst du
+günstiger über keyword_suggestions oben.
+
+Ein GET auf dieselbe Adresse zeigt meinen Verbrauch und mein
+Monatslimit. Schau am Ende nach und sag mir, was der Audit gekostet
+hat.
+
+Nutz die installierten SEO-Skills. Der Rundum-Audit ist „seo-audit" —
+der verteilt selbst an Spezialisten. Zieh je nach Befund dazu:
+„seo-technical", „seo-local", „seo-maps", „seo-images", „seo-schema",
+„seo-sitemap", „seo-content", „seo-backlinks", „seo-geo" für die
+KI-Suche und „seo-page" für einzelne Seiten.
+
+Für die Auswertung und die Empfehlungen am Ende außerdem:
+- „seo-plan" — um die Funde zu einem Fahrplan zu ordnen
+- „seo-cluster" — welche Themen zusammengehören und welche Seiten
+  sich Suchbegriffe streitig machen
+- „seo-competitor-pages" — welche Seiten die Konkurrenz hat, die mir
+  fehlen
+- „seo-content-brief" — für die wichtigsten fehlenden Seiten gleich
+  eine Gliederung vorschlagen (nur vorschlagen, nicht bauen)
+- „seo-hreflang" — nur falls meine Website mehrsprachig ist
+
+Die übrigen Skills aus dem Paket nimmst du nur, wenn ihr Thema
+wirklich auftaucht.
+Arbeite gründlich — ich will lieber zehn Minuten warten als eine
+oberflächliche Liste.
+
+WAS ICH GEPRÜFT HABEN WILL
+
+Technik
+- Ist die Seite für Google auffindbar und indexierbar? robots.txt,
+  Sitemap, Weiterleitungen, Statuscodes.
+- Ladezeit und Core Web Vitals, getrennt für Handy und Rechner.
+- HTTPS, saubere Adressen, Handy-Tauglichkeit.
+
+Auffindbarkeit auf jeder Seite
+- Meta-Titel und Beschreibung: vorhanden, richtige Länge, nicht
+  doppelt, mit dem Ort drin?
+- Überschriftenstruktur: genau eine H1, sinnvolle Reihenfolge.
+- Favicon vorhanden und in allen Größen?
+- Open-Graph-Bild und -Text — was sieht man, wenn jemand meine Seite
+  bei WhatsApp oder Facebook teilt? Zeig mir, wie die Vorschau
+  aussieht.
+
+Bilder
+- Alt-Texte, Dateigrößen, moderne Formate, Bildmaße.
+- Sprechende Dateinamen statt IMG_4711.
+
+Strukturierte Daten
+- Sind meine Firmendaten für Google maschinenlesbar hinterlegt
+  (LocalBusiness): Name, Adresse, Telefon, Öffnungszeiten,
+  Leistungen, Bewertungen?
+
+Lokal
+- Wie stehe ich für mein Einzugsgebiet da? Google-Unternehmensprofil,
+  Einheitlichkeit von Name, Adresse und Telefonnummer, Bewertungen.
+- Welche Ortsbezüge fehlen auf der Website?
+
+KI-Suche
+- Werde ich von KI-Suchen wie ChatGPT oder Perplexity gefunden und
+  zitiert? Was fehlt dafür — llms.txt, klare Fakten, Quellenlage?
+
+Keywords und Konkurrenz
+- Wonach suchen meine Kunden wirklich? Gib mir die wichtigsten
+  Suchbegriffe mit Suchvolumen und Schwierigkeit.
+- Wer steht bei diesen Begriffen vor mir, und warum?
+- Welche Seiten fehlen mir, die meine Konkurrenz hat?
+
+SO WILL ICH DAS ERGEBNIS
+1. Eine Gesamtnote mit einem Satz Begründung.
+2. Eine Liste aller Funde, sortiert nach Wirkung: was bringt am
+   meisten, was ist Kosmetik. Pro Punkt: was ist das Problem, warum
+   ist es eins, was wäre zu tun, und wie aufwendig ist es.
+3. Die fünf Dinge, die ich als Erstes angehen sollte.
+
+Ändere noch NICHTS an meiner Website. Ich will erst die Liste sehen
+und selbst entscheiden. Erfinde keine Zahlen — wenn du etwas nicht
+messen kannst, schreib das hin.`,
+            },
+          ],
+        },
+      },
     ],
   },
   {
