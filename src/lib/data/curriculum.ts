@@ -1797,10 +1797,10 @@ kommt, steht nicht auf der Seite.`,
         // Video: „Terminal - mariusmuller — -zsh — 80×24 - 24 August 2026.mp4"
         slug: "favicon-und-vorschaubild",
         title: "Favicon & Vorschaubild: Der erste Eindruck vor dem Klick",
-        videoUrl: "https://videos.gefundenwerden.online/modul-1/favicon-und-vorschaubild.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/favicon-und-vorschaubild.mp4?v=2",
         description:
           "Zwei kleine Bilder mit großer Wirkung: das Favicon — das Mini-Symbol oben im Browser-Tab — und das Open-Graph-Bild, die Vorschau, wenn dein Link bei WhatsApp, Facebook oder Instagram geteilt wird. Beides erzeugt Claude selbst über Higgsfield: das Favicon aus deinem Logo, das Vorschaubild aus deiner Branche.",
-        duration: 4,
+        duration: 6,
         kind: "video",
         steps: [
           "Die zwei Begriffe kurz: Favicon ist das kleine Symbol im Browser-Tab (wie bei YouTube — oder das der Academy). Open-Graph-Bild ist die Vorschau beim Link-Teilen auf WhatsApp, Facebook und Co. Beides fehlt bei frischen Websites — der Audit hat es angemeckert.",
@@ -1808,7 +1808,8 @@ kommt, steht nicht auf der Seite.`,
           "Den Favicon-Prompt schicken. Du brauchst ein Logo im Projekt — hast du keins, erstell dir erst eins über Higgsfield, wie in der KI-Bilder-Lektion. Claude sucht die Logo-Datei selbst im Ordner.",
           "Warum der Prompt den Schriftzug abschneidet: Ein Favicon ist nicht größer als dein Mauszeiger — Text wäre schlicht unlesbar. Es bleibt nur das Bildzeichen. Und Claude prüft beide Welten: Der Browser kann hell oder dunkel sein, das Icon muss auf beidem funktionieren — wie dein weiß eingefärbtes Logo in der Fußzeile.",
           "Dann der Vorschaubild-Prompt: Claude denkt sich das Motiv aus deiner Branche aus, erzeugt zwei Varianten über Higgsfield, du wählst — er schneidet auf 1200 × 630, drückt die Dateigröße und baut es mit passenden Titeln je Seite ein.",
-          "Der Test: Schick dir den Link selbst per WhatsApp. Jetzt steht da dein Bild statt eines nackten Links — und falls WhatsApp noch die alte Vorschau zeigt: Es cached eine Weile, ein Anhängsel wie ?v=2 hilft beim Testen.",
+          "Realistisch bleiben beim Ergebnis: Bei einem sehr detailreichen Logo gehen im Mini-Format Details verloren — das ist normal und trotzdem viel besser als gar kein Icon. Gefällt dir das Vorschaubild nicht, gib einfach einen anderen Prompt — in der Higgsfield-App siehst du alle erzeugten Bilder.",
+          "Der Test, zwei Wege: Schick dir den Link selbst per WhatsApp — oder nutz einen OpenGraph-Checker (Link rechts): Adresse eingeben, und du siehst die Vorschau für WhatsApp, X und Facebook auf einen Blick, auch für die englische Version. Zeigt WhatsApp noch die alte Vorschau: Es cached eine Weile, ein Anhängsel wie ?v=2 hilft.",
         ],
         cheatSheet: {
           prompts: [
@@ -1880,6 +1881,13 @@ Zum Schluss sagst du mir, wie ich die Vorschau teste. Und warn
 mich vor: WhatsApp merkt sich die Vorschau eine Weile — hab ich
 den Link vorher schon mal verschickt, hilft beim Testen ein
 Anhängsel wie ?v=2.`,
+            },
+          ],
+          links: [
+            {
+              label: "OpenGraph-Checker — Vorschau für WhatsApp, X & Facebook testen",
+              href: "https://www.opengraph.xyz",
+              note: "Adresse eingeben, Vorschau ansehen — ohne selbst zu teilen",
             },
           ],
         },
