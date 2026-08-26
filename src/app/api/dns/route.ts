@@ -3,6 +3,8 @@ import { getSession } from "@/lib/auth/session";
 import { findUserByApiKey, findUserByEmail, type User } from "@/lib/auth/users";
 import {
   dnsKonfiguriert,
+  domainsVonSicher,
+  tokenNeuErzeugen,
   zoneAnlegen,
   zoneEntfernen,
   zonenStatus,
