@@ -20,7 +20,12 @@ export function ResendPrompt({ domain }: { domain?: string }) {
   const prompt = useMemo(() => {
     const von = absender.trim() || "{DEINE ABSENDER-ADRESSE, z. B. info@meine-firma.de}";
     const an = empfaenger.trim() || von;
-    const dom = domain ?? (von.includes("@") ? von.split("@")[1] : "{DEINE-DOMAIN}");
+    // Die Domain kommt aus der Absender-Adresse — wer z. B. über seine
+    // All-Inkl-Adresse sendet, braucht genau DIE Domain bei Resend, nicht
+    // die Kurs-Domain. Die dient nur als Vorbelegung, solange nichts dasteht.
+    const dom = von.includes("@")
+      ? von.split("@")[1]
+      : (domain ?? "{DEINE-DOMAIN}");
     const text = inhalt.trim() || `{${BEISPIEL}}`;
 
     return `Bau den Mailversand für mein Anfrage-Formular über Resend.
@@ -33,9 +38,11 @@ Meine Benachrichtigung geht an: ${an}${an === von ? " (dieselbe Adresse)" : ""}
 SCHRITT 1 — Domain bestätigen
 Damit ich von meiner eigenen Adresse senden darf, muss die Domain bei
 Resend bestätigt sein. Leg sie dort an und hol dir die geforderten
-DNS-Einträge. Wichtig: Das sind reine Versand-Nachweise (SPF, DKIM) —
-meine MX-Einträge und damit meine bestehenden Postfächer fasst du
-NICHT an, die bleiben, wo sie sind.
+DNS-Einträge. Das sind Versand-Nachweise (TXT für SPF und DKIM,
+meist auch DMARC) plus ein MX-Eintrag auf einer UNTERDOMAIN wie
+send.meine-domain.de — der ist nur für Rückläufer. Die MX-Einträge
+meiner Hauptdomain, also meinen Posteingang und meine bestehenden
+Postfächer, fasst du NICHT an — die bleiben, wo sie sind.
 
 Dann setz die Einträge:
 - Läuft meine DNS über die Kursplattform (ich habe ein DNS-Token aus

@@ -1488,18 +1488,19 @@ ZUM SCHLUSS
         // Video folgt — Marius dreht entlang dieser Schritte
         slug: "versand-mit-resend",
         title: "Formular-Mails ohne Kurs-Server: Resend",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/versand-mit-resend.mp4",
         description:
           "Deine Postfächer sollen bleiben, wo sie sind — bei IONOS, Gmail, wo auch immer? Kein Problem: Resend ist ein reiner Versanddienst, der nur die Formular-Mails verschickt. Deine MX-Einträge und Postfächer bleiben unberührt, und für ein Anfrage-Formular reicht der Gratis-Tarif dicke.",
-        duration: 15,
+        duration: 10,
         kind: "video",
         resendPrompt: true,
         steps: [
           "Für wen dieser Weg ist: Du willst weder umziehen noch ein Kurs-Postfach — deine Mails bleiben beim bisherigen Anbieter. Trotzdem soll dein Anfrage-Formular zwei Mails verschicken: die Benachrichtigung an dich, die Bestätigung an den Kunden. Genau dafür gibt es Resend.",
-          "Das Wichtigste zum Verständnis: Resend sendet nur, es empfängt nichts. Deine MX-Einträge — also wohin deine Post fließt — werden nicht angefasst. Deine bestehenden Postfächer merken von alldem gar nichts.",
+          "Das Wichtigste zum Verständnis: Resend sendet nur, es empfängt nichts. Die geforderten Einträge (SPF, DKIM, ein MX nur auf einer Unterdomain für Rückläufer) ändern nichts daran, wohin deine Post fließt — deine bestehenden Postfächer merken von alldem gar nichts. Im Video kommt der Absender von einer All-Inkl-Adresse, und genau da bleibt sie auch.",
           "Konto bei Resend anlegen (Link rechts) und einen API-Schlüssel erzeugen — er beginnt mit re_ und wird nur ein einziges Mal angezeigt, also direkt kopieren.",
           "Im Baukasten unten: Absender-Adresse auf deiner Domain, wohin die Benachrichtigung soll, und in einem Satz grob, was in der Bestätigung stehen soll — der Prompt baut sich beim Tippen mit. Den re_-Schlüssel setzt du oben im Prompt ein.",
-          "Prompt schicken: Claude legt deine Domain bei Resend an und setzt die Versand-Nachweise (SPF, DKIM) — über die Kursplattform direkt, oder du bekommst die Einträge als Tabelle für deinen Anbieter. Dann baut er beide Mails ein; der Schlüssel landet als Umgebungsvariable, nie im Code.",
-          "Der Test: Anfrage über die Website abschicken — Benachrichtigung da, Bestätigung da, Spam-Ordner geprüft. Zu den Grenzen: Der Gratis-Tarif erlaubt 100 Mails am Tag — für ein Anfrage-Formular ist das ein Vielfaches von dem, was je reinkommt.",
+          "Prompt schicken: Läuft deine Domain über die Kursplattform, ist das alles — Claude legt sie bei Resend an und setzt die Einträge selbst. Verwaltest du die DNS beim Anbieter, zeigt dir das Video den Weg von Hand: Domain bei Resend hinzufügen, dann die angezeigten Einträge (SPF-TXT, DMARC-TXT, MX) dort eintragen. Danach baut Claude beide Mails ein; der Schlüssel landet als Umgebungsvariable, nie im Code.",
+          "Der Test: Anfrage über die Website abschicken — Benachrichtigung da, Bestätigung da, Spam-Ordner geprüft. Kleine Beobachtung aus dem Video: Resend liefert oft ein paar Sekunden schneller als der Postfach-Weg — beides kommt zuverlässig an. Und zu den Grenzen: Der Gratis-Tarif erlaubt 100 Mails am Tag, für ein Anfrage-Formular ein Vielfaches des Bedarfs.",
         ],
         cheatSheet: {
           links: [
