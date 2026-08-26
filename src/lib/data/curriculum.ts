@@ -1370,7 +1370,7 @@ ich es danach einmal neu eintragen.`,
           "Das Prinzip zuerst: Nur die MX-Einträge bestimmen, wohin Post fließt. Neue Postfächer anlegen und den kompletten Bestand kopieren geht davor — deine alte Post läuft währenddessen ungestört weiter. Deshalb: erst kopieren, selbst nachschauen, dann umziehen.",
           "Den Skill installieren — Befehl rechts. Er enthält den kompletten Umzugsablauf mit allen Stolperfallen, Claude führt dich damit sicher durch. Und falls du das Setup-Paket noch nicht hast: Der Nachhol-Befehl steht auch rechts — das Sync-Werkzeug imapsync kommt damit gleich mit.",
           "Im Baukasten unten deinen alten Anbieter auswählen — der richtige Mail-Server steht dann automatisch im Prompt, samt Besonderheiten (bei Google und Yahoo brauchst du zum Beispiel ein App-Passwort). Dann je Postfach ein Paar anlegen: von der alten Adresse (mit Passwort) in die neue — das geht auch über mehrere Domains, und sogar Umbenennungen sind drin, etwa buero@alt.de in info@neu.de.",
-          "Prompt schicken: Claude legt Domain und dieselben Adressen auf dem Kurs-Server an (neue Passwörter) und kopiert direkt jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. An deiner DNS ändert er dabei noch gar nichts. Als Beweis bekommst du eine Zähl-Tabelle: je Ordner die Mail-Anzahl alt neben neu.",
+          "Prompt schicken: Claude legt die Ziel-Postfächer auf dem Kurs-Server an — und ist eine Domain noch gar nicht mit deinem Konto verbunden, schließt er sie gleich mit an (sie erscheint dann in den Einstellungen, erst mal als „wartet“ — die Nameserver kommen später). Danach kopiert er jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. An deiner DNS ändert er dabei noch gar nichts. Als Beweis bekommst du eine Zähl-Tabelle: je Ordner die Mail-Anzahl alt neben neu.",
           "Jetzt vergewisserst DU dich: webmail.gefundenwerden.online im Browser öffnen, mit deiner Adresse und dem neuen Passwort anmelden — da liegen alle kopierten Mails samt Ordnern, ganz ohne Mail-Programm. Erst dein OK startet den Umzug.",
           "Nach deinem OK erledigt Claude den Rest von selbst — die Reihenfolge kennt er aus dem Skill. Ab dann landet neue Post auf dem Kurs-Server, und ein automatischer Nachsync holt, was während der Umstellung noch beim alten Anbieter eintrudelte.",
           "Zum Schluss: neue Passwörter in den Passwort-Manager und in deine Mail-Programme, Testmail von außen — und das alte Postfach erst kündigen, wenn ein paar Tage alles rund läuft.",
@@ -1400,16 +1400,28 @@ MEIN ZUGANG (für die neuen Postfächer)
 Adresse: {PLATTFORM-URL}/api/mail
 Anmeldung: Kopfzeile "Authorization: Bearer {DEIN-API-KEY}"
 
+Dieselbe Anmeldung gilt für die DNS-Zentrale:
+POST {PLATTFORM-URL}/api/dns { "domain": "..." } schließt eine
+Domain an und liefert zwei Nameserver plus mein DNS-Token zurück.
+GET auf dieselbe Adresse zeigt meine Domains samt Status.
+
 DIE REIHENFOLGE IST HEILIG — ERST KOPIEREN, DANN UMZIEHEN:
 
 SCHRITT 1 — Neu anlegen, ohne irgendetwas umzustellen
 Leg jedes Ziel-Postfach aus der Liste oben bei uns an — samt seiner
-Domain, falls die noch fehlt (aktion "domain", dann "postfach"),
-mit neuen, sicheren Passwörtern. DNS- und MX-Einträge fasst du
-dabei NICHT an — meine alte Post läuft ungestört weiter. Das
-funktioniert auch, solange eine Domain bei uns noch unverifiziert
-ist: Postfächer und IMAP-Zugang sind sofort nutzbar, nur Empfang
-von außen gibt es erst nach dem Umzug.
+Mail-Domain, falls die noch fehlt (aktion "domain", dann
+"postfach"), mit neuen, sicheren Passwörtern.
+
+Ist eine Ziel-Domain noch GAR NICHT mit meinem Konto verbunden
+(GET auf die DNS-Zentrale zeigt sie nicht): Schließ sie auch dort
+an (POST /api/dns) und heb dir Nameserver und DNS-Token auf — die
+sagst du mir am Ende. Der Domain-Status bleibt dabei auf „wartet" —
+das ist richtig so, die Nameserver stelle ich erst NACH dem Sync um.
+
+DNS- und MX-Einträge fasst du NICHT an — meine alte Post läuft
+ungestört weiter. Das funktioniert auch, solange eine Domain bei
+uns noch unverifiziert ist: Postfächer und IMAP-Zugang sind sofort
+nutzbar, nur Empfang von außen gibt es erst nach dem Umzug.
 
 SCHRITT 2 — Bestand kopieren
 Kopier jedes Paar von alt nach neu: Quelle ist die von-Adresse beim
@@ -1434,9 +1446,11 @@ auf mein OK. Erst wenn ich bestätige, dass alles da ist, ziehst du
 um.
 
 Wenn mein OK da ist, übernimmst du den restlichen Umzug von selbst —
-den Ablauf kennst du aus dem Skill: DNS-Einträge samt MX kommen erst
-NACH meinem OK, und zum Schluss läuft einmal der Nachsync für Mails,
-die währenddessen noch beim alten Anbieter eingingen.
+den Ablauf kennst du aus dem Skill: Bei frisch angeschlossenen
+Domains sage ich zuerst dem Registrar die zwei Nameserver, du
+wartest, bis die Zone aktiv ist. Dann DNS-Einträge samt MX — erst
+NACH meinem OK — und zum Schluss einmal der Nachsync für Mails, die
+währenddessen noch beim alten Anbieter eingingen.
 
 ZUM SCHLUSS
 - Tabelle: Adresse, neues Passwort, Serverdaten (imap.migadu.com,
