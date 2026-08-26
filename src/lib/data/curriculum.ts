@@ -80,7 +80,7 @@ export const CURRICULUM: CourseModule[] = [
         videoUrl: "https://videos.gefundenwerden.online/modul-1/claude-code-dein-mitarbeiter.mp4",
         description:
           "Claude Code ist das Herzstück dieses Kurses — die zentrale Steuerung für alles: Website, Hosting, Automationen, E-Mail-Marketing, Werbekampagnen. Hier richten wir es ein und laden die Werkzeuge, die Claude braucht.",
-        duration: 12,
+        duration: 4,
         kind: "video",
         steps: [
           "Die Claude-Desktop-App herunterladen — es gibt sie für Mac und für Windows.",
@@ -123,7 +123,7 @@ export const CURRICULUM: CourseModule[] = [
         videoUrl: "https://videos.gefundenwerden.online/modul-1/erste-website.mp4",
         description:
           "Wir starten direkt in Claude Code — mit einem echten Kundenauftrag: ein mittelständischer Möbel-Händler. Zwei Design-Skills, ein Start-Prompt, deine Antworten — und Claude baut das Fundament deiner Website.",
-        duration: 40,
+        duration: 5,
         kind: "video",
         steps: [
           "In der Claude-App oben „Code“ auswählen und einen Ordner anlegen, in dem das Projekt lebt.",
@@ -206,7 +206,7 @@ Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/referenz-websites-nutzen.mp4",
         description:
           "Der zweite Weg: Du hast schon eine Website und willst sie mitnehmen — oder dir gefällt eine fremde Seite und du willst sie als Vorlage. Das Download-Werkzeug aus dem Setup holt die komplette Seite, Claude baut sie mit deinen Inhalten nach. So kommst du auch raus aus Wix, IONOS oder WordPress.",
-        duration: 15,
+        duration: 8,
         kind: "video",
         steps: [
           "Die Vorlage aussuchen: deine bisherige Website — oder irgendeine Seite, die dir gefällt. Adresse kopieren.",
@@ -313,7 +313,7 @@ dazu. Was ich nicht beantworte, lässt du weg oder fragst nochmal nach.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/copywriting-mit-claude.mp4",
         description:
           "Das Fundament steht — jetzt die Feinheiten. Erst siehst du, wie leicht sich die Seite in einfacher Sprache umbauen lässt, dann gehen wir an die Texte: Was die KI erfunden hat, fliegt raus — dein Ton, deine Zielgruppe, deine echten Daten rein.",
-        duration: 25,
+        duration: 9,
         kind: "video",
         steps: [
           "Warmwerden: Sag Claude in eigenen Worten, was dich stört — „großes Bild als Hintergrund in der ersten Sektion, Text darüber“ oder „diese Textpassage raus“. Er setzt es direkt um, und responsiv bleibt es von selbst.",
@@ -397,7 +397,7 @@ nicht — das kommt gleich danach, gebündelt.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/design-grundlagen.mp4",
         description:
           "Fundament und Texte stehen — jetzt kommt das Design. Claude zieht die Farben aus deinem Logo, baut dir ein Designprofil mit drei Kombinationen zur Auswahl, und mit dem Stift-Trick schleifst du danach jede Kleinigkeit weg, ohne vom Fach zu sein.",
-        duration: 25,
+        duration: 8,
         kind: "video",
         fontSchau: true,
         steps: [
@@ -545,7 +545,7 @@ Rechner und auf dem Handy.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/eigene-bilder.mp4",
         description:
           "Klingt aufwendig, geht aber schnell: Bilder grob nach Leistungen sortieren, Dateipfad an Claude — er baut ein, benennt, komprimiert und hängt dein Logo in Navigation und Fußzeile. Sogar ein Hintergrundvideo ist drin.",
-        duration: 20,
+        duration: 10,
         kind: "video",
         steps: [
           "Die Vorarbeit: Bilder auf den Rechner holen und grob sortieren — Ordner nach dem Sinn. Ein Ordner für den Betrieb (wie bei dir gearbeitet wird), dazu je einer pro Leistung oder Produktgruppe. Beim Elektriker etwa: Elektroinstallation, Smart Home, PV-Anschluss. Grob reicht völlig.",
@@ -646,7 +646,7 @@ mir — leere Stellen füllen wir gleich danach mit KI-Bildern.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/ki-bilder-vs-eigene.mp4",
         description:
           "Die leeren Stellen füllen wir jetzt mit KI: Higgsfield verbindet fast alle Bild- und Video-KIs — und hängt direkt an Claude. Der Gratis-Zugang reicht. Wo echte Fotos unschlagbar bleiben und wie KI-Bilder nicht nach KI aussehen, regelt der Prompt.",
-        duration: 20,
+        duration: 12,
         kind: "video",
         steps: [
           "Bei higgsfield.ai einen Account anlegen — der Gratis-Zugang reicht völlig. Higgsfield bündelt fast alle Bild- und Video-KIs unter einem Dach.",
@@ -731,7 +731,7 @@ Regeln:
         videoUrl: "https://videos.gefundenwerden.online/modul-1/live-gehen-mit-vercel.mp4",
         description:
           "Die Seite geht online — gehostet bei Vercel, gesteuert von Claude, für die allermeisten komplett kostenlos. Du bekommst erst mal eine Vercel-Adresse; deine eigene Domain verbinden wir im nächsten Schritt.",
-        duration: 20,
+        duration: 13,
         kind: "video",
         steps: [
           "Worum es geht: hosten. Deine Seite wird von überall erreichbar — unter einer zugewiesenen Vercel-Adresse. Keine Sorge: Bei Google steht sie damit noch nicht, sichtbar ist sie nur für den, der die Adresse kennt.",
@@ -794,7 +794,7 @@ keine Einstellungen an anderen Projekten in meinem Konto.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/bewertungen-einbinden.mp4",
         description:
           "140 Bewertungen von Hand kopieren? Die Google-API kann nur fünf und kostet extra. Wir gehen den dritten Weg: Über deinen Akademie-Zugang holt Claude die Bewertungen von Google, Trustpilot & Co. — und hält sie auf Wunsch automatisch aktuell.",
-        duration: 20,
+        duration: 9,
         kind: "video",
         steps: [
           "Die drei Wege kurz verstanden: Selbst kopieren scheitert am „Mehr“-Klick bei jeder Bewertung. Die Google-API zeigt nur fünf Stück live und kostet in der Vollversion — und wenn im Kurs jede Verbindung Geld kostet, summiert sich das. Also der Datenbroker-Weg über deinen Akademie-Zugang: unabhängig von der Plattform, ob Google, Trustpilot, ProvenExpert oder GetYourGuide.",
@@ -907,7 +907,7 @@ sehen, dass alles läuft.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/anfragen-empfangen.mp4",
         description:
           "Die Website bekommt ihre wichtigste Funktion: den Anfragebogen, über den aus Besuchern Leads werden — plus deine eigene Admin-Übersicht unter /admin, in der jede Anfrage ihre Stufe hat, von neu bis gewonnen.",
-        duration: 25,
+        duration: 10,
         kind: "video",
         steps: [
           "Ersten Prompt schicken. Claude fragt dich, welche Felder rein sollen. Die Faustregel: nur, was du zum Zurückrufen brauchst — Name, E-Mail, Telefon, Nachricht ist meist der beste Fall. Dienstleistungs-Auswahl, Kalender-Anbindung und Co. kommen später im Automations-Modul.",
@@ -1050,7 +1050,7 @@ Der Status muss erhalten bleiben.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/rechtstexte-barrierefreiheit.mp4",
         description:
           "Sobald dein Formular Anfragen sammelt, erhebst du Daten dritter Personen — ab da sind Impressum und Datenschutz Pflicht. Der Skill kennt die aktuellen Gesetzestexte inklusive Barrierefreiheit, Claude liest dein Projekt und schreibt die Seiten. Ohne Anwaltstermin.",
-        duration: 20,
+        duration: 9,
         kind: "video",
         steps: [
           "Warum jetzt: Dein Anfragebogen speichert Namen, Nummern und Nachrichten fremder Menschen — genau ab diesem Moment braucht die Seite Impressum und Datenschutzerklärung.",
@@ -1146,7 +1146,7 @@ Erfinde nichts — was ich nicht beantwortet habe, bleibt draußen.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/domain-verbinden.mp4",
         description:
           "Deine Website bekommt ihren echten Namen. Unten prüfst du, ob die Wunschdomain frei ist, kaufst sie nackt für unter 5 € im Jahr — und schließt sie an: Claude bekommt per Token Zugriff auf die DNS-Einträge und verdrahtet alles selbst.",
-        duration: 25,
+        duration: 15,
         kind: "video",
         dnsTool: true,
         domainCheck: true,
@@ -1221,7 +1221,7 @@ Erklärungen, ich trage sie selbst ein.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/firmen-email-anlegen.mp4",
         description:
           "info@deine-firma.de statt gmx: Der Kurs hat einen eigenen Mail-Server, den Claude über deine API steuert. Postfächer anlegen, Mail-Einträge setzen, Handy einrichten — die Grundlage dafür, dass Anfragen gleich per Mail bei dir und beim Kunden landen.",
-        duration: 15,
+        duration: 5,
         kind: "video",
         steps: [
           "Das Ziel vor Augen: Wir vollenden das Anfrage-Formular — du bekommst bei jeder Anfrage eine Mail, der Kunde eine Bestätigung („wir melden uns innerhalb von 24 bis 48 Stunden“, bei einer Praxis: „im Notfall rufen Sie an unter …“). Dafür braucht es zuerst eins: eine eigene E-Mail.",
@@ -1319,7 +1319,7 @@ Mail zu tun haben.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/anfragen-per-mail.mp4",
         description:
           "Die Kette wird geschlossen: Jede Anfrage löst zwei Mails aus — die Benachrichtigung an dich, die Bestätigung an den Kunden. Verschickt über dein eigenes Postfach, zusammengeklickt im Baukasten unten. Danach holst du das Postfach ins Mail-Programm und lernst den Passwort-Trick.",
-        duration: 25,
+        duration: 20,
         kind: "video",
         mailPrompt: true,
         resendPrompt: true,
@@ -1365,7 +1365,7 @@ ich es danach einmal neu eintragen.`,
         videoUrl: "https://videos.gefundenwerden.online/modul-1/postfach-umzug.mp4",
         description:
           "Deine alten Mail-Adressen ziehen mit auf den Kurs-Server — samt allen Ordnern, Rechnungen und 6.000 Mails, wenn es sein muss. Der IMAP-Sync kopiert erst alles in ein frisches Postfach, deine alte Adresse läuft währenddessen ungestört weiter, du prüfst in Ruhe — und erst dann wird umgezogen. Es geht nichts verloren. Wer keine alten Postfächer hat, überspringt diese Lektion einfach.",
-        duration: 20,
+        duration: 12,
         kind: "video",
         steps: [
           "Das Prinzip: Das neue Postfach auf dem Kurs-Server ist erst mal nur ein Zwischenspeicher — du kommst per Anmeldung rein, aber von außen kann niemand hinschicken, solange deine Domain noch auf den alten Anbieter zeigt. Deine alte Adresse läuft ungestört weiter. Deshalb: erst kopieren, selbst prüfen, dann umziehen.",
