@@ -24,6 +24,8 @@ export function PostfachUebersicht({ apiAdresse }: { apiAdresse: string }) {
 
   if (!eintraege || eintraege.length === 0) return null;
 
+  const aktiv = eintraege.some((e) => e.state === "active");
+
   const server = [
     { name: "Posteingang (IMAP)", wert: "imap.migadu.com", zusatz: "Port 993, SSL" },
     { name: "Postausgang (SMTP)", wert: "smtp.migadu.com", zusatz: "Port 465, SSL" },
@@ -31,7 +33,10 @@ export function PostfachUebersicht({ apiAdresse }: { apiAdresse: string }) {
   ];
 
   return (
-    <section className="rounded-3xl border border-white/8 bg-surface-900/70 p-7">
+    <section className="relative overflow-hidden rounded-3xl border border-white/8 bg-surface-900/70 p-7">
+      {aktiv ? (
+        <div className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-gradient-to-br from-emerald-500/80 to-teal-400/80 opacity-25 [mask-image:radial-gradient(closest-side,black,transparent)]" />
+      ) : null}
       <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold text-white">
         <Mail className="size-5 text-brand-300" />
         Deine Postfächer
