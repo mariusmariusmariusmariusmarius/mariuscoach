@@ -145,7 +145,7 @@ export default async function LessonPage({
                 playsInline
                 preload="metadata"
                 // Vorschaubild: liegt als .jpg neben jeder .mp4
-                poster={lesson.videoUrl.replace(/\.mp4$/, ".jpg")}
+                poster={lesson.videoUrl.replace(/\.mp4(\?.*)?$/, ".jpg$1")}
                 className="block w-full"
                 style={{ aspectRatio: "1670 / 1080" }}
               />

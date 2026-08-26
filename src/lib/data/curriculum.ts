@@ -1516,7 +1516,7 @@ ZUM SCHLUSS
         // Video: „Claude - 21 August 2026-2.mp4"
         slug: "seo-audit",
         title: "Der große SEO-Audit",
-        videoUrl: "https://videos.gefundenwerden.online/modul-1/seo-audit.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/seo-audit.mp4?v=2",
         description:
           "Einmal alles auf den Tisch: Claude durchleuchtet deine Seite von A bis Z — Technik, Inhalte, lokale Sichtbarkeit, Keywords, Konkurrenz, KI-Suche — mit Live-Daten über deinen Zugang. Im Video: eine zwei Tage alte Website, Note 3 von 10, 14 Abfragen — und eine Fundliste, für die SEO-Agenturen 5.000 Euro nehmen.",
         duration: 13,
