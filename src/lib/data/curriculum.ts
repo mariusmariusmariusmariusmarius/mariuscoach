@@ -1372,7 +1372,7 @@ ich es danach einmal neu eintragen.`,
           "Im Baukasten unten deinen alten Anbieter auswählen — der richtige Mail-Server steht dann automatisch im Prompt, samt Besonderheiten (bei Google und Yahoo brauchst du zum Beispiel ein App-Passwort).",
           "Prompt schicken: Claude legt Domain und dieselben Adressen auf dem Kurs-Server an (neue Passwörter) und kopiert direkt jedes alte Postfach ins neue — alle Mails, alle Ordner, Gelesen-Status inklusive. An deiner DNS ändert er dabei noch gar nichts. Als Beweis bekommst du eine Zähl-Tabelle: je Ordner die Mail-Anzahl alt neben neu.",
           "Jetzt vergewisserst DU dich: webmail.gefundenwerden.online im Browser öffnen, mit deiner Adresse und dem neuen Passwort anmelden — da liegen alle kopierten Mails samt Ordnern, ganz ohne Mail-Programm. Erst dein OK startet den Umzug.",
-          "Der Umzug: Claude stellt die DNS-Einträge um — Eigentumsnachweis, DKIM, SPF und MX in einem Rutsch (über die Plattform direkt, sonst als Tabelle zum Selbst-Eintragen) — und schaltet die Domain frei. Ab jetzt landet Neues auf dem Kurs-Server. Danach der Nachsync für die Mails, die währenddessen noch beim alten Anbieter eintrudelten.",
+          "Nach deinem OK erledigt Claude den Rest von selbst — die Reihenfolge kennt er aus dem Skill. Ab dann landet neue Post auf dem Kurs-Server, und ein automatischer Nachsync holt, was während der Umstellung noch beim alten Anbieter eintrudelte.",
           "Zum Schluss: neue Passwörter in den Passwort-Manager und in deine Mail-Programme, Testmail von außen — und das alte Postfach erst kündigen, wenn ein paar Tage alles rund läuft.",
         ],
         cheatSheet: {
@@ -1428,24 +1428,10 @@ alle kopierten Mails samt Ordnern, ganz ohne Mail-Programm. Warte
 auf mein OK. Erst wenn ich bestätige, dass alles da ist, ziehst du
 um.
 
-SCHRITT 4 — Der Umzug
-Jetzt die DNS-Einträge: Hol mit aktion "records" alles Geforderte —
-Eigentumsnachweis, DKIM, SPF und die MX-Einträge — und stell um:
-- Läuft meine Domain über die Kursplattform (ich habe ein DNS-Token
-  aus der Domain-Lektion), setzt du alles direkt.
-- Verwalte ich meine DNS selbst beim Anbieter, gibst du mir die
-  Einträge als Tabelle und wartest, bis ich sie eingetragen habe.
-Zeig mir vorher, was sich ändert, und warte auf mein OK — ab den
-MX-Einträgen läuft neue Post auf den neuen Server. Danach schalte
-die Domain frei (aktion "aktivieren").
-
-SCHRITT 5 — Nachsync und Kontrolle
-Warte eine Viertelstunde, dann kopier noch einmal — das holt die
-Mails nach, die während der Umstellung noch beim alten Anbieter
-eingingen (der Sync nimmt nur, was fehlt; doppelt gibt es nicht).
-Zeig mir die Zähl-Tabelle danach noch einmal. Prüf mit einer
-Testmail von außen, dass das neue Postfach empfängt, und mit einer
-von innen, dass der Versand geht.
+Wenn mein OK da ist, übernimmst du den restlichen Umzug von selbst —
+den Ablauf kennst du aus dem Skill: DNS-Einträge samt MX kommen erst
+NACH meinem OK, und zum Schluss läuft einmal der Nachsync für Mails,
+die währenddessen noch beim alten Anbieter eingingen.
 
 ZUM SCHLUSS
 - Tabelle: Adresse, neues Passwort, Serverdaten (imap.migadu.com,
