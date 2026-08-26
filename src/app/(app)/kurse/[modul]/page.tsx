@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, Clock, FileText, Lock, Play, Presentation } from "lucide-react";
+import { ArrowUpRight, Clock, FileText, Lock, Play, Presentation, ChevronRight } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import { hasAccess, TIER_INFO } from "@/lib/tiers";
 import { getModule } from "@/lib/data/curriculum";
@@ -24,12 +24,13 @@ export default async function ModulePage({
 
   return (
     <div className="space-y-8">
-      <Link
-        href="/kurse"
-        className="inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-white"
-      >
-        <ArrowLeft className="size-4" /> Alle Kurse
-      </Link>
+      <nav className="flex flex-wrap items-center gap-1.5 text-sm" aria-label="Pfad">
+        <Link href="/kurse" className="text-zinc-400 transition hover:text-white">
+          Kurse
+        </Link>
+        <ChevronRight className="size-3.5 text-zinc-600" />
+        <span className="font-medium text-zinc-200">{courseModule.title}</span>
+      </nav>
 
       {/* Modul-Header */}
       <div className="relative overflow-hidden rounded-3xl border border-white/8 bg-surface-900/70 p-8">

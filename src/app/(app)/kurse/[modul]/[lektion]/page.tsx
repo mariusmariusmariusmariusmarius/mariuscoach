@@ -4,6 +4,7 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
+  ChevronRight,
   Clock,
   Play,
 } from "lucide-react";
@@ -97,12 +98,22 @@ export default async function LessonPage({
 
   return (
     <div className="space-y-8">
-      <Link
-        href={`/kurse/${courseModule.slug}`}
-        className="inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-white"
-      >
-        <ArrowLeft className="size-4" /> {courseModule.title}
-      </Link>
+      <nav className="flex flex-wrap items-center gap-1.5 text-sm" aria-label="Pfad">
+        <Link href="/kurse" className="text-zinc-400 transition hover:text-white">
+          Kurse
+        </Link>
+        <ChevronRight className="size-3.5 shrink-0 text-zinc-600" />
+        <Link
+          href={`/kurse/${courseModule.slug}`}
+          className="text-zinc-400 transition hover:text-white"
+        >
+          {courseModule.title}
+        </Link>
+        <ChevronRight className="size-3.5 shrink-0 text-zinc-600" />
+        <span className="max-w-64 truncate font-medium text-zinc-200 sm:max-w-md">
+          {lesson.title}
+        </span>
+      </nav>
 
       <div>
         <div className="mb-3 flex flex-wrap items-center gap-3">

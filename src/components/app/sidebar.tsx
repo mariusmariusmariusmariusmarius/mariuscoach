@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
   GraduationCap,
   LayoutDashboard,
@@ -29,7 +29,30 @@ const NAV = [
 
 export function AppSidebar({ session }: { session: Session }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
+
+  // Merken, wo der Nutzer in den Kursen zuletzt war — der Kurse-Link
+  // führt von außerhalb genau dorthin zurück statt zur Übersicht.
+  useEffect(() => {
+    if (pathname.startsWith("/kurse")) {
+      try {
+        localStorage.setItem("mc-kurse-position", pathname);
+      } catch {}
+    }
+  }, [pathname]);
+
+  const kurseKlick = (e: React.MouseEvent) => {
+    setOpen(false);
+    if (pathname.startsWith("/kurse")) return; // innerhalb der Kurse: normal zur Übersicht
+    try {
+      const gemerkt = localStorage.getItem("mc-kurse-position");
+      if (gemerkt && gemerkt !== "/kurse") {
+        e.preventDefault();
+        router.push(gemerkt);
+      }
+    } catch {}
+  };
 
   const items = [
     ...NAV,
@@ -46,7 +69,7 @@ export function AppSidebar({ session }: { session: Session }) {
           <Link
             key={item.href}
             href={item.href}
-            onClick={() => setOpen(false)}
+            onClick={item.href === "/kurse" ? kurseKlick : () => setOpen(false)}
             className={`flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm font-medium transition ${
               active
                 ? "bg-gradient-to-r from-brand-500/20 to-accent-500/10 text-white ring-1 ring-brand-500/30"
