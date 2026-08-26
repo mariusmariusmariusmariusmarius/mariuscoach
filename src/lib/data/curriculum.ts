@@ -1322,7 +1322,6 @@ Mail zu tun haben.`,
         duration: 20,
         kind: "video",
         mailPrompt: true,
-        resendPrompt: true,
         steps: [
           "Der Baukasten unten kennt deine Postfächer schon — die Akademie erkennt automatisch, was du in der letzten Lektion angelegt hast. Absender auswählen, dann wohin die Benachrichtigung soll: deine Geschäftsadresse oder auch privat (Gmail und GMX gehen genauso).",
           "In einem Satz grob sagen, was in der Bestätigung stehen soll — „danke, wir melden uns innerhalb von 48 Stunden, im Notfall rufen Sie an unter …“. Du siehst unten, wie sich der Prompt beim Tippen live mitbaut. Es muss nicht perfekt formuliert sein, Claude baut die Nachricht daraus.",
@@ -1351,9 +1350,9 @@ ich es danach einmal neu eintragen.`,
           ],
           links: [
             {
-              label: "Resend — falls du lieber einen Versanddienst nutzt",
-              href: "https://resend.com",
-              note: "Alternative zum eigenen Postfach, Baukasten unten rechts",
+              label: "Postfächer woanders lassen? Der Resend-Weg",
+              href: "/kurse/modul-1-basics/versand-mit-resend",
+              note: "eigene Lektion — Formular-Mails ohne Kurs-Mailserver",
             },
           ],
         },
@@ -1481,6 +1480,33 @@ ZUM SCHLUSS
               label: "webmail.gefundenwerden.online — dein neues Postfach im Browser",
               href: "https://webmail.gefundenwerden.online",
               note: "Anmeldung: volle Adresse + neues Passwort. Geht sofort — so siehst du die kopierten Mails ohne Mail-Programm.",
+            },
+          ],
+        },
+      },
+      {
+        // Video folgt — Marius dreht entlang dieser Schritte
+        slug: "versand-mit-resend",
+        title: "Formular-Mails ohne Kurs-Server: Resend",
+        description:
+          "Deine Postfächer sollen bleiben, wo sie sind — bei IONOS, Gmail, wo auch immer? Kein Problem: Resend ist ein reiner Versanddienst, der nur die Formular-Mails verschickt. Deine MX-Einträge und Postfächer bleiben unberührt, und für ein Anfrage-Formular reicht der Gratis-Tarif dicke.",
+        duration: 15,
+        kind: "video",
+        resendPrompt: true,
+        steps: [
+          "Für wen dieser Weg ist: Du willst weder umziehen noch ein Kurs-Postfach — deine Mails bleiben beim bisherigen Anbieter. Trotzdem soll dein Anfrage-Formular zwei Mails verschicken: die Benachrichtigung an dich, die Bestätigung an den Kunden. Genau dafür gibt es Resend.",
+          "Das Wichtigste zum Verständnis: Resend sendet nur, es empfängt nichts. Deine MX-Einträge — also wohin deine Post fließt — werden nicht angefasst. Deine bestehenden Postfächer merken von alldem gar nichts.",
+          "Konto bei Resend anlegen (Link rechts) und einen API-Schlüssel erzeugen — er beginnt mit re_ und wird nur ein einziges Mal angezeigt, also direkt kopieren.",
+          "Im Baukasten unten: Absender-Adresse auf deiner Domain, wohin die Benachrichtigung soll, und in einem Satz grob, was in der Bestätigung stehen soll — der Prompt baut sich beim Tippen mit. Den re_-Schlüssel setzt du oben im Prompt ein.",
+          "Prompt schicken: Claude legt deine Domain bei Resend an und setzt die Versand-Nachweise (SPF, DKIM) — über die Kursplattform direkt, oder du bekommst die Einträge als Tabelle für deinen Anbieter. Dann baut er beide Mails ein; der Schlüssel landet als Umgebungsvariable, nie im Code.",
+          "Der Test: Anfrage über die Website abschicken — Benachrichtigung da, Bestätigung da, Spam-Ordner geprüft. Zu den Grenzen: Der Gratis-Tarif erlaubt 100 Mails am Tag — für ein Anfrage-Formular ist das ein Vielfaches von dem, was je reinkommt.",
+        ],
+        cheatSheet: {
+          links: [
+            {
+              label: "Resend — Konto erstellen",
+              href: "https://resend.com/signup",
+              note: "kostenlos; danach unter API Keys einen Schlüssel erzeugen",
             },
           ],
         },
@@ -2872,7 +2898,6 @@ Mail zu tun haben.`,
         duration: 18,
         kind: "video",
         mailPrompt: true,
-        resendPrompt: true,
         steps: [
           "Im selben Chat weitermachen wie bei den Postfächern — Claude kennt dein Postfach dann schon.",
           "Im Baukasten unten die Adressen anklicken und in einem Satz sagen, was in der Bestätigung stehen soll.",

@@ -32,8 +32,16 @@ Meine Benachrichtigung geht an: ${an}${an === von ? " (dieselbe Adresse)" : ""}
 
 SCHRITT 1 — Domain bestätigen
 Damit ich von meiner eigenen Adresse senden darf, muss die Domain bei
-Resend bestätigt sein. Leg sie dort an, hol dir die geforderten
-DNS-Einträge und setz sie selbst — du hast meinen DNS-Zugang bereits.
+Resend bestätigt sein. Leg sie dort an und hol dir die geforderten
+DNS-Einträge. Wichtig: Das sind reine Versand-Nachweise (SPF, DKIM) —
+meine MX-Einträge und damit meine bestehenden Postfächer fasst du
+NICHT an, die bleiben, wo sie sind.
+
+Dann setz die Einträge:
+- Läuft meine DNS über die Kursplattform (ich habe ein DNS-Token aus
+  der Domain-Lektion), setzt du sie direkt.
+- Verwalte ich meine DNS selbst beim Anbieter, gibst du mir die
+  Einträge als Tabelle und wartest, bis ich sie eingetragen habe.
 Nimm genau die Werte, die Resend vorgibt, rate nichts. Prüf danach,
 ob die Domain als bestätigt gilt.
 
@@ -69,11 +77,12 @@ Testanfrage abschicken, beide Mails zeigen, Spam-Ordner prüfen.`;
     <div className="rounded-3xl border border-white/8 bg-surface-900/70 p-6">
       <h2 className="mb-1 flex items-center gap-2 text-base font-semibold text-white">
         <Send className="size-5 text-zinc-400" />
-        Alternative: über Resend
+        Dein Versand-Prompt für Resend
       </h2>
       <p className="mb-5 text-xs leading-relaxed text-zinc-400">
-        Statt über dein eigenes Postfach. Adressen eintragen — der fertige
-        Prompt steht darunter. Den Schlüssel holst du dir bei Resend.
+        Adressen eintragen, grob sagen, was in der Bestätigung stehen soll —
+        der fertige Prompt steht darunter. Den Schlüssel holst du dir bei
+        Resend, deine Postfächer bleiben unberührt.
       </p>
 
       <div className="mb-5 space-y-4">
