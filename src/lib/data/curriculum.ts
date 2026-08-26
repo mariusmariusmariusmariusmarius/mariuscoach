@@ -1704,10 +1704,10 @@ bleibt offen — erfinde nichts.`,
         // Video: „Programmatic SEO für lokale Handwerkskeywords.mp4"
         slug: "programmatic-seo",
         title: "Lokale Landingpages: mehr Seiten, ohne Google zu verärgern",
-        videoUrl: "https://videos.gefundenwerden.online/modul-1/programmatic-seo.mp4",
+        videoUrl: "https://videos.gefundenwerden.online/modul-1/programmatic-seo.mp4?v=2",
         description:
           "Niemand sucht ‚Heizungsbauer' — gesucht wird ‚Heizung Reparatur Leverkusen' oder ‚Rohrreinigung Notfall' plus dein Ort. Claude baut dir die Orts-Leistungs-Seiten, für die es echte Nachfrage gibt. Und nur die: Seiten, die sich zu stark ähneln, ranken schlechter — deshalb hat diese Lektion eine eingebaute Bremse.",
-        duration: 4,
+        duration: 6,
         kind: "video",
         seoPrompt: true,
         steps: [
@@ -1716,6 +1716,7 @@ bleibt offen — erfinde nichts.`,
           "Prompt schicken. Claude nutzt den Skill seo-programmatic (der kennt Aufbau und Schutzregeln) und zieht die Matrix Leistungen × Orte mit echtem Suchvolumen über deinen Zugang — kostet ein paar Cent.",
           "Das Interview: Zu jeder Kombi fragt Claude, was du über diesen Ort weißt. Eine Referenz, eine Besonderheit, eine Anfahrtszeit — wozu dir nichts einfällt, wird nicht gebaut. Die Regel heißt: keine Antwort, keine Seite.",
           "Claude baut höchstens zehn Seiten, mit Übersichtsseite und Verlinkung — gleiche Vorlage, aber jede Seite mit echtem Ortsbezug. Denn Seiten, die sich zu stark ähneln, wertet Google ab und sie ranken gegenseitig schlechter.",
+          "So sieht das Ergebnis aus (im Video): Claude prüft zuerst den Begriff selbst — „Möbel“ schlägt „Möbelhaus“, die „in meiner Nähe“-Suchen gehören dem Google-Profil (eigene Lektion), und die englischen Begriffe waren fast leer. Und die Bremse arbeitet wirklich: Statt zehn schlägt er hier nur drei neue Seiten vor — plus Feinschliff der bestehenden Leistungsseiten, damit jede auf ihren eigenen Begriff rankt. Danach wie immer: seine Fragen beantworten.",
           "Vier Wochen warten, dann Rankings prüfen. Erst wenn die ersten Seiten greifen, kommt die nächste Runde.",
         ],
         cheatSheet: {
@@ -3370,6 +3371,7 @@ messen kannst, schreib das hin.`,
           "Prompt schicken. Claude zieht die Matrix Leistungen × Orte mit Suchvolumen — kostet ein paar Cent.",
           "Das Interview: Zu jeder Kombi fragt Claude, was du über diesen Ort weißt. Eine Referenz, eine Besonderheit, eine Anfahrtszeit — was dir nichts einfällt, wird nicht gebaut.",
           "Claude baut höchstens zehn Seiten, mit Übersichtsseite und Verlinkung. Gleiche Vorlage, aber jede Seite mit echtem Ortsbezug.",
+          "So sieht das Ergebnis aus (im Video): Claude prüft zuerst den Begriff selbst — „Möbel“ schlägt „Möbelhaus“, die „in meiner Nähe“-Suchen gehören dem Google-Profil (eigene Lektion), und die englischen Begriffe waren fast leer. Und die Bremse arbeitet wirklich: Statt zehn schlägt er hier nur drei neue Seiten vor — plus Feinschliff der bestehenden Leistungsseiten, damit jede auf ihren eigenen Begriff rankt. Danach wie immer: seine Fragen beantworten.",
           "Vier Wochen warten, dann Rankings prüfen. Erst wenn die ersten Seiten greifen, kommt die nächste Runde.",
         ],
         cheatSheet: {
