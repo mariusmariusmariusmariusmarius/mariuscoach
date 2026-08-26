@@ -1519,7 +1519,7 @@ ZUM SCHLUSS
         videoUrl: "https://videos.gefundenwerden.online/modul-1/seo-audit.mp4",
         description:
           "Einmal alles auf den Tisch: Claude durchleuchtet deine Seite von A bis Z — Technik, Inhalte, lokale Sichtbarkeit, Keywords, Konkurrenz, KI-Suche — mit Live-Daten über deinen Zugang. Im Video: eine zwei Tage alte Website, Note 3 von 10, 14 Abfragen — und eine Fundliste, für die SEO-Agenturen 5.000 Euro nehmen.",
-        duration: 11,
+        duration: 13,
         kind: "video",
         seoPrompt: true,
         steps: [
@@ -1528,7 +1528,8 @@ ZUM SCHLUSS
           "Prompt schicken und arbeiten lassen. Der Audit zieht Live-Daten über deinen Zugang — im Video waren es 14 Abfragen zu Suchvolumen, Rankings, Karten und KI-Sichtbarkeit — und endet mit Bericht samt Gesamtnote. Eine 3 von 10 bei einer frischen Domain ist völlig normal: Genau dafür gibt es die Liste.",
           "Die Fundliste lesen, wie im Video: Ladezeit (das schwere Hero-Video), maschinenlesbare Firmendaten, Sitemap und robots.txt für die Crawler, llms.txt für die KIs, fehlendes Vorschaubild und Favicon, Sprachkennzeichnung, dünne Kategorien. Der Audit findet sogar Tippfehler-Niveau — im Video eine falsche Handelsregisternummer im Impressum.",
           "Die Keyword-Tabelle verstehen: Suchvolumen sagt, wie oft gesucht wird — Schwierigkeit, wie viel Konkurrenz dort steht (eine 0 heißt: Seite 1 ist gut machbar). Und was nicht zu deinem Ton passt, fliegt raus — im Video ein Sale-Keyword, weil keine Rabattsprache gewünscht war.",
-          "Zur Einordnung: SEO-Agenturen nehmen für so einen Rundumschlag 5.000 bis 6.000 Euro — einmalig. Du kannst ihn jeden Monat laufen lassen und zusehen, wie die Rankings klettern. Wichtig: Noch nichts umsetzen — erst lesen und entscheiden, abgearbeitet wird in den nächsten Lektionen.",
+          "Zur Einordnung: SEO-Agenturen nehmen für so einen Rundumschlag 5.000 bis 6.000 Euro — einmalig. Du kannst ihn jeden Monat laufen lassen und zusehen, wie die Rankings klettern.",
+          "Dann die Umsetzung anstoßen — ein Satz reicht (Prompt rechts): Claude arbeitet den Bericht (das Artifakt) Punkt für Punkt ab; Google My Business lässt du bewusst aus, das bekommt eine eigene Lektion. Bei so einer umfangreichen Liste ruhig den Denkaufwand hochstellen — Opus reicht dafür völlig, Fable wäre Overkill. Es darf dauern, es können auch neue Seiten entstehen.",
         ],
         cheatSheet: {
           apiKeyHint: true,
@@ -1671,6 +1672,17 @@ SO WILL ICH DAS ERGEBNIS
 Ändere noch NICHTS an meiner Website. Ich will erst die Liste sehen
 und selbst entscheiden. Erfinde keine Zahlen — wenn du etwas nicht
 messen kannst, schreib das hin.`,
+            },
+            {
+              label: "Die Umsetzung — wenn du die Liste gelesen hast",
+              text: `Setz jetzt bitte alle Punkte aus dem Audit-Bericht (dem Artifakt)
+um, einen nach dem anderen. Google My Business lässt du komplett
+aus — darum kümmere ich mich später separat.
+
+Nimm dir Zeit und arbeite gründlich; es dürfen auch neue Seiten
+entstehen, wenn der Bericht sie empfiehlt. Zeig mir am Ende eine
+Liste: was du umgesetzt hast, was du bewusst ausgelassen hast und
+was noch von mir gebraucht wird.`,
             },
           ],
         },
