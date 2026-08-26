@@ -49,14 +49,19 @@ export default async function SettingsPage() {
         </p>
       </section>
 
-      {/* Persönlicher API-Schlüssel für die Bewertungs-API */}
+      {/* Persönlicher API-Schlüssel — zugleich der DataForSEO-Zugang */}
       <section className="rounded-3xl border border-white/8 bg-surface-900/70 p-7">
-        <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold text-white">
+        <h2 className="mb-1 flex flex-wrap items-center gap-2 text-lg font-semibold text-white">
           <KeyRound className="size-5 text-brand-300" />
           Dein API-Schlüssel
+          <span className="rounded-full bg-brand-500/15 px-2.5 py-0.5 text-xs font-medium text-brand-300">
+            DataForSEO-Zugang
+          </span>
         </h2>
         <p className="mb-5 text-sm text-zinc-400">
-          Ein Schlüssel für alles: Bewertungen von Google und Trustpilot, deine
+          Ein Schlüssel für alles — er ist zugleich dein DataForSEO-Schlüssel:
+          SEO- und Marktdaten aller Art (Rankings, Keywords, Suchvolumen,
+          Konkurrenz, Bewertungen von Google und Trustpilot) plus deine
           DNS-Einträge und deine Postfächer. Er gehört nur dir — behandle ihn
           wie ein Passwort.
         </p>

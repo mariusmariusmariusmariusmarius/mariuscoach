@@ -88,7 +88,7 @@ export default async function AdminPage() {
       {/* Bewertungs-API: wer verbraucht wie viel */}
       <section className="rounded-3xl border border-white/8 bg-surface-900/70 p-7">
         <h2 className="mb-4 text-lg font-semibold text-white">
-          Bewertungs-API — Verbrauch im laufenden Monat
+          DataForSEO-Verbrauch im laufenden Monat (SEO-Daten & Bewertungen)
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[560px] text-left text-sm">
