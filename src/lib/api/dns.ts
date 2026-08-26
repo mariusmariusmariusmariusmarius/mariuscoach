@@ -15,6 +15,10 @@
  * (Cloudflare zeigt ihn genau einmal); dafür gibt es tokenNeuErzeugen.
  */
 
+import { ladeJson, speichereJson } from "./speicher";
+
+const SPEICHER = (userId: string) => `dns/${userId}.json`;
+
 export type DomainEintrag = {
   domain: string;
   zoneId: string;
@@ -65,8 +69,16 @@ const EIGENTUM = "_mm-eigentum";
 export async function domainsVonSicher(userId: string): Promise<DomainEintrag[]> {
   const imSpeicher = domains.get(userId);
   if (imSpeicher && imSpeicher.length > 0) return imSpeicher;
+
+  // 1) Dauerspeicher — enthält auch die Token-Werte
+  const abgelegt = await ladeJson<DomainEintrag[]>(SPEICHER(userId));
+  if (abgelegt && abgelegt.length > 0) {
+    domains.set(userId, abgelegt);
+    return abgelegt;
+  }
   if (!dnsKonfiguriert()) return [];
 
+  // 2) Notnagel: Eigentums-Marker in den Zonen (Token-Werte nicht rekonstruierbar)
   const acct = process.env.CLOUDFLARE_ACCOUNT_ID;
   const gefunden: DomainEintrag[] = [];
   for (let seite = 1; seite <= 4; seite++) {
@@ -96,7 +108,10 @@ export async function domainsVonSicher(userId: string): Promise<DomainEintrag[]>
     }
     if (r.result.length < 50) break;
   }
-  if (gefunden.length > 0) domains.set(userId, gefunden);
+  if (gefunden.length > 0) {
+    domains.set(userId, gefunden);
+    await speichereJson(SPEICHER(userId), gefunden);
+  }
   return gefunden;
 }
 
@@ -215,6 +230,7 @@ export async function zoneAnlegen(
     angelegt: new Date().toISOString().slice(0, 10),
   };
   domains.set(userId, [...eigene, eintrag]);
+  await speichereJson(SPEICHER(userId), domains.get(userId));
   return { eintrag };
 }
 
@@ -254,6 +270,7 @@ export async function tokenNeuErzeugen(
   eintrag.token = token.result.value;
   eintrag.tokenId = token.result.id;
   domains.set(userId, eigene);
+  await speichereJson(SPEICHER(userId), eigene);
   return { eintrag };
 }
 
@@ -302,5 +319,6 @@ export async function zoneEntfernen(
     userId,
     eigene.filter((d) => d.domain !== domain)
   );
+  await speichereJson(SPEICHER(userId), domains.get(userId));
   return { ok: true };
 }

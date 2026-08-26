@@ -14,6 +14,8 @@
 export type MailDomain = {
   domain: string;
   angelegt: string;
+  /** Migadu-Status: "active" = MX zeigt auf den Kurs-Mailserver */
+  state?: string;
 };
 
 /** Markierung im Beschreibungsfeld der Migadu-Domain */
@@ -57,19 +59,20 @@ function kopf() {
 
 /** Alle Domains des Kontos bei Migadu holen */
 async function alleDomains(): Promise<
-  { name: string; description: string; created?: string }[]
+  { name: string; description: string; state: string }[]
 > {
   const r = await migadu("/domains");
   const liste = (r.daten.domains ?? []) as Record<string, unknown>[];
   return liste.map((d) => ({
     name: d.name as string,
     description: (d.description as string) ?? "",
+    state: (d.state as string) ?? "",
   }));
 }
 
 export async function mailDomainsVon(userId: string): Promise<MailDomain[]> {
   const meine = (await alleDomains()).filter((d) => d.description === marke(userId));
-  return meine.map((d) => ({ domain: d.name, angelegt: "" }));
+  return meine.map((d) => ({ domain: d.name, angelegt: "", state: d.state }));
 }
 
 export async function gehoertNutzer(userId: string, domain: string): Promise<boolean> {

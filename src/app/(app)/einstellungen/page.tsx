@@ -4,6 +4,8 @@ import { findUserByEmail } from "@/lib/auth/users";
 import { LIMIT_USD, verbrauchVon } from "@/lib/api/verbrauch";
 import { CopyButton } from "@/components/ui/copy-button";
 import { DomainUebersicht } from "@/components/app/domain-uebersicht";
+import { PostfachUebersicht } from "@/components/app/postfach-uebersicht";
+import { PLATTFORM_URL } from "@/lib/config";
 import { changeTierAction } from "@/lib/auth/actions";
 import { TIERS, TIER_INFO } from "@/lib/tiers";
 import { Avatar } from "@/components/ui/avatar";
@@ -95,6 +97,8 @@ export default async function SettingsPage() {
       </section>
 
       <DomainUebersicht />
+
+      <PostfachUebersicht apiAdresse={`${PLATTFORM_URL}/api/mail`} />
 
       {/* Account-Stufe */}
       <section className="rounded-3xl border border-white/8 bg-surface-900/70 p-7">

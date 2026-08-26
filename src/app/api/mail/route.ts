@@ -51,6 +51,7 @@ export async function GET(req: NextRequest) {
     meine.map(async (d) => ({
       domain: d.domain,
       angelegt: d.angelegt,
+      state: d.state ?? "",
       postfaecher: await postfaecherVon(d.domain).catch(() => []),
     }))
   );
