@@ -4,11 +4,13 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
+  ArrowUpRight,
   GraduationCap,
   LayoutDashboard,
   LogOut,
   Menu,
   MessagesSquare,
+  Newspaper,
   Settings,
   ShieldCheck,
   Sparkles,
@@ -81,6 +83,17 @@ export function AppSidebar({ session }: { session: Session }) {
           </Link>
         );
       })}
+      <a
+        href="https://blog.gefundenwerden.online"
+        target="_blank"
+        rel="noopener"
+        onClick={() => setOpen(false)}
+        className="flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm font-medium text-zinc-400 transition hover:bg-white/5 hover:text-white"
+      >
+        <Newspaper className="size-4.5" />
+        Blog
+        <ArrowUpRight className="ml-auto size-3.5 text-zinc-600" />
+      </a>
     </nav>
   );
 
